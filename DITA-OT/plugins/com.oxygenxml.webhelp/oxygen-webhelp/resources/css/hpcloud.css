@@ -620,3 +620,7 @@ tr:first-child {
   //remeber to ask
 }
 ///////////////////////////////////////////////
+
+li > i > b {
+background-color: green;
+}

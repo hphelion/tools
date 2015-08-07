@@ -621,6 +621,6 @@ tr:first-child {
 }
 ///////////////////////////////////////////////
 
-li i b u{
+li.i.b.u{
 background-color: #cccccc !important;
 }

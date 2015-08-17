@@ -70,24 +70,10 @@ available in the base directory of this Oxygen Webhelp plugin.
   </xsl:template>
   
   <xsl:template name="generateHeadContent">
-  
-  <xsl:comment> <xsl:text>XXX1</xsl:text> </xsl:comment>
-  
-		
-		  
-        <xsl:apply-templates 
-		
-
-
-          select=" (local-name() = 'link' )" 
-          mode="fixup_desktop"/>
-    <xsl:comment> <xsl:text>XXX2</xsl:text> </xsl:comment>
-	
-	
       <xsl:apply-templates 
           select="*[not(local-name() = 'link' 
                     and @rel='stylesheet' 
-                    )]" 
+                    and not(contains(@href, 'commonltr.css')))]" 
           mode="fixup_desktop"/>
     <xsl:call-template name="jsAndCSS"/>
   </xsl:template>

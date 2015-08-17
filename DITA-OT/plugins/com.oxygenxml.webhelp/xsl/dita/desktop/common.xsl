@@ -30,16 +30,11 @@ available in the base directory of this Oxygen Webhelp plugin.
     <link rel="stylesheet" type="text/css" href="{$PATH2PROJ}oxygen-webhelp/resources/css/commonltr.css"><xsl:comment/></link>
 	<link rel="stylesheet" type="text/css" href="{$PATH2PROJ}oxygen-webhelp/resources/css/hpcloud.css"><xsl:comment/></link>
     <link rel="stylesheet" type="text/css" href="{$PATH2PROJ}oxygen-webhelp/resources/css/webhelp_topic.css"><xsl:comment/></link>
-     <!-- <xsl:apply-templates
-	  
+      <xsl:apply-templates
           select="*[local-name() = 'link' 
                   and @rel='stylesheet' 
                   and not(contains(@href, 'commonltr.css'))]"
           mode="fixup_desktop"/>
-		 <xsl:value-of select="$title"/> 
-		 <xsl:copy-of select="$title"/>   -->
-		 
-		 <xsl:apply-templates select="$title"/> 
     <xsl:if test="$IS_FEEDBACK_ENABLED">
       <link rel="stylesheet" type="text/css" href="{$PATH2PROJ}oxygen-webhelp/resources/css/jquery.realperson.css"><xsl:comment/></link>
       <link rel="stylesheet" type="text/css" href="{$PATH2PROJ}oxygen-webhelp/resources/css/comments.css"><xsl:comment/></link>

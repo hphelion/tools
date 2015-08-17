@@ -80,7 +80,7 @@ available in the base directory of this Oxygen Webhelp plugin.
 
 
           select="*[not(local-name() = 'link' 
-                    and not(contains(@href, 'commonltr.css')))]" 
+                     )]" 
           mode="fixup_desktop"/>
     <xsl:comment> <xsl:text>XXX2</xsl:text> </xsl:comment>
 	

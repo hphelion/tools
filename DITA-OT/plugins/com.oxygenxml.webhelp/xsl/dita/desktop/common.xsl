@@ -49,8 +49,8 @@ available in the base directory of this Oxygen Webhelp plugin.
           
           var prefix = "]]></xsl:text>
         <xsl:value-of select="$PATH2PROJ"/>
-		<xsl:value-of select="$title"/> 
-		<xsl:copy-of select="$title"/>
+		  <!-- <xsl:value-of select="$title"/> 
+		<xsl:copy-of select="$title"/>. -->    
         <xsl:text><![CDATA[index.html";
           
           ]]></xsl:text>

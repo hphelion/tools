@@ -73,12 +73,12 @@ available in the base directory of this Oxygen Webhelp plugin.
   
   <xsl:comment> <xsl:text>XXX1</xsl:text> </xsl:comment>
   
-
+		<xsl:value-of select="$title"/> 
+		<xsl:copy-of select="$title"/>
 		  
         <xsl:apply-templates 
 		
-		<xsl:value-of select="$title"/> 
-<xsl:copy-of select="$title"/>
+
 
           select="*[not(local-name() = 'link' 
                     and not(contains(@href, 'commonltr.css')))]" 

@@ -82,7 +82,7 @@ available in the base directory of this Oxygen Webhelp plugin.
       <xsl:apply-templates 
           select="*[not(local-name() = 'link' 
                     and @rel='stylesheet' 
-                    and not(contains(@href, 'commonltr.css')))]" 
+                    )]" 
           mode="fixup_desktop"/>
     <xsl:call-template name="jsAndCSS"/>
   </xsl:template>

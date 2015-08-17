@@ -71,6 +71,11 @@ available in the base directory of this Oxygen Webhelp plugin.
   
   <xsl:template name="generateHeadContent">
   
+  <xsl:comment>
+        <xsl:text>test</xsl:text>
+        
+      </xsl:comment>
+  
         <xsl:apply-templates 
           select="*[not(local-name() = 'link' 
                     and not(contains(@href, 'commonltr.css')))]" 

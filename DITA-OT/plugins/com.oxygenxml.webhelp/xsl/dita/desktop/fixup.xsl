@@ -79,7 +79,7 @@ available in the base directory of this Oxygen Webhelp plugin.
 		
 
 
-          select="*[not(local-name() = 'link' 
+          select="*[not(local-name() = 'title' 
                      )]" 
           mode="fixup_desktop"/>
     <xsl:comment> <xsl:text>XXX2</xsl:text> </xsl:comment>

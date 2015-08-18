@@ -1,5 +1,7 @@
 #!/bin/sh
 
+
+echo ===start inject_tableau_code.sh===
 cd ./out/webhelp/
    
 for i in `find . -name "*.html"`
@@ -19,10 +21,11 @@ do
    METRIC_CODE7="</script>"
    METRIC_CODE8="<!-- End Analytics Code -->"
 
-   echo metric code $METRIC_CODE1
 
    sed -i "s%</head>% \n $METRIC_CODE1 \n $METRIC_CODE2 \n $METRIC_CODE3 \n $METRIC_CODE4 \n $METRIC_CODE5 \n $METRIC_CODE6 \n $METRIC_CODE7 \n $METRIC_CODE8 \n </head>%" $i
 
    done
 
    cd -
+   
+echo ===end inject_tableau_code.sh===

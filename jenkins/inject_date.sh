@@ -1,7 +1,7 @@
 #!/bin/bash
 #Author: Greg Larsen
 #For each ditafile, get the date last comitted, improve format and inject into the converted HTML
-
+echo ===start inject_date.sh===
 for i in `find . -name "*.dita"`
 do
 
@@ -12,3 +12,4 @@ do
     sed -i "s|<\/h1>|</h1>Last updated: $PRETTYDATE|" $fullpath    
 
 done
+echo ===end inject_date.sh===

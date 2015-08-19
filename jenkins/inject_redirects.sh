@@ -6,7 +6,7 @@ grep -v "^#" ./ServerArtifacts/inter-helpset-redirects.txt > inter-helpset-redir
 while read -r FROM TO; do
   echo $FROM $TO;
   REDIRECT="if (dynamicURL == '$FROM') {window.location.href = '#$TO';} else"
-  echo $EDIRECT
+  echo $REDIRECT
 done < inter-helpset-redirects.tmp 
 
 echo stop inject redirects

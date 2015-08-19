@@ -1,7 +1,7 @@
 #!/bin/bash
 echo start inject redirects
-
-grep -v "^#" ./ServerArtifacts/inter-helpset-redirects.txt > inter-helpset-redirects.tmp 
+pwd
+grep -v "^#" ./inter-helpset-redirects.txt > inter-helpset-redirects.tmp 
   
 while read -r FROM TO; do
   echo $FROM $TO;

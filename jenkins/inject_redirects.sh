@@ -1,5 +1,8 @@
 #!/bin/bash
 echo start inject redirects
+
+cat ./ServerArtifacts/inter-helpset-redirects.txt
+
 for i in ./ServerArtifacts/inter-helpset-redirects.txt; do
   while read line; do
     echo $line | read FROM TO;

@@ -9,9 +9,9 @@ while read -r FROM TO; do
   echo $REDIRECT
 done < inter-helpset-redirects.tmp 
 
-echo stop inject redirects
-#sed –i  "s| function loadIframe(dynamicURL) {| function loadIframe(dynamicURL) { $REDIRECT|"  ./oxygen-webhelp/resources/skins/desktop/toc_driver.js
+sed –i  "s|function loadIframe(dynamicURL) {| function loadIframe(dynamicURL) { $REDIRECT|"  ./oxygen-webhelp/resources/skins/desktop/toc_driver.js
 
+echo stop inject redirects
 
 
 

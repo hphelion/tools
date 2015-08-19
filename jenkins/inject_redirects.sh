@@ -10,7 +10,8 @@ while read -r FROM TO; do
   
   echo $REDIRECT
   echo blah
-  sed –i 's|function|function|'  ./oxygen-webhelp/resources/skins/desktop/toc_driver.js
+  sed 's|function|FUNCTION|'  ./oxygen-webhelp/resources/skins/desktop/toc_driver.js
+  
 echo blah
 
 done < inter-helpset-redirects.tmp 

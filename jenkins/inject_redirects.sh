@@ -5,10 +5,13 @@ grep -v "^#" ./ServerArtifacts/inter-helpset-redirects.txt > inter-helpset-redir
   
 while read -r FROM TO; do
   echo $FROM $TO;
+  
   REDIRECT="if (dynamicURL == '$FROM') {window.location.href = '#$TO';} else"
+  
   echo $REDIRECT
-  sed –i "s|function|function|"  ./oxygen-webhelp/resources/skins/desktop/toc_driver.js
-
+  echo blah
+  sed –i 's|function|function|'  ./oxygen-webhelp/resources/skins/desktop/toc_driver.js
+echo blah
 
 done < inter-helpset-redirects.tmp 
 

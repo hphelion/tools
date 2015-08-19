@@ -1,7 +1,7 @@
 #!/bin/bash
 echo start inject redirects
 pwd
-grep -v "^#" ./inter-helpset-redirects.txt > inter-helpset-redirects.tmp 
+grep -v "^#" ./tools/jenkins/inter-helpset-redirects.txt > inter-helpset-redirects.tmp 
   
 while read -r FROM TO; do
   echo $FROM $TO;

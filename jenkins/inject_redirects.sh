@@ -11,7 +11,7 @@ while read -r FROM TO; do
   echo $REDIRECT
   echo blah
   pwd
-  sed 's|function|FUNCTION|'  ./oxygen-webhelp/resources/skins/desktop/toc_driver.js
+  sed 's|function|FUNCTION|'  ./out/webhelp/oxygen-webhelp/resources/skins/desktop/toc_driver.js
   
 echo blah
 

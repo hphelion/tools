@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo start inject redirects
 for i in ./ServerArtifacts/inter-helpset-redirects.txt; do
   while read line; do
     echo $line | read FROM TO;
@@ -14,6 +14,7 @@ REDIRECT="if (dynamicURL == '$FROM') {window.location.href = '#$TO';} else"
 
 echo $EDIRECT
 
+echo stop inject redirects
 #sed –i  "s| function loadIframe(dynamicURL) {| function loadIframe(dynamicURL) { $REDIRECT|"  ./oxygen-webhelp/resources/skins/desktop/toc_driver.js
 
 

@@ -118,7 +118,8 @@ DITAMAP_FILE=docs.hpcloud.com.ditamap
 
 # The name of the DITAVAL input filter file 
 DITAVAL_FILE=my_ditaval.ditaval
-
+echo where am I
+pwd
 # The path of the directory of the DITAVAL input filter file
 DITAVAL_DIR=/usr/local/OxygenXMLDeveloper16/samples/dita
 

@@ -156,7 +156,7 @@ DITAVAL_DIR=/usr/local/OxygenXMLDeveloper16/samples/dita
  "-Dargs.xhtml.classattr=yes"\
  "-Dargs.input=$DITA_MAP_BASE_DIR/$DITAMAP_FILE"\
  "-DbaseJVMArgLine=-Xmx384m"\
- "-Dargs.hdr=test.html"
+ "-Dargs.hdr=$DITA_MAP_BASE_DIR/tools/jenkins/test.html"
  
  
   

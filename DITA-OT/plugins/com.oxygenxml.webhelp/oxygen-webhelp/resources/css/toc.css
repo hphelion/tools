@@ -12,9 +12,7 @@ html,body {
     margin: 0;
     padding: 0;
     background-color: #fff;
-    /* Changing all fonts to HP Simplified 6/26 
-    font-family: arial, helvetica, sans-serif; */
-    font-family: HPSimplified !important;
+    font-family: arial, helvetica, sans-serif;
     font-size: 10pt;
 }
 
@@ -28,10 +26,6 @@ html,body {
     margin: 0.5em 0 0 0.3em;
     padding-bottom: 0.5em;
     line-height: 1.1em;
-}
-
-#productTitle {
-background-image: url ("http://www8.hp.com/hpnext/sites/default/files/content/documents/HP%20Helion%20Logo_Cloud_Martin%20Fink_New%20Style%20of%20IT_Hewlett-Packard.PNG"); ////nancy 7-2
 }
 
 /* Expand / Collapse Buttons */
@@ -109,9 +103,7 @@ background-image: url ("http://www8.hp.com/hpnext/sites/default/files/content/do
     text-decoration: none;
     font-size: 10pt;
     color: navy;
-    /*font-family: arial, helvetica, tahoma, sans-serif;*/
-  /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+    font-family: arial, helvetica, tahoma, sans-serif;
     white-space: nowrap;
 }
 #contentBlock a:hover{
@@ -248,9 +240,7 @@ a.foundResult:hover{
     position: relative;
     float: right;
     font-size: 13px;
-    /*font-family: Arial,sans-serif;*/
-  /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+    font-family: Arial,sans-serif;
     color: #888;
 }
 

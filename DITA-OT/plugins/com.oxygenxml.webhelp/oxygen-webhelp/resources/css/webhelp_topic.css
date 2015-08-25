@@ -9,31 +9,15 @@ available in the base directory of this Oxygen Webhelp plugin.
 
 @import "print.css";
 
-/* Changing topic background to $hp-gray-5: #f2f2f2 PFletcher 6/11/15 */
 body {
-  /*background-color:white;*/
-  background-color:#f2f2f2;
+  background-color:white;
   font-family: arial, helvetica, sans-serif;
   line-height:18px;
   font-size:12px;
 }
 
-/* Anchors */
-/* (Consolidated here P Fletcher 6/11/15) */
-
 a.link {
     text-decoration: none;
-	/* Added by P Fletcher 6/11: Links are $hp-accessible-blue: #007dba */
-	color: #007dba;
-}
-
-a:visited{
-  color:#660066;        
-}
-a:hover{
-	/* Changed by P Fletcher 6/11: Link hover color is $hp-hover-blue: #006699 */
-  /*color:red;*/
-  color:#006699;
 }
 
 .navheader{
@@ -73,7 +57,12 @@ a:hover{
 
 span.frames{ cursor:pointer; padding:0 5px 0 0; }
 
-
+a:visited{
+  color:#660066;        
+}
+a:hover{
+  color:red;
+}
 
 a span.frames{
 /*
@@ -118,15 +107,12 @@ table.nav td + td {
  *   margin:0 0.3em 0 0;
 }
  */
- 
- /* Adding keylines PFletcher 6/11/15 */
 h1.topictitle1 {
   color:black;
   background-color:#C0C0C0;
   font-size: 20px;  
   padding:0.4em 0 0.3em 0.7em;
   margin:0 0.3em 0 0;
-  border-bottom: 1px solid #cccccc;
 }
 
 div.rate_page{float:left; width:400px; margin:40px 0 0 0;}
@@ -228,7 +214,6 @@ h2.title{
     text-shadow:0 1px 0 #fff;
     padding: 0.4em 0.4em 0.4em 0.4em;
     box-shadow: 0 1px 2px #999;
-	border-bottom: 1px solid #cccccc;
 }
 
 /* The navigation tree classes */
@@ -477,4 +462,3 @@ div.fignone img {
         float:none;
     }
 }
- 

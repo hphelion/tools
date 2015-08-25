@@ -28,7 +28,6 @@ available in the base directory of this Oxygen Webhelp plugin.
     
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="{$PATH2PROJ}oxygen-webhelp/resources/css/commonltr.css"><xsl:comment/></link>
-	<link rel="stylesheet" type="text/css" href="{$PATH2PROJ}oxygen-webhelp/resources/css/hpcloud.css"><xsl:comment/></link>
     <link rel="stylesheet" type="text/css" href="{$PATH2PROJ}oxygen-webhelp/resources/css/webhelp_topic.css"><xsl:comment/></link>
       <xsl:apply-templates
           select="*[local-name() = 'link' 

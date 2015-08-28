@@ -275,7 +275,7 @@ See the accompanying license.txt file for applicable licenses.
 	<variable id="danger Note Image Path">Customization/OpenTopic/common/artwork/alert_32x32.png</variable>
 
     <!-- Image path to use for a note of "fastpath" type. -->
-	<variable id="fastpath Note Image Path">Customization/OpenTopic/common/artwork/hand.gif</variable>
+	<variable id="fastpath Note Image Path">Customization/OpenTopic/common/artwork/note_32x32.png</variable>
 
     <!-- Image path to use for a note of "important" type. -->
 	<variable id="important Note Image Path">Customization/OpenTopic/common/artwork/important_32x32.png</variable>

@@ -269,7 +269,7 @@ See the accompanying license.txt file for applicable licenses.
 	<variable id="attention Note Image Path">Customization/OpenTopic/common/artwork/alert_32x32.png</variable>
 
     <!-- Image path to use for a note of "caution" type. -->
-	<variable id="caution Note Image Path">Customization/OpenTopic/common/artwork/alert_32x32.png</variable>
+	<variable id="caution Note Image Path">Customization/OpenTopic/common/artwork/caution.png</variable>
 
     <!-- Image path to use for a note of "danger" type. -->
 	<variable id="danger Note Image Path">Customization/OpenTopic/common/artwork/alert_32x32.png</variable>

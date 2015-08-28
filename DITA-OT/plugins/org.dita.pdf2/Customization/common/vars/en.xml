@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <!-- 
 Copyright © 2004-2006 by Idiom Technologies, Inc. All rights reserved. 
@@ -193,7 +193,7 @@ See the accompanying license.txt file for applicable licenses.
 
     <!-- Text to use for 'Note' label generated from <note> element
          with 'type' attribute set to 'restriction'. -->
-    <variable id="Restriction">For HA</variable>
+    <variable id="Restriction">Restriction</variable>
 
     <!-- Text to use for figure titles. Renders as part of <fig>/<title>
           elements. -->
@@ -284,7 +284,7 @@ See the accompanying license.txt file for applicable licenses.
 	<variable id="remember Note Image Path">Customization/OpenTopic/common/artwork/info_32x32.png</variable>
 
     <!-- Image path to use for a note of "restriction" type. -->
-	<variable id="restriction Note Image Path">Customization/OpenTopic/common/artwork/ha_32x32.png</variable>
+	<variable id="restriction Note Image Path">Customization/OpenTopic/common/artwork/restriction.png</variable>
 
     <!-- Image path to use for a note of "tip" type. -->
 	<variable id="tip Note Image Path">Customization/OpenTopic/common/artwork/tip_32x32.png</variable>

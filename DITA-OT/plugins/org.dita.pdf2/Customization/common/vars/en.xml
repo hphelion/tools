@@ -46,10 +46,10 @@ See the accompanying license.txt file for applicable licenses.
     -->
 
     <!-- Product name to be placed inside headers etc. -->
-    <variable id="Product Name">Eucalyptus</variable>
+    <variable id="Product Name">HP Helion</variable>
 
     <!-- The footer that appears on odd-numbered pages. -->
-    <variable id="Body odd footer">CC-BY-SA, Eucalyptus Systems, Inc.
+    <variable id="Body odd footer">Copyright &#169; Hewlett-Packard Development Company, L.P.
     </variable>
 
     <!-- The footer that appears on even-numbered pages. -->

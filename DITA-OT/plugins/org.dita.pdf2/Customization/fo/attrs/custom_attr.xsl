@@ -13,7 +13,7 @@
 		<!--<xsl:attribute name="font-style">italic</xsl:attribute>-->
 		<xsl:attribute name="line-height">160%</xsl:attribute>
 		<xsl:attribute name="margin-bottom">1.4pc</xsl:attribute>
-		<xsl:attribute name="color">#8CC63E</xsl:attribute>
+		<xsl:attribute name="color">#000000</xsl:attribute>
 		<xsl:attribute name="padding-right">1.4pc</xsl:attribute>
 		<xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
 	</xsl:attribute-set>
@@ -106,10 +106,10 @@
 		<xsl:attribute name="font-size">14pt</xsl:attribute>
 		<xsl:attribute name="font-weight">bold</xsl:attribute>
 		<xsl:attribute name="padding-top">12pt</xsl:attribute>
-		<xsl:attribute name="color">#8CC63E</xsl:attribute>
+		<xsl:attribute name="color">#000000</xsl:attribute>
 		<xsl:attribute name="border-bottom-style">solid</xsl:attribute>
 		<xsl:attribute name="border-bottom-width">1pt</xsl:attribute>
-		<xsl:attribute name="border-bottom-color">#8CC63E</xsl:attribute>
+		<xsl:attribute name="border-bottom-color">#000000</xsl:attribute>
 		<xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
 	</xsl:attribute-set>
 	

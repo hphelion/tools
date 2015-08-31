@@ -9,7 +9,7 @@ do
     fullpath=`echo $j | sed 's|\.\/|./out/webhelp/|'`
     DATE=`git log -1 --date=short --pretty=format:%ad $i`
     PRETTYDATE=`date -d$DATE +'%d %b %Y'`
-    sed -i "s|<\/h1>|</h1>Last updated: $PRETTYDATE|" $fullpath    
+    sed -i "s|<\/h1>|</h1><span class=\"heliondate\">Last updated: $PRETTYDATE</span>|" $fullpath    
 
 done
 echo ===end inject_date.sh===

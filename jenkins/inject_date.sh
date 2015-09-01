@@ -2,7 +2,7 @@
 #Author: Greg Larsen
 #For each ditafile, get the date last comitted, improve format and inject into the converted HTML
 echo ===start inject_date.sh===
-for i in `find . -name "*.dita"`
+for i in `find  -name "*.dita" -not -path "./publiccloud/*"`
 do
 
     j=`echo $i | sed 's|\.dita$|\.html|'`

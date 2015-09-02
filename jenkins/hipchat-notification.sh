@@ -1,4 +1,4 @@
-!#/bin/bash
+!#/bin/sh
 #Send notification to hipchat
 
 COLOR=$1 #valid values are red, green, or yellow

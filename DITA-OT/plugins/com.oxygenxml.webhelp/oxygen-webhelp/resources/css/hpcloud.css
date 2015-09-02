@@ -6,7 +6,12 @@
 	 
 	 /* Consolidating anchor tags here -- PFletcher 6/11/2015 */
 	 
-	
+
+p.heliondate {
+text-align: left;
+font-size: 10px;
+}
+
 a.xref {
   /* Changed to $hp-accessible-blue: #007dba P Fletcher 6/11/15*/
   /*color: rgb(0, 0, 238);*/

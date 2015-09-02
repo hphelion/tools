@@ -16,7 +16,7 @@ curl \
 {
 	"color":"$COLOR",
 	"notify":false,
-	"message":"$MESSAGE  You can see the list of issues with your Jenkins login info (<a href=\"$CONSOLE\">here</a>.)",
+	"message":"$MESSAGE",
 	"message_format":"html"
 }
 EOP

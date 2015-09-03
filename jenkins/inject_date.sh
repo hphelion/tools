@@ -2,15 +2,6 @@
 #Author: Greg Larsen
 #For each ditafile, get the date last comitted, improve format and inject into the converted HTML
 
-if [ "$1" == "-time" ]
-then
-echo time
-fi
-
-
-
-exit 0
-
 echo ===start inject_date.sh===
 for i in `find  -name "*.dita" -not -path "./publiccloud/api/*"`
 do

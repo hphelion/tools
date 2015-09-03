@@ -1,6 +1,9 @@
 #!/bin/bash
-#Author: Greg Larsen
-#For each ditafile, get the date last comitted, improve format and inject into the converted HTML
+# Author: Greg Larsen
+# For each ditafile, get the date last comitted, improve format and inject into the converted HTML
+# With the -time switch, the output looks like this: Last updated: 12 Aug 2015 (13:52 UTC)
+# Without -time switch, the output looks like this: Last updated: 27 Aug 2015
+# Do not use the -time switch on public documents.
 
 echo ===start inject_date.sh===
 for i in `find  -name "*.dita" -not -path "./publiccloud/api/*"`

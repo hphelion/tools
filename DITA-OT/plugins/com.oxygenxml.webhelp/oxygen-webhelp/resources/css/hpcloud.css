@@ -81,6 +81,9 @@ lightgrey {
 headerrow {
 	background-color:#1C7EA0;	
 }
+codehighlight {
+    background-color:#ffff00;
+}
 #splitterContainer .menuItemSelected {
   background-color: rgb(249, 249, 249);
   color: rgb(9, 65, 91);

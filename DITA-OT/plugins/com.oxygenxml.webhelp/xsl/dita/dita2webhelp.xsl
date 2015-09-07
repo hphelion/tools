@@ -44,7 +44,7 @@ available in the base directory of this Oxygen Webhelp plugin.
   -->
   <xsl:template match="/|node()|@*" mode="gen-user-header">
   	<!-- Google Tag Manager -->
-	#removed jgl
+	<!--#removed jgl-->
   	<!-- End Google Tag Manager -->
     <table class="nav">
       <tbody>

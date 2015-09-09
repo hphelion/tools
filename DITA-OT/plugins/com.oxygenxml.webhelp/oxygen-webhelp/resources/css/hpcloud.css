@@ -82,7 +82,7 @@ headerrow {
 	background-color:#1C7EA0;	
 }
 codehighlight {
-    background-color:#ffff00;
+    background-color:#ffff00 !important;
 }
 #splitterContainer .menuItemSelected {
   background-color: rgb(249, 249, 249);
@@ -466,7 +466,7 @@ span.wintitle {
 }
 
 pre {
-    background-color: #E1EFF5 !important;
+    background-color: #E1EFF5;
 }
 
 

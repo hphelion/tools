@@ -76,10 +76,10 @@ a {
 
 /* Table formatting for CS Automation index document */
 lightgrey {
-	background-color:#DFDFDF;	
+	background-color:#DFDFDF !important;	
 }
 headerrow {
-	background-color:#1C7EA0;	
+	background-color:#1C7EA0 !important;	
 }
 codehighlight {
     background-color:#ffff00 !important;

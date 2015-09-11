@@ -75,13 +75,13 @@ a {
   }*/
 
 /* Table formatting for CS Automation index document */
-lightgrey {
+.lightgrey {
 	background-color:#DFDFDF !important;	
 }
-headerrow {
+.headerrow {
 	background-color:#1C7EA0 !important;	
 }
-codehighlight {
+.codehighlight {
     background-color:#ffff00 !important;
 }
 #splitterContainer .menuItemSelected {

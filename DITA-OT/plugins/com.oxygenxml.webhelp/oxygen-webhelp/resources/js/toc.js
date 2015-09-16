@@ -78,12 +78,12 @@ $(document).ready(function () {
     // Normalize TOC HREFs and add '#' for no-frames webhelp
     $('#contentBlock li a').each(function () {
         var old = $(this).attr('href');
-	alert(old)
 	var n = old.search("http");
 	if (n > 0) {
 	var newHref = normalizeLink(old);
-	}
+	else	
         var newHref = '#' + normalizeLink(old);
+	}
 	alert(newHref)
         /* If with frames */
         if (top != self) {

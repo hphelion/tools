@@ -81,7 +81,7 @@ $(document).ready(function () {
 	var n = old.search("http");
 	if (n > 0) {
 	var newHref = normalizeLink(old);
-	else	
+	}else{	
         var newHref = '#' + normalizeLink(old);
 	}
 	alert(newHref)

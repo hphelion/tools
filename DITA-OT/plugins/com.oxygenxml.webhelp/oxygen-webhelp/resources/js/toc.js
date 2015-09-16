@@ -80,6 +80,7 @@ $(document).ready(function () {
         var old = $(this).attr('href');
 	alert(old)
 	var n = old.search("http");
+	echo(n)
 	if (n > 0) {
 	var newHref = normalizeLink(old);
 	}else{	

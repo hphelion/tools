@@ -568,10 +568,7 @@ available in the base directory of this Oxygen Webhelp plugin.
       <span>
         <xsl:choose>
           <xsl:when test="@href">
-            <a href="{@href}">
-	     <xsl:if test="@scope='external' or @scope='peer'">
-	                     <xsl:attribute name="target">_SELF</xsl:attribute>
-			                   </xsl:if>
+            <a href="{@href}">  
               <xsl:value-of select="$title"/>
             </a>
           </xsl:when>

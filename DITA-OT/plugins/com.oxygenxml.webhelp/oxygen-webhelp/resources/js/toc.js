@@ -638,3 +638,4 @@ $.fn.highlightContent = function (what, spanClass) {
         container.innerHTML = highlighted;
     });
 }
+document.getElementById('search').style.display = "none";

@@ -79,6 +79,10 @@ $(document).ready(function () {
     $('#contentBlock li a').each(function () {
         var old = $(this).attr('href');
 	alert(old)
+	var n = old.search("http");
+	if (n > 0) {
+	var newHref = normalizeLink(old);
+	}
         var newHref = '#' + normalizeLink(old);
 	alert(newHref)
         /* If with frames */

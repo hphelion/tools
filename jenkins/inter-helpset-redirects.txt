@@ -10,10 +10,5 @@
 #     click from one file to another.
 #
 devplatform/1.1devplatform.ALS-developer-trial-quick-start.html devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.html
-helion/installation_troubleshooting.html http://docs-staging.hpcloud.com/hos2.0beta2/#helion/installation_troubleshooting.html
-helion/cinder/vsa/vsa.html	http://docs-staging.hpcloud.com/hos2.0beta2/#helion/cinder/vsa/vsa.html
-helion/bare_installation_esx.html	http://docs-staging.hpcloud.com/hos2.0beta2/#helion/bare_installation_esx.html
-helion/monasca/opsconsole/overview.html	http://docs-staging.hpcloud.com/hos2.0beta2/#helion/monasca/opsconsole/overview.html
-helion/monasca/monasca.html	http://docs-staging.hpcloud.com/hos2.0beta2/#helion/monasca/monasca.html
 
 

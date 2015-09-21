@@ -16,7 +16,7 @@ a.xref {
   /* Changed to $hp-accessible-blue: #007dba P Fletcher 6/11/15*/
   /*color: rgb(0, 0, 238);*/
   /* Remove underlines P Fletcher 6/26/2015 */
-  color:#009874;
+  color:#00b388;
   font-weight: 400;
   /* Change font to HPSimplified for whole site PFletcher 6/26/2015*/
   font-family: HPSimplified, sans-serif  !important;
@@ -49,7 +49,7 @@ a.xref:hover {
 }
 a.xref:active {
 /* Remove underlines P Fletcher 6/26/2015 */
-  color: #009874;
+  color: #00b388;
   font-weight: 400;
     /* Change font to HPSimplified for whole site PFletcher 6/26/2015*/
   font-family: HPSimplified, sans-serif !important;
@@ -60,14 +60,14 @@ a.xref:active {
 
 /* Commenting out a.xref overrides: P Fletcher 6/11/15 */
 /*a.xref {
-    color: rgb(21, 113, 161) !important;
+    color: #00b388 !important;
     text-decoration: none !important;
 }
 a.xref:visited {
 text-decoration: none !important;
   }
 a {
-  color: #00b388 !important;
+  color: # !important;
   text-decoration: none !important;
 }
   a:visited {
@@ -471,12 +471,12 @@ pre {
 
 
 #contentBlock a, #contentBlock a:hover, #contentBlock a:after, #contentBlock a:active, a.link, a.navheader_parent_path {
-  color: #009874 !important;
+  color: #00b388 !important;
   font-family: HPSimplified, sans-serif !important;
   }
 
 a.foundResult {
-  color: #009874 !important;
+  color: #00b388 !important;
   font-weight: bold !important;
 }
 

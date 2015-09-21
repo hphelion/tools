@@ -59,7 +59,7 @@ body {
 a.link {
     text-decoration: none;
 	/* Added by P Fletcher 6/11: Links are $hp-accessible-blue: #007dba */
-	color: #009874;
+	color: #00b388;
 	/* Added by P Fletcher 6/26: Use HPSimplified for whole site */
 	font-family: HPSimplified, sans-serif !important;
 }

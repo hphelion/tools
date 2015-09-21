@@ -59,20 +59,20 @@ body {
 a.link {
     text-decoration: none;
 	/* Added by P Fletcher 6/11: Links are $hp-accessible-blue: #007dba */
-	color: #00b388;
+	color: #009874;
 	/* Added by P Fletcher 6/26: Use HPSimplified for whole site */
 	font-family: HPSimplified, sans-serif !important;
 }
 
 a:visited{
-  color:#660066; 
+  color:#00b388; 
   /* Added by P Fletcher 6/26: Use HPSimplified for whole site */
 	font-family: HPSimplified, sans-serif !important;
 }
 a:hover{
 	/* Changed by P Fletcher 6/11: Link hover color is $hp-hover-blue: #006699 */
   /*color:red;*/
-  color:#006699;
+  text-decoration:underline
   /* Added by P Fletcher 6/26: Use HPSimplified for whole site */
 	font-family: HPSimplified, sans-serif !important;
 }

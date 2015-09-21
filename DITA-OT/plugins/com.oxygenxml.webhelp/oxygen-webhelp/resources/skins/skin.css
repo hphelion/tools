@@ -64,7 +64,7 @@ a.xref:hover {
   background-image: url(http://www.oxygenxml.com/webhelp-skin-builder/dita/oxygen-webhelp/resources/img/frames.png);
 }
 #header #customLogo {
-  background-image: url("http://docs.hpcloud.com/images/HP_Helion_logo_72.png");
+  background-image: url("/var/lib/jenkkins/HPE-Helion.png");
   background-size: contain;
   width: 140px;
   height: 49px !important;

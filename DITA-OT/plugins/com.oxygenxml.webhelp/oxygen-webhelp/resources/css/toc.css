@@ -108,7 +108,7 @@ background-image: url ("http://www8.hp.com/hpnext/sites/default/files/content/do
 #contentBlock a, a.link, a.navheader_parent_path{
     text-decoration: none;
     font-size: 10pt;
-    color: navy;
+    color: #00b388;
     /*font-family: arial, helvetica, tahoma, sans-serif;*/
   /* Change font to HPSimplified */
   font-family:HPSimplified !important;
@@ -119,7 +119,7 @@ background-image: url ("http://www8.hp.com/hpnext/sites/default/files/content/do
 }
 #contentBlock a:hover, a.link:hover, a.navheader_parent_path:hover{
     text-decoration: none;
-    color: red;
+    color: #00b388;
 }
 .hasSubMenuClosed{
     background: url('../img/book_closed16.png') no-repeat;
@@ -204,13 +204,13 @@ li{
 }
 
 a.foundResult{
-    color:#0000FF;
+    color:#00b388;
 }
 a.foundResult:visited{
-    color:#660066;
+    color:#00b388;
 }
 a.foundResult:hover{
-    color:red;
+    color:#00b388;
 }
 
 /*Rating of searched terms*/

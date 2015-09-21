@@ -26,14 +26,14 @@
   background-color: rgba(0, 0, 0, 0);
 }
 a.xref {
-  color: rgb(0, 0, 238);
+  color: #00b388;
   font-weight: 400;
   font-family: arial, helvetica, sans-serif;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
 a.xref:visited {
-  color: rgb(0, 0, 238);
+  color: #00b388;
   font-weight: 400;
   font-family: arial, helvetica, sans-serif;
   font-style: normal;
@@ -53,7 +53,7 @@ a.xref:visited {
   background-color: rgba(0, 0, 0, 0);
 }
 a.xref:hover {
-  color: rgb(0, 0, 238);
+  color: #00b388;
   font-weight: 400;
   font-family: arial, helvetica, sans-serif;
   font-style: normal;
@@ -287,7 +287,7 @@ a.xref:hover {
   font-size: 13.3333330154419px;
 }
 a.xref:active {
-  color: rgb(0, 0, 238);
+  color: #00b388;
   font-weight: 400;
   font-family: arial, helvetica, sans-serif;
   font-style: normal;
@@ -375,7 +375,7 @@ pre {
     background-color: #E1EFF5 !important;
 }
 a.xref {
-    color: rgb(21, 113, 161) !important;
+    color: #00b388 !important;
     text-decoration: none !important;
 }
 a.xref:visited {
@@ -383,11 +383,11 @@ text-decoration: none !important;
   }
 
 #contentBlock a, #contentBlock a:hover, #contentBlock a:after, #contentBlock a:active, a.link, a.navheader_parent_path {
-  color: rgb(21, 113, 161) !important;
+  color: #00b388 !important;
   }
 
 a.foundResult {
-  color: rgb(21, 113, 161) !important;
+  color: #00b388 !important;
   font-weight: bold !important;
 }
 

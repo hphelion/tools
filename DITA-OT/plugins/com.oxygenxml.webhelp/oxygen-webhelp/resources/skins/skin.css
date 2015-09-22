@@ -23,14 +23,14 @@
   background-color: rgba(0, 0, 0, 0);
 }
 a.xref {
-  color: #00b388;
+  color: rgb(97, 125, 120);
   font-weight: 400;
   font-family: arial, helvetica, sans-serif;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
 a.xref:visited {
-  color: #00b388;
+  color: rgb(135,135,135);
   font-weight: 400;
   font-family: arial, helvetica, sans-serif;
   font-style: normal;
@@ -371,7 +371,7 @@ pre {
     background-color: #E1EFF5 !important;
 }
 a.xref {
-    color: #00b388 !important;
+    color: rgb(97, 125, 120) !important;
     text-decoration: none !important;
 }
 a.xref:visited {
@@ -379,11 +379,11 @@ text-decoration: none !important;
   }
 
 #contentBlock a, #contentBlock a:hover, #contentBlock a:after, #contentBlock a:active, a.link, a.navheader_parent_path {
-  color: #00b388 !important;
+  color: rgb(97, 125, 120) !important;
   }
 
 a.foundResult {
-  color: #00b388 !important;
+  color: rgb(97, 125, 120) !important;
   font-weight: bold !important;
 }
 

@@ -106,7 +106,7 @@ background-image: url ("/var/lib/jenkins/HPE-Helion.png");
 #contentBlock a, a.link, a.navheader_parent_path{
     text-decoration: none;
     font-size: 10pt;
-    color: #00b388;
+    color: rgb(97, 125, 120);
     font-family: arial, helvetica, tahoma, sans-serif;
     white-space: nowrap;
 }
@@ -115,7 +115,7 @@ background-image: url ("/var/lib/jenkins/HPE-Helion.png");
 }
 #contentBlock a:hover, a.link:hover, a.navheader_parent_path:hover{
     text-decoration: none;
-    color: #00b388;
+    color: rgb(97, 125, 120);
 }
 .hasSubMenuClosed{
     background: url('../img/book_closed16.png') no-repeat;
@@ -200,13 +200,12 @@ li{
 }
 
 a.foundResult{
-    color:#00b388;
+    color:rgb(97, 125, 120);
 }
 a.foundResult:visited{
-    color:#00b388;
+    color:rgb(135,135,135);
 }
 a.foundResult:hover{
-    color:#00b388;
 }
 
 /*Rating of searched terms*/

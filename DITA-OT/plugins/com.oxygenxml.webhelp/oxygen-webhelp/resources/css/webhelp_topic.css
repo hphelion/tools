@@ -40,7 +40,7 @@ a.link {
 }
 
 a:visited{
-  color:#00b388; 
+  color:rgb(135,135,135); 
 }
 a:hover{
 	/* Changed by P Fletcher 6/11: Link hover color is $hp-hover-blue: #006699 */

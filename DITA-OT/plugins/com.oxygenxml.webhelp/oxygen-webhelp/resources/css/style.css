@@ -8,9 +8,9 @@ available in the base directory of this Oxygen Webhelp plugin.
 */
 @font-face {
   font-family: 'Metric';
-    src: url(MetricWeb-Black.eot); /* IE9 Compat Modes */
-      src: url(MetricWeb-Black.eot?#iefix) format('embedded-opentype'), /* IE6-IE8 */
-             url('MetricWeb-Black.woff') format('woff'); /* Pretty Modern Browsers */
+    src: url(http://docs.hpcloud.com/oxygen-webhelp/resources/css/fonts/MetricWeb-Black.eot); /* IE9 Compat Modes */
+      src: url(http://docs.hpcloud.com/oxygen-webhelp/resources/css/fonts/MetricWeb-Black.eot?#iefix) format('embedded-opentype'), /* IE6-IE8 */
+             url('http://docs.hpcloud.com/oxygen-webhelp/resources/css/fonts/MetricWeb-Black.woff') format('woff'); /* Pretty Modern Browsers */
 	     }
 
 body {

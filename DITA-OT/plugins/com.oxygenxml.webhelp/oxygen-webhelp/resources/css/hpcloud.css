@@ -252,7 +252,7 @@ a {
   background-color: rgba(0, 0, 0, 0);
 }
 #splitterContainer .splitbarV {
-  background-color: rgb(7, 48, 101);
+  background-color: #425563;
   border-top-style: none;
   border-top-color: rgb(7, 48, 101);
   border-top-width: 1;

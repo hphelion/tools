@@ -11,7 +11,7 @@ available in the base directory of this Oxygen Webhelp plugin.
   src: url('./MetricWeb-Black.eot'); /* IE9 Compat Modes */
   src: url('./MetricWeb-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        /* url('./MetricWeb-Black.woff') format('woff'),  Pretty Modern Browsers */
-       url('./MetricWeb-Black.ttf')  format('truetype'); /* Legacy iOS */
+       url('./MetricApp-Black.ttf')  format('truetype'); /* Legacy iOS */
 }	
 
 

@@ -320,7 +320,7 @@ a {
   text-shadow: rgb(255, 255, 255) 0px 1px 0px;
   color: rgb(255, 255, 255);
   /* font-family: 'Trebuchet MS';*/
-  font-family:Arial, sans-serif !important;
+  font-family:Metric, Arial, sans-serif !important;
   font-size: 13.3333330154419px;
   font-weight: 400;
   font-style: normal;
@@ -335,7 +335,7 @@ a {
   color: rgb(255, 255, 255);
   font-weight: 400;
   /* font-family: 'Trebuchet MS';*/
-  font-family:Arial, sans-serif !important;
+  font-family:Metric, Arial, sans-serif !important;
   font-style: normal;
   font-size: 13.3333330154419px;
   font-variant: normal;
@@ -344,7 +344,7 @@ a {
   color: rgb(255, 255, 255);
   font-weight: 400;
   /* font-family: 'Trebuchet MS';*/
-  font-family:Arial, sans-serif !important;
+  font-family:Metric, Arial, sans-serif !important;
   font-style: normal;
   font-size: 13.3333330154419px;
   text-align: start;
@@ -408,7 +408,7 @@ a {
   /*text-shadow: rgba(0, 0, 0, 0) 0px 0px 0px;*/
   color: rgb(19, 19, 20);
   
-  font-family:Arial, sans-serif !important;
+  font-family:Metric, Arial, sans-serif !important;
   margin-bottom: 30px;
   font-size: 25px;
   font-weight: bold;

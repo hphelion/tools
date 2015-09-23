@@ -25,7 +25,7 @@ available in the base directory of this Oxygen Webhelp plugin.
 	clear: both;
 }
 #commentsContainer {
-	font-family: Metric, 'Lucida sans Unicode', Arial, Verdana;
+	font-family: Metric;
 	clear: both;
 	margin: 7px 7px 7px 0;
 }
@@ -412,7 +412,7 @@ div.product {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-	font-family: Metric, 'Lucida sans Unicode', Arial, Verdana;
+	font-family: Metric;
 }
 
 #cm_count,#cm_title {
@@ -835,7 +835,7 @@ div.suspended {
 	margin: 10px 0 0 0;
 }
 input[type=button] {
-    font-family:Metric, 'Lucida sans Unicode', Arial, Verdana;
+    font-family:Metric;
 }
 
 .v_true,.v_false {
@@ -1023,7 +1023,7 @@ div.tbCell p{
 	margin-top: -10%; /*set to a negative number 1/2 of your height*/
 	margin-left: -20%; /*set to a negative number 1/2 of your width*/
 	z-index: 100;
-	font-family: Metric, 'Lucida sans Unicode', Arial, Verdana;
+	font-family: Metric;
 }
 div#info{
 	font-size:xx-small;

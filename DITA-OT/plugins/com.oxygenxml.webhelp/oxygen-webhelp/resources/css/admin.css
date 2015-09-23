@@ -293,7 +293,7 @@ available in the base directory of this Oxygen Webhelp plugin.
 
 body {
     min-width: 720px;
-	font-family: Metric, arial, helvetica, verdana;
+	font-family: Metric;
 	font-size: 0.9em;
 }
 

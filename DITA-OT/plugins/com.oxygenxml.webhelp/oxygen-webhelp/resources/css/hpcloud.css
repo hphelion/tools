@@ -9,17 +9,7 @@
 
 	
 
-
-@font-face {
-  font-family: 'Metric';
-  src: url('./MetricWeb-Black.eot'); /* IE9 Compat Modes */
-  src: url('./MetricWeb-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       /* url('./MetricWeb-Black.woff') format('woff'),  Pretty Modern Browsers */
-       url('./MetricApp-Black.ttf')  format('truetype'); /* Legacy iOS */
-}	
-	
-
- 
+@import url("fonts.css");
 	 
 p.heliondate {
 text-align: left;

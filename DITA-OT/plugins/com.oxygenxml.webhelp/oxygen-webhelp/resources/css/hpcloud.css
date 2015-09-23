@@ -10,9 +10,9 @@
 	
 @font-face{
     font-family:'Metric';
-    src:url(MetricWeb-Black.eot); 
-    src:url(MetricWeb-Black.eot?#iefix) format('embedded-opentype'),  
-        url('MetricWeb-Black.woff') format('woff');
+    src:url(http://docs.hpcloud.com/oxygen-webhelp/resources/css/fonts/MetricWeb-Black.eot); 
+    src:url(http://docs.hpcloud.com/oxygen-webhelp/resources/css/fonts/MetricWeb-Black.eot?#iefix) format('embedded-opentype'),  
+        url('http://docs.hpcloud.com/oxygen-webhelp/resources/css/fonts/MetricWeb-Black.woff') format('woff');
     font-weight:normal;
     font-style:normal}		 		 
 

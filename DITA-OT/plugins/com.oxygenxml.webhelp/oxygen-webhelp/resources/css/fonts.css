@@ -1,5 +1,6 @@
+/*
 @font-face {
-	font-family: 'Metric'; /*regular*/
+	font-family: 'Metric'; regular
 	src: url('./MetricWeb-Regular.eot');
   src: url('./MetricWeb-Regular.eot?#iefix') format('embedded-opentype'), 
        url('./MetricWeb-Regular.woff') format('woff'),
@@ -7,6 +8,20 @@
 	font-weight: normal;
 	font-style: normal;
 }
+*/
+
+
+@font-face {
+	font-family: 'Metric';
+	src: url('./MetricWeb-Light.eot');
+	src: url('./MetricWeb-Light.eot?#iefix') format('embedded-opentype'), 
+       url('./MetricWeb-Light.woff') format('woff'),
+       url('./MetricApp-Light.ttf')  format('truetype'); 
+	font-weight: normal;
+	font-style: normal;
+}
+
+
 @font-face {
 	font-family: 'Metric'; /*bold*/
 	src: url('./MetricWeb-Semibold.eot');

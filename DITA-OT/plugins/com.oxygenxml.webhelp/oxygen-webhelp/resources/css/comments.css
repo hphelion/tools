@@ -715,7 +715,7 @@ div.suspended {
 	margin: 0;
 	padding: 0;
 	overflow-y: scroll;
-	font: 10pt Arial, Verdana;
+	font: 10pt ;
 	resize: none;
 	outline: none /* webkit grip focus */
 }
@@ -754,7 +754,7 @@ div.suspended {
 	border: solid 1px #999;
 	background-color: white;
 	position: absolute;
-	font: 10pt Arial, Verdana;
+	font: 10pt ;
 	cursor: default;
 	z-index: 10000
 }
@@ -789,7 +789,7 @@ div.suspended {
 }
 
 .cleditorPrompt input,.cleditorPrompt textarea {
-	font: 8.5pt Arial, Verdana;
+	font: 8.5pt ;
 }
 
 .cleditorMsg {

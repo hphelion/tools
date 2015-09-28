@@ -693,6 +693,7 @@ available in the base directory of this Oxygen Webhelp plugin.
                            
                            return currentPage;
                         }
+			<script src="./js/metrics.js"></script> 
                         </xsl:comment></script>
         </head>
         <frameset cols="25%,*" onload="frames.contentwin.location = getHTMLPage()">

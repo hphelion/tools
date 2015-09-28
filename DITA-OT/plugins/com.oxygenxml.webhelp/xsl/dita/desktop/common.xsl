@@ -61,7 +61,7 @@ available in the base directory of this Oxygen Webhelp plugin.
     <xsl:if test="string-length($CUSTOM_RATE_PAGE_URL) > 0">
       <script type="text/javascript" charset="utf-8" src="{$PATH2PROJ}oxygen-webhelp/resources/js/rate_article.js"><xsl:comment/></script>
     </xsl:if>    
-    <script type="text/javascript" charset="utf-8" src="{$PATH2PROJ}oxygen-webhelp/resources/js/webhelp_topic.js"><xsl:comment/></script>
+    <script type="text/javascript" charset="utf-8" src="{$PATH2PROJ}oxygen-webhelp/resources/js/webhelp_topic.js"></script>
     <script type="text/javascript" charset="utf-8" src="{$PATH2PROJ}oxygen-webhelp/resources/js/metrics.js"></script> "><xsl:comment/></script>
 
 <xsl:if test="$IS_FEEDBACK_ENABLED">      

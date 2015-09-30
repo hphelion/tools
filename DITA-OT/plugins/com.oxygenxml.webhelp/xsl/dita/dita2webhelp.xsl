@@ -153,7 +153,7 @@ available in the base directory of this Oxygen Webhelp plugin.
                   	    			  in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation 
                   	    			  or the OpenStack community.</p>
                   	    			  <p>&#169; Copyright 2015 Hewlett-Packard Development Company, L.P.<br />
-                  	    			  <a href="http://www.hpcloud.com/legal-documents">HP Cloud legal documents and privacy policy</a></p> 
+                  	    			  <a target="_blank" href="http://www.hpcloud.com/legal-documents">HP Cloud legal documents and privacy policy</a></p> 
                     
                       <!--<a href="http://www.oxygenxml.com" target="_blank">
                           <span class="oXygenLogo"><img src="{$PATH2PROJ}oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen" /></span>

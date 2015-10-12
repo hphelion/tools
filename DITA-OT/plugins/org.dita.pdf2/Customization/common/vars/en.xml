@@ -46,7 +46,7 @@ See the accompanying license.txt file for applicable licenses.
     -->
 
     <!-- Product name to be placed inside headers etc. -->
-    <variable id="Product Name">HP Helion</variable>
+    <variable id="Product Name">HPP Helion</variable>
 
     <!-- The footer that appears on odd-numbered pages. -->
     <variable id="Body odd footer">&#169; Copyright Hewlett-Packard Development Company, L.P.

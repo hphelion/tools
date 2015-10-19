@@ -100,7 +100,7 @@ a {
 }
 
 #splitterContainer .menuItemSelected:hover {
-  background-color: rgb(127, 191, 213);
+  background-color: silver;
 }
 #splitterContainer .topic:not(.menuItemSelected):hover {
   color: silver;

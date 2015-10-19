@@ -84,7 +84,7 @@ a {
     background-color:#ffff00 !important;
 }
 #splitterContainer .menuItemSelected {
-  background-color: #425563;
+  background-color: silver;
   color: rgb(9, 65, 91);
   font-family: 'Metric';
   font-size: 13.3333330154419px;

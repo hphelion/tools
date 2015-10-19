@@ -554,6 +554,7 @@ tr:first-child {
 .tool tbody:first-child tr:first-child td {
  background-color: rgb(000, 000, 000) !important;
  //now reset the frames first child tr
+ margin-bottom {.5em}
 }
 
 /*.row.entry. {

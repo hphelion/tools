@@ -572,7 +572,8 @@ tr:first-child {
 
 .table > :first-child > tr:first-child > * { 
 
-  background-color: rgb(28, 126, 160) !important;
+  #background-color: rgb(28, 126, 160) !important;
+  background-color: #6a817c;
   text-align: -webkit-left;
   text-decoration: none;
   line-height: 18px;

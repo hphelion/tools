@@ -103,7 +103,7 @@ a {
   background-color: rgb(127, 191, 213);
 }
 #splitterContainer .topic:not(.menuItemSelected):hover {
-  color: rgb(0, 0, 128);
+  color: silver;
   font-weight: bold;
   font-family: 'Metric';
   font-style: normal;

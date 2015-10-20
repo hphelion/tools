@@ -330,7 +330,7 @@ div.footer span.xmlauthor{
 /*----------------*/
 /*The copyright.*/
 div, td{
-    font-size:10pt;
+    /*font-size:10pt;*/
 }
 
 div.copyright{

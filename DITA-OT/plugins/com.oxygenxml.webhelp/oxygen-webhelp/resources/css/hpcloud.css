@@ -84,6 +84,11 @@ a {
 .codehighlight {
     background-color:#ffff00 !important;
 }
+
+/* List indent style: PF 10.20.15 */
+.listindent {
+	text-indent:50px;
+}
 #splitterContainer .menuItemSelected {
   background-color: rgb(249, 249, 249);
   color: rgb(9, 65, 91);

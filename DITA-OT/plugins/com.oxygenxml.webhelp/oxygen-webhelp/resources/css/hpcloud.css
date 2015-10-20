@@ -87,7 +87,10 @@ a {
 
 /* List indent style: PF 10.20.15 */
 .listindent {
-	text-indent:50px;
+	text-indent:10px;
+}
+.listsubindent {
+	text-indent:20px;
 }
 #splitterContainer .menuItemSelected {
   background-color: rgb(249, 249, 249);

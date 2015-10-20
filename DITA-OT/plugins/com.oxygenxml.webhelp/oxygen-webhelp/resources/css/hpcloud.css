@@ -431,7 +431,9 @@ pre {
     font-size:10pt;
 }
 
-codeph {font-size:10pt}
+codeph {
+	font-size:10pt;
+}
 
 #contentBlock a, #contentBlock a:hover, #contentBlock a:after, #contentBlock a:active, a.link, a.navheader_parent_path {
   color:  rgb(97, 125, 120) !important;

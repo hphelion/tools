@@ -24,7 +24,7 @@ a.xref {
   font-weight: 400;
   font-family: 'Metric';
   font-style: normal;
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
   text-decoration:none;
 }
 
@@ -34,7 +34,7 @@ a.xref:visited {
   font-weight: 400;
   font-family: 'Metric';
   font-style: normal;
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
   text-decoration:none;
 }
 a.xref:hover {
@@ -45,7 +45,7 @@ a.xref:hover {
   font-weight: 400;
   font-family: 'Metric';
   font-style: normal;
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
 }
 a.xref:active {
 /* Remove underlines P Fletcher 6/26/2015 */
@@ -53,7 +53,7 @@ a.xref:active {
   font-weight: 400;
   font-family: 'Metric';
   font-style: normal;
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
   text-decoration:none;
 }
 
@@ -87,7 +87,7 @@ a {
   background-color: silver;
   color: rgb(9, 65, 91);
   font-family: 'Metric';
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
   font-weight: bold;
   font-style: normal;
   font-variant: normal;
@@ -107,7 +107,7 @@ a {
   font-weight: bold;
   font-family: 'Metric';
   font-style: normal;
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
 }
 #splitterContainer .hasSubMenuOpened:hover {
   background-color: rgba(0, 0, 0, 0);
@@ -165,7 +165,7 @@ a {
   
   font-family:'Metric';*/
   /*font-family: 'Trebuchet MS';*/
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
   font-weight: 400;
   font-style: normal;
   font-variant: normal;
@@ -196,7 +196,7 @@ a {
   color: rgb(255, 255, 255);
   /* font-family: 'Trebuchet MS';*/
   font-family: 'Metric';
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
   font-weight: 400;
   font-style: normal;
   font-variant: normal;
@@ -212,7 +212,7 @@ a {
   /* font-family: 'Trebuchet MS';*/
   font-family: 'Metric';
   font-style: normal;
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
   font-variant: normal;
 }
 #header .link {
@@ -221,7 +221,7 @@ a {
   /* font-family: 'Trebuchet MS';*/
   font-family: 'Metric';
   font-style: normal;
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
   text-align: start;
   text-decoration: none;
   line-height: 16px;
@@ -242,7 +242,7 @@ a {
   font-weight: 400;
   font-family: 'Metric';
   font-style: normal;
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
   text-align: left;
   text-decoration: none;
   line-height: 18px;
@@ -311,41 +311,41 @@ a {
   font-weight: 400;
   font-family: 'Metric';
   font-style: normal;
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
 }
 .p {
   color: rgb(0, 0, 0);
   font-weight: 400;
   font-family: 'Metric';
   font-style: normal;
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
 }
 .example {
   color: rgb(0, 0, 0);
   font-weight: 400;
   font-family: 'Metric';
   font-style: normal;
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
 }
 .dl {
   color: rgb(0, 0, 0);
   font-weight: 400;
   font-family: 'Metric';
   font-style: normal;
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
 }
 .dt {
   color: rgb(0, 0, 0);
   font-weight: bold;
   font-family: 'Metric';
   font-style: normal;
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
 }
 .dd {
   color: rgb(0, 0, 0);
   font-weight: 400;
   font-style: normal;
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
 }
 
 .p .image {
@@ -359,21 +359,21 @@ a {
   font-weight: 400;
   font-family: 'Metric';
   font-style: normal;
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
 }
 span.uicontrol {
   color: rgb(0, 0, 0);
   font-weight: bold;
   font-family: 'Metric';
   font-style: normal;
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
 }
 span.wintitle {
   color: rgb(0, 0, 0);
   font-weight: 400;
   font-family: 'Metric';
   font-style: normal;
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
 }
 .footer a {
   color: rgb(68, 68, 68);
@@ -580,7 +580,7 @@ tr:first-child {
   text-shadow: none;
   color: rgb(255, 255, 255);
   font-family: 'Trebuchet MS';
-  font-size: 13.3333330154419px;
+  /*font-size: 13.3333330154419px;*/
   font-weight: bold;
   font-style: normal;
   font-variant: normal;

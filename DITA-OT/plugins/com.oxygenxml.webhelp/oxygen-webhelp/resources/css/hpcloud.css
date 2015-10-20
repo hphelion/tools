@@ -118,7 +118,7 @@ a {
 
 }
 #oldFrames {
-  background-image: url(http://www.oxygenxml.com/webhelp-skin-builder/dita/oxygen-webhelp/resources/img/frames.png);
+  background-image: url(../img/frames.png);
 }
 #header #customLogo {
   background-image: url("/var/lib/jenkkins/HPE-Helion.png");
@@ -235,7 +235,7 @@ a {
   background-color: rgb(255, 255, 255);
 }
 .hasSubMenuClosed {
-  background-image: url(http://www.oxygenxml.com/webhelp-skin-builder/dita/oxygen-webhelp/resources/img/book_closed16.png);
+  background-image: url(../img/book_closed16.png);
 }
 #splitterContainer .topic:not(.menuItemSelected) {
   color: rgb(0, 0, 128);

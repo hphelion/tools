@@ -13,7 +13,7 @@ html,body {
     margin: 0;
     padding: 0;
     background-color: #fff;
-    font-family: "arial", "verdana", "helvetica", sans-serif;
+    font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
     font-size: 10pt;
 }
 
@@ -108,7 +108,7 @@ background-image: url ("/var/lib/jenkins/HPE-Helion.png");
     text-decoration: none;
     font-size: 10pt;
     color: rgb(97, 125, 120);
-    font-family: "arial", "verdana", "helvetica", sans-serif;
+    font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
     white-space: nowrap;
 }
 #contentBlock a:hover{
@@ -244,7 +244,7 @@ a.foundResult:hover{
     position: relative;
     float: right;
     font-size: 13px;
-    font-family: "arial", "verdana", "helvetica", sans-serif;
+    font-family: "MetricWeb-Medium", "arial", "verdana", "helvetica", sans-serif;
     color: #888;
 }
 

@@ -26,7 +26,7 @@ available in the base directory of this Oxygen Webhelp plugin.
 	clear: both;
 }
 #commentsContainer {
-	font-family: arial,verdana, helvetica, sans-serif;
+	font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
 	clear: both;
 	margin: 7px 7px 7px 0;
 }
@@ -413,7 +413,7 @@ div.product {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-	font-family: arial,verdana, helvetica, sans-serif;
+	font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
 }
 
 #cm_count,#cm_title {
@@ -836,7 +836,7 @@ div.suspended {
 	margin: 10px 0 0 0;
 }
 input[type=button] {
-    font-family: arial, verdana, helvetica, sans-serif;
+    font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
 }
 
 .v_true,.v_false {
@@ -1024,7 +1024,7 @@ div.tbCell p{
 	margin-top: -10%; /*set to a negative number 1/2 of your height*/
 	margin-left: -20%; /*set to a negative number 1/2 of your width*/
 	z-index: 100;
-	font-family: arial,verdana, helvetica, sans-serif;
+	font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
 }
 div#info{
 	font-size:xx-small;

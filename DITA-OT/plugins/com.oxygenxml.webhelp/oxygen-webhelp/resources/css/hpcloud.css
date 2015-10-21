@@ -22,7 +22,7 @@ a.xref {
   /* Remove underlines P Fletcher 6/26/2015 */
   color:rgb(97, 125, 120);
   font-weight: 400;
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", "arial", "verdana", "helvetica", sans-serif;
   font-style: normal;
   /*font-size: 13.3333330154419px;*/
   text-decoration:none;
@@ -32,7 +32,7 @@ a.xref:visited {
 /* Remove underlines P Fletcher 6/26/2015 */
   color:  rgb(135,135,135);
   font-weight: 400;
-  font-family: "arial", "verdana", "helvetica", sans-serif; 
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   font-style: normal;
   /*font-size: 13.3333330154419px;*/
   text-decoration:none;
@@ -43,7 +43,7 @@ a.xref:hover {
   /* Remove underlines P Fletcher 6/26/2015 */
   text-decoration:underline;
   font-weight: 400;
-  font-family:"arial", "verdana", "helvetica", sans-serif; 
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   font-style: normal;
   /*font-size: 13.3333330154419px;*/
 }
@@ -51,7 +51,7 @@ a.xref:active {
 /* Remove underlines P Fletcher 6/26/2015 */
   color: rgb(97, 125, 120);
   font-weight: 400;
-  font-family:"arial", "verdana", "helvetica", sans-serif; 
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   font-style: normal;
   /*font-size: 13.3333330154419px;*/
   text-decoration:none;
@@ -97,7 +97,7 @@ a {
 #splitterContainer .menuItemSelected {
   background-color: silver;
   color: rgb(9, 65, 91);
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   /*font-size: 13.3333330154419px;*/
   font-weight: bold;
   font-style: normal;
@@ -116,7 +116,7 @@ a {
 #splitterContainer .topic:not(.menuItemSelected):hover {
   color: silver;
   font-weight: bold;
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif; 
   font-style: normal;
   /*font-size: 13.3333330154419px;*/
 }
@@ -174,7 +174,7 @@ a {
   border-top-left-radius: 0;
   color: rgb(255, 255, 255);
   
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   /*font-family: 'Trebuchet MS';*/
   /*font-size: 13.3333330154419px;*/
   font-weight: 400;
@@ -206,7 +206,7 @@ a {
   text-shadow: rgb(255, 255, 255) 0px 1px 0px;
   color: rgb(255, 255, 255);
   /* font-family: 'Trebuchet MS';*/
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;/
   /*font-size: 13.3333330154419px;*/
   font-weight: 400;
   font-style: normal;
@@ -221,7 +221,7 @@ a {
   color: rgb(255, 255, 255);
   font-weight: 400;
   /* font-family: 'Trebuchet MS';*/
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   font-style: normal;
   /*font-size: 13.3333330154419px;*/
   font-variant: normal;
@@ -230,7 +230,7 @@ a {
   color: rgb(255, 255, 255);
   font-weight: 400;
   /* font-family: 'Trebuchet MS';*/
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   font-style: normal;
   /*font-size: 13.3333330154419px;*/
   text-align: start;
@@ -251,7 +251,7 @@ a {
 #splitterContainer .topic:not(.menuItemSelected) {
   color: rgb(0, 0, 128);
   font-weight: 400;
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   font-style: normal;
   /*font-size: 13.3333330154419px;*/
   text-align: left;
@@ -320,35 +320,35 @@ a {
 .shortdesc {
   color: rgb(0, 0, 0);
   font-weight: 400;
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   font-style: normal;
   /*font-size: 13.3333330154419px;*/
 }
 .p {
   color: rgb(0, 0, 0);
   font-weight: 400;
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   font-style: normal;
   /*font-size: 13.3333330154419px;*/
 }
 .example {
   color: rgb(0, 0, 0);
   font-weight: 400;
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   font-style: normal;
   /*font-size: 13.3333330154419px;*/
 }
 .dl {
   color: rgb(0, 0, 0);
   font-weight: 400;
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   font-style: normal;
   /*font-size: 13.3333330154419px;*/
 }
 .dt {
   color: rgb(0, 0, 0);
   font-weight: bold;
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   font-style: normal;
   /*font-size: 13.3333330154419px;*/
 }
@@ -368,28 +368,28 @@ a {
 .tablecap {
   color: rgb(0, 0, 0);
   font-weight: 400;
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   font-style: normal;
   /*font-size: 13.3333330154419px;*/
 }
 span.uicontrol {
   color: rgb(0, 0, 0);
   font-weight: bold;
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   font-style: normal;
   /*font-size: 13.3333330154419px;*/
 }
 span.wintitle {
   color: rgb(0, 0, 0);
   font-weight: 400;
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   font-style: normal;
   /*font-size: 13.3333330154419px;*/
 }
 .footer a {
   color: rgb(68, 68, 68);
   font-weight: 400;
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   font-style: normal;
   font-size: 10.8000001907349px;
 }
@@ -453,7 +453,7 @@ pre {
 
 #contentBlock a, #contentBlock a:hover, #contentBlock a:after, #contentBlock a:active, a.link, a.navheader_parent_path {
   color:  rgb(97, 125, 120) !important;
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   }
 
 a.foundResult {
@@ -489,10 +489,10 @@ input.searchButton {
     padding 10px;
     margin-left: 0px;
     margin-right: 100px;
-    font-family: "arial", "verdana", "helvetica", sans-serif;
+    font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   }
 #mainRight p {
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
 
 }
   #frontTable {
@@ -548,7 +548,7 @@ input.searchButton {
 
 #homeDescript {
   margin-top: 40px;
-  font-family: "arial", "verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
   width: 700px;
   margin-left: 50px;
 }

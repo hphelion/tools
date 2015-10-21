@@ -13,7 +13,7 @@ html,body {
     margin: 0;
     padding: 0;
     background-color: #fff;
-    font-family: 'arial, verdana, helvetica, sans-serif'; 
+    font-family: 'arial, verdana, helvetica, sans-serif'  !important; 
     font-size: 10pt;
 }
 

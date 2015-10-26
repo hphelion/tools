@@ -20,7 +20,7 @@
 .p {margin-top: 1em}
 
 /* Default of italics to set apart figure captions */
-.figcap { font-style: italic }
+.figcap { font-style: italic ;         font-family: "MetricWeb-RegularItalic";}
 .figdesc { font-style: normal }
 
 /* Use @frame to create frames on figures */
@@ -47,11 +47,11 @@
 /* Set heading sizes, getting smaller for deeper nesting */
 .topictitle1 { margin-top: 0pc; margin-bottom: .1em; font-size: 1.34em; }
 .topictitle2 { margin-top: 1pc; margin-bottom: .45em; font-size: 1.17em; }
-.topictitle3 { margin-top: 1pc; margin-bottom: .17em; font-size: 1.17em; font-weight: bold; }
-.topictitle4 { margin-top: .83em; font-size: 1.17em; font-weight: bold; }
-.topictitle5 { font-size: 1.17em; font-weight: bold; }
-.topictitle6 { font-size: 1.17em; font-style: italic; }
-.sectiontitle { margin-top: 1em; margin-bottom: 0em; color: black; font-size: 1.17em; font-weight: bold;}
+.topictitle3 { margin-top: 1pc; margin-bottom: .17em; font-size: 1.17em; font-weight: bold;        font-family: "MetricWeb-Semibold"; }
+.topictitle4 { margin-top: .83em; font-size: 1.17em; font-weight: bold;        font-family: "MetricWeb-Semibold"; }
+.topictitle5 { font-size: 1.17em; font-weight: bold;        font-family: "MetricWeb-Semibold"; }
+.topictitle6 { font-size: 1.17em; font-style: italic;        font-family: "MetricWeb-RegularItalic"; }
+.sectiontitle { margin-top: 1em; margin-bottom: 0em; color: black; font-size: 1.17em; font-weight: bold;        font-family: "MetricWeb-Semibold";}
 .section { margin-top: 1em; margin-bottom: 1em }
 .example { margin-top: 1em; margin-bottom: 1em }
 div.tasklabel { margin-top: 1em; margin-bottom: 1em; }
@@ -59,48 +59,48 @@ h2.tasklabel, h3.tasklabel, h4.tasklabel, h5.tasklabel, h6.tasklabel { font-size
 
 /* All note formats have the same default presentation */
 .note { margin-top: 1em; margin-bottom : 1em;}
-.notetitle { font-weight: bold }
-.notelisttitle { font-weight: bold }
+.notetitle { font-weight: bold;        font-family: "MetricWeb-Semibold"; }
+.notelisttitle { font-weight: bold;        font-family: "MetricWeb-Semibold"; }
 .tip { margin-top: 1em; margin-bottom : 1em;}
-.tiptitle { font-weight: bold }
+.tiptitle { font-weight: bold;        font-family: "MetricWeb-Semibold"; }
 .fastpath { margin-top: 1em; margin-bottom : 1em;}
-.fastpathtitle { font-weight: bold }
+.fastpathtitle { font-weight: bold;        font-family: "MetricWeb-Semibold"; }
 .important { margin-top: 1em; margin-bottom : 1em;}
-.importanttitle { font-weight: bold }
+.importanttitle { font-weight: bold;        font-family: "MetricWeb-Semibold"; }
 .remember { margin-top: 1em; margin-bottom : 1em;}
-.remembertitle { font-weight: bold }
+.remembertitle { font-weight: bold;        font-family: "MetricWeb-Semibold"; }
 .restriction { margin-top: 1em; margin-bottom : 1em;}
-.restrictiontitle { font-weight: bold }
+.restrictiontitle { font-weight: bold;        font-family: "MetricWeb-Semibold"; }
 .attention { margin-top: 1em; margin-bottom : 1em;}
-.attentiontitle { font-weight: bold }
-.dangertitle { font-weight: bold }
+.attentiontitle { font-weight: bold;        font-family: "MetricWeb-Semibold"; }
+.dangertitle { font-weight: bold;        font-family: "MetricWeb-Semibold"; }
 .danger { margin-top: 1em; margin-bottom : 1em;}
-.cautiontitle { font-weight: bold }
-.caution { font-weight: bold; margin-bottom : 1em; }
+.cautiontitle { font-weight: bold;        font-family: "MetricWeb-Semibold"; }
+.caution { font-weight: bold; margin-bottom : 1em;        font-family: "MetricWeb-Semibold"; }
 
 /* Simple lists do not get a bullet */
 ul.simple { list-style-type: none }
 
 /* Used on the first column of a table, when rowheader="firstcol" is used */
-.firstcol { font-weight : bold;}
+.firstcol { font-weight : bold;        font-family: "MetricWeb-Semibold";}
 
 /* Various basic phrase styles */
-.bold { font-weight: bold; }
+.bold { font-weight: bold;        font-family: "MetricWeb-Semibold"; }
 .boldItalic { font-weight: bold; font-style: italic; }
-.italic { font-style: italic; }
+.italic { font-style: italic;        font-family: "MetricWeb-RegularItalic"; }
 .underlined { text-decoration: underline; }
-.uicontrol { font-weight: bold; }
-.parmname { font-weight: bold; }
-.kwd { font-weight: bold; }
-.defkwd { font-weight: bold; text-decoration: underline; }
-.var { font-style : italic;}
+.uicontrol { font-weight: bold;        font-family: "MetricWeb-Semibold"; }
+.parmname { font-weight: bold;        font-family: "MetricWeb-Semibold"; }
+.kwd { font-weight: bold;        font-family: "MetricWeb-Semibold"; }
+.defkwd { font-weight: bold; text-decoration: underline;        font-family: "MetricWeb-Semibold"; }
+.var { font-style : italic;        font-family: "MetricWeb-RegularItalic";}
 .shortcut { text-decoration: underline; }
 
 /* Default of bold for definition list terms */
-.dlterm { font-weight: bold; }
+.dlterm { font-weight: bold;        font-family: "MetricWeb-Semibold"; }
 
 /* Use CSS to expand lists with @compact="no" */
-.dltermexpand { font-weight: bold; margin-top: 1em; }
+.dltermexpand { font-weight: bold; margin-top: 1em;        font-family: "MetricWeb-Semibold"; }
 *[compact="yes"]>li { margin-top: 0em;}
 *[compact="no"]>li { margin-top: .53em;}
 .liexpand { margin-top: 1em; margin-bottom: 1em }

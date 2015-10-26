@@ -12,7 +12,7 @@ available in the base directory of this Oxygen Webhelp plugin.
 		 
 		 
 p {
-    font-family: "MetricWeb-Medium","arial", "verdana", "helvetica", sans-serif;
+    font-family: "MetricWeb-Regular","arial", "verdana", "helvetica", sans-serif;
 }
 /* Changing topic background to $hp-gray-5: #f2f2f2 PFletcher 6/11/15 */
 /* Reverted back to white per Dionysia's request 6/17/15 - JSB */
@@ -20,7 +20,7 @@ p {
 body {
   background-color:white;
   /*background-color:#f2f2f2;*/
-  font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
+  font-family: "MetricWeb-Regular", " arial" ,"verdana", "helvetica", sans-serif;
   line-height:18px;
   font-size:12pt;
 }
@@ -416,7 +416,8 @@ h2.title{
 /* Title displayed over the tree area.*/
 #nav_tree p.nav_title { 
     font-size: 14pt; 
-    font-weight: bold; 
+    font-weight: bold;
+            font-family: "MetricWeb-Semibold";
     margin: 0.5em;
 }
 #nav_tree p.nav_title a{ 
@@ -440,6 +441,7 @@ div.nav_path{
     color:#1166DD;
     background-color:inherit;
     font-weight:bold;
+            font-family: "MetricWeb-Semibold";
     font-size:1.2em;
 }
 
@@ -479,6 +481,7 @@ div[class="warning"]>h3{
 
 .warningtitle {
     font-weight:bold;
+            font-family: "MetricWeb-Semibold";
 }
 
 .notetitle,
@@ -557,6 +560,7 @@ div.fignone p.figcap {
   display:block;
   text-align:left;
   font-weight:bold;
+          font-family: "MetricWeb-Semibold";
   padding:2px 10px 5px 10px;
 }
 
@@ -564,6 +568,7 @@ div.fignone p.figcapcenter {
   display:block;
   text-align:center;
   font-weight:bold;
+          font-family: "MetricWeb-Semibold";
   padding:2px 10px 5px 10px;
 }
 
@@ -571,6 +576,7 @@ div.fignone p.figcapright {
   display:block;
   text-align:right;
   font-weight:bold;
+          font-family: "MetricWeb-Semibold";
   padding:2px 10px 5px 10px;
 }
 
@@ -578,6 +584,7 @@ div.fignone p.figcapjustify {
   display:block;
   text-align:justify;
   font-weight:bold;
+          font-family: "MetricWeb-Semibold";
   padding:2px 10px 5px 10px;
 }
 

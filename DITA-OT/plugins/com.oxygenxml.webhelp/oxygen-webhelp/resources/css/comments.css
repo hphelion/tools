@@ -26,7 +26,7 @@ available in the base directory of this Oxygen Webhelp plugin.
 	clear: both;
 }
 #commentsContainer {
-	font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
+	font-family: "MetricWeb-Regular", " arial" ,"verdana", "helvetica", sans-serif;
 	clear: both;
 	margin: 7px 7px 7px 0;
 }
@@ -36,6 +36,7 @@ available in the base directory of this Oxygen Webhelp plugin.
 	display: block;
 	text-align: center;
 	font-weight: bold;
+	        font-family: "MetricWeb-Semibold";
 	margin-top:10px;
 	position: relative;
 	margin-left: auto;
@@ -169,6 +170,7 @@ div.name {
 	padding:0 0 10px 0;
   color: #667799;
   font-weight:bold
+          font-family: "MetricWeb-Semibold";
 }
 
 div.date {
@@ -299,6 +301,7 @@ div.product {
 #loginResponse {
 	color: red;
 	font-style: italic
+	font-family: "MetricWeb-RegularItalic";
 }
 
 .bt_toolbar,#accountInfo a,#userAccount #bt_logIn,#userAccount #bt_logOff,#userAccount #bt_editProfile
@@ -413,11 +416,12 @@ div.product {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-	font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
+	font-family: "MetricWeb-Regular", " arial" ,"verdana", "helvetica", sans-serif;
 }
 
 #cm_count,#cm_title {
 	font-weight: bold;
+	        font-family: "MetricWeb-Semibold";
 	font-size: 1.2em;
 	padding-left: 5px;
 }
@@ -453,6 +457,7 @@ div.product {
 .login thead td {
 	font-size: 1.2em;
 	font-weight: bold;
+	        font-family: "MetricWeb-Semibold";
 }
 
 .login td:FIRST-CHILD {
@@ -488,6 +493,7 @@ div.product {
   text-align:left;
 	font-size: 1.2em;
 	font-weight: bold;
+	        font-family: "MetricWeb-Semibold";
 }
 #signUp #signUpResponse{
   padding:15px 0 10px 0;
@@ -558,6 +564,7 @@ div.product {
 	padding-bottom: 4px;
 	display: inline-block;
 	font-weight:bold;
+	        font-family: "MetricWeb-Semibold";
 	color:#444
 }
 
@@ -803,6 +810,7 @@ div.suspended {
 .textError {
 	color: red;
 	font-weight: bold;
+	        font-family: "MetricWeb-Semibold";
 }
 
 .textInfo {
@@ -827,6 +835,7 @@ div.suspended {
 .formTitle {
 	height: 30px;
 	font-weight: bold;
+	        font-family: "MetricWeb-Semibold";
 	font-size: 1.2em;
 	float: left;
 	padding: 10px 10px 10px 10px;
@@ -836,7 +845,7 @@ div.suspended {
 	margin: 10px 0 0 0;
 }
 input[type=button] {
-    font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
+    font-family: "MetricWeb-Regular", " arial" ,"verdana", "helvetica", sans-serif;
 }
 
 .v_true,.v_false {
@@ -888,6 +897,7 @@ input[type=button] {
 #v_preload {
 	height: 30px;
 	font-weight: bold;
+	        font-family: "MetricWeb-Semibold";
 	font-size: 1.2em;
 	float: left;
 	padding: 10px 10px 10px 10px;
@@ -1024,7 +1034,7 @@ div.tbCell p{
 	margin-top: -10%; /*set to a negative number 1/2 of your height*/
 	margin-left: -20%; /*set to a negative number 1/2 of your width*/
 	z-index: 100;
-	font-family: "MetricWeb-Medium", " arial" ,"verdana", "helvetica", sans-serif;
+	font-family: "MetricWeb-Regular", " arial" ,"verdana", "helvetica", sans-serif;
 }
 div#info{
 	font-size:xx-small;
@@ -1035,7 +1045,9 @@ div#info{
 	padding: 0 3px 0 3px;
 }
 .sharePName{
-	font-weight:bold;	
+	font-weight:bold;
+	        font-family: "MetricWeb-Semibold";
+
 }
 .sharePID{
 	display: none;

@@ -69,3 +69,13 @@ $(document).ready(function () {
         }
     }
 });
+
+
+function breakOut() {
+ 
+ var here = window.location.href; 
+ var ohne = here.replace("/#", "/");
+ var pV = document.getElementById('printview');
+ pV.setAttribute('href', ohne);
+
+  }

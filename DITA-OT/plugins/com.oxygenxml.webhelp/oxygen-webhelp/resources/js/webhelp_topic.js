@@ -70,12 +70,10 @@ $(document).ready(function () {
     }
 });
 
-
-function breakOut() {
- 
- var here = window.location.href; 
- var ohne = here.replace("/#", "/");
- var pV = document.getElementById('printview');
- pV.setAttribute('href', ohne);
-
-  }
+function printBody() {
+     var printContents = document.body.innerHTML;
+          var originalContents = document.body.innerHTML;
+	       document.body.innerHTML = printContents;
+	            window.print();
+		         document.body.innerHTML = originalContents;
+			  }

@@ -615,3 +615,7 @@ tr:first-child {
 #topic_ckw_kbc_ws__inlineA{
 background-color: #cccccc !important;
 }
+
+#printview {
+	text-align:right;
+	}

@@ -32,7 +32,6 @@ a.xref:visited {
 /* Remove underlines P Fletcher 6/26/2015 */
   color:  rgb(135,135,135);
   font-weight: 400;
-  font-family: "MetricWeb-Regular", " arial" ,"verdana", "helvetica", sans-serif;
   font-style: normal;
   /*font-size: 13.3333330154419px;*/
   text-decoration:none;
@@ -43,7 +42,6 @@ a.xref:hover {
   /* Remove underlines P Fletcher 6/26/2015 */
   text-decoration:underline;
   /*font-weight: 400;*/
-  font-family: "MetricWeb-Regular", " arial" ,"verdana", "helvetica", sans-serif;
   font-style: normal;
   /*font-size: 13.3333330154419px;*/
 }

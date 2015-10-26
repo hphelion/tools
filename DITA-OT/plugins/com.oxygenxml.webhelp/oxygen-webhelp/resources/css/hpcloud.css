@@ -42,7 +42,7 @@ a.xref:hover {
   /*color: rgb(0, 0, 238);*/
   /* Remove underlines P Fletcher 6/26/2015 */
   text-decoration:underline;
-  font-weight: 400;
+  /*font-weight: 400;*/
   font-family: "MetricWeb-Regular", " arial" ,"verdana", "helvetica", sans-serif;
   font-style: normal;
   /*font-size: 13.3333330154419px;*/

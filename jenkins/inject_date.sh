@@ -21,7 +21,7 @@ do
     	PRETTYDATE=`date -d"$DATE" +'%d %b %Y'`
     fi
 
-    sed -i "s|<\/h1>|</h1><p class=\"heliondate\">Last updated: $PRETTYDATE<a href=\"\" style=\"float:right\" onclick=\"window.print()\">Print this page</a> </p>|" $fullpath    
+    sed -i "s|<\/h1>|</h1><p class=\"heliondate\">Last updated: $PRETTYDATE<a href=\"\" class="xref" style=\"float:right\" onclick=\"window.print()\">Print this page</a> </p>|" $fullpath    
 
 done
 echo ===end inject_date.sh===

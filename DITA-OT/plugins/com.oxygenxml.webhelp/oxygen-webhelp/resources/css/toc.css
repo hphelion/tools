@@ -6,8 +6,7 @@ Licensed under the terms stated in the license file EULA_Webhelp.txt
 available in the base directory of this Oxygen Webhelp plugin.
 
 */
-@import url("fonts.css");
-
+@import 'fonts.css';
 html,body {
     width: 100%;
     margin: 0;

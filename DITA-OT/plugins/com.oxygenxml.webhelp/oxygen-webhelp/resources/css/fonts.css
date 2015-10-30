@@ -12,6 +12,29 @@
 
 
 @font-face {
+	font-family: 'MetricWeb-Regular';
+	src: url('MetricWeb-Regulark.eot');
+	src: url('/MetricWeb-Regular.eot?#iefix') format('embedded-opentype'), 
+       url('MetricWeb-Regular.woff') format('woff'),
+       url('MetricWeb-Regular.ttf')  format('truetype'); 
+}
+@font-face {
+	font-family: 'MetricWeb-RegularItalic';
+	src: url('MetricWeb-RegularItalic.eot');
+	src: url('MetricWeb-RegularItalic.eot?#iefix') format('embedded-opentype'), 
+       url('MetricWeb-RegularItalic.woff') format('woff'),
+       url('MetricWeb-RegularItalic.ttf')  format('truetype'); 
+}
+@font-face {
+	font-family: 'MetricWeb-Semibold';
+	src: url('MetricWeb-Semibold.eot');
+	src: url('MetricWeb-Semibold.eot?#iefix') format('embedded-opentype'), 
+       url('MetricWeb-Semibold.woff') format('woff'),
+       url('MetricWeb-Semibold.ttf')  format('truetype'); 
+}
+
+
+@font-face {
 	font-family: 'Metric';
 	src: url('MetricWeb-Light.eot');
 	src: url('MetricWeb-Light.eot?#iefix') format('embedded-opentype'), 

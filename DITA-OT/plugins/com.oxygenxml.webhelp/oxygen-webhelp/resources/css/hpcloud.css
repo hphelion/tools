@@ -451,6 +451,7 @@ pre {
 
 .footer {
 	font-size: 9pt;
+	font-family: "MetricWeb-Regular", " arial" ,"verdana", "helvetica", sans-serif;
 }
 
 #contentBlock a, #contentBlock a:hover, #contentBlock a:after, #contentBlock a:active, a.link, a.navheader_parent_path {

@@ -1,10 +1,10 @@
 /*
 @font-face {
 	font-family: 'Metric'; regular
-	src: url('./MetricWeb-Regular.eot');
-  src: url('./MetricWeb-Regular.eot?#iefix') format('embedded-opentype'), 
-       url('./MetricWeb-Regular.woff') format('woff'),
-       url('./MetricApp-Regular.ttf')  format('truetype'); 
+	src: url('MetricWeb-Regular.eot');
+  src: url('MetricWeb-Regular.eot?#iefix') format('embedded-opentype'), 
+       url('MetricWeb-Regular.woff') format('woff'),
+       url('MetricApp-Regular.ttf')  format('truetype'); 
 	font-weight: normal;
 	font-style: normal;
 }
@@ -13,10 +13,10 @@
 
 @font-face {
 	font-family: 'Metric';
-	src: url('./MetricWeb-Light.eot');
-	src: url('./MetricWeb-Light.eot?#iefix') format('embedded-opentype'), 
-       url('./MetricWeb-Light.woff') format('woff'),
-       url('./MetricApp-Light.ttf')  format('truetype'); 
+	src: url('MetricWeb-Light.eot');
+	src: url('MetricWeb-Light.eot?#iefix') format('embedded-opentype'), 
+       url('MetricWeb-Light.woff') format('woff'),
+       url('MetricApp-Light.ttf')  format('truetype'); 
 	font-weight: normal;
 	font-style: normal;
 }
@@ -24,28 +24,28 @@
 
 @font-face {
 	font-family: 'Metric'; /*bold*/
-	src: url('./MetricWeb-Semibold.eot');
-	src: url('./MetricWeb-Semibold.eot?#iefix') format('embedded-opentype'), 
-       url('./MetricWeb-Semibold.woff') format('woff'),
-       url('./MetricApp-Semibold.ttf')  format('truetype'); 
+	src: url('MetricWeb-Semibold.eot');
+	src: url('MetricWeb-Semibold.eot?#iefix') format('embedded-opentype'), 
+       url('MetricWeb-Semibold.woff') format('woff'),
+       url('MetricApp-Semibold.ttf')  format('truetype'); 
 	font-weight: bold;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Metric'; /*italic*/
-	src: url('./MetricWeb-RegularItalic.eot');
-	src: url('./MetricWeb-RegularItalic.eot?#iefix') format('embedded-opentype'), 
-       url('./MetricWeb-RegularItalic.woff') format('woff'),
-       url('./MetricApp-RegularItalic.ttf')  format('truetype'); 
+	src: url('MetricWeb-RegularItalic.eot');
+	src: url('MetricWeb-RegularItalic.eot?#iefix') format('embedded-opentype'), 
+       url('MetricWeb-RegularItalic.woff') format('woff'),
+       url('MetricApp-RegularItalic.ttf')  format('truetype'); 
 	font-weight: normal;
 	font-style: italic;
 }	
 @font-face {
 	font-family: 'Metric'; /*bold italic*/
-	src: url('./MetricWeb-SemiboldItalic.eot');
-	src: url('./MetricWeb-SemiboldItalic.eot?#iefix') format('embedded-opentype'), 
-       url('./MetricWeb-SemiboldItalic.woff') format('woff'),
-       url('./MetricApp-SemiboldItalic.ttf')  format('truetype'); 
+	src: url('MetricWeb-SemiboldItalic.eot');
+	src: url('MetricWeb-SemiboldItalic.eot?#iefix') format('embedded-opentype'), 
+       url('MetricWeb-SemiboldItalic.woff') format('woff'),
+       url('MetricApp-SemiboldItalic.ttf')  format('truetype'); 
 	font-weight: bold;
 	font-style: italic;
 }	
@@ -53,37 +53,37 @@
 
 @font-face {
   font-family: 'Metric-Black'; /*regular*/
-  src: url('./MetricWeb-Black.eot'); 
-  src: url('./MetricWeb-Black.eot?#iefix') format('embedded-opentype'), 
-       url('./MetricWeb-Black.woff') format('woff'),
-       url('./MetricApp-Black.ttf')  format('truetype'); 
+  src: url('MetricWeb-Black.eot'); 
+  src: url('MetricWeb-Black.eot?#iefix') format('embedded-opentype'), 
+       url('MetricWeb-Black.woff') format('woff'),
+       url('MetricApp-Black.ttf')  format('truetype'); 
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Metric-Black';  /*italic*/
-	src: url('./MetricWeb-BlackItalic.eot');
-	src: url('./MetricWeb-BlackItalic.eot?#iefix') format('embedded-opentype'), 
-       url('./MetricWeb-BlackItalic.woff') format('woff'),
-       url('./MetricWeb-BlackItalic.ttf')  format('truetype'); 
+	src: url('MetricWeb-BlackItalic.eot');
+	src: url('MetricWeb-BlackItalic.eot?#iefix') format('embedded-opentype'), 
+       url('MetricWeb-BlackItalic.woff') format('woff'),
+       url('MetricWeb-BlackItalic.ttf')  format('truetype'); 
 	font-weight: normal;
 	font-style: italic;
 }
 @font-face {
 	font-family: 'Metric-Black';  /*bold*/
-	src: url('./MetricWeb-BlackBold.eot');
-  src: url('./MetricWeb-Black.eot?#iefix') format('embedded-opentype'), 
-       url('./MetricWeb-Black.woff') format('woff'),
-       url('./MetricApp-Black.ttf')  format('truetype'); 
+	src: url('MetricWeb-BlackBold.eot');
+  src: url('MetricWeb-Black.eot?#iefix') format('embedded-opentype'), 
+       url('MetricWeb-Black.woff') format('woff'),
+       url('MetricApp-Black.ttf')  format('truetype'); 
 	font-weight: bold;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Metric-Black';  /*bold italic*/
-	src: url('./MetricWeb-BlackBoldItalic.eot');
-	src: url('./MetricWeb-BlackBoldItalic.eot?#iefix') format('embedded-opentype'), 
-       url('./MetricWeb-BlackBoldItalic.woff') format('woff'),
-       url('./MetricApp-BlackBoldItalic.ttf')  format('truetype'); 
+	src: url('MetricWeb-BlackBoldItalic.eot');
+	src: url('MetricWeb-BlackBoldItalic.eot?#iefix') format('embedded-opentype'), 
+       url('MetricWeb-BlackBoldItalic.woff') format('woff'),
+       url('MetricApp-BlackBoldItalic.ttf')  format('truetype'); 
 	font-weight: bold;
 	font-style: italic;
 }	
@@ -91,59 +91,59 @@
 
 @font-face {
 	font-family: 'MetricWeb-Light';
-	src: url('./MetricWeb-Light.eot');
-	src: url('./MetricWeb-Light.eot?#iefix') format('embedded-opentype'), 
-       url('./MetricWeb-Light.woff') format('woff'),
-       url('./MetricApp-Light.ttf')  format('truetype'); 
+	src: url('MetricWeb-Light.eot');
+	src: url('MetricWeb-Light.eot?#iefix') format('embedded-opentype'), 
+       url('MetricWeb-Light.woff') format('woff'),
+       url('MetricApp-Light.ttf')  format('truetype'); 
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'MetricWeb-Light';
-	src: url('./MetricWeb-LightItalic.eot');
-	src: url('./MetricWeb-LightItalic.eot?#iefix') format('embedded-opentype'), 
-       url('./MetricWeb-LightItalic.woff') format('woff'),
-       url('./MetricApp-LightItalic.ttf')  format('truetype'); 
+	src: url('MetricWeb-LightItalic.eot');
+	src: url('MetricWeb-LightItalic.eot?#iefix') format('embedded-opentype'), 
+       url('MetricWeb-LightItalic.woff') format('woff'),
+       url('MetricApp-LightItalic.ttf')  format('truetype'); 
 	font-weight: normal;
 	font-style: italic;
 }	
 
 @font-face {
 	font-family: 'MetricWeb-Medium';
-	src: url('./MetricWeb-Medium.eot');
-	src: url('./MetricWeb-Medium.eot?#iefix') format('embedded-opentype'), 
-       url('./MetricWeb-Medium.woff') format('woff'),
-       url('./MetricApp-Medium.ttf')  format('truetype'); 
+	src: url('MetricWeb-Medium.eot');
+	src: url('MetricWeb-Medium.eot?#iefix') format('embedded-opentype'), 
+       url('MetricWeb-Medium.woff') format('woff'),
+       url('MetricApp-Medium.ttf')  format('truetype'); 
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'MetricWeb-Medium';
-	src: url('./MetricWeb-MediumItalic.eot');
-	src: url('./MetricWeb-MediumItalic.eot?#iefix') format('embedded-opentype'), 
-       url('./MetricWeb-MediumItalic.woff') format('woff'),
-       url('./MetricApp-MediumItalic.ttf')  format('truetype'); 
+	src: url('MetricWeb-MediumItalic.eot');
+	src: url('MetricWeb-MediumItalic.eot?#iefix') format('embedded-opentype'), 
+       url('MetricWeb-MediumItalic.woff') format('woff'),
+       url('MetricApp-MediumItalic.ttf')  format('truetype'); 
 	font-weight: normal;
 	font-style: italic;
 }	
  
 @font-face {
 	font-family: 'MetricWeb-Thin';
-	src: url('./MetricWeb-Thin.eot');
-	src: url('./MetricWeb-Thin.eot?#iefix') format('embedded-opentype'), 
-       url('./MetricWeb-Thin.woff') format('woff'),
-       url('./MetricApp-Thin.ttf')  format('truetype'); 
+	src: url('MetricWeb-Thin.eot');
+	src: url('MetricWeb-Thin.eot?#iefix') format('embedded-opentype'), 
+       url('MetricWeb-Thin.woff') format('woff'),
+       url('MetricApp-Thin.ttf')  format('truetype'); 
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'MetricWeb-Thin';
-	src: url('./MetricWeb-ThinItalicc.eot');
-	src: url('./MetricWeb-ThinItalic.eot?#iefix') format('embedded-opentype'), 
-       url('./MetricWeb-ThinItalic.woff') format('woff'),
-       url('./MetricApp-ThinItalic.ttf')  format('truetype'); 
+	src: url('MetricWeb-ThinItalicc.eot');
+	src: url('MetricWeb-ThinItalic.eot?#iefix') format('embedded-opentype'), 
+       url('MetricWeb-ThinItalic.woff') format('woff'),
+       url('MetricApp-ThinItalic.ttf')  format('truetype'); 
 	font-weight: normal;
 	font-style: italic;
 }	

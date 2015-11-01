@@ -14,7 +14,7 @@
 @font-face {
 	font-family: 'MetricWeb-Regular';
 	src: url('MetricWeb-Regulark.eot');
-	src: url('/MetricWeb-Regular.eot?#iefix') format('embedded-opentype'), 
+	src: url('MetricWeb-Regular.eot?#iefix') format('embedded-opentype'), 
        url('MetricWeb-Regular.woff') format('woff'),
        url('MetricWeb-Regular.ttf')  format('truetype'); 
 }

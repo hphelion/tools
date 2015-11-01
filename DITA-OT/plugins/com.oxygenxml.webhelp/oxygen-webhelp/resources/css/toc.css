@@ -29,7 +29,7 @@ html,body {
 }
 
 #productTitle {
-background-image: url ("/var/lib/jenkins/HPE-Helion.png"); 
+background-image: url ("../img/hpe-logo.png"); 
 }
 
 /* Expand / Collapse Buttons */

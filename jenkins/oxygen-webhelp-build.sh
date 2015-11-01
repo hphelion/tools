@@ -170,4 +170,4 @@ DITAVAL_DIR=/usr/local/OxygenXMLDeveloper16/samples/dita
  
 
 
-
+cp ./tools/DITA-OT/plugins/com.oxygenxml.webhelp/oxygen-webhelp/resources/css/Metric* ./out/webhelp/oxygen-webhelp/resources/css/

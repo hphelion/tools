@@ -6,11 +6,9 @@ Licensed under the terms stated in the license file EULA_Webhelp.txt
 available in the base directory of this Oxygen Webhelp plugin.
 
 */
-
+@import 'fonts.css';
 body{
-  /* All fonts to HP Simplified 
-  font-family:arial, helvetica, verdana;*/
-  font-family:HPSimplified !important;
+  font-family: "MetricWeb-Regular", "arial", "verdana", "helvetica", sans-serif;
   font-size:12px;
   text-shadow: 0 1px 0 #fff;
 }
@@ -48,6 +46,7 @@ h1.centerH{
 
 .titProduct{
   font-weight:bold;
+          font-family: "MetricWeb-Semibold";
 }
 
 #form{
@@ -63,6 +62,7 @@ div.title{
   font-size:medium;
   font-style:normal;
   font-weight:bold;
+          font-family: "MetricWeb-Semibold";
   padding:5px 2px 5px 2px;
 }
 div.desc{
@@ -105,6 +105,7 @@ div.panel table{
 
 div.panel td:first-child{
   font-weight:bold;
+          font-family: "MetricWeb-Semibold";
   color:#333;
   width:60%;
 }
@@ -127,6 +128,7 @@ div.panel .col2 td{
 
 div.panel td:last-child{
   font-style:italic;
+          font-family: "MetricWeb-RegularItalic";
   font-size:0.9em;
   padding-left:7px;
 }
@@ -149,10 +151,12 @@ div.panel tr:hover td{
 div.success{
   color:green;
   font-weight:bold;
+          font-family: "MetricWeb-Semibold";
 }
 div.error{
   color:red;
   font-weight:bold;
+          font-family: "MetricWeb-Semibold";
 }
 .btActions{
   clear:both;
@@ -172,6 +176,7 @@ div.error{
 	text-align: center;
 	text-shadow: 0 1px 0 #fff;
 	font-weight:bold;
+	        font-family: "MetricWeb-Semibold";
 	color:#666;
 	box-shadow: 1px 1px 7px #ccc;
 }
@@ -199,7 +204,7 @@ ol{
   line-height:2em;
 }
 
-li.step .cmd{font-weight:bold}
+li.step .cmd{font-weight:bold;        font-family: "MetricWeb-Semibold";}
 li.substep .cmd{font-weight:normal;}
 strong.b{}
 span.code{
@@ -215,6 +220,7 @@ span.code{
 .bld{
 	color:#336699;
 	font-weight: bold;
+	        font-family: "MetricWeb-Semibold";
 }	
 ol ol ol{
   list-style:circle;
@@ -227,5 +233,6 @@ ol a{
 div.removeInfo{
 	font-size: medium;
 	font-weight: bold;
+	        font-family: "MetricWeb-Semibold";
 	color: #aa0000;
 }

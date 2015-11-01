@@ -6,9 +6,9 @@ Licensed under the terms stated in the license file EULA_Webhelp.txt
 available in the base directory of this Oxygen Webhelp plugin.
 
 */
-
+@import 'fonts.css';
 body {
-	font-family: 'Lucida sans Unicode', Arial, Verdana;
+	font-family: "MetricWeb-Regular", "arial", "verdana", "helvetica", sans-serif;
 	font-size: 12px
 }
 
@@ -93,6 +93,7 @@ margin: 0;
 
 span.name {
 	font-weight: bold;
+	        font-family: "MetricWeb-Semibold";
 	font-size: 1.2em;
 	color: #336699;
 }
@@ -197,7 +198,8 @@ span.version {
 
 #loginResponse {
 	color: red;
-	font-style: italic
+	font-style: italic;
+	        font-family: "MetricWeb-RegularItalic";
 }
 
 #userAccount {
@@ -285,11 +287,13 @@ span.version {
 
 #cm_count {
 	font-weight: bold;
+	        font-family: "MetricWeb-Semibold";
 	font-size: 1.2em;
 	margin-left: 35px;
 }
 #cm_title{
 	font-weight: bold;
+	        font-family: "MetricWeb-Semibold";
 	font-size: 1.2em;	
 }
 

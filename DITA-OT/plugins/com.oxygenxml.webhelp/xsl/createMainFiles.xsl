@@ -367,7 +367,8 @@ available in the base directory of this Oxygen Webhelp plugin.
                 <div id="searchBlock" style="display:none;">
                   <form name="searchForm" id="searchForm" action="javascript:void(0)"
                     onsubmit="SearchToc('searchForm');">
-					<!-- ADDED 11/1/2015 NM FOR SCOPED SEARCH ---------------------------------------------------- --------------------- -->
+					
+			
                    <select name="product" id="product">
                       <option value="">Everything</option>
                       <option value="openstack 2.0">HPE Helion OpenStack 2.0</option>
@@ -375,7 +376,9 @@ available in the base directory of this Oxygen Webhelp plugin.
                       <option value="openstack 1.1">HPE Helion OpenStack 1.1</option>
        
                   </select>
-<!-- END  ADDED 11/1/2015 NM FOR SCOPED SEARCH ---------------------------------------------------- --------------------- -->
+
+				  
+				  
                     <xsl:comment/>
                     <input type="text" id="textToSearch" name="textToSearch" class="textToSearch"
                       size="30" placeholder="Keywords"/>

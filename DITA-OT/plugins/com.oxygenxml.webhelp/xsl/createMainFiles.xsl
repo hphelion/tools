@@ -365,13 +365,13 @@ available in the base directory of this Oxygen Webhelp plugin.
             <div id="leftPane">
               <div id="bck_toc">
                 <div id="searchBlock" style="display:none;">
-                  <h4>  Prioritize your results by:</h4>
+                  <h5>  Prioritize your results by:</h5>
                   <form name="searchForm" id="searchForm" action="javascript:void(0)"
                     onsubmit="SearchToc('searchForm');">
 					
 				  
                    <select name="product" id="product">
-                      <option value="">Everything</option>
+                      <option value="">All documentation</option>
                       <option value="openstack 2.0">HPE Helion OpenStack 2.0</option>
                       <option value="1.3 development platform">HPE Helion Development Platform 1.3</option>
                       <option value="carrier grade">HPE Helion OpenStack Carrier Grade 1.1</option>

@@ -36,6 +36,10 @@ Warranty: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRES
   4. Do not omit words between angle brackets from the title of the 
      search results.
 
+  5. Normalize search results HREFs and add '#' for no-frames webhelp
+
+  6. Keep custom footer in TOC after searching some text
+
 */
 
 // Return true if "word1" starts with "word2"  
@@ -124,15 +128,31 @@ var txt_results_for = "Results for:";
 /**
  * This function find the all matches using the search term
  */
-function SearchToc(ditaSearch_Form) {
+function SearchToc(ditaSearch_Form) { 
+
+ // alert(document.searchForm.textToSearch.value);
+  //alert(document.searchForm.product.value);
+  //document.searchForm.textToSearch.value = document.searchForm.product.value + " " + document.searchForm.textToSearch.value;
+ // alert(document.searchForm.textToSearch.value);
+  //////addded alert 10-29-15
+
+
   debug('SearchToc(..)');
+  //START - EXM-30790
+  var footer = $("#searchResults .footer");
+  //END - EXM-30790
   // Check browser compatibitily
   if (navigator.userAgent.indexOf("Konquerer") > -1) {
-    alert(getLocalization(txt_browser_not_supported));
+   //alert(getLocalization(txt_browser_not_supported));
     return;
   }
 
-  searchTextField = trim(document.searchForm.textToSearch.value);
+// NM 11/1/15 added new variable to hold user input and append to it a space + the value from the select to represent product
+newestTerm= document.searchForm.product.value + " " + document.searchForm.textToSearch.value;   ///NM 10-29-15
+
+
+// NM 11/1/15 used new variable newestTerm here in trim function instead of original value to prevent term from showing up in input box
+  searchTextField = trim(newestTerm);  ///NM 10-29-15
   
   // Eliminate the cross site scripting possibility.
   searchTextField = searchTextField.replace(/</g, " ");
@@ -179,6 +199,26 @@ function SearchToc(ditaSearch_Form) {
     }
   }
   debug('End SearchToc(..)');
+
+  // START - EXM-29420
+  $('.searchresult li a').each(function () {
+      var old = $(this).attr('href');
+      var newHref = '#' + normalizeLink(old);
+      /* If with frames */
+      if (top != self) {
+          newHref = normalizeLink(old);
+      }
+      if (old == 'javascript:void(0)') {
+          $(this).attr('href', '#!_' + $(this).text());
+      } else {
+          $(this).attr('href', newHref);
+          info('alter link:' + $(this).attr('href') + ' from ' + old);
+      }
+  });
+  //END - EXM-29420
+  //START - EXM-30790
+  $("#searchResults").append(footer);
+  //END - EXM-30790
 }
 
 var stemQueryMap = new Array();  // A hashtable which maps stems to query words
@@ -195,7 +235,6 @@ function realSearch(expressionInput) {
    */
   scriptLetterTab = new Scriptfirstchar(); // Array containing the first letter of each word to look for
   var searchFor = "";       // expression in lowercase and without special caracters
-debug('sxs',scriptLetterTab);
   var wordsList = new Array(); // Array with the words to look for
   var finalWordsList = new Array(); // Array with the words to look for after removing spaces
   var linkTab = new Array();
@@ -236,6 +275,7 @@ debug('sxs',scriptLetterTab);
   } else if(useCJKTokenizing){
     finalWordsList = cjkTokenize(wordsList);
     finalArray = finalWordsList;
+   debug('CJKTokenizing, finalWordsList: ' + finalWordsList);
   }
   if(!useCJKTokenizing){
     /**
@@ -275,7 +315,7 @@ debug('sxs',scriptLetterTab);
     finalWordsList = removeDuplicate(finalWordsList);
   }
 
-  debug('finalWordsList'+finalWordsList);
+  debug('finalWordsList  ' + finalWordsList);
 
   if (finalWordsList.length) {
     //search 'and' and 'or' one time
@@ -360,16 +400,6 @@ debug('sxs',scriptLetterTab);
             linkString += "\n<div class=\"shortdesclink\">" + tempShortdesc + "</div>";
           }
                     
-          // Add rating values for scoring at the list of matches
-          linkString += "<div id=\"rightDiv\">";
-          linkString += "<div id=\"star\">";
-          linkString += "<div id=\"star0\" class=\"star\">";
-          linkString += "<div id=\"starCur0\" class=\"curr\" style=\"width: " + starWidth + "px;\">&nbsp;</div>";
-          linkString += "</div>";
-                  
-          linkString += "<br style=\"clear: both;\">";
-          linkString += "</div>";
-          linkString += "</div>";
           linkString += "</li>";
           linkTab.push(linkString);
           no++;
@@ -433,13 +463,13 @@ function tokenize(wordsList){
   var cleanwordsList = new Array(); // Array with the words to look for
   for(var j in wordsList){
     var word = wordsList[j];
-    if(typeof stemmer != "undefined" ){
+    if(typeof stemmer != "undefined" && doStem){
       stemQueryMap[stemmer(word)] = word;
     } else {
       stemQueryMap[word] = word;
     }
   }
-  debug('ss',scriptLetterTab);
+  debug('scriptLetterTab in tokenize: ', scriptLetterTab);
   scriptLetterTab.add('s');
   //stemmedWordsList is the stemmed list of words separated by spaces.
   for (var t in wordsList) {
@@ -451,7 +481,7 @@ function tokenize(wordsList){
     }
   }
 
-  if(typeof stemmer != "undefined" ){
+  if(typeof stemmer != "undefined" && doStem){
     //Do the stemming using Porter's stemming algorithm
     for (var i = 0; i < cleanwordsList.length; i++) {
       var stemWord = stemmer(cleanwordsList[i]);

@@ -1,4 +1,4 @@
-/*
+﻿/*
 
 David Cramer
 <david AT thingbag DOT net>
@@ -130,11 +130,6 @@ var txt_results_for = "Results for:";
  */
 function SearchToc(ditaSearch_Form) { 
 
- // alert(document.searchForm.textToSearch.value);
-  //alert(document.searchForm.product.value);
-  //document.searchForm.textToSearch.value = document.searchForm.product.value + " " + document.searchForm.textToSearch.value;
- // alert(document.searchForm.textToSearch.value);
-  //////addded alert 10-29-15
 
 
   debug('SearchToc(..)');
@@ -150,6 +145,10 @@ function SearchToc(ditaSearch_Form) {
 // NM 11/1/15 added new variable to hold user input and append to it a space + the value from the select to represent product
 newestTerm= document.searchForm.product.value + " " + document.searchForm.textToSearch.value;   ///NM 10-29-15
 
+//next reset the search fields. already have the vals
+document.getElementById('textToSearch').value="";
+defaultSel=document.getElementById('product');
+defaultSel.options[defaultSel.options.selectedIndex].selected = 0;
 
 // NM 11/1/15 used new variable newestTerm here in trim function instead of original value to prevent term from showing up in input box
   searchTextField = trim(newestTerm);  ///NM 10-29-15

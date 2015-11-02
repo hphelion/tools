@@ -365,7 +365,6 @@ available in the base directory of this Oxygen Webhelp plugin.
             <div id="leftPane">
               <div id="bck_toc">
                 <div id="searchBlock" style="display:none;">
-                  <h4><pre>    </pre>Prioritize your results by:</h4>
                   <form name="searchForm" id="searchForm" action="javascript:void(0)"
                     onsubmit="SearchToc('searchForm');">
                     <xsl:comment/>

@@ -7,8 +7,6 @@ available in the base directory of this Oxygen Webhelp plugin.
 
 */
 
-<sup>®</sup> 
-
 function feedback(){
 if (window.location.href.indexOf("/helion/")  > -1  || window.location.href.indexOf("flubber") > -1 ) {
 var topic=document.getElementsByTagName("H1")[0].innerHTML ;

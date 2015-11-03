@@ -46,67 +46,8 @@ available in the base directory of this Oxygen Webhelp plugin.
   	<!-- Google Tag Manager -->
 	<!--#removed jgl-->
   	<!-- End Google Tag Manager -->
-    <table class="nav">
-      <tbody>
-        <tr>
-          <td colspan="2">
-            <!-- Permanent link.          
-            <xsl:variable name="permaLinkText">
-              <xsl:call-template name="getString">
-                <xsl:with-param name="stringName" select="'linkToThis'"/>
-              </xsl:call-template>
-            </xsl:variable>
-            <div id="permalink"><a href="#" title="{$permaLinkText}"></a>              
-            </div>
-			-->   
-            <!-- Print link.       
-            <xsl:variable name="printLinkText">
-              <xsl:call-template name="getString">
-                <xsl:with-param name="stringName" select="'printThisPage'"/>
-              </xsl:call-template>
-            </xsl:variable>
-            <div id="printlink">
-              <a href="javascript:window.print();" title="{$printLinkText}"></a>
-            </div>-->      
-          </td>
-        </tr>
-        <tr>
-          <td width="75%">
-            <xsl:if test="count(descendant::*[contains(@class, ' topic/link ')][@role='parent']) = 1">
-              <!-- Bread-crumb -->
-              <xsl:variable name="parentRelativePath" 
-                select="descendant::*[contains(@class, ' topic/link ')][@role='parent'][1]/@href"/>
-              <xsl:variable name="parentTopic" 
-                select="document($parentRelativePath)"/>
-              
-              <xsl:if test="count($parentTopic//*[contains(@class, ' topic/link ')][@role='parent']) = 1">            
-                <!-- Link to parent of parent. -->
-                <xsl:variable name="parentOfParentTopic" select="$parentTopic//*[contains(@class, ' topic/link ')][@role='parent'][1]"/>
-                <xsl:for-each select="$parentOfParentTopic">
-                  <xsl:call-template name="makelink">
-                    <xsl:with-param name="final-path"
-                      tunnel="yes"
-                      select="oxygen:combineRelativePaths($parentRelativePath, @href)"
-                      />
-                  </xsl:call-template>
-                </xsl:for-each>
-                <xsl:text> / </xsl:text>
-              </xsl:if>
-                <!-- Link to parent. -->
-              <xsl:for-each select="descendant::*[contains(@class, ' topic/link ')][@role='parent']">
-                <xsl:call-template name="makelink"/>
-              </xsl:for-each>
-            </xsl:if>
-          </td>
-          <td>
-            <!-- Navigation to the next, previous siblings and to the parent. -->
-            <div class="navheader">              
-              <xsl:call-template name="oxygenCustomHeaderAndFooter"/>
-            </div>
-          </td>        
-        </tr>
-      </tbody>
-    </table>
+	
+
   </xsl:template>
 
 

@@ -59,7 +59,7 @@ available in the base directory of this Oxygen Webhelp plugin.
             <div id="permalink"><a href="#" title="{$permaLinkText}"></a>              
             </div>
 			-->   
-            <!-- Print link.         
+            <!-- Print link.       
             <xsl:variable name="printLinkText">
               <xsl:call-template name="getString">
                 <xsl:with-param name="stringName" select="'printThisPage'"/>
@@ -67,9 +67,9 @@ available in the base directory of this Oxygen Webhelp plugin.
             </xsl:variable>
             <div id="printlink">
               <a href="javascript:window.print();" title="{$printLinkText}"></a>
-            </div>
+            </div>-->      
           </td>
-        </tr> -->    
+        </tr>
         <tr>
           <td width="75%">
             <xsl:if test="count(descendant::*[contains(@class, ' topic/link ')][@role='parent']) = 1">

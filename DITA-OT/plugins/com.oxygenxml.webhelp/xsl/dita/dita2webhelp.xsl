@@ -50,7 +50,7 @@ available in the base directory of this Oxygen Webhelp plugin.
       <tbody>
         <tr>
           <td colspan="2">
-            <!-- Permanent link. -->            
+            <!-- Permanent link.          
             <xsl:variable name="permaLinkText">
               <xsl:call-template name="getString">
                 <xsl:with-param name="stringName" select="'linkToThis'"/>
@@ -58,6 +58,7 @@ available in the base directory of this Oxygen Webhelp plugin.
             </xsl:variable>
             <div id="permalink"><a href="#" title="{$permaLinkText}"></a>              
             </div>
+			-->   
             <!-- Print link. -->            
             <xsl:variable name="printLinkText">
               <xsl:call-template name="getString">

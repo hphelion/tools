@@ -43,6 +43,15 @@ available in the base directory of this Oxygen Webhelp plugin.
     </xsl:if>
     <!-- JS -->
     <!-- Generates the inline scripts. -->    
+	<script type="text/javascript" >
+	$(document).ready(function() 
+		{ 
+			$("#changelog_tb2").tablesorter(); 
+		} 
+	); 
+</script>
+
+	
     <script type="text/javascript">
       <xsl:comment>
         <xsl:text><![CDATA[

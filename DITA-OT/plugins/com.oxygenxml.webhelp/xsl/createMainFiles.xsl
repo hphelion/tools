@@ -214,11 +214,12 @@ available in the base directory of this Oxygen Webhelp plugin.
     <!--true pentru frame-uri, false pentru no frames. -->
     
     <xsl:variable name="skinName" select="oxygen:getSkinName($withFrames)"/>
-    
+    <!--
     <xsl:result-document href="{$fileName}" method="xhtml" indent="no" encoding="UTF-8"
       doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
       doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
       omit-xml-declaration="yes">
+	  -->
       <html xmlns="http://www.w3.org/1999/xhtml">
         <head>
           <xsl:if test="$withFrames">

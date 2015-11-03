@@ -56,10 +56,10 @@ available in the base directory of this Oxygen Webhelp plugin.
     Adds topic rating and navigation to the footer.  
   -->  
   <xsl:template match="/|node()|@*" mode="gen-user-footer">
-    <div class="navfooter">
+  <!--    <div class="navfooter">
       <xsl:comment/>
       <xsl:call-template name="oxygenCustomHeaderAndFooter"/>
-    </div>
+    </div> -->
     <xsl:if test="string-length($CUSTOM_RATE_PAGE_URL) > 0">
       <noscript>.rate_page{display:none}</noscript>
       <div class="rate_page">

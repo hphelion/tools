@@ -10,10 +10,10 @@ available in the base directory of this Oxygen Webhelp plugin.
 
 function feedback(){
 
-if (window.location.href.indexOf("helion")  > -1  || window.location.href.indexOf("flubber") > -1 ) {
+if (window.location.href.indexOf("#helion")  > -1  || window.location.href.indexOf("flubber") > -1 ) {
 var topic=document.getElementsByTagName("H1")[0].innerHTML ;
 document.getElementById("feedback").innerHTML = "<a href=\"mailto:heliondocs@hpe.com&subject=Feedback on '"+topic+"'&body=Thank you for providing the Helion Documentation Team with feedback about this topic!  Please replace this text with your feedback.%0D%0A %0D%0ALeave the title unchanged, because this will make it clear to us what topic you are providing feedback about.  If you need support, please contact your HPE Support representative.%0D%0A %0D%0AThanks for helping us improve the documentation!\">Feedback to the Helion Docs Team</a>  ";
-}else {document.getElementById("feedback").style.display = "";}
+}else {document.getElementById("feedback").style.display = "none";}
 }
 
 

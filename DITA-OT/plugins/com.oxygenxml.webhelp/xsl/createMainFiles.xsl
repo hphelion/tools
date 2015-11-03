@@ -527,6 +527,7 @@ available in the base directory of this Oxygen Webhelp plugin.
   <xsl:template name="create-js-scripts">
     <xsl:param name="withFrames"/>
       <script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><xsl:comment/></script>
+	  <script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="oxygen-webhelp/resources/js/jquery-latest.js"><xsl:comment/></script>
       <script type="text/javascript" src="{$PATH2PROJ}oxygen-webhelp/resources/js/jquery.cookie.js"><xsl:comment/></script>
       <script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><xsl:comment/></script>
       <script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script>

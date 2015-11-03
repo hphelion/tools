@@ -218,7 +218,7 @@ available in the base directory of this Oxygen Webhelp plugin.
   
 	  -->
       <html xmlns="http://www.w3.org/1999/xhtml">
-        <head>
+        <head  id="blah1">
           <xsl:if test="$withFrames">
             <base target="contentwin"/>
           </xsl:if>

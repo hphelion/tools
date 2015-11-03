@@ -28,7 +28,7 @@ available in the base directory of this Oxygen Webhelp plugin.
   <xsl:param name="BASEDIR"/>
   <xsl:param name="OUTPUTDIR"/>
   <xsl:param name="LANGUAGE" select="'en-us'"/>
-  
+  <!--  
   <xsl:output 
     method="xml" 
     encoding="UTF-8"
@@ -37,7 +37,7 @@ available in the base directory of this Oxygen Webhelp plugin.
     doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
     omit-xml-declaration="yes"/>
   
-  <!-- 
+ 
   
   Header navigation.
   

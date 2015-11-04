@@ -32,6 +32,7 @@ available in the base directory of this Oxygen Webhelp plugin.
 	<link rel="stylesheet" type="text/css" href="{$PATH2PROJ}oxygen-webhelp/resources/css/hpcloud.css"><xsl:comment/></link>
     <link rel="stylesheet" type="text/css" href="{$PATH2PROJ}oxygen-webhelp/resources/css/webhelp_topic.css"><xsl:comment/></link>
     <script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="{$PATH2PROJ}oxygen-webhelp/resources/js/jquery-latest.js"><xsl:comment/></script>
+    <script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="{$PATH2PROJ}oxygen-webhelp/resources/js/jquery.tablesorter.min.js"><xsl:comment/></script>
       <xsl:apply-templates
           select="*[local-name() = 'link' 
                   and @rel='stylesheet' 
@@ -46,28 +47,7 @@ available in the base directory of this Oxygen Webhelp plugin.
 
 
 	  </xsl:if>
-    <!-- JS -->
-    <!-- Generates the inline scripts. -->    
-	<script type="text/javascript" >
-	$(document).ready(function() 
-		{ 
-        $("#changelog_tb2").tablesorter(); 
-		} 
-	); 
-</script>
-
-	
-    <script type="text/javascript">
-      <xsl:comment>
-        <xsl:text><![CDATA[
-          
-          var prefix = "]]></xsl:text>
-        <xsl:value-of select="$PATH2PROJ"/>
-        <xsl:text><![CDATA[index.html";
-          
-          ]]></xsl:text>
-      </xsl:comment>
-    </script>    
+    <!-- JS --> 
     <!-- Generates the external script references. -->
     <script type="text/javascript" src="{$PATH2PROJ}oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><xsl:comment/></script>
 
@@ -85,6 +65,28 @@ available in the base directory of this Oxygen Webhelp plugin.
       <script type="text/javascript" charset="utf-8" src="{$PATH2PROJ}oxygen-webhelp/resources/js/init.js"><xsl:comment/></script>
       <script type="text/javascript" charset="utf-8" src="{$PATH2PROJ}oxygen-webhelp/resources/js/comments-functions.js"><xsl:comment/></script>      
     </xsl:if>
+    
+    <!-- Generates the inline scripts. -->    
+    <script type="text/javascript" >
+      $(document).ready(function()
+      { 
+      $("#changelog__changelog_tb2").tablesorter(); 
+      } 
+      ); 
+    </script>
+    
+    
+    <script type="text/javascript">
+      <xsl:comment>
+        <xsl:text><![CDATA[
+          
+          var prefix = "]]></xsl:text>
+        <xsl:value-of select="$PATH2PROJ"/>
+        <xsl:text><![CDATA[index.html";
+          
+          ]]></xsl:text>
+      </xsl:comment>
+    </script>   
     <!-- Custom JavaScript code set by param webhelp.head.script -->
     <xsl:if test="string-length($WEBHELP_HEAD_SCRIPT) > 0" >
       <xsl:value-of select="unparsed-text($WEBHELP_HEAD_SCRIPT)" disable-output-escaping="yes"/>

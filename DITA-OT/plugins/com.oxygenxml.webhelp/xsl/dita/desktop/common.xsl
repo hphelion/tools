@@ -68,7 +68,7 @@ available in the base directory of this Oxygen Webhelp plugin.
     
     <!-- Generates the inline scripts. -->    
     <script type="text/javascript" >
-      $(document).ready(function() 
+      $(window.parent.frames[1].document).ready(function()
       { 
       $("#changelog_tb2").tablesorter(); 
       } 

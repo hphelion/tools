@@ -32,6 +32,7 @@ available in the base directory of this Oxygen Webhelp plugin.
 	<link rel="stylesheet" type="text/css" href="{$PATH2PROJ}oxygen-webhelp/resources/css/hpcloud.css"><xsl:comment/></link>
     <link rel="stylesheet" type="text/css" href="{$PATH2PROJ}oxygen-webhelp/resources/css/webhelp_topic.css"><xsl:comment/></link>
     <script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="{$PATH2PROJ}oxygen-webhelp/resources/js/jquery-latest.js"><xsl:comment/></script>
+    <script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="{$PATH2PROJ}oxygen-webhelp/resources/js/jquery.tablesorter.min.js"><xsl:comment/></script>
       <xsl:apply-templates
           select="*[local-name() = 'link' 
                   and @rel='stylesheet' 
@@ -46,8 +47,7 @@ available in the base directory of this Oxygen Webhelp plugin.
 
 
 	  </xsl:if>
-    <!-- JS -->
- 
+    <!-- JS --> 
     <!-- Generates the external script references. -->
     <script type="text/javascript" src="{$PATH2PROJ}oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><xsl:comment/></script>
 

@@ -80,7 +80,7 @@ available in the base directory of this Oxygen Webhelp plugin.
       window.onload=function(){
       var elements = document.getElementsByTagName('a');
       for(var i = 0, len = elements.length; i &lt; len; i++) {
-       elements[i].onclick = function () {
+      elements[i].addEventListener("click", function(){
           var newlink=this;
           var newlink2=String(newlink);
           var linkLen = newlink2.length;

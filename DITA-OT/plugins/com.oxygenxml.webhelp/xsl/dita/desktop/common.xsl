@@ -71,24 +71,25 @@ available in the base directory of this Oxygen Webhelp plugin.
       $(document).ready(function()
       { 
       $("#changelog__changelog_tb2").tablesorter(); 
+      
       } 
       ); 
     </script>
-    
+   
     <script type="text/javascript">
       window.onload=function(){
-        var elements = document.getElementsByTagName('a');
-        for(var i = 0, len = elements.length; i < len; i++) {
-          elements[i].onclick = function () {
-            //alert(this);
-            var newlink=this;
-           //alert(newlink);
-           window.location.href=newlink;
-          }
-        }
-      };
+      var elements = document.getElementsByTagName('a');
+      for(var i = 0, len = elements.length; i &lt; len; i++) { 
+      elements[i].onclick = function () {
+      //alert(this);
+      var newlink=this;
+      //alert(newlink);
+      window.location.href=newlink;
+      }
+      }
+      };       
     </script>
-    
+  
     <script type="text/javascript">
       <xsl:comment>
         <xsl:text><![CDATA[

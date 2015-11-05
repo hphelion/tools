@@ -342,6 +342,8 @@ div.copyright{
 }
 
 /* Makes the titles stand-out */
+/*section title is cverted to h2*/
+/*topictitle is h1 but is further styled under topictitle */
 h1.title,
 h2.title{
     color:#333;
@@ -606,3 +608,7 @@ div.fignone img {
     }
 }
  
+ /*nm added for updates table only. 11/4/15*/
+#changelog__changelog_tb2 > thead{  
+  cursor: pointer;
+}  

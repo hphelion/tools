@@ -88,9 +88,9 @@ available in the base directory of this Oxygen Webhelp plugin.
           var pos = newlink2.search("#");
           var goto = newlink2.substr(pos+1, linkLen);
           window.scroll(0,findPos(document.getElementById(goto)));
-          }
+          });
        }
-      };       ]]></xsl:text>
+            ]]></xsl:text>
       </xsl:comment>
     </script>
   

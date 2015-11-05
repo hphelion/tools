@@ -77,19 +77,21 @@ available in the base directory of this Oxygen Webhelp plugin.
     </script>
    
     <script type="text/javascript">
-      window.onload=function(){
+      <xsl:comment>
+      <xsl:text><![CDATA[window.onload=function(){
       var elements = document.getElementsByTagName('a');
-      for(var i = 0, len = elements.length; i &lt; len; i++) {
+      for(var i = 0, len = elements.length; i < len; i++) {
       elements[i].addEventListener("click", function(){
           var newlink=this;
           var newlink2=String(newlink);
           var linkLen = newlink2.length;
           var pos = newlink2.search("#");
-          var goto = newlink2.substr(pos-1, linkLen);
+          var goto = newlink2.substr(pos+1, linkLen);
           window.scroll(0,findPos(document.getElementById(goto)));
           }
        }
-      };       
+      };       ]]></xsl:text>
+      </xsl:comment>
     </script>
   
     <script type="text/javascript">

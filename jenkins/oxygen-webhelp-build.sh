@@ -1,5 +1,13 @@
 #!/bin/sh
  
+ 
+if [ -z "$1" ]
+	then
+		# The name of the input DITA map file
+		DITAMAP_FILE=docs.hpcloud.com.ditamap
+	else
+		DITAMAP_FILE="$1"
+fi
 
 rm -r temp
 rm -r out
@@ -113,8 +121,7 @@ DITA_MAP_BASE_DIR=`pwd`
 echo DITA_MAP_BASE_DIR
 echo $DITA_MAP_BASE_DIR
 
-# The name of the input DITA map file
-DITAMAP_FILE=docs.hpcloud.com.ditamap
+
 
 # The name of the DITAVAL input filter file 
 DITAVAL_FILE=my_ditaval.ditaval
@@ -163,4 +170,4 @@ DITAVAL_DIR=/usr/local/OxygenXMLDeveloper16/samples/dita
  
 
 
-
+cp ./tools/DITA-OT/plugins/com.oxygenxml.webhelp/oxygen-webhelp/resources/css/Metric* ./out/webhelp/oxygen-webhelp/resources/css/

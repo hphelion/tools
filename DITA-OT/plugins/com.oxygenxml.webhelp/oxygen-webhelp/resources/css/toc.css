@@ -6,15 +6,13 @@ Licensed under the terms stated in the license file EULA_Webhelp.txt
 available in the base directory of this Oxygen Webhelp plugin.
 
 */
-
+@import 'fonts.css';
 html,body {
     width: 100%;
     margin: 0;
     padding: 0;
     background-color: #fff;
-    /* Changing all fonts to HP Simplified 6/26 
-    font-family: arial, helvetica, sans-serif; */
-    font-family: HPSimplified !important;
+    font-family: "MetricWeb-Regular", " arial" ,"verdana", "helvetica", sans-serif;
     font-size: 10pt;
 }
 
@@ -31,7 +29,7 @@ html,body {
 }
 
 #productTitle {
-background-image: url ("http://www8.hp.com/hpnext/sites/default/files/content/documents/HP%20Helion%20Logo_Cloud_Martin%20Fink_New%20Style%20of%20IT_Hewlett-Packard.PNG"); ////nancy 7-2
+background-image: url ("../img/hpe-logo.png"); 
 }
 
 /* Expand / Collapse Buttons */
@@ -108,10 +106,8 @@ background-image: url ("http://www8.hp.com/hpnext/sites/default/files/content/do
 #contentBlock a, a.link, a.navheader_parent_path{
     text-decoration: none;
     font-size: 10pt;
-    color: navy;
-    /*font-family: arial, helvetica, tahoma, sans-serif;*/
-  /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+    color: rgb(97, 125, 120);
+    font-family: "MetricWeb-Regular", " arial" ,"verdana", "helvetica", sans-serif;
     white-space: nowrap;
 }
 #contentBlock a:hover{
@@ -119,7 +115,7 @@ background-image: url ("http://www8.hp.com/hpnext/sites/default/files/content/do
 }
 #contentBlock a:hover, a.link:hover, a.navheader_parent_path:hover{
     text-decoration: none;
-    color: red;
+    color: rgb(97, 125, 120);
 }
 .hasSubMenuClosed{
     background: url('../img/book_closed16.png') no-repeat;
@@ -204,13 +200,12 @@ li{
 }
 
 a.foundResult{
-    color:#0000FF;
+    color:rgb(97, 125, 120);
 }
 a.foundResult:visited{
-    color:#660066;
+    color:rgb(135,135,135);
 }
 a.foundResult:hover{
-    color:red;
 }
 
 /*Rating of searched terms*/
@@ -248,9 +243,7 @@ a.foundResult:hover{
     position: relative;
     float: right;
     font-size: 13px;
-    /*font-family: Arial,sans-serif;*/
-  /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+    font-family: "MetricWeb-Regular", "arial", "verdana", "helvetica", sans-serif;
     color: #888;
 }
 
@@ -258,6 +251,7 @@ a.foundResult:hover{
     color: #0050A0;
     font-size: 10pt;
     font-weight:bold;
+            font-family: "MetricWeb-Semibold";
 }
 
 #searchResults{

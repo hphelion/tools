@@ -8,32 +8,10 @@ available in the base directory of this Oxygen Webhelp plugin.
 */
 
 @import "print.css";
-
-/* Changing font to HP Simplified PFletcher 6/26/2015 */
-/* Attempt to get the font from HP's site, and fail over to sans*/
-/*@font-face {
-    font-family: HPSimplified;
-    src: url(HPSimplified-Rg.ttf)  format('truetype');
-}*/
-
-@font-face{
-    font-family:'HPSimplified';
-    src:url(http://www8.hp.com/us/en/images/fonts/v2-0/hps-euro-w01-regular-eot.eot); 
-    src:url(http://www8.hp.com/us/en/images/fonts/v2-0/hps-euro-w01-regular-eot.eot?#iefix) format('embedded-opentype'),  
-        url('http://www8.hp.com/us/en/images/fonts/v2-0/hps-euro-w01-regular-woff.woff') format('woff'), 
-        url('http://www8.hp.com/us/en/images/fonts/v2-0/hps-euro-w01-regular-ttf.ttf') format('truetype');
-    font-weight:normal;
-    font-style:normal}
-@font-face{font-family:'HPSimplified';
-    src:url(http://www8.hp.com/us/en/images/fonts/v2-0/hps-euro-w01-bold-eot.eot); 
-    src:url(http://www8.hp.com/us/en/images/fonts/v2-0/hps-euro-w01-bold-eot.eot?#iefix) format('embedded-opentype'),  
-        url('http://www8.hp.com/us/en/images/fonts/v2-0/hps-euro-w01-bold-woff.woff') format('woff'), 
-        url('http://www8.hp.com/us/en/images/fonts/v2-0/hps-euro-w01-bold-ttf.ttf') format('truetype');
-    font-weight:bold;
-    font-style:normal}
-
+		@import 'fonts.css'; 
+		 
 p {
-    font-family: HPSimplified, sans-serif !important;
+    font-family: "MetricWeb-Regular","arial", "verdana", "helvetica", sans-serif;
 }
 /* Changing topic background to $hp-gray-5: #f2f2f2 PFletcher 6/11/15 */
 /* Reverted back to white per Dionysia's request 6/17/15 - JSB */
@@ -41,10 +19,9 @@ p {
 body {
   background-color:white;
   /*background-color:#f2f2f2;*/
-  /* font-family: arial, helvetica, sans-serif; */
-  font-family: HPSimplified, sans-serif !important;
+  font-family: "MetricWeb-Regular", " arial" ,"verdana", "helvetica", sans-serif;
   line-height:18px;
-  font-size:12px;
+  font-size:12pt;
 }
 ///////////////////
 .hometable {
@@ -59,22 +36,16 @@ body {
 a.link {
     text-decoration: none;
 	/* Added by P Fletcher 6/11: Links are $hp-accessible-blue: #007dba */
-	color: #007dba;
-	/* Added by P Fletcher 6/26: Use HPSimplified for whole site */
-	font-family: HPSimplified, sans-serif !important;
+	color: #00b388;
 }
 
-a:visited{
-  color:#660066; 
-  /* Added by P Fletcher 6/26: Use HPSimplified for whole site */
-	font-family: HPSimplified, sans-serif !important;
-}
+/*a:visited{
+  color:rgb(135,135,135); 
+}*/
 a:hover{
 	/* Changed by P Fletcher 6/11: Link hover color is $hp-hover-blue: #006699 */
   /*color:red;*/
-  color:#006699;
-  /* Added by P Fletcher 6/26: Use HPSimplified for whole site */
-	font-family: HPSimplified, sans-serif !important;
+  text-decoration:underline
 }
 /* End Anchors */
 
@@ -358,7 +329,7 @@ div.footer span.xmlauthor{
 /*----------------*/
 /*The copyright.*/
 div, td{
-    font-size:10pt;
+    /*font-size:10pt;*/
 }
 
 div.copyright{
@@ -371,6 +342,8 @@ div.copyright{
 }
 
 /* Makes the titles stand-out */
+/*section title is cverted to h2*/
+/*topictitle is h1 but is further styled under topictitle */
 h1.title,
 h2.title{
     color:#333;
@@ -444,7 +417,8 @@ h2.title{
 /* Title displayed over the tree area.*/
 #nav_tree p.nav_title { 
     font-size: 14pt; 
-    font-weight: bold; 
+    font-weight: bold;
+            font-family: "MetricWeb-Semibold";
     margin: 0.5em;
 }
 #nav_tree p.nav_title a{ 
@@ -468,6 +442,7 @@ div.nav_path{
     color:#1166DD;
     background-color:inherit;
     font-weight:bold;
+            font-family: "MetricWeb-Semibold";
     font-size:1.2em;
 }
 
@@ -507,6 +482,7 @@ div[class="warning"]>h3{
 
 .warningtitle {
     font-weight:bold;
+            font-family: "MetricWeb-Semibold";
 }
 
 .notetitle,
@@ -585,6 +561,7 @@ div.fignone p.figcap {
   display:block;
   text-align:left;
   font-weight:bold;
+          font-family: "MetricWeb-Semibold";
   padding:2px 10px 5px 10px;
 }
 
@@ -592,6 +569,7 @@ div.fignone p.figcapcenter {
   display:block;
   text-align:center;
   font-weight:bold;
+          font-family: "MetricWeb-Semibold";
   padding:2px 10px 5px 10px;
 }
 
@@ -599,6 +577,7 @@ div.fignone p.figcapright {
   display:block;
   text-align:right;
   font-weight:bold;
+          font-family: "MetricWeb-Semibold";
   padding:2px 10px 5px 10px;
 }
 
@@ -606,6 +585,7 @@ div.fignone p.figcapjustify {
   display:block;
   text-align:justify;
   font-weight:bold;
+          font-family: "MetricWeb-Semibold";
   padding:2px 10px 5px 10px;
 }
 
@@ -628,3 +608,7 @@ div.fignone img {
     }
 }
  
+ /*nm added for updates table only. 11/4/15*/
+#changelog__changelog_tb2 > thead{  
+  cursor: pointer;
+}  

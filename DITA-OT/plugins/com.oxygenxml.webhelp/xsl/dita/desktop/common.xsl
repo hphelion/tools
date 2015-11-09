@@ -65,6 +65,12 @@ available in the base directory of this Oxygen Webhelp plugin.
       <script type="text/javascript" charset="utf-8" src="{$PATH2PROJ}oxygen-webhelp/resources/js/init.js"><xsl:comment/></script>
       <script type="text/javascript" charset="utf-8" src="{$PATH2PROJ}oxygen-webhelp/resources/js/comments-functions.js"><xsl:comment/></script>      
     </xsl:if>
+
+
+<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/qtip2/2.2.0/jquery.qtip.min.css"><xsl:comment/></link>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.js"><xsl:comment/></script>
+	
+		
     
     <!-- Generates the inline scripts. -->    
     <script type="text/javascript" >

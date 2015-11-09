@@ -20,7 +20,7 @@ a {
   /* Changed to $hp-accessible-blue: #007dba P Fletcher 6/11/15*/
   /*color: rgb(0, 0, 238);*/
   /* Remove underlines P Fletcher 6/26/2015 */
-  #color:rgb(97, 125, 120);
+  /*color:rgb(97, 125, 120);*/
   color:rgb(0, 179, 136);
   /*font-weight: 400;/.
   font-family: "MetricWeb-Regular", "arial", "verdana", "helvetica", sans-serif;
@@ -47,16 +47,15 @@ a:hover {
   /*font-size: 13.3333330154419px;*/
 }
 
-/*
-a.xref:active {
+/*a.xref:active { */
 /* Remove underlines P Fletcher 6/26/2015 */
-  #color: rgb(97, 125, 120);
-  font-weight: 400;
-  font-family: "MetricWeb-Regular", " arial" ,"verdana", "helvetica", sans-serif;
-  font-style: normal;
+/*  #color: rgb(97, 125, 120);*/
+/*  font-weight: 400;*/
+/*  font-family: "MetricWeb-Regular", " arial" ,"verdana", "helvetica", sans-serif;*/
+/*  font-style: normal;*/
   /*font-size: 13.3333330154419px;*/
-  text-decoration:none;
-}*/
+/*  text-decoration:none;*/
+/*}*/
 
 /* Commenting out a.xref overrides: P Fletcher 6/11/15 */
 /*a.xref {
@@ -76,15 +75,18 @@ a {
   }*/
 
 
-
-
 a.gloss, a.gloss:hover, a.gloss:link, a.gloss:visited {
-    border: thin dotted green !important;
-    text-decoration: none !important;
+    border: thin dotted green;
+    text-decoration: none;
     color: black !important;
     background-color: #FFFFEE  !important;
     padding-left: 2px;
     padding-right: 2px;
+}
+
+a.gloss, a.gloss:hover, a.gloss:link, a.gloss:visited {
+    border: thin dotted green !important;
+    background-color: #FFFFEE !important;
 }
 
 

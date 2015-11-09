@@ -479,7 +479,7 @@ available in the base directory of this Oxygen Webhelp plugin.
           </script>
         </body>
       </html>
-    </xsl:result-document>
+  
   </xsl:template>
   
   <!-- Adds the legal stuff, the copyright and the legal notice. -->
@@ -645,7 +645,7 @@ available in the base directory of this Oxygen Webhelp plugin.
         doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd"
         omit-xml-declaration="yes">
       <html xmlns="http://www.w3.org/1999/xhtml">
-        <head id="blah">
+        <head>
           <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
           <title> 
             <xsl:value-of select="$title"/>

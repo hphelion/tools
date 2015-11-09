@@ -77,6 +77,19 @@ available in the base directory of this Oxygen Webhelp plugin.
       $(document).ready(function()
       { 
       $("#changelog__changelog_tb2").tablesorter(); 
+      
+          $('.gloss').each(function() {
+        $(this).qtip({
+            content: {
+          attr: 'title'
+            },
+            position: {
+                target: 'mouse',
+                adjust: { x: 5, y: 5 }
+            }
+        });
+    });
+    
       } 
       ); 
     </script>

@@ -85,6 +85,12 @@ a.gloss, a.gloss:hover, a.gloss:link, a.gloss:visited {
     padding-right: 2px;
 }
 
+a.gloss, a.gloss:hover, a.gloss:link, a.gloss:visited {
+    border: thin dotted green !important;
+    background-color: #FFFFEE !important;
+}
+
+
 dfn {
 font-style: normal;
 }

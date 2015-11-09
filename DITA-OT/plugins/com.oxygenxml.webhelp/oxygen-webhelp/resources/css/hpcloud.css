@@ -79,7 +79,7 @@ a {
 a.gloss, a.gloss:hover, a.gloss:link, a.gloss:visited {
     border: thin dotted green;
     text-decoration: none;
-    color: black; !important
+    color: black !important;
     background-color: #FFFFEE  !important;
     padding-left: 2px;
     padding-right: 2px;

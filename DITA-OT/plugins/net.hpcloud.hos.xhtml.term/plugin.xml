@@ -1,0 +1,3 @@
+<plugin id="net.hpcloud.hos.term.html">
+  <feature extension="dita.xsl.xhtml" value="hos-term-override.xsl" type="file"/>  
+</plugin>

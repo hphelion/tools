@@ -85,7 +85,9 @@ a.gloss, a.gloss:hover, a.gloss:link, a.gloss:visited {
     padding-right: 2px;
 }
 
-
+dfn {
+font-style: normal;
+}
 
 
 

@@ -161,7 +161,7 @@ available in the base directory of this Oxygen Webhelp plugin.
                   	    			  or the OpenStack community.</p>
 
                   	    			  <p class="footer">&#169; Copyright 2015 Hewlett Packard Enterprise Development LP<br />
-                  	    			  <a href="http://www.hpcloud.com/legal-documents">HP Cloud legal documents and privacy policy</a></p> 
+                  	    			  <a href="http://www.hpcloud.com/legal-documents">Legal documents and privacy policy</a></p> 
 
                     
                       <!--<a href="http://www.oxygenxml.com" target="_blank">

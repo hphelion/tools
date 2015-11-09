@@ -75,6 +75,24 @@ a {
   text-decoration: none !important;
   }*/
 
+
+a.gloss, a.gloss:hover, a.gloss:link, a.gloss:visited {
+    border: thin dotted green;
+    text-decoration: none;
+    color: black;
+    background-color: #FFFFEE;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+a.gloss, a.gloss:hover, a.gloss:link, a.gloss:visited {
+    border: thin dotted green !important;
+    background-color: #FFFFEE !important;
+}
+
+
+
+
 /* Table formatting for CS Automation index document */
 .lightgrey {
 	background-color:#DFDFDF !important;	

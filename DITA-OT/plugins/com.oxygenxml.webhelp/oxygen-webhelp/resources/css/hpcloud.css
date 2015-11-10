@@ -432,10 +432,10 @@ span.wintitle {
 }
 
 
-
+/*
 //override default styles for page 1
 //and others
-
+*/
 #productTitle { 
   height: 90px !important;
   background-color: #3f3f3f !important;

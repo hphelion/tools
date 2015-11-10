@@ -183,11 +183,11 @@ font-style: normal;
   background-color: #00b388;
   border-top-style: solid;
   border-top-color: rgb(204, 204, 204);
-  border-top-width: 1;
+  border-top-width: 1px;
   border-top-right-radius: 0;
   border-right-style: solid;
   border-right-color: rgb(204, 204, 204);
-  border-right-width: 1;
+  border-right-width: 1px;
   border-bottom-right-radius: 0;
   border-bottom-style: none;
   border-bottom-color: rgb(51, 51, 51);
@@ -195,7 +195,7 @@ font-style: normal;
   border-bottom-left-radius: 0;
   border-left-style: solid;
   border-left-color: rgb(204, 204, 204);
-  border-left-width: 1;
+  border-left-width: 1px;
   border-top-left-radius: 0;
   color: rgb(255, 255, 255);
   
@@ -211,11 +211,11 @@ font-style: normal;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
   border-top-style: solid;
   border-top-color: rgb(204, 204, 204);
-  border-top-width: 1;
+  border-top-width: 1px;
   border-top-right-radius: 0;
   border-right-style: solid;
   border-right-color: rgb(204, 204, 204);
-  border-right-width: 1;
+  border-right-width: 1px;
   border-bottom-right-radius: 0;
   border-bottom-style: none;
   border-bottom-color: rgb(51, 102, 153);
@@ -223,7 +223,7 @@ font-style: normal;
   border-bottom-left-radius: 0;
   border-left-style: solid;
   border-left-color: rgb(204, 204, 204);
-  border-left-width: 1;
+  border-left-width: 1px;
   border-top-left-radius: 0;
   text-align: start;
   text-decoration: none;
@@ -231,7 +231,7 @@ font-style: normal;
   text-shadow: rgb(255, 255, 255) 0px 1px 0px;
   color: rgb(255, 255, 255);
   /* font-family: 'Trebuchet MS';*/
-  font-family: "MetricWeb-Regular", " arial" ,"verdana", "helvetica", sans-serif;/
+  font-family: "MetricWeb-Regular", " arial" ,"verdana", "helvetica", sans-serif;
   /*font-size: 13.3333330154419px;*/
   font-weight: 400;
   font-style: normal;
@@ -240,7 +240,7 @@ font-style: normal;
 #header #tocMenu {
   background-color: rgba(0, 0, 0, 0);
   padding-bottom: 2px;
-  padding-top: 3px; ////NM added little space
+  padding-top: 3px; /*NM added little space*/
 }
 #header .navheader_parent_path {
   color: rgb(255, 255, 255);
@@ -291,7 +291,7 @@ font-style: normal;
   background-color: #425563;
   border-top-style: none;
   border-top-color: rgb(7, 48, 101);
-  border-top-width: 1;
+  border-top-width: 1px;
   border-top-right-radius: 0;
   border-right-style: none;
   border-right-color: rgb(255, 255, 255);
@@ -324,12 +324,14 @@ font-style: normal;
   font-weight: bold;
   font-style: normal;
   font-variant: normal;
+  /*
 //-webkit-box-shadow: 8px 6px 5px 0px rgba(80,81,82,1);
 //-moz-box-shadow: 8px 6px 5px 0px rgba(80,81,82,1);
 //box-shadow: 8px 6px 5px 0px rgba(80,81,82,1);
+*/
 }
 .title.sectiontitle {
-  //background-color: rgb(150, 188, 202);
+  /*background-color: rgb(150, 188, 202);*/
   background-color: rgb(255, 255, 255);
   text-align: start;
   text-decoration: none;
@@ -453,9 +455,10 @@ span.wintitle {
 }
 
 
-
+/*
 //override default styles for page 1
 //and others
+*/
 
 #productTitle { 
   height: 90px !important;
@@ -489,7 +492,7 @@ a.foundResult {
 }
 
 input.searchButton {
-  //background-color: rgb(51, 102, 153) !important;
+  /*//background-color: rgb(51, 102, 153) !important;*/
   background-color: #00b388 !important;
   color: #ffffff !important;
 }
@@ -513,7 +516,7 @@ input.searchButton {
 
   #mainRight {
     float: right;
-    padding 10px;
+    padding: 10px;
     margin-left: 0px;
     margin-right: 100px;
     font-family: "MetricWeb-Regular", " arial" ,"verdana", "helvetica", sans-serif;
@@ -590,9 +593,13 @@ tr:first-child {
  //style table with tr as first child of tbody not thead
 }
 */
+
+/*
 ///////////////////////////////////////////////
 //////// TABLES ////////////////////////////////
 //////// DO NOT CHANGE /////////////////////////
+*/
+
 
 /*.tablenoborder tbody:first-child tr:first-child {
    background-color: rgb(208, 126, 160) !important;
@@ -600,8 +607,8 @@ tr:first-child {
 */
 .tool tbody:first-child tr:first-child td {
  background-color: rgb(000, 000, 000) !important;
- //now reset the frames first child tr
- margin-bottom {.5em}
+ /*//now reset the frames first child tr*/
+ margin-bottom:.5em;
 }
 
 /*.row.entry. {
@@ -619,7 +626,7 @@ tr:first-child {
 
 .table > :first-child > tr:first-child > * { 
 
-  #background-color: rgb(28, 126, 160) !important;
+  /*background-color: rgb(28, 126, 160) !important;*/
   background-color: #6a817c;
   text-align: -webkit-left;
   text-decoration: none;
@@ -632,13 +639,13 @@ tr:first-child {
   font-style: normal;
   font-variant: normal;
 }
-//get old style for above
+/*//get old style for above*/
 
 .related-links {
   visibility: hidden !important;
-  //remeber to ask
+  /*//remeber to ask*/
 }
-///////////////////////////////////////////////
+/*///////////////////////////////////////////////*/
 
 #topic_ckw_kbc_ws__inlineA{
 background-color: #cccccc !important;

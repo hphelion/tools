@@ -53,7 +53,7 @@ dt.prereq { margin-left : 20px;}
 .topictitle4 { margin-top: .83em; font-size: 1.17em; font-weight: bold;        font-family: "MetricWeb-Semibold"; }
 .topictitle5 { font-size: 1.17em; font-weight: bold;        font-family: "MetricWeb-Semibold"; }
 .topictitle6 { font-size: 1.17em; font-style: italic;        font-family: "MetricWeb-RegularItalic"; }
-.sectiontitle { margin-top: 1em; margin-bottom: 0em; color: black; font-size: 1.17em; font-weight: bold;        font-family: "MetricWeb-Semibold";}
+.sectiontitle { margin-top: 1em; margin-bottom: 0em; color: black; font-size: 1.5em; font-weight: bold;        font-family: "MetricWeb-Semibold";}
 .section { margin-top: 1em; margin-bottom: 1em }
 .example { margin-top: 1em; margin-bottom: 1em }
 div.tasklabel { margin-top: 1em; margin-bottom: 1em; }

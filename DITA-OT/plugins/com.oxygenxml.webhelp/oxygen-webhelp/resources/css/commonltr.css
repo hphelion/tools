@@ -47,13 +47,13 @@
 dt.prereq { margin-left : 20px;}
 
 /* Set heading sizes, getting smaller for deeper nesting */
-.topictitle1 { margin-top: 0pc; margin-bottom: .1em; font-size: 1.34em; }
+.topictitle1 { margin-top: 0pc; margin-bottom: .1em; font-size: 1.60em; }
 .topictitle2 { margin-top: 1pc; margin-bottom: .45em; font-size: 1.29em; }
 .topictitle3 { margin-top: 1pc; margin-bottom: .17em; font-size: 1.17em; font-weight: bold;         font-family: "MetricWeb-Semibold";}
 .topictitle4 { margin-top: .83em; font-size: 1.17em; font-weight: bold;        font-family: "MetricWeb-Semibold"; }
 .topictitle5 { font-size: 1.17em; font-weight: bold;        font-family: "MetricWeb-Semibold"; }
 .topictitle6 { font-size: 1.17em; font-style: italic;        font-family: "MetricWeb-RegularItalic"; }
-.sectiontitle { margin-top: 1em; margin-bottom: 0em; color: black; font-size: 1.29em; font-weight: bold;        font-family: "MetricWeb-Semibold";}
+.sectiontitle { margin-top: 1em; margin-bottom: 0em; color: black; font-size: 1.45em; font-weight: bold;        font-family: "MetricWeb-Semibold";}
 .section { margin-top: 1em; margin-bottom: 1em }
 .example { margin-top: 1em; margin-bottom: 1em }
 div.tasklabel { margin-top: 1em; margin-bottom: 1em; }

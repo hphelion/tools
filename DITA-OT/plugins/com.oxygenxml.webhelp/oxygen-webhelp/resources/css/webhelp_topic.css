@@ -23,13 +23,14 @@ body {
   line-height:18px;
   font-size:12pt;
 }
-///////////////////
+
 .hometable {
 	border: 1px solid gray;
 	border-radius: 10px;
 }
-///////////////
-}
+
+/* .hometable Nancy July 2015*/
+
 /* Anchors */
 /* (Consolidated here P Fletcher 6/11/15) */
 
@@ -53,16 +54,18 @@ a:hover{
 
 
 
-table {  ///////////////////////////////nancy 7-1
+table {  
     border-collapse: separate;
     width: 100%;
     margin: 0;
     border: 1px solid #d9d9d9;
-    //-webkit-border-radius: 10px;
-    //-moz-border-radius: 10px;
-    //-ms-border-radius: 10px;
-   // -o-border-radius: 10px;
-   //border-radius: 10px;
+    /*
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px; 
+    */
     background: whitesmoke;
     margin-bottom: 1em;
     position: relative;
@@ -72,8 +75,8 @@ table {  ///////////////////////////////nancy 7-1
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
-   -o-border-radius: 10px;
-   border-radius: 10px;
+    -o-border-radius: 10px;
+     border-radius: 10px;
 
 }
 
@@ -586,6 +589,18 @@ div.fignone p.figcapjustify {
           font-family: "MetricWeb-Semibold";
   padding:2px 10px 5px 10px;
 }
+.h3 {
+border-bottom: 0px;    
+font-size: 1.25em; 
+font-weight: bold;
+}
+
+.h4 {
+border-bottom: 0px;    
+font-size: 1.0em; 
+font-weight: bold;
+}
+
 
 div.fignone img {
   padding-top: 5px;

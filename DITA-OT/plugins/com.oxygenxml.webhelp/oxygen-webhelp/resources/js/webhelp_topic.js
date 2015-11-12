@@ -39,19 +39,8 @@ function getPath(currentUrl) {
         currentUrl = currentUrl.substr(1);
     }
     
-    //path = prefix + "?q=" + currentUrl;
-    
-    // gmcg - fix the google search problem of linking back from standalone page
-    // prefix is usually something like "../../../index.html" depending on depth 
-    // so to generate a full path to the normal iframe version (not the "Frames" version)
-    // we want a path like "../../../#/" + currentUrl
-    
-    var n = str.indexOf("index");
-    var offset = prefix.substring(0,n);
-    
-    path = offset + "#" + currentUrl;
-    
-    
+    path = prefix + "?q=" + currentUrl;
+      
     return path;
 }
 

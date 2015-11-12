@@ -13,7 +13,6 @@
     </xsl:attribute>
     <xsl:attribute name="page-height">
       <xsl:value-of select="$page-height"/>
-      reference-orientation="90"
     </xsl:attribute>
  <xsl:attribute name="reference-orientation">90
         </xsl:attribute>

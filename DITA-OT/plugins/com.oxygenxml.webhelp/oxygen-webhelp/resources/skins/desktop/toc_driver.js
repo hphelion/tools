@@ -69,8 +69,21 @@ if (location.search.indexOf("?q=") == 0) {
         pos = location.search.lastIndexOf(wh.directory.substring(1));
         newLink = newLink + "#" + location.search.substring(pos + wh.directory.length -1);
     } else {
-        pos = location.search.lastIndexOf(wh.directory);
-        newLink = newLink + "#" + location.search.substring(pos + wh.directory.length);
+        // gmcg  this seems to be expecting a directory like /bundle-2015-may, but if there is no directory, 
+        //then it strips off the /helion by accident!!!
+        //pos = location.search.lastIndexOf(wh.directory);
+        //newLink = newLink + "#" + location.search.substring(pos + wh.directory.length);
+        
+        if (wh.directory === "/")
+        {
+            newLink = newLink + "#" +  location.search;                    
+        }
+        else
+        {
+            pos = location.search.lastIndexOf(wh.directory);
+            newLink = newLink + "#" + location.search.substring(pos + wh.directory.length);
+        }
+
     }
     debug('redirect to ' + newLink);
     redirect(newLink);

@@ -76,7 +76,8 @@ if (location.search.indexOf("?q=") == 0) {
         
         if (wh.directory === "/")
         {
-            newLink = newLink + "#" +  location.search;                    
+            // strip the "?q=" from the search string
+            newLink = newLink + "#" +  location.search.substring(3);                    
         }
         else
         {

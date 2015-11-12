@@ -46,7 +46,7 @@ function getPath(currentUrl) {
     // so to generate a full path to the normal iframe version (not the "Frames" version)
     // we want a path like "../../../#/" + currentUrl
     
-    var n = str.indexOf("index");
+    var n = prefix.indexOf("index");
     var offset = prefix.substring(0,n);
     
     path = offset + "#" + currentUrl;

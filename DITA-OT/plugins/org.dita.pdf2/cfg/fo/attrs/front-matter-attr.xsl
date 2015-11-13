@@ -62,7 +62,7 @@ See the accompanying license.txt file for applicable licenses.
 
     <xsl:attribute-set name="__frontmatter__owner__container">
         <xsl:attribute name="position">absolute</xsl:attribute>
-        <xsl:attribute name="top210mm></xsl:attribute>
+        <xsl:attribute name="top">210mm</xsl:attribute>
         <xsl:attribute name="bottom">20mm</xsl:attribute>
         <xsl:attribute name="right">20mm</xsl:attribute>
         <xsl:attribute name="left">20mm</xsl:attribute>

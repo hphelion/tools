@@ -468,6 +468,8 @@ function processHref(hrf, idName) {
 }
 
 var currentHref = window.location.href;
+
+/*
 $(function () {
     $(window).on("hashchange", function(e) {
         var newHref = window.location.href;
@@ -490,7 +492,7 @@ $(function () {
     // the event now, to handle the hash the page may have loaded with.
     $(window).hashchange();
 });
-
+*/
 if (!("onhashchange" in window) && ($.browser.msie)) {
     //IE and browsers that don't support hashchange
     $('#contentBlock a').bind('click', function () {

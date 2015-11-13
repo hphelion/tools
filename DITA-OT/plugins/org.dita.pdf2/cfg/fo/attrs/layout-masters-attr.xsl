@@ -9,11 +9,9 @@
     
   <xsl:attribute-set name="simple-page-master">
     <xsl:attribute name="page-width">
-      <xsl:value-of select="$page-width"/>
-    </xsl:attribute>
+    14in</xsl:attribute>
     <xsl:attribute name="page-height">
-      <xsl:value-of select="$page-height"/>
-    </xsl:attribute>
+    8.5in</xsl:attribute>
  <xsl:attribute name="reference-orientation">90
         </xsl:attribute>
 

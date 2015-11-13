@@ -8,10 +8,8 @@
                 version="2.0">
     
   <xsl:attribute-set name="simple-page-master">
-    <xsl:attribute name="page-width">
-    14in</xsl:attribute>
-    <xsl:attribute name="page-height">
-    8.5in</xsl:attribute>
+    <xsl:attribute name="page-width">420mm</xsl:attribute>
+    <xsl:attribute name="page-height">297mm</xsl:attribute>
  <xsl:attribute name="reference-orientation">90
         </xsl:attribute>
 

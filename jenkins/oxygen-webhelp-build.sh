@@ -46,7 +46,7 @@ fi
 
 echo "*** Setting ant environment variables ***"
 echo "Xmx4012m "
-free
+free 
 export ANT_OPTS="-Xmx4012m $ANT_OPTS"
 export ANT_OPTS="$ANT_OPTS -Djavax.xml.transform.TransformerFactory=net.sf.saxon.TransformerFactoryImpl"
 #export ANT_HOME="$DITA_DIR"/tools/ant
@@ -133,7 +133,7 @@ DITAVAL_DIR=/usr/local/OxygenXMLDeveloper16/samples/dita
 
 
 "java"\
- -Xmx512m\
+ -Xmx4512m\
  -classpath\
  "$DITA_OT_INSTALL_DIR/tools/ant/lib/ant-launcher.jar"\
  "-Dant.home=$DITA_OT_INSTALL_DIR/tools/ant" org.apache.tools.ant.launch.Launcher\

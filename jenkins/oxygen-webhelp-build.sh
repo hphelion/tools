@@ -45,7 +45,7 @@ chmod +x "$DITA_DIR"/tools/ant/bin/ant
 fi
 
 echo "*** Setting ant environment variables ***"
-export ANT_OPTS="-Xmx512m $ANT_OPTS"
+export ANT_OPTS="-Xmx1012m $ANT_OPTS"
 export ANT_OPTS="$ANT_OPTS -Djavax.xml.transform.TransformerFactory=net.sf.saxon.TransformerFactoryImpl"
 #export ANT_HOME="$DITA_DIR"/tools/ant
 #export DOC_VERSION_NUMBER=$(sed -n '/shortversionnumber">/ s/[^<]*<p><ph[^>]*>\([^<]*\).*/\1/p' ./shared/conrefs.dita)

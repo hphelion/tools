@@ -8,8 +8,6 @@ for i in `find . -name "*.html"`
 do
 
 
-   TITLE=`grep "<title>" $i | sed 's|.*<title>\(.*\)</title>.*|\1|'`
-
 
 
 METRIC_CODE1="<!-- Begin Analytics Code -->"

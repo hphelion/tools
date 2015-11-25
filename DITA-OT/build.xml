@@ -35,7 +35,7 @@
     <condition property="transtarget" value="pdf2" else="${transtype}">
       <equals arg1="${transtype}" arg2="pdf" casesensitive="false"></equals>
     </condition>
-    <condition property="clean.temp" value="false">
+    <condition property="clean.temp" value="true">
       <not><isset property="clean.temp"></isset></not>
     </condition>
     <condition property="clean-temp.skip">

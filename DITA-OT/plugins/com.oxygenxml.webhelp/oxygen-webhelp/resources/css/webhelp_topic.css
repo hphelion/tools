@@ -612,3 +612,7 @@ div.fignone img {
 #changelog__changelog_tb2 > thead{  
   cursor: pointer;
 }  
+
+.codesquish {
+	margin-bottom: -5px;
+}

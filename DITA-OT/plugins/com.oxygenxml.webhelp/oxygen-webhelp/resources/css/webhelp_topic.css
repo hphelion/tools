@@ -613,6 +613,7 @@ div.fignone img {
   cursor: pointer;
 }  
 
+ /*nm added 11-25-15 for codeblock concatenation HDP*/
 .codesquish {
-	margin-bottom: -5px;
+	margin-bottom: -7px;
 }

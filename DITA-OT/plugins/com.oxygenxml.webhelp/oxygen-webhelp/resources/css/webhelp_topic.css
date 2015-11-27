@@ -612,3 +612,8 @@ div.fignone img {
 #changelog__changelog_tb2 > thead{  
   cursor: pointer;
 }  
+
+ /*nm added 11-25-15 for codeblock concatenation HDP*/
+.codesquish {
+	margin-bottom: -7px;
+}

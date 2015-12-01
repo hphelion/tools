@@ -72,10 +72,11 @@ available in the base directory of this Oxygen Webhelp plugin.
       $(document).ready(function()
       { 
       $("#changelog__changelog_tb2").tablesorter(); 
+      makeAccordions();
       } 
       ); 
       
-      window.onload=makeAccordions();
+      
 
     </script>
     

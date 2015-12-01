@@ -26,6 +26,16 @@ function getPath(currentUrl) {
 accord creates accordions for any section with outputclass of headerH that has a sectiondiv of class insideSection ignoring section title as first child. nancy 12/1/15
  */
 
+
+ function makeAccordions(){
+      headers=document.getElementsByClassName("headerH");
+      for(var i=0;i < ;headers.length;i++){
+        headers[i].addEventListener('click', accord, false);
+        }
+      }
+
+
+
 function accord(){
 listofnodes=this.children;
     for (var i=1; i<listofnodes.length; i++){

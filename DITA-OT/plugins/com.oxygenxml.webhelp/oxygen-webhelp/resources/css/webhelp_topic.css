@@ -616,6 +616,18 @@ div.fignone img {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+/* nancy added 12-1-15 for accordions  */
+
+.insideSection {
+ display: none;
+}
+.headerH {
+    cursor: pointer;
+}
+
+
+
 /* OXYGEN PATCH END EXM-17248 */
 
 /* IE6 & IE7 style */

@@ -29,18 +29,6 @@ makeAccordions add the event listeners. accord creates accordions for any sectio
 
 
 
-function accord(){
-listofnodes=this.children;
-    for (var i=1; i<listofnodes.length; i++){
-        //listofnodes=boxes[i].childNodes;
-		if (listofnodes[i].style.display=="none"){
-            listofnodes[i].style.display="block";
-        }
-        else {
-            listofnodes[i].style.display="none";
-        }
-    }
-}
 
 /**
  * @description Highlight searched words

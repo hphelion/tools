@@ -1,9 +1,14 @@
-      window.onload=function(){
-      headers=document.getElementsByClassName("headerH");
-      for(var i=0; headers.length>i; i++){
-        headers[i].addEventListener('click', accord, false);
-        }
-        };
+      $(document).ready(function()
+      { 
+     		headers=document.getElementsByClassName("headerH");
+      		for(var i=0; headers.length>i; i++){
+        		headers[i].addEventListener('click', accord, false);
+       		 }
+      
+      } 
+      ); 
+
+
 
 function accord(){
 listofnodes=this.children;

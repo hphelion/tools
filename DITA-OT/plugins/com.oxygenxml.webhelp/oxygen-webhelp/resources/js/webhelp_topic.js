@@ -27,13 +27,6 @@ makeAccordions add the event listeners. accord creates accordions for any sectio
  */
 
 
- function makeAccordions(){
-      headers=document.getElementsByClassName("headerH");
-      for(var i=0;i < ;headers.length;i++){
-        headers[i].addEventListener('click', accord, false);
-        }
-      }
-
 
 
 function accord(){

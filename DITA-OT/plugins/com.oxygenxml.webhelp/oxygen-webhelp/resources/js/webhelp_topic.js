@@ -23,7 +23,7 @@ function getPath(currentUrl) {
 
 
 /**
-accord creates accordions for any section with outputclass of headerH that has a sectiondiv of class insideSection ignoring section title as first child. nancy 12/1/15
+makeAccordions add the event listeners. accord creates accordions for any section with outputclass of headerH that has a sectiondiv of class insideSection ignoring section title as first child. nancy 12/1/15
  */
 
 

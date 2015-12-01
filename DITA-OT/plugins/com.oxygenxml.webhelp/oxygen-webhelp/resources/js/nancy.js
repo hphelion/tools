@@ -12,15 +12,18 @@
 
 
 
+
 function accord(){
 listofnodes=this.children;
-    for (var i=1; i<listofnodes.length; i++){   //note 1. start with child 1. skip first child as it is title
-        //listofnodes=boxes[i].childNodes;
+    for (var i=1; i<listofnodes.length; i++){
+            var headline=listofnodes[0].innerText;
 		if (listofnodes[i].style.display=="none"){
             listofnodes[i].style.display="block";
+            listofnodes[0].innerText="-"+headline.substring(1);
         }
         else {
             listofnodes[i].style.display="none";
+          listofnodes[0].innerText="+"+headline.substring(1);
         }
     }
 }

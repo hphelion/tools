@@ -76,7 +76,7 @@ available in the base directory of this Oxygen Webhelp plugin.
       
       window.onload=function(){
       headers=document.getElementsByClassName("headerH");
-      for(var i=0;i<headers.length;i++){
+      for(var i=0;i&lt;headers.length;i++){
         headers[i].addEventListener('click', accord, false);
         }
       };

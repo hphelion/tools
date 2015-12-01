@@ -1,9 +1,11 @@
       $(document).ready(function()
       { 
-     		headers=document.getElementsByClassName("headerH");
-      		for(var i=0; headers.length>i; i++){
-        		headers[i].addEventListener('click', accord, false);
-       		 }
+          headers=document.getElementsByClassName("headerH");
+          for(var i=0;i<headers.length;i++){
+              var headline=headers[i].firstChild.innerText;
+              headers[i].firstChild.innerText="+"+headline;
+              headers[i].addEventListener('click', accord, false);
+          }
       
       } 
       ); 

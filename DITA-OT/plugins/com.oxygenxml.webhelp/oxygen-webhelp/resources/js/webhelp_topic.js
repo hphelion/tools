@@ -21,6 +21,24 @@ function getPath(currentUrl) {
     return path;
 }
 
+
+/**
+accord creates accordions for any section with outputclass of headerH that has a sectiondiv of class insideSection ignoring section title as first child. nancy 12/1/15
+ */
+
+function accord(){
+listofnodes=this.children;
+    for (var i=1; i<listofnodes.length; i++){
+        //listofnodes=boxes[i].childNodes;
+		if (listofnodes[i].style.display=="none"){
+            listofnodes[i].style.display="block";
+        }
+        else {
+            listofnodes[i].style.display="none";
+        }
+    }
+}
+
 /**
  * @description Highlight searched words
  * @param words {array} words to be highlighted

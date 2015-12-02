@@ -96,7 +96,7 @@ $(document).ready(function () {
 	  headers=document.getElementsByClassName("headerH");
           for(var i=0;i<headers.length;i++){
             newimg = document.createElement("img");
-            newimg.src="http://docs.hpcloud.com/media/rightarrow.png";
+            newimg.src="media/rightarrow.png";
             headers[i].insertBefore(newimg, headers[i].childNodes[0]);
             headers[i].addEventListener('click', accord, false);
           }
@@ -111,12 +111,12 @@ listofnodes=this.children;
         var headline=listofnodes[0].innerHTML;
 	if (listofnodes[i+1].style.display=="inline"){
             listofnodes[i+1].style.display="none";
-    	    listofnodes[i-1].src="http://docs.hpcloud.com/media/rightarrow.png";
+    	    listofnodes[i-1].src="media/rightarrow.png";
 
         }
         else {
             listofnodes[i+1].style.display="inline";
-            listofnodes[i-1].src="http://docs.hpcloud.com/media/downarrow.png";
+            listofnodes[i-1].src="media/downarrow.png";
 
         }
     }

@@ -93,11 +93,12 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
           $(document).ready(function()
       { 
-          headers=document.getElementsByClassName("headerH");
+	  headers=document.getElementsByClassName("headerH");
           for(var i=0;i<headers.length;i++){
-              var headline=headers[i].firstChild.innerHTML;
-              headers[i].firstChild.innerHTML="+"+headline;
-              headers[i].addEventListener('click', accord, false);
+            newimg = document.createElement("img");
+            newimg.src="http://nancymichell.us/rightarrow.png";
+            headers[i].insertBefore(newimg, headers[i].childNodes[0]);
+            headers[i].addEventListener('click', accord, false);
           }
       
       } 
@@ -107,14 +108,16 @@ $(document).ready(function () {
 function accord(){
 listofnodes=this.children;
     for (var i=1; i<listofnodes.length; i++){
-            var headline=listofnodes[0].innerHTML;
-	if (listofnodes[i].style.display=="block"){
-            listofnodes[i].style.display="none";
-            listofnodes[0].innerHTML="+"+headline.substring(1);
+        var headline=listofnodes[0].innerHTML;
+	if (listofnodes[i+1].style.display=="inline"){
+            listofnodes[i+1].style.display="none";
+    	    listofnodes[i-1].src="http://nancymichell.us/rightarrow.png";
+
         }
         else {
-            listofnodes[i].style.display="block";
-            listofnodes[0].innerHTML="-"+headline.substring(1);
+            listofnodes[i+1].style.display="inline";
+            listofnodes[i-1].src="http://nancymichell.us/downarrow.png";
+
         }
     }
 }

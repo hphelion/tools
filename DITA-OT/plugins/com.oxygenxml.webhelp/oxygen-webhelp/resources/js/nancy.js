@@ -11,19 +11,17 @@
       ); 
 
 
-
-
 function accord(){
 listofnodes=this.children;
     for (var i=1; i<listofnodes.length; i++){
             var headline=listofnodes[0].innerText;
-		if (listofnodes[i].style.display=="none"){
-            listofnodes[i].style.display="block";
-            listofnodes[0].innerText="-"+headline.substring(1);
+	if (listofnodes[i].style.display=="block"){
+            listofnodes[i].style.display="none";
+            listofnodes[0].innerText="+"+headline.substring(1);
         }
         else {
-            listofnodes[i].style.display="none";
-          listofnodes[0].innerText="+"+headline.substring(1);
+            listofnodes[i].style.display="block";
+            listofnodes[0].innerText="-"+headline.substring(1);
         }
     }
 }

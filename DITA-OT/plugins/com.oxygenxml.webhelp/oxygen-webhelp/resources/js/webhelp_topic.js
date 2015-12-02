@@ -110,11 +110,11 @@ listofnodes=this.children;
             var headline=listofnodes[0].innerHTML;
 	if (listofnodes[i].style.display=="block"){
             listofnodes[i].style.display="none";
-            listofnodes[0].innerText="+"+headline.substring(1);
+            listofnodes[0].innerHTML="+"+headline.substring(1);
         }
         else {
             listofnodes[i].style.display="block";
-            listofnodes[0].innerText="-"+headline.substring(1);
+            listofnodes[0].innerHTML="-"+headline.substring(1);
         }
     }
 }

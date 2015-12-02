@@ -620,18 +620,8 @@ div.fignone img {
 
 /*nm added 12-2-15 to hide sectiondivs for accordions and to use hand pointer*/
 .insideSection {
-   display: none;
+ display: none;
 }
-
 .headerH {
-  cursor: pointer;
- 
-}
-
-.headerH h2 {
-  display: inline;
-}
-
-.headerH img {
-   display: inline;
+    cursor: pointer;
 }

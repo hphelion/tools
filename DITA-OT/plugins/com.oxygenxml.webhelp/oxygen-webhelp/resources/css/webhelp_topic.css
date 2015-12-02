@@ -617,3 +617,11 @@ div.fignone img {
 .codesquish {
 	margin-bottom: -7px;
 }
+
+/*nm added 12-2-15 to hide sectiondivs for accordions and to use hand pointer
+.insideSection {
+ 	display: none;
+}
+.headerH {
+      cursor: pointer;
+}

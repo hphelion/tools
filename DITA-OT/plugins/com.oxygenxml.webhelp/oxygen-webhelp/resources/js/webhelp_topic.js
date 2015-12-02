@@ -96,7 +96,7 @@ $(document).ready(function () {
           headers=document.getElementsByClassName("headerH");
           for(var i=0;i<headers.length;i++){
               var headline=headers[i].firstChild.innerHTML;
-              headers[i].firstChild.innerHTML="&#x25b7;"+headline;
+              headers[i].firstChild.innerHTML="&#x25b8;"+headline;
               headers[i].addEventListener('click', accord, false);
           }
       
@@ -110,11 +110,11 @@ listofnodes=this.children;
             var headline=listofnodes[0].innerHTML;
 	if (listofnodes[i].style.display=="block"){
             listofnodes[i].style.display="none";
-            listofnodes[0].innerHTML="&#x25b7;"+headline.substring(1);
+            listofnodes[0].innerHTML="&#x25b8;"+headline.substring(1);
         }
         else {
             listofnodes[i].style.display="block";
-            listofnodes[0].innerHTML="&#x25bd;"+headline.substring(1);
+            listofnodes[0].innerHTML="&#x25be;"+headline.substring(1);
         }
     }
 }

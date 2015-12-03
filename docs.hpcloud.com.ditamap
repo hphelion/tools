@@ -155,8 +155,12 @@
     <topicref href="public.cloud.docs/publiccloud/glossary.dita"
       navtitle="Helion Public Cloud Glossary" locktitle="yes"/>
   </topicref>
-  <topicref href="cloud.system.docs/helion.rack.solution.dita" navtitle="HPE Helion Cloud Solutions" locktitle="yes"/>
+  <topicref href="cloud.system.docs/helion.rack.solution.dita" navtitle="HPE Helion Cloud Solutions"
+    locktitle="yes">
+
+  </topicref>
   
   <!-- END Public cloud -->
+  <mapref href="hcf.docs/docs.hpcloud.com.ditamap" format="ditamap" navtitle="HP Helion Cloud Foundry"/>
 </map>
 

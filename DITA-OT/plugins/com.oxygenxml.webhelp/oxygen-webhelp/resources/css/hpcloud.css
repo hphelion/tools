@@ -11,10 +11,18 @@
 
 	@import 'fonts.css'; 
 
+p.applies-to {
+text-align: left;
+font-size: 10px;
+background-color: #EEE;
+}
+
 p.heliondate {
 text-align: left;
 font-size: 10px;
 }
+
+
 
 a {
   /* Changed to $hp-accessible-blue: #007dba P Fletcher 6/11/15*/

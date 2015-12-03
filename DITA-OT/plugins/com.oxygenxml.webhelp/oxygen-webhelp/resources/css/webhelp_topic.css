@@ -625,3 +625,7 @@ div.fignone img {
 .headerH {
     cursor: pointer;
 }
+
+.headerH h2::first-letter {
+color: green;
+}

@@ -112,7 +112,7 @@ listofnodes=this.parentNode.children;
     for (var i=0; i<listofnodes.length; i++){
             var headline=listofnodes[0].innerHTML;
       
-	if (listofnodes[i+1].style.display=="block"){
+	if (listofnodes[i+1].style.display=="block"  && (i+1)<=listofnodes.length){
             listofnodes[i+1].style.display="none";
             listofnodes[0].innerHTML="&#x25b8;"+headline.substring(1);
         }

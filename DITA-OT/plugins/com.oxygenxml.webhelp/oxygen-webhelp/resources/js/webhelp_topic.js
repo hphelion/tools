@@ -91,7 +91,7 @@ $(document).ready(function () {
     }
 });
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
-          $(document).ready(function()
+      $(document).ready(function()
       { 
           headers=document.getElementsByClassName("headerH");  //h1
 
@@ -101,7 +101,15 @@ $(document).ready(function () {
               headers[i].addEventListener('click', accord, false);
 
           }
-      
+      	alldivs=document.getElementsByTagName('div');
+	for (i=0; i<alldivs.length; i++){
+		link=alldivs[i].id;
+
+		var anchr = document.createElement("a");
+		anchr.setAttribute("name", link);
+		alldivs[i].appendChild(anchr);
+
+	}
       } 
       ); 
 

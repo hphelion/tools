@@ -105,20 +105,22 @@ $(document).ready(function () {
       } 
       ); 
 
-/*added 12-2-15 NM shows hides sectiondivs (2nd child+) of headerH. adds/changes + - signs*/
+/*added 12-2-15 NM shows hides sectiondivs */
 
 function accord(){
 listofnodes=this.parentNode.children;
     for (var i=0; i<listofnodes.length; i++){
-            var headline=listofnodes[0].innerHTML;
-      
-	if (listofnodes[i+1].style.display=="block"  && (i+1)<listofnodes.length){
-            listofnodes[i+1].style.display="none";
-            listofnodes[0].innerHTML="&#x25b8;"+headline.substring(1);
-        }
-        else {
-            listofnodes[i+1].style.display="block";
-            listofnodes[0].innerHTML="&#x25be;"+headline.substring(1);
-        }
+         var headline=listofnodes[0].innerHTML;
+
+          if ((i+1)<listofnodes.length) {
+		if (listofnodes[i+1].style.display=="block") {
+                     listofnodes[i+1].style.display="none";
+                     listofnodes[0].innerHTML="&#x25b8;"+headline.substring(1);
+                }
+                else {
+                    listofnodes[i+1].style.display="block";
+                    listofnodes[0].innerHTML="&#x25be;"+headline.substring(1);
+                }
+          }
     }
 }

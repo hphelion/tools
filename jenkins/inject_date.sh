@@ -18,7 +18,7 @@ do
     if [ "$1" == "-file" ]
     then
     
-    DATE=`stat --format=%z $i`
+    DATE=`stat --format=%y $i`
     else
 
     DATE=`git log -1 --date=iso --pretty=format:%ad $i | sed 's| +.*||'` ; echo $DATE

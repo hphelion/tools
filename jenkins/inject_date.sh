@@ -14,7 +14,7 @@ do
     echo $fullpath
     #DATE=`git log -1 --date=short --pretty=format:%ad $i`
     DATE=`git log -1 --date=iso --pretty=format:%ad $i | sed 's| +.*||'` ; echo $DATE
-
+    DATE=`stat --format=%z $i`
     if [ "$1" == "-time" ]
     then
     	PRETTYDATE=`date -d"$DATE" +'%d %b %Y (%H:%M UTC)'`	

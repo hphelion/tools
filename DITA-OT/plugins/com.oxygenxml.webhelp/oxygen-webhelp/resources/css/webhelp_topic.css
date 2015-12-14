@@ -626,6 +626,6 @@ div.fignone img {
     cursor: pointer;
 }
 
-.headerH h2::first-letter {
+.headerH::first-letter {
 color: #00b388;
 }

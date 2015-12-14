@@ -93,28 +93,34 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
           $(document).ready(function()
       { 
-          headers=document.getElementsByClassName("headerH");
+          headers=document.getElementsByClassName("headerH");  //h1
+
           for(var i=0;i<headers.length;i++){
-              var headline=headers[i].firstChild.innerHTML;
-              headers[i].firstChild.innerHTML="&#x25b8;"+headline;
+              var headline=headers[i].innerHTML;
+              headers[i].innerHTML="&#x25b8;"+headline;
               headers[i].addEventListener('click', accord, false);
+
           }
       
       } 
       ); 
 
-/*added 12-2-15 NM shows hides sectiondivs (2nd child+) of headerH. adds/changes + - signs*/
+/*added 12-2-15 NM shows hides sectiondivs */
+
 function accord(){
-listofnodes=this.children;
-    for (var i=1; i<listofnodes.length; i++){
-            var headline=listofnodes[0].innerHTML;
-	if (listofnodes[i].style.display=="block"){
-            listofnodes[i].style.display="none";
-            listofnodes[0].innerHTML="&#x25b8;"+headline.substring(1);
-        }
-        else {
-            listofnodes[i].style.display="block";
-            listofnodes[0].innerHTML="&#x25be;"+headline.substring(1);
-        }
+listofnodes=this.parentNode.children;
+    for (var i=0; i<listofnodes.length; i++){
+         var headline=listofnodes[0].innerHTML;
+
+          if ((i+1)<listofnodes.length) {
+		if (listofnodes[i+1].style.display=="block") {
+                     listofnodes[i+1].style.display="none";
+                     listofnodes[0].innerHTML="&#x25b8;"+headline.substring(1);
+                }
+                else {
+                    listofnodes[i+1].style.display="block";
+                    listofnodes[0].innerHTML="&#x25be;"+headline.substring(1);
+                }
+          }
     }
 }

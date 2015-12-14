@@ -11,6 +11,7 @@ do
 
     j=`echo $i | sed 's|\.dita$|\.html|'`
     fullpath=`echo $j | sed 's|\.\/|./out/webhelp/|'`
+    echo $fullpath
     #DATE=`git log -1 --date=short --pretty=format:%ad $i`
     DATE=`git log -1 --date=iso --pretty=format:%ad $i | sed 's| +.*||'` ; echo $DATE
 

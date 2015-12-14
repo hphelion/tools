@@ -4,6 +4,7 @@
 # With the -time switch, the output looks like this: Last updated: 12 Aug 2015 (13:52 UTC)
 # Without -time switch, the output looks like this: Last updated: 27 Aug 2015
 # Do not use the -time switch on public documents.
+# If you want to get the date from the timestamp instead of the commit, use -file
 
 echo ===start inject_date.sh===
 for i in `find  -name "*.dita" -not -path "./publiccloud/api/*"`
@@ -13,8 +14,16 @@ do
     fullpath=`echo $j | sed 's|\.\/|./out/webhelp/|'`
     echo $fullpath
     #DATE=`git log -1 --date=short --pretty=format:%ad $i`
-    DATE=`git log -1 --date=iso --pretty=format:%ad $i | sed 's| +.*||'` ; echo $DATE
+
+    if [ "$1" == "-file" ]
+    then
+    
     DATE=`stat --format=%z $i`
+    else
+
+    DATE=`git log -1 --date=iso --pretty=format:%ad $i | sed 's| +.*||'` ; echo $DATE
+    fi
+
     if [ "$1" == "-time" ]
     then
     	PRETTYDATE=`date -d"$DATE" +'%d %b %Y (%H:%M UTC)'`	

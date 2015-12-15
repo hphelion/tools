@@ -629,3 +629,11 @@ div.fignone img {
 .headerH::first-letter {
 color: #00b388;
 }
+
+.expandall {
+color: rgb(0, 179, 136);
+}
+.collapseall {
+color: rgb(0, 179, 136);	
+}
+}

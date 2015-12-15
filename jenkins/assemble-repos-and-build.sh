@@ -28,10 +28,7 @@ pwd
 
 
 
-rm -r *
 
-
-git clone -b master --single-branch git@github.com:hphelion/tools.git
  
 
 pwd

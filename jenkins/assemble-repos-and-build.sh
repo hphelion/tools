@@ -216,7 +216,7 @@ chmod -R 777 ./tools/jenkins/
 ./tools/jenkins/oxygen-webhelp-build.sh docs.hpcloud.com.ditamap	
 #./tools/jenkins/inject_tableau_code.sh
 #./tools/jenkins/inject_google_analytics.sh
-./tools/jenkins/insert_disclaimer.sh
+#./tools/jenkins/insert_disclaimer.sh
 ./tools/jenkins/inject_redirects.sh
 
 

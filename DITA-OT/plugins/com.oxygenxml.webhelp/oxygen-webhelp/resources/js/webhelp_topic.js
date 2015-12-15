@@ -131,17 +131,25 @@ listofnodes=this.parentNode.children;
           }
     }
 }
+
 function expandall(){
+  listofnodes=document.getElementsByClassName("headerH");
   allnodes=document.getElementsByClassName("insideSection");
     for (var i=0; i<allnodes.length; i++){
+      var headline=listofnodes[0].innerHTML;
       allnodes[i].style.display="block";
+      listofnodes[i].parentNode.children[0].innerHTML="&#x25be;"+headline.substring(1);
     }
 }
 
 
 function collapseall(){
+  listofnodes=document.getElementsByClassName("headerH");
   allnodes=document.getElementsByClassName("insideSection");
     for (var i=0; i<allnodes.length; i++){
+      var headline=listofnodes[0].innerHTML;
       allnodes[i].style.display="none";
+      listofnodes[i].parentNode.children[0].innerHTML="&#x25b8;"+headline.substring(1);
     }
 }
+

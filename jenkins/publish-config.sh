@@ -1,1 +1,5 @@
-BLAH="Blah di blah"
+devplat.docs.BRANCH="bundle-2015-may"
+hos.docs.BRANCH="bundle-2015-may"
+carrier.grade.docs.BRANCH="bundle-2015-may"
+public.cloud.docs.BRANCH="bundle-2015-may"
+hcf.docs.BRANCH="hcf-1.0-cf-release-certified"

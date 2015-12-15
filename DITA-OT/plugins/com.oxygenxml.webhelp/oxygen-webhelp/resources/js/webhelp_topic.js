@@ -103,10 +103,10 @@ $(document).ready(function () {
           }
           
           var expanding=document.getElementById("expandall");
-          expanding.style.cursor="pointer";
+          //expanding.style.cursor="pointer";
           expanding.addEventListener('click', expandall, false);
           var collapsing=document.getElementById("collapseall");
-          collapsing.style.cursor="pointer";
+          //collapsing.style.cursor="pointer";
           collapsing.addEventListener('click', collapseall, false);
       
       } 

@@ -1,4 +1,4 @@
-devplat_docs_BRANCH="test"
+devplat_docs_BRANCH="bundle-2015-may"
 hos_docs_BRANCH="test"
 carrier_grade_docs_BRANCH="bundle-2015-may"
 public_cloud_docs_BRANCH="bundle-2015-may"

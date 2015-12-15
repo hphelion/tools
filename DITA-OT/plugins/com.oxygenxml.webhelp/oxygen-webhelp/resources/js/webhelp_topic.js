@@ -102,12 +102,12 @@ $(document).ready(function () {
 
           }
           
-          var expanding=document.getElementById("expandall");
-          //expanding.style.cursor="pointer";
-          expanding.addEventListener('click', expandall, false);
-          var collapsing=document.getElementById("collapseall");
-          //collapsing.style.cursor="pointer";
-          collapsing.addEventListener('click', collapseall, false);
+          var expanding=document.getElementsByClassName("expandall");
+          expanding[0].style.cursor="pointer";
+          expanding[0].addEventListener('click', expandall, false);
+          var collapsing=document.getElementsByClassName("collapseall");
+          collapsing[0].style.cursor="pointer";
+          collapsing[0].addEventListener('click', collapseall, false);
       
       } 
       ); 

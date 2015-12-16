@@ -238,6 +238,7 @@ chmod -R 777 ./tools/jenkins/
 cp -r ./commercial/GA1/RollYourOwn11/  out/webhelp/commercial/GA1/RollYourOwn11/
 cp -r ./commercial/GA1/RollYourOwn10/  out/webhelp/commercial/GA1/RollYourOwn10/
 cp -r ./media/ ./out/webhelp/
+cp -r ./hcf/media ./out/webhelp/hcf/media
 cp -r ./file/  out/webhelp/file/
 cp -r ./ServerArtifacts/404.html  out/webhelp/404.html
 cp -r ./ServerArtifacts/htaccess.with.rewrite.rules  out/webhelp/.htaccess

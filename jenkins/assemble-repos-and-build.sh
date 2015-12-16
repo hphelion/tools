@@ -118,7 +118,8 @@ repo="hcf.docs"
 	adjust_date_to_last_commit
 
 	cp -rp ${repo}/media/${repo} ./
-    cp -rp ${repo}/*.ditamap ./
+        cp -rp ${repo}/*.ditamap ./
+	cp -rp ${repo/hcf/ ./
     
 	rm -r ${repo}
 

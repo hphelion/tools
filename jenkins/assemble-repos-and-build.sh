@@ -119,7 +119,7 @@ repo="hcf.docs"
 
 	cp -rp ${repo}/media/${repo} ./
         cp -rp ${repo}/*.ditamap ./
-	cp -rp ${repo/hcf/ ./
+	cp -rp ${repo}/hcf/ ./
     
 	rm -r ${repo}
 

@@ -65,20 +65,6 @@ repo="devplat.docs"
  
 
 
-repo="carrier.grade.docs"
-	echo "clone $repo"
-	rm -r $repo
-	git clone -b ${carrier_grade_docs_BRANCH} --single-branch git@github.com:hphelion/${repo}.git ${repo}
-    
-    adjust_date_to_last_commit
-
-	cp -rp ${repo}/media/${repo} ./
-	cp -rp ${repo}/CarrierGrade/ ./
-    cp -rp ${repo}/CarrierGrade2.0/ ./
-    cp -rp ${repo}/*.ditamap ./
-
-	rm -r ${repo}
-
 
 repo="public.cloud.docs"
 	echo "clone $repo"
@@ -93,6 +79,20 @@ repo="public.cloud.docs"
 
 	rm -r ${repo}
 
+
+repo="carrier.grade.docs"
+	echo "clone $repo"
+	rm -r $repo
+	git clone -b ${carrier_grade_docs_BRANCH} --single-branch git@github.com:hphelion/${repo}.git ${repo}
+    
+    adjust_date_to_last_commit
+
+	cp -rp ${repo}/media/${repo} ./
+	cp -rp ${repo}/CarrierGrade/ ./
+    cp -rp ${repo}/CarrierGrade2.0/ ./
+    cp -rp ${repo}/*.ditamap ./
+
+	rm -r ${repo}
 
 
 repo="hcf.docs"

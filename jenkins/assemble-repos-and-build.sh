@@ -73,6 +73,8 @@ repo="hos.docs"
 	cp -rp ${repo}/community/ ./
     cp -rp ${repo}/commercial/ ./
     cp -rp ${repo}/helion/ ./
+
+    cp -rp ${repo}/hos-html/ ./
 	cp -rp ${repo}/media/ ./
     cp -rp ${repo}/media/${repo} ./
     cp -rp ${repo}/*.ditamap ./

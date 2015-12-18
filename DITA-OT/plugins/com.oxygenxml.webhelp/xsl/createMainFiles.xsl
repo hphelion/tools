@@ -372,7 +372,7 @@ available in the base directory of this Oxygen Webhelp plugin.
 				  
                    <select name="product" id="product">
                       <option value="">All products</option>
-                      <option value="openstack 2.0">HPE Helion OpenStack 2.0</option>
+                      <option value="openstack 2.1">HPE Helion OpenStack 2.0 and 2.1</option>
                       <option value="2.0 Development Platform">HPE Helion 2.0 Development Platform</option>
                       <option value="1.3 development platform">HPE Helion 1.3 Development Platform</option>
                       <option value="openstack 1.1">HPE Helion OpenStack 1.1</option>

@@ -10,7 +10,7 @@ echo "
 
 <p><b>
 
-$BRANCH_TO_PUBLISH
+<!-- BRANCH_TO_PUBLISH -->  $BRANCH_TO_PUBLISH
 
 </b>
 </p>

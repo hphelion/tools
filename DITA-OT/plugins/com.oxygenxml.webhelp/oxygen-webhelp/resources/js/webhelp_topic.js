@@ -93,7 +93,10 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
       { 
-          headers=document.getElementsByClassName("headerH");  //h1
+          
+        if (document.getElementsByClassName("headerH")){
+
+           headers=document.getElementsByClassName("headerH");  //h1
 
           for(var i=0;i<headers.length;i++){
               var headline=headers[i].innerHTML;
@@ -101,16 +104,19 @@ $(document).ready(function () {
               headers[i].addEventListener('click', accord, false);
 
           }
-          
+       }
+
+        if (document.getElementsByClassName("expandall") && document.getElementsByClassName("collapseall")) {       
           var expanding=document.getElementsByClassName("expandall");
           expanding[0].style.cursor="pointer";
           expanding[0].addEventListener('click', expandall, false);
           var collapsing=document.getElementsByClassName("collapseall");
           collapsing[0].style.cursor="pointer";
           collapsing[0].addEventListener('click', collapseall, false);
+
+        }
       
-      } 
-      ); 
+      }); 
 
 /*added 12-2-15 NM shows hides sectiondivs */
 

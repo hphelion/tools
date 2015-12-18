@@ -11,6 +11,12 @@
 
 	@import 'fonts.css'; 
 
+span.ph.product-title {
+display:block;
+font-size: 14px;
+   
+}
+
 p.heliondate {
 text-align: left;
 font-size: 10px;

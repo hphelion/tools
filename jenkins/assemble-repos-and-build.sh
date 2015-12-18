@@ -63,23 +63,6 @@ repo="devplat.docs"
     rm -r $repo
  
  
-repo="hos.docs"
-	echo "clone $repo"
- 	rm -r $repo
-	git clone -b ${hos_docs_BRANCH} --single-branch git@github.com:hphelion/${repo}.git ${repo}
-    
-    adjust_date_to_last_commit
-
-	cp -rp ${repo}/community/ ./
-    cp -rp ${repo}/commercial/ ./
-    cp -rp ${repo}/helion/ ./
-
-    cp -rp ${repo}/hos-html/ ./
-	cp -rp ${repo}/media/ ./
-    cp -rp ${repo}/media/${repo} ./
-    cp -rp ${repo}/*.ditamap ./
- 
-	rm -r ${repo}
 
 
 repo="carrier.grade.docs"
@@ -125,6 +108,25 @@ repo="hcf.docs"
     
 	rm -r ${repo}
 
+	
+	
+repo="hos.docs"
+	echo "clone $repo"
+ 	rm -r $repo
+	git clone -b ${hos_docs_BRANCH} --single-branch git@github.com:hphelion/${repo}.git ${repo}
+    
+    adjust_date_to_last_commit
+
+	cp -rp ${repo}/community/ ./
+    cp -rp ${repo}/commercial/ ./
+    cp -rp ${repo}/helion/ ./
+
+    cp -rp ${repo}/hos-html/ ./
+	cp -rp ${repo}/media/ ./
+    cp -rp ${repo}/media/${repo} ./
+    cp -rp ${repo}/*.ditamap ./
+ 
+	rm -r ${repo}
 
 #repo="cloud.system.docs"
 #	echo "clone $repo"

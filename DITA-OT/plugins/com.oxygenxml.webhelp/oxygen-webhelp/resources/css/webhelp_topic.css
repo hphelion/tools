@@ -548,6 +548,12 @@ pre {
   overflow: auto;
   max-height: 600px;
   margin: 0.5em;
+  width: 900px;
+ white-space: pre-wrap !important;       /* css-3 */
+ white-space: -moz-pre-wrap !important;   /* Mozilla, since 1999 */
+ white-space: -pre-wrap !important;      /* Opera 4-6 */
+ white-space: -o-pre-wrap !important;     /* Opera 7 */
+ word-wrap: break-word !important;      /* Internet Explorer 5.5+ */
 } 
 
 /* OXYGEN PATCH START - EXM-18138 - Insert space between button image and button name. */
@@ -636,12 +642,4 @@ color: rgb(0, 179, 136);
 .collapseall {
 color: rgb(0, 179, 136);	
 }
-}
 
-pre {
- white-space: pre-wrap !important;       /* css-3 */
- white-space: -moz-pre-wrap !important;   /* Mozilla, since 1999 */
- white-space: -pre-wrap !important;      /* Opera 4-6 */
- white-space: -o-pre-wrap !important;     /* Opera 7 */
- word-wrap: break-word !important;      /* Internet Explorer 5.5+ */
-}

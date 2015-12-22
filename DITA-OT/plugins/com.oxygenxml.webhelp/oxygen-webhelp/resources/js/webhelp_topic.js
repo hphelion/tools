@@ -108,10 +108,10 @@ $(document).ready(function () {
 
         if (document.getElementsByClassName("expandall") && document.getElementsByClassName("collapseall")) {       
           var expanding=document.getElementsByClassName("expandall");
-          expanding[0].style.cursor="pointer";
+          //expanding[0].style.cursor="pointer";
           expanding[0].addEventListener('click', expandall, false);
           var collapsing=document.getElementsByClassName("collapseall");
-          collapsing[0].style.cursor="pointer";
+          //collapsing[0].style.cursor="pointer";
           collapsing[0].addEventListener('click', collapseall, false);
 
         }

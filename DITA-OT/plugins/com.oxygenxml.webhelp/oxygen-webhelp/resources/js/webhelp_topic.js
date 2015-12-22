@@ -106,7 +106,7 @@ $(document).ready(function () {
           }
        }
 
-        if (document.getElementsByClassName("expandall") && document.getElementsByClassName("collapseall")) {       
+        if (document.getElementsByClassName("expandall").length && document.getElementsByClassName("collapseall").length) {       
           var expanding=document.getElementsByClassName("expandall");
           //expanding[0].style.cursor="pointer";
           expanding[0].addEventListener('click', expandall, false);

@@ -115,8 +115,32 @@ $(document).ready(function () {
           collapsing[0].addEventListener('click', collapseall, false);
 
         }
-      
-      }); 
+        //added anchor replacement 12/27/15 NM
+        if (document.getElementsByClassName("pageAnchor").length && document.getElementsByClassName("pageTarget").length) {  
+           var anchs=document.getElementsByClassName('pageAnchor');
+           var targets=document.getElementsByClassName('pageTarget');
+           for (var i=0; i<anchs.length; i++) {
+              anchs[i].addEventListener('click', anchorMove, false);
+              anchs[i].setAttribute('id', 'a'+ i.toString());
+  
+           }
+        }
+
+  }); 
+  
+  //added anchor replacement 12/27/15 NM
+  function anchorMove() {
+   var anchorId=this.id;
+   var anchr = anchorId.substring(1);
+   var newIndex=parseInt(anchr);
+  
+   var target=targets[newIndex].id;
+  
+   var element = document.getElementById(target);
+   element.scrollIntoView();
+}
+
+
 
 /*added 12-2-15 NM shows hides sectiondivs */
 

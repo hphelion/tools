@@ -120,8 +120,9 @@ $(document).ready(function () {
            var anchs=document.getElementsByClassName('pageAnchor');
            var targets=document.getElementsByClassName('pageTarget');
            for (var i=0; i<anchs.length; i++) {
-              anchs[i].addEventListener('click', anchorMove, false);
               anchs[i].setAttribute('id', 'a'+ i.toString());
+              anchs[i].addEventListener('click', anchorMove, false);
+              
   
            }
         }

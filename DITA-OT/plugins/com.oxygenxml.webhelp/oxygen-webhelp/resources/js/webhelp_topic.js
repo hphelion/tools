@@ -131,6 +131,7 @@ $(document).ready(function () {
   
   //added anchor replacement 12/27/15 NM
   function anchorMove() {
+   var targets=document.getElementsByClassName('pageTarget');
    var anchorId=this.id;
    var anchr = anchorId.substring(1);
    var newIndex=parseInt(anchr);

@@ -118,7 +118,7 @@ $(document).ready(function () {
         //added anchor replacement 12/27/15 NM
         if (document.getElementsByClassName("pageAnchor").length && document.getElementsByClassName("pageTarget").length) {  
            var anchs=document.getElementsByClassName('pageAnchor');
-           var targets=document.getElementsByClassName('pageTarget');
+           //var targets=document.getElementsByClassName('pageTarget');
            for (var i=0; i<anchs.length; i++) {
               anchs[i].setAttribute('id', 'a'+ i.toString());
               anchs[i].addEventListener('click', anchorMove, false);

@@ -96,7 +96,7 @@ $(document).ready(function () {
           
         if (document.getElementsByClassName("headerH")){
 
-           headers=document.getElementsByClassName("headerH");  //h1
+           var headers=document.getElementsByClassName("headerH");  //h1
 
           for(var i=0;i<headers.length;i++){
               var headline=headers[i].innerHTML;
@@ -108,25 +108,20 @@ $(document).ready(function () {
 
         if (document.getElementsByClassName("expandall").length && document.getElementsByClassName("collapseall").length) {       
           var expanding=document.getElementsByClassName("expandall");
-          //expanding[0].style.cursor="pointer";
           expanding[0].addEventListener('click', expandall, false);
           var collapsing=document.getElementsByClassName("collapseall");
-          //collapsing[0].style.cursor="pointer";
           collapsing[0].addEventListener('click', collapseall, false);
 
         }
         //added anchor replacement 12/27/15 NM
         if (document.getElementsByClassName("pageAnchor").length && document.getElementsByClassName("pageTarget").length) {  
            var anchs=document.getElementsByClassName('pageAnchor');
-           //var targets=document.getElementsByClassName('pageTarget');
            for (var i=0; i<anchs.length; i++) {
               anchs[i].setAttribute('id', 'a'+ i.toString());
               anchs[i].addEventListener('click', anchorMove, false);
               
-  
            }
         }
-
   }); 
   
   //added anchor replacement 12/27/15 NM
@@ -147,7 +142,7 @@ $(document).ready(function () {
 /*added 12-2-15 NM shows hides sectiondivs */
 
 function accord(){
-listofnodes=this.parentNode.children;
+var listofnodes=this.parentNode.children;
     for (var i=0; i<listofnodes.length; i++){
          var headline=listofnodes[0].innerHTML;
 
@@ -165,8 +160,8 @@ listofnodes=this.parentNode.children;
 }
 
 function expandall(){
-  listofnodes=document.getElementsByClassName("headerH");
-  allnodes=document.getElementsByClassName("insideSection");
+  var listofnodes=document.getElementsByClassName("headerH");
+  var allnodes=document.getElementsByClassName("insideSection");
     for (var i=0; i<allnodes.length; i++){
       var headline=listofnodes[i].parentNode.children[0].innerHTML;
       allnodes[i].style.display="block";
@@ -176,8 +171,8 @@ function expandall(){
 
 
 function collapseall(){
-  listofnodes=document.getElementsByClassName("headerH");
-  allnodes=document.getElementsByClassName("insideSection");
+  var listofnodes=document.getElementsByClassName("headerH");
+  var allnodes=document.getElementsByClassName("insideSection");
     for (var i=0; i<allnodes.length; i++){
       var headline=listofnodes[i].parentNode.children[0].innerHTML;
       allnodes[i].style.display="none";

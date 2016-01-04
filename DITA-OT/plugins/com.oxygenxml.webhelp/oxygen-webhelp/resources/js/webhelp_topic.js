@@ -135,10 +135,10 @@ $(document).ready(function () {
   
   //added anchor replacement 12/27/15 NM
    function anchorMove1() {
-   	var bod=document.getElementsByTagName('body').id;
-   	
+   	var bod=document.getElementsByTagName('body');
+   	var bodid=bod[0].id;
  	var newTarget=this.id;
- 	var newTarget2='__' + bod + newTarget+'_target';
+ 	var newTarget2='__' + bodid + newTarget+'_target';
     	var element = document.getElementById(newTarget2);
    	element.scrollIntoView();
 }

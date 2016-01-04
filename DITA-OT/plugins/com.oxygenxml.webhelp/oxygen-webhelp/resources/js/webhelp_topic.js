@@ -123,7 +123,7 @@ $(document).ready(function () {
            }
         }
         
-        if (document.getElementsByClassName("pageAnchor1").length {  
+        if (document.getElementsByClassName("pageAnchor1").length) {  
            var anchs=document.getElementsByClassName('pageAnchor1');
            for (var i=0; i<anchs.length; i++) {
               //anchs[i].setAttribute('id', 'a'+ i.toString());

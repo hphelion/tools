@@ -134,11 +134,12 @@ $(document).ready(function () {
   }); 
   
   //added anchor replacement 12/27/15 NM
-      function anchorMove1() {
+   function anchorMove1() {
    	var bod=document.getElementsByTagName('body');
    	var bodid=bod[0].id;
  	var newTarget=this.id;
- 	var element = newTarget + '__target';
+  	var elementid = newTarget + '_target';
+ 	var element = document.getElementById(elementid);
    	element.scrollIntoView();
 }
 

@@ -138,7 +138,7 @@ $(document).ready(function () {
    	var bod=document.getElementsByTagName('body');
    	var bodid=bod[0].id;
  	var newTarget=this.id;
- 	var newTarget2='__' + bodid + newTarget+'_target';
+ 	var newTarget2= bodid + '__' + newTarget + '_target';
     	var element = document.getElementById(newTarget2);
    	element.scrollIntoView();
 }

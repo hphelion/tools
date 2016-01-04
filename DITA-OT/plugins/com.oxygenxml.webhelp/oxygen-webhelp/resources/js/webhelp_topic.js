@@ -122,9 +122,26 @@ $(document).ready(function () {
               
            }
         }
+        
+        if (document.getElementsByClassName("pageAnchor1").length {  
+           var anchs=document.getElementsByClassName('pageAnchor1');
+           for (var i=0; i<anchs.length; i++) {
+              //anchs[i].setAttribute('id', 'a'+ i.toString());
+              anchs[i].addEventListener('click', anchorMove1, false);
+              
+           }
+        }
   }); 
   
   //added anchor replacement 12/27/15 NM
+   function anchorMove1() {
+ 	var newTarget=this.id;
+ 	var newTarget2=newTarget+'_target';
+    	var element = document.getElementById(newTarget2);
+   	element.scrollIntoView();
+}
+
+
   function anchorMove() {
    var targets=document.getElementsByClassName('pageTarget');
    var anchorId=this.id;

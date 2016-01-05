@@ -131,6 +131,33 @@ $(document).ready(function () {
               
            }
         }
+        
+        
+        var lists=document.getElementsByTagName('LI');  //all li
+
+  for (var i=0; i<lists.length; i++) {
+    if (lists[i].children.length==1) {  
+      if (lists[i].children[0].nodeName=='A') {
+
+          var linktext=lists[i].children[0].innerHTML;
+          var hrf=lists[i].children[0].href;
+          var hrf2=hrf.split('#')[1];   //target
+          
+          lists[i].removeChild(lists[i].children[0]);   //remove a
+          
+          var para = document.createElement('p');
+          lists[i].appendChild(para); 
+          var newlinktext = document.createTextNode(linktext);
+          lists[i].children[0].appendChild(newlinktext);
+          lists[i].children[0].setAttribute("id", "a" + i);
+          lists[i].children[0].setAttribute("data-link", hrf2);
+          lists[i].children[0].style.cursor="pointer";
+          
+          document.getElementById('a' + i).addEventListener('click', gothere, false);
+          
+      }
+    }
+  }
   }); 
   
   //added anchor replacement 12/27/15 NM
@@ -199,3 +226,8 @@ function collapseall(){
     }
 }
 
+function gothere() {
+    var link=this.getAttribute('data-link');
+    var element = document.getElementById(link);
+    element.scrollIntoView();
+}

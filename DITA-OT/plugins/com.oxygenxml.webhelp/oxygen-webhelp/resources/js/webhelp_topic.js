@@ -133,7 +133,7 @@ $(document).ready(function () {
         }
         
         
-  var lists=document.getElementsByTagName('LI');  //all li
+  /*var lists=document.getElementsByTagName('LI');  //all li
 
   for (var i=0; i<lists.length; i++) {
     //if (lists[i].children.length==1) {  
@@ -162,7 +162,7 @@ $(document).ready(function () {
 	}
       }
     //}
-   } 
+   } */
   }); 
   
   //added anchor replacement 12/27/15 NM

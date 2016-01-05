@@ -133,10 +133,10 @@ $(document).ready(function () {
         }
         
         
-  /*var lists=document.getElementsByTagName('LI');  //all li
+  var lists=document.getElementsByTagName('LI');  //all li
 
   for (var i=0; i<lists.length; i++) {
-    if (lists[i].children.length==1) {  
+    //if (lists[i].children.length==1) {  
       if (lists[i].children[0].nodeName=='A') {
 	var testnode=lists[i].innerHTML;
 	var testnode2=testnode.trim();
@@ -161,8 +161,8 @@ $(document).ready(function () {
           document.getElementById('a' + i).addEventListener('click', gothere, false);
 	}
       }
-    }
-  } */
+    //}
+   } 
   }); 
   
   //added anchor replacement 12/27/15 NM

@@ -133,7 +133,7 @@ $(document).ready(function () {
         }
         
         
-        var lists=document.getElementsByTagName('LI');  //all li
+  var lists=document.getElementsByTagName('LI');  //all li
 
   for (var i=0; i<lists.length; i++) {
     if (lists[i].children.length==1) {  
@@ -142,7 +142,7 @@ $(document).ready(function () {
 	var testnode2=testnode.trim();
 	var firstchar = testnode2.charAt(0);
 	
-	if (firstchar=='<' ) {
+	if (firstchar=='<' && testnode.search('http://')<0) {
           var linktext=lists[i].children[0].innerHTML;
           var hrf=lists[i].children[0].href;
           var hrf2=hrf.split('#')[1];   //target

@@ -151,6 +151,7 @@ $(document).ready(function () {
           lists[i].children[0].appendChild(newlinktext);
           lists[i].children[0].setAttribute("id", "a" + i);
           lists[i].children[0].setAttribute("data-link", hrf2);
+          lists[i].children[0].setAttribute("class", 'newanchor');
           lists[i].children[0].style.cursor="pointer";
           
           document.getElementById('a' + i).addEventListener('click', gothere, false);

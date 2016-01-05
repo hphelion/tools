@@ -138,7 +138,10 @@ $(document).ready(function () {
   for (var i=0; i<lists.length; i++) {
     if (lists[i].children.length==1) {  
       if (lists[i].children[0].nodeName=='A') {
-
+	var testnode=lists[i].innerHTML;
+	var testnode2=testnode.trim();
+	var firstchar = testnode2.charAt(0);
+	if (firstchar=='<') {
           var linktext=lists[i].children[0].innerHTML;
           var hrf=lists[i].children[0].href;
           var hrf2=hrf.split('#')[1];   //target
@@ -155,7 +158,7 @@ $(document).ready(function () {
           lists[i].children[0].style.cursor="pointer";
           
           document.getElementById('a' + i).addEventListener('click', gothere, false);
-          
+	}
       }
     }
   }

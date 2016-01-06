@@ -26,14 +26,15 @@ html, body {
   float: right;
   width: 100%;     
   position: relative;
-  background-color: #eee;        
+  background-color: #00b388 ;        
+
 }
 #productTitle{
   float: left;
   width: 100%;
   top:0;
   display: block;
-  background-color: #eee;
+  background-color: white;
   padding: 0 5px 0 5px;
 }
 #productTitle h1 {

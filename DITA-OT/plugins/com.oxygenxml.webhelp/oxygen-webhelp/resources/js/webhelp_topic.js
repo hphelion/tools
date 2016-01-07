@@ -141,7 +141,7 @@ $(document).ready(function () {
 
   for (var i=0; i<lists.length; i++) {
     //if (lists[i].children.length==1) {  
-      if (lists[i].children[0].nodeName=='A') {
+      if (lists[i].children[0].class='xref') {
           var testnode=lists[i].innerHTML;
           var testnode2=testnode.trim();
           var firstchar = testnode2.charAt(0);

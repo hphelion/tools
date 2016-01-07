@@ -147,7 +147,7 @@ $(document).ready(function () {
           var firstchar = testnode2.charAt(0);
           var hrf=lists[i].children[0].href;
   	  var pound = hrf.indexOf('#');
-          if (firstchar=='<' && testnode.search('http://')<0 && pound!=-1) {
+          if (firstchar=='<' && testnode.search('http://')<0 && pound==0) {
                   var linktext=lists[i].children[0].innerHTML;
                   
                   var hrf2=hrf.split('#')[1];   //target

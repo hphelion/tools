@@ -161,7 +161,7 @@ available in the base directory of this Oxygen Webhelp plugin.
                   	    			  or the OpenStack community.</p>
 						  <p class="footer">Cloud Foundry is a trademark and/or registered trademark of <a href="https://www.cloudfoundry.org/">CloudFoundry.org</a> Foundation, Inc. in the United States and/or other countries.</p>
 
-                  	    			  <p class="footer">&#169; Copyright 2015 Hewlett Packard Enterprise Development LP<br />
+                  	    			  <p class="footer">&#169; Copyright 2016 Hewlett Packard Enterprise Development LP<br />
                   	    			  <a href="http://www.hpcloud.com/legal-documents">Legal documents and privacy policy</a></p> 
 
                     

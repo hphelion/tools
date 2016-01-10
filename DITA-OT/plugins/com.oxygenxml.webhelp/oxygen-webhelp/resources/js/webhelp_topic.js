@@ -133,7 +133,7 @@ $(document).ready(function () {
         }
         
   var title1=document.title;
-  if (title1.indexOf('HPE Helion OpenStack 2')!=-1) {
+ // if (title1.indexOf('HPE Helion OpenStack 2')!=-1) {
     
   var lists=document.getElementsByTagName('LI');  //all li
 
@@ -169,7 +169,7 @@ $(document).ready(function () {
             }
          }
       }
-  }
+  //}
   }); 
   
   //added anchor replacement 12/27/15 NM

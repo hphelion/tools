@@ -132,25 +132,27 @@ $(document).ready(function () {
            }
         }
         
-        
-  
-  var title=document.title;
-  if (title.indexOf('HPE Helion OpenStack 2')!=-1) {
+  var title1=document.title;
+  if (title1.indexOf('HPE Helion OpenStack 2')!=-1) {
     
   var lists=document.getElementsByTagName('LI');  //all li
 
   for (var i=0; i<lists.length; i++) {
+    var hrf0=lists[i].innerHTML;
+          //alert(hrf0);
     //if (lists[i].children.length==1) {  
-      if (lists[i].children[0].class='xref') {
+      if (lists[i].children[0].class='xref' && hrf0.indexOf('#')!=-1  ) {
           var testnode=lists[i].innerHTML;
           var testnode2=testnode.trim();
           var firstchar = testnode2.charAt(0);
-          var hrf=lists[i].children[0].href;
-  	  var pound = hrf.charAt(0);
-          if (firstchar=='<' && testnode.search('http://')<0 && pound=='#') {
+          
+          //alert(hrf);
+      //var pound = hrf.charAt(0);
+      //alert(typeof(hrf));
+          if (firstchar=='<' && testnode.search('http://')<0 ) {
                   var linktext=lists[i].children[0].innerHTML;
-                  
-                  var hrf2=hrf.split('#')[1];   //target
+                  var hrf3=lists[i].children[0].href;
+                  var hrf2=hrf3.split('#')[1];   //target
                   
                   lists[i].removeChild(lists[i].children[0]);   //remove a
                   

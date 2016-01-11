@@ -133,37 +133,14 @@ $(document).ready(function () {
         }
         
         
-  /*var lists=document.getElementsByTagName('LI');  //all li
-
-  for (var i=0; i<lists.length; i++) {
-    //if (lists[i].children.length==1) {  
-      if (lists[i].children[0].nodeName=='A') {
-	var testnode=lists[i].innerHTML;
-	var testnode2=testnode.trim();
-	var firstchar = testnode2.charAt(0);
-	
-	if (firstchar=='<' && testnode.search('http://')<0) {
-          var linktext=lists[i].children[0].innerHTML;
-          var hrf=lists[i].children[0].href;
-          var hrf2=hrf.split('#')[1];   //target
-          
-          lists[i].removeChild(lists[i].children[0]);   //remove a
-          
-          var para = document.createElement('p');
-          lists[i].appendChild(para); 
-          var newlinktext = document.createTextNode(linktext);
-          lists[i].children[0].appendChild(newlinktext);
-          lists[i].children[0].setAttribute("id", "a" + i);
-          lists[i].children[0].setAttribute("data-link", hrf2);
-          lists[i].children[0].setAttribute("class", 'newanchor');
-          lists[i].children[0].style.cursor="pointer";
-          
-          document.getElementById('a' + i).addEventListener('click', gothere, false);
-	}
-      }
-    //}
-   } */
-  }); 
+ var allAnchors=document.getElementsByTagName('A');
+ for (var i=0; i<allAnchors.length; i++) {
+     var hrf=allAnchors[i].href;
+     if (hrf.indexOf('#')!=-1) {
+        allAnchors[i].setAttribute('target', '_self');
+     }
+  }
+}); 
   
   //added anchor replacement 12/27/15 NM
    function anchorMove1() {

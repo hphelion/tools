@@ -70,7 +70,7 @@ available in the base directory of this Oxygen Webhelp plugin.
     <script type="text/javascript" >
       $(document).ready(function()
       { 
-      $("#changelog__changelog_tb2").tablesorter(); 
+      $("#changelog__changelog_tb2").tablesorter({ sortList: [[0,1]]}); 
       } 
       ); 
     </script>

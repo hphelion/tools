@@ -141,7 +141,7 @@ $(document).ready(function () {
     var hrf0=lists[i].innerHTML;
           //alert(hrf0);
     //if (lists[i].children.length==1) {  
-      if (lists[i].children[0].class='xref' && hrf0.indexOf('#')!=-1  ) {
+      if (lists[i].children[0].class=='xref' && hrf0.indexOf('#')!=-1  ) {
           var testnode=lists[i].innerHTML;
           var testnode2=testnode.trim();
           var firstchar = testnode2.charAt(0);

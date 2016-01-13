@@ -136,7 +136,7 @@ $(document).ready(function () {
  var allAnchors=document.getElementsByTagName('A');
  for (var i=0; i<allAnchors.length; i++) {
      var hrf=allAnchors[i].href;
-     if (hrf.indexOf('#')!=-1) {
+     if (hrf.indexOf('#')!=-1 && hrf.search('http://')<0 ) {
         allAnchors[i].setAttribute('target', '_self');
      }
   }

@@ -137,7 +137,7 @@ $(document).ready(function () {
  for (var i=0; i<allAnchors.length; i++) {
      var hrf=allAnchors[i].href;
      if (hrf.indexOf('#')!=-1) {
-     	if (hrf.search('http')<0) {
+     	if (hrf.search("http://docs.hpcloud.com/eucalyptus")<0) {
            allAnchors[i].setAttribute('target', '_self');
      	}
      }

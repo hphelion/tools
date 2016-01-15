@@ -13,8 +13,8 @@ ssh ubuntu@${SERVER1} "sudo mkdir -p /var/www/html/eucaProd/$VERSION_TO_PUBLISH"
 echo ">>Ensure target directory has correct ownership..."
 ssh ubuntu@${SERVER1} "sudo chown -R ubuntu:www-data /var/www/html/eucaProd/"
 
-echo ">>rsync /var/www/html/euca-incoming/$VERSION_TO_PUBLISH  to /var/www/html/eucaProd/$VERSION_TO_PUBLISH "
-rsync -avr --delete   /var/www/html/euca-incoming/$VERSION_TO_PUBLISH ubuntu@${SERVER1}:/var/www/html/eucaProd
+echo ">>rsync /var/www/html/euca-incoming/staging  to /var/www/html/eucaProd/$VERSION_TO_PUBLISH "
+rsync -avr --delete   /var/www/html/euca-incoming/staging ubuntu@${SERVER1}:/var/www/html/eucaProd
 
 ssh ubuntu@${SERVER1} 'sudo chmod 777 /var/www/html/hphelionFransProd/.htaccess'
 

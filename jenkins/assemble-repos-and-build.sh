@@ -47,7 +47,7 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 #################################################################
 "
  
-
+mkdir ./media
 
 repo="devplat.docs"
 	echo "clone $repo"

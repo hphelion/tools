@@ -58,6 +58,7 @@ repo="devplat.docs"
     
 	cp -rp ${repo}/devplatform/ ./
     cp -rp ${repo}/media/${repo} ./
+	cp -rp ${repo}/media/${repo} ./media/
     cp -rp ${repo}/*.ditamap ./
     cp -rp ${repo}/hdp-html/ ./
  
@@ -104,7 +105,7 @@ repo="hcf.docs"
 	adjust_date_to_last_commit
 
 	cp -rp ${repo}/media/${repo} ./
-        cp -rp ${repo}/*.ditamap ./
+    cp -rp ${repo}/*.ditamap ./
 	cp -rp ${repo}/hcf/ ./
     
 	rm -r ${repo}
@@ -121,7 +122,6 @@ repo="hos.docs"
 	cp -rp ${repo}/community/ ./
     cp -rp ${repo}/commercial/ ./
     cp -rp ${repo}/helion/ ./
-
     cp -rp ${repo}/hos-html/ ./
 	cp -rp ${repo}/media/ ./
     cp -rp ${repo}/media/${repo} ./

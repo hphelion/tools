@@ -2,7 +2,7 @@
 
 
 echo ===start inject_google_analytics.sh===
-cd ./out/webhelp/
+cd $1
 
 
 METRIC_CODE1="<!-- Begin Analytics Code -->"

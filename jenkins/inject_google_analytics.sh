@@ -2,13 +2,14 @@
 
 
 echo ===start inject_google_analytics.sh===
+pwd
 cd ./out/webhelp/
-   
+pwd   
 for i in `find . -name "*.html"`
 do
 
 
-
+echo $i
 
 METRIC_CODE1="<!-- Begin Analytics Code -->"
 METRIC_CODE2="<script>"

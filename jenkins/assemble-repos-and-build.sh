@@ -58,7 +58,7 @@ repo="devplat.docs"
     
 	cp -rp ${repo}/devplatform/ ./
    # cp -rp ${repo}/media/${repo} ./
-	cp -rp ${repo}/media/${repo} ./media/
+	cp -rp ${repo}/media/${repo} ./media/${repo}
     cp -rp ${repo}/*.ditamap ./
     cp -rp ${repo}/hdp-html/ ./
  

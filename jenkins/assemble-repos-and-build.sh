@@ -57,7 +57,7 @@ repo="devplat.docs"
     adjust_date_to_last_commit
     
 	cp -rp ${repo}/devplatform/ ./
-    cp -rp ${repo}/media/${repo} ./
+   # cp -rp ${repo}/media/${repo} ./
 	cp -rp ${repo}/media/${repo} ./media/
     cp -rp ${repo}/*.ditamap ./
     cp -rp ${repo}/hdp-html/ ./

@@ -89,7 +89,7 @@ repo="carrier.grade.docs"
     
     adjust_date_to_last_commit
 
-	cp -rp ${repo}/media/${repo} ./
+	cp -rp ${repo}/media/${repo} ./media/${repo}
 	cp -rp ${repo}/CarrierGrade/ ./
     cp -rp ${repo}/CarrierGrade2.0/ ./
     cp -rp ${repo}/*.ditamap ./
@@ -104,7 +104,7 @@ repo="hcf.docs"
 
 	adjust_date_to_last_commit
 
-	cp -rp ${repo}/media/${repo} ./
+	cp -rp ${repo}/media/${repo} ./media/${repo}
     cp -rp ${repo}/*.ditamap ./
 	cp -rp ${repo}/hcf/ ./
     
@@ -124,7 +124,7 @@ repo="hos.docs"
     cp -rp ${repo}/helion/ ./
     cp -rp ${repo}/hos-html/ ./
 	cp -rp ${repo}/media/ ./
-    cp -rp ${repo}/media/${repo} ./
+    cp -rp ${repo}/media/${repo} ./media/${repo}
     cp -rp ${repo}/*.ditamap ./
  
 	rm -r ${repo}

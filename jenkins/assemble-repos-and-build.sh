@@ -65,7 +65,7 @@ repo="devplat.docs"
     rm -r $repo
  
  
-
+exit 1 ;
 
 
 repo="public.cloud.docs"

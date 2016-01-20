@@ -139,7 +139,92 @@ $(document).ready(function () {
         allAnchors[i].setAttribute('target', '_self');
     }
   }
+  
+  
+  var links = document.querySelectorAll(".itemLinks");
+var wrapper = document.querySelector("#wrapper");
+
+// Build array of slide information.
+var HAinfo = [
+			"The HPE Helion OpenStack installer deploys highly available configurations of OpenStack cloud services, resilient against single points of failure. Step through the included flow for an API request in an HA deployment. All API requests (internal and external) are sent through the VIP. ",
+			"keepalived has currently configured the VIP on the Controller0 node; client sends Nova request to VIP:8774",
+			"HA proxy (listening on VIP:8774) receives the request and selects Controller0 from the list of available nodes (Controller0, Controller1, Controller2). The request is forwarded to the Controller0IP:8774",
+			"nova-api on Controller0 receives the request and determines that a database change is required. It connects to the database using VIP:3306",
+			"HA proxy (listening on VIP:3306) receives the database connection request and selects Controller0 from the list of available nodes (Controller0, Controller1, Controller2). The connection request is forwarded to Controller0IP:3306",
+			];
+
+// Set initial text.
+document.getElementById("desc").innerHTML = HAinfo[0];
+
+// the activeLink provides a pointer to the currently displayed item
+var activeLink = 0;
+ 
+// setup the event listeners
+for (var i = 0; i < links.length; i++) {
+    var link = links[i];
+    link.addEventListener('click', setClickedItem, false);
+ 
+    // identify the item for the activeLink
+    link.itemID = i;
+}
+// set first item as active
+links[activeLink].classList.add("active");
+  
+ var transforms = ["transform",
+            "msTransform",
+            "webkitTransform",
+            "mozTransform",
+            "oTransform"];
+ 
+var transformProperty = getSupportedPropertyName(transforms);
+
+var allids=document.getElementsByClassName('HAcontent');
+  allids[0].setAttribute('id', 'itemOne');
+  allids[1].setAttribute('id', 'itemTwo');
+  allids[2].setAttribute('id', 'itemThree');
+  allids[3].setAttribute('id', 'itemFour');
+  allids[4].setAttribute('id', 'itemFive');
+  
+  
+  
 }); 
+
+
+function setClickedItem(e) {
+    removeActiveLinks();
+ 
+    var clickedLink = e.target;
+    activeLink = clickedLink.itemID;
+ 
+    changePosition(clickedLink);
+	document.getElementById("desc").innerHTML = HAinfo[clickedLink.itemID];
+}
+ 
+function removeActiveLinks() {
+    for (var i = 0; i < links.length; i++) {
+        links[i].classList.remove("active");
+    }
+}
+ 
+// Handle changing the slider position as well as ensure
+// the correct link is highlighted as being active
+function changePosition(link) {
+    var position = link.getAttribute("data-pos");
+ 
+    var translateValue = "translate3d(" + position + ", 0px, 0)";
+    wrapper.style[transformProperty] = translateValue;
+ 
+    link.classList.add("active");
+}
+function getSupportedPropertyName(properties) {
+    for (var i = 0; i < properties.length; i++) {
+        if (typeof document.body.style[properties[i]] != "undefined") {
+            return properties[i];
+        }
+    }
+    return null;
+}
+
   
   //added anchor replacement 12/27/15 NM
    function anchorMove1() {

@@ -161,7 +161,7 @@ var links = document.getElementsByClassName("itemLinks");
 var wrapper = document.getElementById("wrapper");
 
 // Build array of slide information.
-var HAinfo = [
+HAinfo = [
 			"The HPE Helion OpenStack installer deploys highly available configurations of OpenStack cloud services, resilient against single points of failure. Step through the included flow for an API request in an HA deployment. All API requests (internal and external) are sent through the VIP. ",
 			"keepalived has currently configured the VIP on the Controller0 node; client sends Nova request to VIP:8774",
 			"HA proxy (listening on VIP:8774) receives the request and selects Controller0 from the list of available nodes (Controller0, Controller1, Controller2). The request is forwarded to the Controller0IP:8774",

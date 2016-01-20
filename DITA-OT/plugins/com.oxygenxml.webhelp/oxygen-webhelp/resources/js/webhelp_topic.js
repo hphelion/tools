@@ -206,10 +206,11 @@ function setClickedItem(e) {
     activeLink = clickedLink.itemID;
  
     changePosition(clickedLink);
-	document.getElementById("desc").innerHTML = HAinfo[clickedLink.itemID];
+	document.getElementById("HP2.0HA__desc").innerHTML = HAinfo[clickedLink.itemID];
 }
  
 function removeActiveLinks() {
+var links = document.getElementsByClassName("itemLinks");
     for (var i = 0; i < links.length; i++) {
         links[i].classList.remove("active");
     }

@@ -106,7 +106,8 @@ $(document).ready(function () {
   allliitems[2].setAttribute('data-pos', '-2000px');
   allliitems[3].setAttribute('data-pos', '-3000px');
   allliitems[4].setAttribute('data-pos', '-4000px');
-  
+  var rappers=document.GetElementsByClassName('wrapper1');
+  rappers[0].setAttribute('id', 'wrapper');
   var mainlinks=document.getElementsByClassName('navLinks1');
   mainlinks[0].setAttribute('id', 'navLinks');
         if (document.getElementsByClassName("headerH")){
@@ -156,8 +157,8 @@ $(document).ready(function () {
   }
   
   
-  var links = document.querySelectorAll(".itemLinks");
-var wrapper = document.querySelector("#wrapper");
+var links = document.getElementsByClassName("itemLinks");
+var wrapper = document.getElementById("wrapper");
 
 // Build array of slide information.
 var HAinfo = [

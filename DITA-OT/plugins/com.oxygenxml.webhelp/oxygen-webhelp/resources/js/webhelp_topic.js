@@ -93,7 +93,22 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
       { 
-          
+  var allids=document.getElementsByClassName('HAcontent');
+  allids[0].setAttribute('id', 'itemOne');
+  allids[1].setAttribute('id', 'itemTwo');
+  allids[2].setAttribute('id', 'itemThree');
+  allids[3].setAttribute('id', 'itemFour');
+  allids[4].setAttribute('id', 'itemFive');
+  
+  var allliitems=document.getElementsByClassName('itemLinks');
+  allliitems[0].setAttribute('data-pos', '0px');
+  allliitems[1].setAttribute('data-pos', '-1000px');
+  allliitems[2].setAttribute('data-pos', '-2000px');
+  allliitems[3].setAttribute('data-pos', '-3000px');
+  allliitems[4].setAttribute('data-pos', '-4000px');
+  
+  var mainlinks=document.getElementsByClassName('navLinks1');
+  mainlinks[0].setAttribute('id', 'navLinks');
         if (document.getElementsByClassName("headerH")){
 
            var headers=document.getElementsByClassName("headerH");  //h1
@@ -178,22 +193,7 @@ links[activeLink].classList.add("active");
  
 var transformProperty = getSupportedPropertyName(transforms);
 
-var allids=document.getElementsByClassName('HAcontent');
-  allids[0].setAttribute('id', 'itemOne');
-  allids[1].setAttribute('id', 'itemTwo');
-  allids[2].setAttribute('id', 'itemThree');
-  allids[3].setAttribute('id', 'itemFour');
-  allids[4].setAttribute('id', 'itemFive');
-  
-  var allliitems=document.getElementsByClassName('itemLinks');
-  allliitems[0].setAttribute('data-pos', '0px');
-  allliitems[1].setAttribute('data-pos', '-1000px');
-  allliitems[2].setAttribute('data-pos', '-2000px');
-  allliitems[3].setAttribute('data-pos', '-3000px');
-  allliitems[4].setAttribute('data-pos', '-4000px');
-  
-  var mainlinks=document.getElementsByClassName('navLinks1');
-  mainlinks[0].setAttribute('id', 'navLinks');
+
   
 }); 
 

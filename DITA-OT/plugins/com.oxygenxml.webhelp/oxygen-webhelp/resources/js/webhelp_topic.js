@@ -185,8 +185,12 @@ var allids=document.getElementsByClassName('HAcontent');
   allids[3].setAttribute('id', 'itemFour');
   allids[4].setAttribute('id', 'itemFive');
   
-  
-  
+  var allliitems=document.getElementsByClassName('itemLinks');
+  allliitems[0].setAttribute('data-pos', '0px');
+  allliitems[1].setAttribute('data-pos', '-1000px');
+  allliitems[2].setAttribute('data-pos', '-2000px');
+  allliitems[3].setAttribute('data-pos', '-3000px');
+  allliitems[4].setAttribute('data-pos', '-4000px');
 }); 
 
 

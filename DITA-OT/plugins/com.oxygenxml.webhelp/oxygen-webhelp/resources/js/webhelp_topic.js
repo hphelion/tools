@@ -192,7 +192,7 @@ links[activeLink].classList.add("active");
             "mozTransform",
             "oTransform"];
  
-var transformProperty = getSupportedPropertyName(transforms);
+transformPropertyHAHAHA = getSupportedPropertyName(transforms);
 
 
   
@@ -222,7 +222,7 @@ function changePosition(link) {
     var position = link.getAttribute("data-pos");
  
     var translateValue = "translate3d(" + position + ", 0px, 0)";
-    wrapper.style[transformProperty] = translateValue;
+    wrapper.style[transformPropertyHAHAHA] = translateValue;
  
     link.classList.add("active");
 }

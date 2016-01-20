@@ -191,6 +191,10 @@ var allids=document.getElementsByClassName('HAcontent');
   allliitems[2].setAttribute('data-pos', '-2000px');
   allliitems[3].setAttribute('data-pos', '-3000px');
   allliitems[4].setAttribute('data-pos', '-4000px');
+  
+  var mainlinks=document.getElementsByClassName('navLinks1');
+  mainlinks[0].setAttribute('id', 'navLinks');
+  
 }); 
 
 

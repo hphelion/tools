@@ -169,7 +169,7 @@ var HAinfo = [
 			];
 
 // Set initial text.
-document.getElementById("desc").innerHTML = HAinfo[0];
+document.getElementById("HP2.0HA__desc").innerHTML = HAinfo[0];
 
 // the activeLink provides a pointer to the currently displayed item
 var activeLink = 0;

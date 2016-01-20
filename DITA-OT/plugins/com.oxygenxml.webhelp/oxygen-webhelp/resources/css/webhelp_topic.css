@@ -709,3 +709,75 @@ color: rgb(0, 179, 136);
 margin-top: -16px;
 }
 */
+ #wrapper {
+				width: 5000px;
+				transform: translate3d(0, 0, 0);
+				transition: transform .5s ease-in-out;
+			}
+			.HAcontent {
+				float: left;
+				width: 1000px;
+				height: 800px;
+				white-space: normal;
+				background-repeat: no-repeat;
+			}
+			#contentContainer {
+				width: 1000px;
+				height: 800px;
+				border: 2px black solid;
+				overflow: hidden;
+			}
+			
+			#navLinks {
+				text-align: center;
+				width: 1000px;
+			}
+			#navLinks ul {
+				margin: 0px;
+				padding: 0px;
+				display: inline-block;
+				margin-top: 6px;
+			}
+			#navLinks ul li {
+				float: left;
+				text-align: center;
+				margin: 10px;
+				list-style: none;
+				cursor: pointer;
+				background-color: #CCCCCC;
+				padding: 5px;
+				border-radius: 50%;
+				border: black 2px solid;
+			}
+            #navLinks ul li:hover {
+                background-color: #FFFF00;
+            }
+            #navLinks ul li.active {
+                background-color: #333333;
+                color: #FFFFFF;
+                outline-width: 3px;
+            }
+            #navLinks ul li.active:hover {
+                background-color: #484848;
+                color: #FFFFFF;
+            }
+			
+			#itemOne {
+				background-image: url("../../media/ha/HPE_HA_Flow.png");
+			}
+			#itemTwo {
+				background-image: url("../../media/ha/HPE_HA_Flow-1.png");
+			}
+			#itemThree {
+				background-image: url("../../media/ha/HPE_HA_Flow-2.png");
+			}
+			#itemFour {
+				background-image: url("../../media/ha/HPE_HA_Flow-3.png");
+			}
+			#itemFive {
+				background-image: url("../../media/ha/HPE_HA_Flow-4.png");
+			}
+			#p {
+				font-size: 12pt;
+				font-color: blue;
+			}

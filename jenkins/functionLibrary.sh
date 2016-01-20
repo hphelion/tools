@@ -1,5 +1,5 @@
 hipChat () {  
-#Usage: hipChat (PASS|FAIL) "MESSAGE"
+#Usage: hipChat (PASS|FAIL) "MESSAGE" ROOM
 
 
 #Set the URL to the console output for this build
@@ -26,7 +26,7 @@ echo $MESSAGE
 
 #Set HipChat authorization and room     
 auth="zKuxF5Bt5H9dpNysOSf8nRPw2GbT41f3vAS5jKSI"
-room="845"  
+room="$3"  
 
 #amok 145
 #test 845

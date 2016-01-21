@@ -93,6 +93,7 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
       { 
+      	document.getElementById('HP2.0HA__contentContainer').setAttribute('id', 'HP20HA__contentContainer');
   var allids=document.getElementsByClassName('HAcontent');
   allids[0].setAttribute('id', 'itemOne');
   allids[1].setAttribute('id', 'itemTwo');

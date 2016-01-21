@@ -172,7 +172,7 @@ HAinfo = [
 			];
 
 // Set initial text.
-document.getElementById("HP2.0HA__desc").innerHTML = HAinfo[0];
+document.getElementById("HP20HA__desc").innerHTML = HAinfo[0];
 
 // the activeLink provides a pointer to the currently displayed item
 var activeLink = 0;
@@ -208,7 +208,7 @@ function setClickedItem(e) {
     activeLink = clickedLink.itemID;
  
     changePosition(clickedLink);
-	document.getElementById("HP2.0HA__desc").innerHTML = HAinfo[clickedLink.itemID];
+	document.getElementById("HP20HA__desc").innerHTML = HAinfo[clickedLink.itemID];
 }
  
 function removeActiveLinks() {

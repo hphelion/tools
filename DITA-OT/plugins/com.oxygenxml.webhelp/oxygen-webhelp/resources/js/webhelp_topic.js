@@ -93,25 +93,28 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
       { 
+      if (document.getElementsByClassName('wrapper1')) {
       	document.getElementById('HP2.0HA__desc').setAttribute('id', 'HP20HA__desc');
       	document.getElementById('HP2.0HA__contentContainer').setAttribute('id', 'HP20HA__contentContainer');
-  var allids=document.getElementsByClassName('HAcontent');
-  allids[0].setAttribute('id', 'itemOne');
-  allids[1].setAttribute('id', 'itemTwo');
-  allids[2].setAttribute('id', 'itemThree');
-  allids[3].setAttribute('id', 'itemFour');
-  allids[4].setAttribute('id', 'itemFive');
+        var allids=document.getElementsByClassName('HAcontent');
+        allids[0].setAttribute('id', 'itemOne');
+        allids[1].setAttribute('id', 'itemTwo');
+        allids[2].setAttribute('id', 'itemThree');
+        allids[3].setAttribute('id', 'itemFour');
+        allids[4].setAttribute('id', 'itemFive');
   
-  var allliitems=document.getElementsByClassName('itemLinks');
-  allliitems[0].setAttribute('data-pos', '0px');
-  allliitems[1].setAttribute('data-pos', '-1000px');
-  allliitems[2].setAttribute('data-pos', '-2000px');
-  allliitems[3].setAttribute('data-pos', '-3000px');
-  allliitems[4].setAttribute('data-pos', '-4000px');
-  var rappers=document.getElementsByClassName('wrapper1');
-  rappers[0].setAttribute('id', 'wrapper');
-  var mainlinks=document.getElementsByClassName('navLinks1');
-  mainlinks[0].setAttribute('id', 'navLinks');
+        var allliitems=document.getElementsByClassName('itemLinks');
+        allliitems[0].setAttribute('data-pos', '0px');
+        allliitems[1].setAttribute('data-pos', '-1000px');
+        allliitems[2].setAttribute('data-pos', '-2000px');
+        allliitems[3].setAttribute('data-pos', '-3000px');
+        allliitems[4].setAttribute('data-pos', '-4000px');
+        var rappers=document.getElementsByClassName('wrapper1');
+        rappers[0].setAttribute('id', 'wrapper');
+        var mainlinks=document.getElementsByClassName('navLinks1');
+        mainlinks[0].setAttribute('id', 'navLinks');
+      }
+        
         if (document.getElementsByClassName("headerH")){
 
            var headers=document.getElementsByClassName("headerH");  //h1

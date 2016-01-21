@@ -722,7 +722,7 @@ margin-top: -16px;
 				white-space: normal;
 				background-repeat: no-repeat;
 			}
-		.section #HP2.0HA__contentContainer {
+		 #HP2.0HA__contentContainer .section {
 				width: 1000px;
 				height: 800px;
 				border: 2px black solid;

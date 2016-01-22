@@ -94,7 +94,7 @@ $(document).ready(function () {
   $(document).ready(function()
       { 
       	/////////////////begin HA////////////////////
-      	 if (document.getElementsByClassName('wrapper1')) {
+      	 if (document.getElementsByClassName('wrapper1').length) {
       	document.getElementById('HP2.0HA__desc').setAttribute('id', 'HP20HA__desc');
       	document.getElementById('HP2.0HA__contentContainer').setAttribute('id', 'HP20HA__contentContainer');
         var allids=document.getElementsByClassName('HAcontent');

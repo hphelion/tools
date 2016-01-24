@@ -47,6 +47,7 @@ function highlightSearchTerm(words) {
 }
 
 function feedback(){
+alert("test")
 	if (window.location.href.indexOf("/eucalyptus/")  > -1   ) {
 		var topic=document.getElementsByTagName("title")[0].innerHTML ;
 		var tmp=topic.replace(/<[^>]*>/, "");

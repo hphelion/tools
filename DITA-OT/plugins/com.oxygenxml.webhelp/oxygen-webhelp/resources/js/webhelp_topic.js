@@ -49,9 +49,13 @@ function highlightSearchTerm(words) {
 function feedback(){
 alert("test")
 	if (window.location.href.indexOf("/eucalyptus/")  > -1   ) {
+
+	alert("1")
 		var topic=document.getElementsByTagName("title")[0].innerHTML ;
+		alert(topic)
 		var tmp=topic.replace(/<[^>]*>/, "");
 		var topic=tmp.replace(/<\/[^>]*>/, "");
+		alert(topic)
 		document.getElementById("feedback").innerHTML = "<a href=\"mailto:heliondocs@hpe.com&subject=Feedback on '"+topic+"'&body=Thank you for providing the Helion Eucalyptus Documentation Team with feedback about this topic!  Please replace this text with your feedback.%0D%0A %0D%0ALeave the title unchanged, because this will make it clear to us what topic you are providing feedback about.  If you need support, please contact your HPE Support representative.%0D%0A %0D%0AThanks for helping us improve the documentation!\">Feedback to the Helion Eucalyptus Docs Team</a>  ";
 	}else {
 		document.getElementById("feedback").style.display = "none";

@@ -201,7 +201,10 @@ links[activeLink].classList.add("active");
      var hrf=allAnchors[i].href;
      if (hrf.indexOf('#')!=-1) {
      	if (hrf.search("http://docs.hpcloud.com/")<0) {
-           allAnchors[i].setAttribute('target', '_self');
+     		if (allAnchors[i].target!="_blank") {
+        	 allAnchors[i].setAttribute('target', '_self');
+           
+     		}
      	}
      }
   }

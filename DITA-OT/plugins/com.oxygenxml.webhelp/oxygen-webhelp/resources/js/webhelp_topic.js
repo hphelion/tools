@@ -200,12 +200,12 @@ links[activeLink].classList.add("active");
  for (var i=0; i<allAnchors.length; i++) {
      var hrf=allAnchors[i].href;
      if (hrf.indexOf('#')!=-1) {
-     	if (hrf.search("http://docs.hpcloud.com/")<0) {
+     	//if (hrf.search("http://docs.hpcloud.com/")<0) {
      		if (allAnchors[i].target!="_blank") {
         	 allAnchors[i].setAttribute('target', '_self');
            
      		}
-     	}
+     	//}
      }
   }
 }); 

@@ -93,9 +93,12 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
       { 
-      if (document.getElementsByClassName('wrapper1')) {
+      	/////////////////begin HA////////////////////
+      	 if (document.getElementsByClassName('wrapper1').length) {
+      	var concontain=document.getElementsByClassName('oldcontentContainer');
+      	concontain[0].setAttribute('id', 'HP20HA__contentContainer');
       	document.getElementById('HP2.0HA__desc').setAttribute('id', 'HP20HA__desc');
-      	document.getElementById('HP2.0HA__contentContainer').setAttribute('id', 'HP20HA__contentContainer');
+      	//document.getElementById('HP2.0HA__contentContainer').setAttribute('id', 'HP20HA__contentContainer');
         var allids=document.getElementsByClassName('HAcontent');
         allids[0].setAttribute('id', 'itemOne');
         allids[1].setAttribute('id', 'itemTwo');
@@ -113,8 +116,47 @@ $(document).ready(function () {
         rappers[0].setAttribute('id', 'wrapper');
         var mainlinks=document.getElementsByClassName('navLinks1');
         mainlinks[0].setAttribute('id', 'navLinks');
-      }
-        
+        var links = document.getElementsByClassName("itemLinks");
+var wrapper = document.getElementById("wrapper");
+
+// Build array of slide information.
+HAinfo = [
+			"The HPE Helion OpenStack installer deploys highly available configurations of OpenStack cloud services, resilient against single points of failure. Step through the included flow for an API request in an HA deployment. All API requests (internal and external) are sent through the VIP. ",
+			"keepalived has currently configured the VIP on the Controller0 node; client sends Nova request to VIP:8774",
+			"HA proxy (listening on VIP:8774) receives the request and selects Controller0 from the list of available nodes (Controller0, Controller1, Controller2). The request is forwarded to the Controller0IP:8774",
+			"nova-api on Controller0 receives the request and determines that a database change is required. It connects to the database using VIP:3306",
+			"HA proxy (listening on VIP:3306) receives the database connection request and selects Controller0 from the list of available nodes (Controller0, Controller1, Controller2). The connection request is forwarded to Controller0IP:3306",
+			];
+
+// Set initial text.
+document.getElementById("HP20HA__desc").innerHTML = HAinfo[0];
+
+// the activeLink provides a pointer to the currently displayed item
+var activeLink = 0;
+ 
+// setup the event listeners
+for (var i = 0; i < links.length; i++) {
+    var link = links[i];
+    link.addEventListener('click', setClickedItem, false);
+ 
+    // identify the item for the activeLink
+    link.itemID = i;
+}
+// set first item as active
+links[activeLink].classList.add("active");
+  
+    var transforms = ["transform",
+            "msTransform",
+            "webkitTransform",
+            "mozTransform",
+            "oTransform"];
+ 
+   transformPropertyHAHAHA = getSupportedPropertyName(transforms);
+
+}
+      ///////////////end HA ///////////////////////////	
+      	
+          
         if (document.getElementsByClassName("headerH")){
 
            var headers=document.getElementsByClassName("headerH");  //h1
@@ -153,58 +195,22 @@ $(document).ready(function () {
            }
         }
         
+        
  var allAnchors=document.getElementsByTagName('A');
  for (var i=0; i<allAnchors.length; i++) {
      var hrf=allAnchors[i].href;
      if (hrf.indexOf('#')!=-1) {
-        allAnchors[i].setAttribute('target', '_self');
-    }
+     	//if (hrf.search("http://docs.hpcloud.com/")<0) {
+     		if (allAnchors[i].target!="_blank") {
+        	 allAnchors[i].setAttribute('target', '_self');
+           
+     		}
+     	//}
+     }
   }
-  
-  
-var links = document.getElementsByClassName("itemLinks");
-var wrapper = document.getElementById("wrapper");
-
-// Build array of slide information.
-HAinfo = [
-			"The HPE Helion OpenStack installer deploys highly available configurations of OpenStack cloud services, resilient against single points of failure. Step through the included flow for an API request in an HA deployment. All API requests (internal and external) are sent through the VIP. ",
-			"keepalived has currently configured the VIP on the Controller0 node; client sends Nova request to VIP:8774",
-			"HA proxy (listening on VIP:8774) receives the request and selects Controller0 from the list of available nodes (Controller0, Controller1, Controller2). The request is forwarded to the Controller0IP:8774",
-			"nova-api on Controller0 receives the request and determines that a database change is required. It connects to the database using VIP:3306",
-			"HA proxy (listening on VIP:3306) receives the database connection request and selects Controller0 from the list of available nodes (Controller0, Controller1, Controller2). The connection request is forwarded to Controller0IP:3306",
-			];
-
-// Set initial text.
-document.getElementById("HP20HA__desc").innerHTML = HAinfo[0];
-
-// the activeLink provides a pointer to the currently displayed item
-var activeLink = 0;
- 
-// setup the event listeners
-for (var i = 0; i < links.length; i++) {
-    var link = links[i];
-    link.addEventListener('click', setClickedItem, false);
- 
-    // identify the item for the activeLink
-    link.itemID = i;
-}
-// set first item as active
-links[activeLink].classList.add("active");
-  
- var transforms = ["transform",
-            "msTransform",
-            "webkitTransform",
-            "mozTransform",
-            "oTransform"];
- 
-transformPropertyHAHAHA = getSupportedPropertyName(transforms);
-
-
-  
 }); 
-
-
-function setClickedItem(e) {
+  ///////////////HA//////////////////////
+  function setClickedItem(e) {
     removeActiveLinks();
  
     var clickedLink = e.target;
@@ -239,8 +245,7 @@ function getSupportedPropertyName(properties) {
     }
     return null;
 }
-
-  
+//////////////end HA ///////////////////
   //added anchor replacement 12/27/15 NM
    function anchorMove1() {
    	var bod=document.getElementsByTagName('body');

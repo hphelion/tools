@@ -214,7 +214,7 @@ links[activeLink].classList.add("active");
 function hashit() {
 	
        var hashlink=this.href;
-       var hashlink2=hashlink.substring(hashlink.indexOf('#')-1);
+       var hashlink2=hashlink.substring(hashlink.indexOf('#'));
        window.location.hash=hashlink2;
        console.log(hashlink2);
         	 

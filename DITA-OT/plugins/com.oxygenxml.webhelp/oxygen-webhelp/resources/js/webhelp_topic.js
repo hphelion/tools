@@ -216,6 +216,7 @@ function hashit() {
        var hashlink=this.href;
        var hashlink2=hashlink.substring(hashlink.indexOf('#')-1);
        window.location.hash=hashlink2;
+       console.log(hashlink2);
         	 
 }
   ///////////////HA//////////////////////

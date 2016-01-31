@@ -219,7 +219,7 @@ function hashit() {
        window.location.hash=hashlink2;
        console.log(hashlink2);
        console.log(loc);
-       window.location.replace(location.href);
+       window.location.replace(location.href + hashlink2);
         	 
 }
   ///////////////HA//////////////////////

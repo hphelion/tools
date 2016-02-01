@@ -97,6 +97,11 @@ a {
 .codehighlight {
     background-color:#ffff00 !important;
 }
+/*Opt out of vertical scrollbar for codeblock elements*/
+.noverticalscroll {
+    max-height:none;
+}
+
 
 /* List indent style: PF 10.20.15 */
 .listsuba {

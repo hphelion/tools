@@ -97,7 +97,7 @@ a {
 .codehighlight {
     background-color:#ffff00 !important;
 }
-/*Opt out of vertical scrollbar for codeblock elements*/
+/*Opt out of vertical scrollbar for codeblock elements PF 2/1/2016*/
 .noverticalscroll {
     max-height:none;
 }

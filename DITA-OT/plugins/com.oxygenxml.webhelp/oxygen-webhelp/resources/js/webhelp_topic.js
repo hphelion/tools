@@ -220,7 +220,8 @@ function hashit() {
        console.log(hashlink2);
        console.log(loc);
        var newhash=loc+hashlink2;
-       history.replaceState(null, null, newhash);
+       history.replaceState(null, null, "something");
+       
        //window.location.replace(location.href + hashlink2);
         	 
 }

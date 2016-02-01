@@ -1,5 +1,5 @@
 hipChat () {  
-#Usage: hipChat (PASS|FAIL) "MESSAGE"
+#Usage: hipChat (PASS|FAIL) "MESSAGE" ROOM
 
 
 #Set the URL to the console output for this build
@@ -11,7 +11,7 @@ CONSOLE=${BUILD_URL}console
 if [[ $1 == "FAIL" ]]
 then
 	COLOR="red"
-	MESSAGE="<b>$JOB_NAME</b> $2 See the <a href=\\\"$CONSOLE\\\">console output</a> for details."
+	MESSAGE="<b>$JOB_NAME</b> $2 "
  
 else
 	COLOR="green"
@@ -26,7 +26,7 @@ echo $MESSAGE
 
 #Set HipChat authorization and room     
 auth="zKuxF5Bt5H9dpNysOSf8nRPw2GbT41f3vAS5jKSI"
-room="845"  
+room="$3"  
 
 #amok 145
 #test 845

@@ -8,12 +8,12 @@
                 version="2.0">
     
   <xsl:attribute-set name="simple-page-master">
-    <xsl:attribute name="page-width">
-      <xsl:value-of select="$page-width"/>
-    </xsl:attribute>
-    <xsl:attribute name="page-height">
-      <xsl:value-of select="$page-height"/>
-    </xsl:attribute>
+<xsl:attribute name="page-width">420mm</xsl:attribute>
+<xsl:attribute name="page-height">297mm</xsl:attribute>
+<xsl:attribute name="reference-orientation">90</xsl:attribute>
+
+
+
   </xsl:attribute-set>
   
   <!-- legacy attribute set -->

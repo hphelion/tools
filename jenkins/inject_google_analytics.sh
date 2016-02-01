@@ -2,12 +2,7 @@
 
 
 echo ===start inject_google_analytics.sh===
-cd ./out/webhelp/
-   
-for i in `find . -name "*.html"`
-do
-
-
+cd $1
 
 
 METRIC_CODE1="<!-- Begin Analytics Code -->"
@@ -19,6 +14,9 @@ METRIC_CODE6=" })(window,document,'script','//www.google-analytics.com/analytics
 METRIC_CODE7=" ga('create', 'UA-58640491-1', 'auto');  ga('send', 'pageview'); </script>"
 METRIC_CODE8="<!-- End Analytics Code -->"
 
+for i in `find . -name "*.html"`
+do
+echo $i
    sed -i "s%</head>% \n $METRIC_CODE1 \n $METRIC_CODE2 \n $METRIC_CODE3 \n $METRIC_CODE4 \n $METRIC_CODE5 \n $METRIC_CODE6 \n $METRIC_CODE7 \n $METRIC_CODE8 \n </head>%" $i
 
    done

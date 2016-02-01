@@ -93,6 +93,69 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
       { 
+      	/////////////////begin HA////////////////////
+      	 if (document.getElementsByClassName('wrapper1').length) {
+      	var concontain=document.getElementsByClassName('oldcontentContainer');
+      	concontain[0].setAttribute('id', 'HP20HA__contentContainer');
+      	document.getElementById('HP2.0HA__desc').setAttribute('id', 'HP20HA__desc');
+      	//document.getElementById('HP2.0HA__contentContainer').setAttribute('id', 'HP20HA__contentContainer');
+        var allids=document.getElementsByClassName('HAcontent');
+        allids[0].setAttribute('id', 'itemOne');
+        allids[1].setAttribute('id', 'itemTwo');
+        allids[2].setAttribute('id', 'itemThree');
+        allids[3].setAttribute('id', 'itemFour');
+        allids[4].setAttribute('id', 'itemFive');
+  
+        var allliitems=document.getElementsByClassName('itemLinks');
+        allliitems[0].setAttribute('data-pos', '0px');
+        allliitems[1].setAttribute('data-pos', '-1000px');
+        allliitems[2].setAttribute('data-pos', '-2000px');
+        allliitems[3].setAttribute('data-pos', '-3000px');
+        allliitems[4].setAttribute('data-pos', '-4000px');
+        var rappers=document.getElementsByClassName('wrapper1');
+        rappers[0].setAttribute('id', 'wrapper');
+        var mainlinks=document.getElementsByClassName('navLinks1');
+        mainlinks[0].setAttribute('id', 'navLinks');
+        var links = document.getElementsByClassName("itemLinks");
+var wrapper = document.getElementById("wrapper");
+
+// Build array of slide information.
+HAinfo = [
+			"The HPE Helion OpenStack installer deploys highly available configurations of OpenStack cloud services, resilient against single points of failure. Step through the included flow for an API request in an HA deployment. All API requests (internal and external) are sent through the VIP. ",
+			"keepalived has currently configured the VIP on the Controller0 node; client sends Nova request to VIP:8774",
+			"HA proxy (listening on VIP:8774) receives the request and selects Controller0 from the list of available nodes (Controller0, Controller1, Controller2). The request is forwarded to the Controller0IP:8774",
+			"nova-api on Controller0 receives the request and determines that a database change is required. It connects to the database using VIP:3306",
+			"HA proxy (listening on VIP:3306) receives the database connection request and selects Controller0 from the list of available nodes (Controller0, Controller1, Controller2). The connection request is forwarded to Controller0IP:3306",
+			];
+
+// Set initial text.
+document.getElementById("HP20HA__desc").innerHTML = HAinfo[0];
+
+// the activeLink provides a pointer to the currently displayed item
+var activeLink = 0;
+ 
+// setup the event listeners
+for (var i = 0; i < links.length; i++) {
+    var link = links[i];
+    link.addEventListener('click', setClickedItem, false);
+ 
+    // identify the item for the activeLink
+    link.itemID = i;
+}
+// set first item as active
+links[activeLink].classList.add("active");
+  
+    var transforms = ["transform",
+            "msTransform",
+            "webkitTransform",
+            "mozTransform",
+            "oTransform"];
+ 
+   transformPropertyHAHAHA = getSupportedPropertyName(transforms);
+
+}
+      ///////////////end HA ///////////////////////////	
+      	
           
         if (document.getElementsByClassName("headerH")){
 
@@ -133,38 +196,58 @@ $(document).ready(function () {
         }
         
         
-  /*var lists=document.getElementsByTagName('LI');  //all li
+ var allAnchors=document.getElementsByTagName('A');
+ for (var i=0; i<allAnchors.length; i++) {
+     var hrf=allAnchors[i].href;
+     if (hrf.indexOf('#')!=-1) {
+     	//if (hrf.search("http://docs.hpcloud.com/")<0) {
+     		if (allAnchors[i].target!="_blank") {
+        	 allAnchors[i].setAttribute('target', '_self');
+                 
+     		}
+     	//}
+     }
+  }
+}); 
 
-  for (var i=0; i<lists.length; i++) {
-    //if (lists[i].children.length==1) {  
-      if (lists[i].children[0].nodeName=='A') {
-	var testnode=lists[i].innerHTML;
-	var testnode2=testnode.trim();
-	var firstchar = testnode2.charAt(0);
-	
-	if (firstchar=='<' && testnode.search('http://')<0) {
-          var linktext=lists[i].children[0].innerHTML;
-          var hrf=lists[i].children[0].href;
-          var hrf2=hrf.split('#')[1];   //target
-          
-          lists[i].removeChild(lists[i].children[0]);   //remove a
-          
-          var para = document.createElement('p');
-          lists[i].appendChild(para); 
-          var newlinktext = document.createTextNode(linktext);
-          lists[i].children[0].appendChild(newlinktext);
-          lists[i].children[0].setAttribute("id", "a" + i);
-          lists[i].children[0].setAttribute("data-link", hrf2);
-          lists[i].children[0].setAttribute("class", 'newanchor');
-          lists[i].children[0].style.cursor="pointer";
-          
-          document.getElementById('a' + i).addEventListener('click', gothere, false);
-	}
-      }
-    //}
-   } */
-  }); 
-  
+
+  ///////////////HA//////////////////////
+  function setClickedItem(e) {
+    removeActiveLinks();
+ 
+    var clickedLink = e.target;
+    activeLink = clickedLink.itemID;
+ 
+    changePosition(clickedLink);
+	document.getElementById("HP20HA__desc").innerHTML = HAinfo[clickedLink.itemID];
+}
+ 
+function removeActiveLinks() {
+var links = document.getElementsByClassName("itemLinks");
+    for (var i = 0; i < links.length; i++) {
+        links[i].classList.remove("active");
+    }
+}
+ 
+// Handle changing the slider position as well as ensure
+// the correct link is highlighted as being active
+function changePosition(link) {
+    var position = link.getAttribute("data-pos");
+ 
+    var translateValue = "translate3d(" + position + ", 0px, 0)";
+    wrapper.style[transformPropertyHAHAHA] = translateValue;
+ 
+    link.classList.add("active");
+}
+function getSupportedPropertyName(properties) {
+    for (var i = 0; i < properties.length; i++) {
+        if (typeof document.body.style[properties[i]] != "undefined") {
+            return properties[i];
+        }
+    }
+    return null;
+}
+//////////////end HA ///////////////////
   //added anchor replacement 12/27/15 NM
    function anchorMove1() {
    	var bod=document.getElementsByTagName('body');

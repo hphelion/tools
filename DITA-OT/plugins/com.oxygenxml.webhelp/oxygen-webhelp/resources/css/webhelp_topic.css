@@ -743,3 +743,7 @@ margin-top: -16px;
 				font-size: 12pt;
 				font-weight: bold;
 			}
+.abstract > .hdphidden {
+	display: none;
+}
+}

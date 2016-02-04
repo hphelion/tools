@@ -724,25 +724,26 @@ margin-top: -16px;
                 color: #FFFFFF;
             }
 			
-			#itemOne {
-				background-image: url("http://docs.hpcloud.com/media/ha/HPE_HA_Flow.png");
-			}
-			#itemTwo {
-				background-image: url("http://docs.hpcloud.com/media/ha/HPE_HA_Flow-1.png");
-			}
-			#itemThree {
-				background-image: url("http://docs.hpcloud.com/media/ha/HPE_HA_Flow-2.png");
-			}
-			#itemFour {
-				background-image: url("http://docs.hpcloud.com/media/ha/HPE_HA_Flow-3.png");
-			}
-			#itemFive {
-				background-image: url("http://docs.hpcloud.com/media/ha/HPE_HA_Flow-4.png");
-			}
-			#HP20HA__desc {
-				font-size: 12pt;
-				font-weight: bold;
-			}
+	#itemOne {
+		background-image: url("http://docs.hpcloud.com/media/ha/HPE_HA_Flow.png");
+	}
+	#itemTwo {
+		background-image: url("http://docs.hpcloud.com/media/ha/HPE_HA_Flow-1.png");
+	}
+	#itemThree {
+		background-image: url("http://docs.hpcloud.com/media/ha/HPE_HA_Flow-2.png");
+	}
+	#itemFour {
+		background-image: url("http://docs.hpcloud.com/media/ha/HPE_HA_Flow-3.png");
+	}
+	#itemFive {
+		background-image: url("http://docs.hpcloud.com/media/ha/HPE_HA_Flow-4.png");
+	}
+	#HP20HA__desc {
+		font-size: 12pt;
+		font-weight: bold;
+	}
+/* hdphidden hides shortdesc text that is a child of abstract text  */
 .abstract > .hdphidden {
 	display: none;
 }

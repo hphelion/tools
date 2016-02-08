@@ -104,11 +104,11 @@ $(document).ready(function () {
              allids[j].setAttribute('id', 'item' + parseInt(j+1));
         }
         var allliitems=document.getElementsByClassName('itemLinks');
-        allliitems[0].setAttribute('data-pos', '0px');
-        allliitems[1].setAttribute('data-pos', '-1000px');
-        allliitems[2].setAttribute('data-pos', '-2000px');
-        allliitems[3].setAttribute('data-pos', '-3000px');
-        allliitems[4].setAttribute('data-pos', '-4000px');
+        for (var k=0; k<allliitems.length; k++) {
+        var m=0;
+        allliitems[k].setAttribute('data-pos', m+'px');
+        m-=1000;
+        }
         var rappers=document.getElementsByClassName('wrapper1');
         rappers[0].setAttribute('id', 'wrapper');
         var mainlinks=document.getElementsByClassName('navLinks1');

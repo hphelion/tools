@@ -101,7 +101,7 @@ $(document).ready(function () {
       	//document.getElementById('HP2.0HA__contentContainer').setAttribute('id', 'HP20HA__contentContainer');
         var allids=document.getElementsByClassName('HAcontent');
         for (var j=0; j<allids.length; j++) {
-             allids[j].setAttribute('id', 'item' + j+1);
+             allids[j].setAttribute('id', 'item' + parseInt(j+1));
         }
         var allliitems=document.getElementsByClassName('itemLinks');
         allliitems[0].setAttribute('data-pos', '0px');

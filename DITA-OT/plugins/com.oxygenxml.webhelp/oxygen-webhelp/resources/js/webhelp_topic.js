@@ -203,28 +203,14 @@ links[activeLink].classList.add("active");
      	//if (hrf.search("http://docs.hpcloud.com/")<0) {
      		if (allAnchors[i].target!="_blank") {
         	 allAnchors[i].setAttribute('target', '_self');
-        	 allAnchors[i].addEventListener('click', hashit, false);
-           
+                 
      		}
      	//}
      }
   }
 }); 
 
-function hashit() {
-	
-       var hashlink=this.href;
-       var hashlink2=hashlink.substring(hashlink.indexOf('#'));
-       var loc=window.location;
-       window.location.hash=hashlink2;
-       console.log(hashlink2);
-       console.log(loc);
-       var newhash=loc+hashlink2;
-       history.pushState(null, null, history-2);
-       
-       //window.location.replace(location.href + hashlink2);
-        	 
-}
+
   ///////////////HA//////////////////////
   function setClickedItem(e) {
     removeActiveLinks();

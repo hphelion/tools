@@ -95,29 +95,29 @@ $(document).ready(function () {
       { 
       	/////////////////begin HA////////////////////
       	 if (document.getElementsByClassName('wrapper1').length) {
-      	var concontain=document.getElementsByClassName('oldcontentContainer');
-      	concontain[0].setAttribute('id', 'HP20HA__contentContainer');
-      	document.getElementById('HP2.0HA__desc').setAttribute('id', 'HP20HA__desc');
-      	//document.getElementById('HP2.0HA__contentContainer').setAttribute('id', 'HP20HA__contentContainer');
-        var allids=document.getElementsByClassName('HAcontent');
-        for (var j=0; j<allids.length; j++) {
-             allids[j].setAttribute('id', 'item' + parseInt(j+1));
-        }
-        var allliitems=document.getElementsByClassName('itemLinks');
-        var m=0;
-        for (var k=0; k<allliitems.length; k++) {
-             allliitems[k].setAttribute('data-pos', m+'px');
-             m-=1000;
-        }
-        var rappers=document.getElementsByClassName('wrapper1');
-        rappers[0].setAttribute('id', 'wrapper');
-        var mainlinks=document.getElementsByClassName('navLinks1');
-        mainlinks[0].setAttribute('id', 'navLinks');
-        var links = document.getElementsByClassName("itemLinks");
-var wrapper = document.getElementById("wrapper");
+      	     var concontain=document.getElementsByClassName('oldcontentContainer');
+      	     concontain[0].setAttribute('id', 'HP20HA__contentContainer');
+      	     document.getElementById('HP2.0HA__desc').setAttribute('id', 'HP20HA__desc');
+      	     //document.getElementById('HP2.0HA__contentContainer').setAttribute('id', 'HP20HA__contentContainer');
+             var allids=document.getElementsByClassName('HAcontent');
+             for (var j=0; j<allids.length; j++) {
+                  allids[j].setAttribute('id', 'item' + parseInt(j+1));
+             }
+             var allliitems=document.getElementsByClassName('itemLinks');
+             var m=0;
+             for (var k=0; k<allliitems.length; k++) {
+                  allliitems[k].setAttribute('data-pos', m+'px');
+                  m-=1000;
+             }
+             var rappers=document.getElementsByClassName('wrapper1');
+             rappers[0].setAttribute('id', 'wrapper');
+             var mainlinks=document.getElementsByClassName('navLinks1');
+             mainlinks[0].setAttribute('id', 'navLinks');
+             var links = document.getElementsByClassName("itemLinks");
+             var wrapper = document.getElementById("wrapper");
 
-// Build array of slide information.
-HAinfo = [
+            // Build array of slide information.
+            HAinfo = [
 			"The HPE Helion OpenStack installer deploys highly available configurations of OpenStack cloud services, resilient against single points of failure. Step through the included flow for an API request in an HA deployment. All API requests (internal and external) are sent through the VIP. ",
 			"keepalived has currently configured the VIP on the Controller0 node; client sends Nova request to VIP:8774",
 			"HA proxy (listening on VIP:8774) receives the request and selects Controller0 from the list of available nodes (Controller0, Controller1, Controller2). The request is forwarded to the Controller0IP:8774",
@@ -125,30 +125,30 @@ HAinfo = [
 			"HA proxy (listening on VIP:3306) receives the database connection request and selects Controller0 from the list of available nodes (Controller0, Controller1, Controller2). The connection request is forwarded to Controller0IP:3306",
 			];
 
-// Set initial text.
-document.getElementById("HP20HA__desc").innerHTML = HAinfo[0];
+           // Set initial text.
+           document.getElementById("HP20HA__desc").innerHTML = HAinfo[0];
 
-// the activeLink provides a pointer to the currently displayed item
-var activeLink = 0;
+          // the activeLink provides a pointer to the currently displayed item
+           var activeLink = 0;
  
-// setup the event listeners
-for (var i = 0; i < links.length; i++) {
-    var link = links[i];
-    link.addEventListener('click', setClickedItem, false);
+          // setup the event listeners
+          for (var i = 0; i < links.length; i++) {
+              var link = links[i];
+          link.addEventListener('click', setClickedItem, false);
  
-    // identify the item for the activeLink
-    link.itemID = i;
-}
-// set first item as active
-links[activeLink].classList.add("active");
+           // identify the item for the activeLink
+          link.itemID = i;
+         }
+        // set first item as active
+        links[activeLink].classList.add("active");
   
-    var transforms = ["transform",
+        var transforms = ["transform",
             "msTransform",
             "webkitTransform",
             "mozTransform",
             "oTransform"];
  
-   transformPropertyHAHAHA = getSupportedPropertyName(transforms);
+       transformPropertyHAHAHA = getSupportedPropertyName(transforms);
 
 }
       ///////////////end HA ///////////////////////////	

@@ -100,8 +100,15 @@ $(document).ready(function () {
       	     document.getElementById('HP2.0HA__desc').setAttribute('id', 'HP20HA__desc');
       	     //document.getElementById('HP2.0HA__contentContainer').setAttribute('id', 'HP20HA__contentContainer');
              var allids=document.getElementsByClassName('HAcontent');
+             var bgimages=document.getElementsByClassName('HAimgs');
+             var allbgs=bgimages[0].innerHTML;
+             var haimgs=arrayofimgs.toString();
+             var allimgs=haimgs.split('%');
+           
+                 
              for (var j=0; j<allids.length; j++) {
                   allids[j].setAttribute('id', 'item' + parseInt(j+1));
+                  allids[j].style.backgroundImage = "url('" + allimgs[j] + "')";
              }
              var allliitems=document.getElementsByClassName('itemLinks');
              var m=0;

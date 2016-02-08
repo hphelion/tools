@@ -102,7 +102,7 @@ $(document).ready(function () {
              var allids=document.getElementsByClassName('HAcontent');
              var bgimages=document.getElementsByClassName('HAimgs');
              var allbgs=bgimages[0].innerHTML;
-             var haimgs=arrayofimgs.toString();
+             var haimgs=allbgs.toString();
              var allimgs=haimgs.split('%');
            
                  

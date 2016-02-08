@@ -117,13 +117,18 @@ $(document).ready(function () {
              var wrapper = document.getElementById("wrapper");
 
             // Build array of slide information.
-            HAinfo = [
+            var arrayoftext=document.getElementsByClassName('HAsliderText');
+            
+                 var info=arrayoftext[0].toString();
+                 var allText=info.split('%');
+                 HAinfo=allText;
+           /* HAinfo = [
 			"The HPE Helion OpenStack installer deploys highly available configurations of OpenStack cloud services, resilient against single points of failure. Step through the included flow for an API request in an HA deployment. All API requests (internal and external) are sent through the VIP. ",
 			"keepalived has currently configured the VIP on the Controller0 node; client sends Nova request to VIP:8774",
 			"HA proxy (listening on VIP:8774) receives the request and selects Controller0 from the list of available nodes (Controller0, Controller1, Controller2). The request is forwarded to the Controller0IP:8774",
 			"nova-api on Controller0 receives the request and determines that a database change is required. It connects to the database using VIP:3306",
 			"HA proxy (listening on VIP:3306) receives the database connection request and selects Controller0 from the list of available nodes (Controller0, Controller1, Controller2). The connection request is forwarded to Controller0IP:3306",
-			];
+			]; */
 
            // Set initial text.
            document.getElementById("HP20HA__desc").innerHTML = HAinfo[0];

@@ -723,19 +723,19 @@ margin-top: -16px;
         color: #FFFFFF;
 }
 			
-#itemOne {
+#item1 {
 	background-image: url("../../../media/ha/HPE_HA_Flow.png");
 }
-#itemTwo {
+#item2 {
 	background-image: url("../../../media/ha/HPE_HA_Flow-1.png");
 }
-#itemThree {
+#item3 {
 	background-image: url("../../../media/ha/HPE_HA_Flow-2.png");
 }
-#itemFour {
+#item4 {
 	background-image: url("../../../media/ha/HPE_HA_Flow-3.png");
 }
-#itemFive {
+#item5 {
         background-image: url("../../../media/ha/HPE_HA_Flow-4.png");
 }
 #HP20HA__desc {

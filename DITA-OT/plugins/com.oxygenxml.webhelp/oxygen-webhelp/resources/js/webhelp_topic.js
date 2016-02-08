@@ -100,12 +100,9 @@ $(document).ready(function () {
       	document.getElementById('HP2.0HA__desc').setAttribute('id', 'HP20HA__desc');
       	//document.getElementById('HP2.0HA__contentContainer').setAttribute('id', 'HP20HA__contentContainer');
         var allids=document.getElementsByClassName('HAcontent');
-        allids[0].setAttribute('id', 'itemOne');
-        allids[1].setAttribute('id', 'itemTwo');
-        allids[2].setAttribute('id', 'itemThree');
-        allids[3].setAttribute('id', 'itemFour');
-        allids[4].setAttribute('id', 'itemFive');
-  
+        for (var j=0; j<allids; j++) {
+             allids[j].setAttribute('id', 'item' + j+1);
+        }
         var allliitems=document.getElementsByClassName('itemLinks');
         allliitems[0].setAttribute('data-pos', '0px');
         allliitems[1].setAttribute('data-pos', '-1000px');

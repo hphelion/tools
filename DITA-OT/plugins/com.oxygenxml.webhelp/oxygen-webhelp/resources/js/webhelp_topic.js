@@ -117,9 +117,9 @@ $(document).ready(function () {
              var wrapper = document.getElementById("wrapper");
 
             // Build array of slide information.
-            var arrayoftext=document.getElementsByClassName('HAsliderText');
-            
-                 var info=arrayoftext[0].toString();
+            var arraytext=document.getElementsByClassName('HAsliderText');
+            var arrayoftext=arraytext[0].innerHTML;
+                 var info=arrayoftext.toString();
                  var allText=info.split('%');
                  HAinfo=allText;
            /* HAinfo = [

@@ -104,10 +104,10 @@ $(document).ready(function () {
              allids[j].setAttribute('id', 'item' + parseInt(j+1));
         }
         var allliitems=document.getElementsByClassName('itemLinks');
-        for (var k=0; k<allliitems.length; k++) {
         var m=0;
-        allliitems[k].setAttribute('data-pos', m+'px');
-        m-=1000;
+        for (var k=0; k<allliitems.length; k++) {
+             allliitems[k].setAttribute('data-pos', m+'px');
+             m-=1000;
         }
         var rappers=document.getElementsByClassName('wrapper1');
         rappers[0].setAttribute('id', 'wrapper');

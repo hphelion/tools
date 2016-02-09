@@ -97,8 +97,7 @@ $(document).ready(function () {
       	 if (document.getElementsByClassName('wrapper1').length) {
       	     var concontain=document.getElementsByClassName('oldcontentContainer');
       	     concontain[0].setAttribute('id', 'HP20HA__contentContainer');
-      	     var itemdecsr=document.getElementsByClassName('itemDesc');
-      	     itemdecsr[0].setAttribute('id', 'HP20HA__desc');
+             document.getElementById('HP2.0HA__desc').setAttribute('id', 'HP20HA__desc');
       	     //document.getElementById('HP2.0HA__contentContainer').setAttribute('id', 'HP20HA__contentContainer');
              var allids=document.getElementsByClassName('HAcontent');
              var bgimages=document.getElementsByClassName('HAimgs');

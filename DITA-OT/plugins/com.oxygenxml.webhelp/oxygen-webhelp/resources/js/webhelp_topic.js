@@ -123,11 +123,11 @@ $(document).ready(function () {
              var links = document.getElementsByClassName("itemLinks");
              var wrapper = document.getElementById("wrapper");
 
-            // Build array of slide information.
-            var arraytext=document.getElementsByClassName('HAsliderText');
-            var arrayoftext=arraytext[0].innerHTML;
-                 var info=arrayoftext.toString();
-                 HAinfo=info.split('%');
+             // Build array of slide information.
+             var arraytext=document.getElementsByClassName('HAsliderText');
+             var arrayoftext=arraytext[0].innerHTML;
+             var info=arrayoftext.toString();
+             var HAinfo=info.split('%');
                  
           
            // Set initial text.

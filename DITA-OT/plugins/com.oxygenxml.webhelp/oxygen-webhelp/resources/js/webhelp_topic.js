@@ -128,7 +128,7 @@ $(document).ready(function () {
              var arraytext=document.getElementsByClassName('HAsliderText');
              var arrayoftext=arraytext[0].innerHTML;
              var info=arrayoftext.toString();
-             var HAinfo=info.split('%');
+             HAinfo=info.split('%');
                  
           
            // Set initial text.

@@ -1,3 +1,7 @@
+JENKINS="docs-staging.hpcloud.com"
+PRIMARY="docs.hpcloud.com"
+
+
 hipChat () {  
 #Usage: hipChat (PASS|FAIL) "MESSAGE" ROOM
 

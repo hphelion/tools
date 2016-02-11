@@ -93,6 +93,71 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
       { 
+      /////////////////begin HA////////////////////
+      	 if (document.getElementsByClassName('wrapper1').length) {
+      	     var concontain=document.getElementsByClassName('oldcontentContainer');
+      	     concontain[0].setAttribute('id', 'HP20HA__contentContainer');
+             document.getElementById('HP2.0HA__desc').setAttribute('id', 'HP20HA__desc');
+      	     //document.getElementById('HP2.0HA__contentContainer').setAttribute('id', 'HP20HA__contentContainer');
+             var allids=document.getElementsByClassName('HAcontent');
+             var bgimages=document.getElementsByClassName('HAimgs');
+             var allbgs=bgimages[0].innerHTML;
+             var haimgs=allbgs.toString();
+             var allimgs=haimgs.split('%');
+           
+                 
+             for (var j=0; j<allids.length; j++) {
+                  allids[j].setAttribute('id', 'item' + parseInt(j+1));
+                  allids[j].style.backgroundImage = "url('" + allimgs[j] + "')";
+             }
+             var allliitems=document.getElementsByClassName('itemLinks');
+             var m=0;
+             for (var k=0; k<allliitems.length; k++) {
+                  allliitems[k].setAttribute('data-pos', m+'px');
+                  m-=1000;
+             }
+             var rappers=document.getElementsByClassName('wrapper1');
+             rappers[0].setAttribute('id', 'wrapper');
+             var mainlinks=document.getElementsByClassName('navLinks1');
+             mainlinks[0].setAttribute('id', 'navLinks');
+             var links = document.getElementsByClassName("itemLinks");
+             var wrapper = document.getElementById("wrapper");
+
+             // Build array of slide information.
+             var arraytext=document.getElementsByClassName('HAsliderText');
+             var arrayoftext=arraytext[0].innerHTML;
+             var info=arrayoftext.toString();
+             HAinfo=info.split('%');
+                 
+          
+           // Set initial text.
+           document.getElementById("HP20HA__desc").innerHTML = HAinfo[0];
+
+          // the activeLink provides a pointer to the currently displayed item
+           var activeLink = 0;
+ 
+          // setup the event listeners
+          for (var i = 0; i < links.length; i++) {
+              var link = links[i];
+          link.addEventListener('click', setClickedItem, false);
+ 
+           // identify the item for the activeLink
+          link.itemID = i;
+         }
+        // set first item as active
+        links[activeLink].classList.add("active");
+  
+        var transforms = ["transform",
+            "msTransform",
+            "webkitTransform",
+            "mozTransform",
+            "oTransform"];
+ 
+       transformPropertyHAHAHA = getSupportedPropertyName(transforms);
+
+}
+      ///////////////end HA ///////////////////////////	
+      	
           
         if (document.getElementsByClassName("headerH")){
 
@@ -137,13 +202,54 @@ $(document).ready(function () {
  for (var i=0; i<allAnchors.length; i++) {
      var hrf=allAnchors[i].href;
      if (hrf.indexOf('#')!=-1) {
-     	if (hrf.search("http://docs.hpcloud.com/eucalyptus")<0) {
-           allAnchors[i].setAttribute('target', '_self');
-     	}
+     	//if (hrf.search("http://docs.hpcloud.com/")<0) {
+     		if (allAnchors[i].target!="_blank") {
+        	 allAnchors[i].setAttribute('target', '_self');
+                 
+     		}
+     	//}
      }
   }
 }); 
-  
+
+
+   ///////////////HA//////////////////////
+  function setClickedItem(e) {
+    removeActiveLinks();
+ 
+    var clickedLink = e.target;
+    activeLink = clickedLink.itemID;
+ 
+    changePosition(clickedLink);
+	document.getElementById("HP20HA__desc").innerHTML = HAinfo[clickedLink.itemID];
+}
+ 
+function removeActiveLinks() {
+var links = document.getElementsByClassName("itemLinks");
+    for (var i = 0; i < links.length; i++) {
+        links[i].classList.remove("active");
+    }
+}
+ 
+// Handle changing the slider position as well as ensure
+// the correct link is highlighted as being active
+function changePosition(link) {
+    var position = link.getAttribute("data-pos");
+ 
+    var translateValue = "translate3d(" + position + ", 0px, 0)";
+    wrapper.style[transformPropertyHAHAHA] = translateValue;
+ 
+    link.classList.add("active");
+}
+function getSupportedPropertyName(properties) {
+    for (var i = 0; i < properties.length; i++) {
+        if (typeof document.body.style[properties[i]] != "undefined") {
+            return properties[i];
+        }
+    }
+    return null;
+}
+//////////////end HA ///////////////////
   //added anchor replacement 12/27/15 NM
    function anchorMove1() {
    	var bod=document.getElementsByTagName('body');

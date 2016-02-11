@@ -1,5 +1,7 @@
-JENKINS="docs-staging.hpcloud.com"
-PRIMARY="docs.hpcloud.com"
+JENKINS_NAME="docs-staging.hpcloud.com"
+
+PRIMARY_WAN_IP="173.205.188.47"
+PRIMARY_LAN_IP="192.168.251.121"
 
 
 hipChat () {  

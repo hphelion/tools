@@ -93,11 +93,11 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
       { 
-      	/////////////////begin HA////////////////////
+      /////////////////begin HA////////////////////
       	 if (document.getElementsByClassName('wrapper1').length) {
       	     var concontain=document.getElementsByClassName('oldcontentContainer');
       	     concontain[0].setAttribute('id', 'HP20HA__contentContainer');
-      	     document.getElementById('HP2.0HA__desc').setAttribute('id', 'HP20HA__desc');
+             document.getElementById('HP2.0HA__desc').setAttribute('id', 'HP20HA__desc');
       	     //document.getElementById('HP2.0HA__contentContainer').setAttribute('id', 'HP20HA__contentContainer');
              var allids=document.getElementsByClassName('HAcontent');
              var bgimages=document.getElementsByClassName('HAimgs');
@@ -123,20 +123,13 @@ $(document).ready(function () {
              var links = document.getElementsByClassName("itemLinks");
              var wrapper = document.getElementById("wrapper");
 
-            // Build array of slide information.
-            var arraytext=document.getElementsByClassName('HAsliderText');
-            var arrayoftext=arraytext[0].innerHTML;
-                 var info=arrayoftext.toString();
-                 var allText=info.split('%');
-                 HAinfo=allText;
-           /* HAinfo = [
-			"The HPE Helion OpenStack installer deploys highly available configurations of OpenStack cloud services, resilient against single points of failure. Step through the included flow for an API request in an HA deployment. All API requests (internal and external) are sent through the VIP. ",
-			"keepalived has currently configured the VIP on the Controller0 node; client sends Nova request to VIP:8774",
-			"HA proxy (listening on VIP:8774) receives the request and selects Controller0 from the list of available nodes (Controller0, Controller1, Controller2). The request is forwarded to the Controller0IP:8774",
-			"nova-api on Controller0 receives the request and determines that a database change is required. It connects to the database using VIP:3306",
-			"HA proxy (listening on VIP:3306) receives the database connection request and selects Controller0 from the list of available nodes (Controller0, Controller1, Controller2). The connection request is forwarded to Controller0IP:3306",
-			]; */
-
+             // Build array of slide information.
+             var arraytext=document.getElementsByClassName('HAsliderText');
+             var arrayoftext=arraytext[0].innerHTML;
+             var info=arrayoftext.toString();
+             HAinfo=info.split('%');
+                 
+          
            // Set initial text.
            document.getElementById("HP20HA__desc").innerHTML = HAinfo[0];
 
@@ -220,7 +213,7 @@ $(document).ready(function () {
 }); 
 
 
-  ///////////////HA//////////////////////
+   ///////////////HA//////////////////////
   function setClickedItem(e) {
     removeActiveLinks();
  

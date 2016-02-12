@@ -51,18 +51,18 @@ repo="devplat.docs"
     rm -r $repo
  
   
-repo="public.cloud.docs"
-	echo "clone $repo"
-	rm -r $repo
-	git clone -b ${public_cloud_docs_BRANCH} --single-branch git@github.com:hphelion/${repo}.git ${repo}
-
-	adjust_date_to_last_commit
-
-	cp -rp ${repo}/file/ ./
-	cp -rp ${repo}/publiccloud/ ./
-    cp -rp ${repo}/*.ditamap ./
-
-	rm -r ${repo}
+#repo="public.cloud.docs"
+#	echo "clone $repo"
+#	rm -r $repo
+#	git clone -b ${public_cloud_docs_BRANCH} --single-branch git@github.com:hphelion/${repo}.git ${repo}
+#
+#	adjust_date_to_last_commit
+#
+#	cp -rp ${repo}/file/ ./
+#	cp -rp ${repo}/publiccloud/ ./
+#   cp -rp ${repo}/*.ditamap ./
+#
+#	rm -r ${repo}
 
 
 repo="carrier.grade.docs"

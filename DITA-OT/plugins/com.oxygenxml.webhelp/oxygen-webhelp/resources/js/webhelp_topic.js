@@ -157,7 +157,7 @@ $(document).ready(function () {
 
 }
       ///////////////end HA ///////////////////////////	
-      	
+      /////////////// begin accordions ///////////////////////////		
           
         if (document.getElementsByClassName("headerH")){
 
@@ -178,7 +178,8 @@ $(document).ready(function () {
           collapsing[0].addEventListener('click', collapseall, false);
 
         }
-        
+ /////////////// end accordions ///////////////////////////  
+ /////////////// begin anchors ///////////////////////////
         
 // anchors code can be deleted if we use only drupal        
  var allAnchors=document.getElementsByTagName('A');
@@ -192,9 +193,9 @@ $(document).ready(function () {
      }
   }
 }); 
+ /////////////// end anchors ///////////////////////////
 
-
-   ///////////////HA//////////////////////
+   /////////////// begin HA functions//////////////////////
   function setClickedItem(e) {
     removeActiveLinks();
  
@@ -230,12 +231,12 @@ function getSupportedPropertyName(properties) {
     }
     return null;
 }
-//////////////end HA ///////////////////
+//////////////end HA functions///////////////////
   
 
 
 /*added 12-2-15 NM shows hides sectiondivs */
-
+//////////////begin accordion functions///////////////////
 function accord(){
 var listofnodes=this.parentNode.children;
     for (var i=0; i<listofnodes.length; i++){
@@ -274,4 +275,4 @@ function collapseall(){
       listofnodes[i].parentNode.children[0].innerHTML="&#x25b8;"+headline.substring(1);
     }
 }
-
+//////////////end accordion functions///////////////////

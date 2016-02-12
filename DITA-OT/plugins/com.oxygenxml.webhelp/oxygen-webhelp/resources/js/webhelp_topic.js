@@ -178,36 +178,17 @@ $(document).ready(function () {
           collapsing[0].addEventListener('click', collapseall, false);
 
         }
-        //added anchor replacement 12/27/15 NM
-        if (document.getElementsByClassName("pageAnchor").length && document.getElementsByClassName("pageTarget").length) {  
-           var anchs=document.getElementsByClassName('pageAnchor');
-           for (var i=0; i<anchs.length; i++) {
-              anchs[i].setAttribute('id', 'a'+ i.toString());
-              anchs[i].addEventListener('click', anchorMove, false);
-              
-           }
-        }
-        
-        if (document.getElementsByClassName("pageAnchor1").length) {  
-           var anchs=document.getElementsByClassName('pageAnchor1');
-           for (var i=0; i<anchs.length; i++) {
-              //anchs[i].setAttribute('id', 'a'+ i.toString());
-              anchs[i].addEventListener('click', anchorMove1, false);
-              
-           }
-        }
         
         
+// anchors code can be deleted if we use only drupal        
  var allAnchors=document.getElementsByTagName('A');
  for (var i=0; i<allAnchors.length; i++) {
      var hrf=allAnchors[i].href;
      if (hrf.indexOf('#')!=-1) {
-     	//if (hrf.search("http://docs.hpcloud.com/")<0) {
-     		if (allAnchors[i].target!="_blank") {
-        	 allAnchors[i].setAttribute('target', '_self');
-                 
-     		}
-     	//}
+
+         if (allAnchors[i].target!="_blank") {
+            allAnchors[i].setAttribute('target', '_self');
+     	 }
      }
   }
 }); 
@@ -250,29 +231,7 @@ function getSupportedPropertyName(properties) {
     return null;
 }
 //////////////end HA ///////////////////
-  //added anchor replacement 12/27/15 NM
-   function anchorMove1() {
-   	var bod=document.getElementsByTagName('body');
-   	var bodid=bod[0].id;
- 	var newTarget=this.id;
-  	var elementid = newTarget + '_target';
- 	var element = document.getElementById(elementid);
-   	element.scrollIntoView();
-}
-
-
-  function anchorMove() {
-   var targets=document.getElementsByClassName('pageTarget');
-   var anchorId=this.id;
-   var anchr = anchorId.substring(1);
-   var newIndex=parseInt(anchr);
   
-   var target=targets[newIndex].id;
-  
-   var element = document.getElementById(target);
-   element.scrollIntoView();
-}
-
 
 
 /*added 12-2-15 NM shows hides sectiondivs */
@@ -316,8 +275,3 @@ function collapseall(){
     }
 }
 
-function gothere() {
-    var link=this.getAttribute('data-link');
-    var element = document.getElementById(link);
-    element.scrollIntoView();
-}

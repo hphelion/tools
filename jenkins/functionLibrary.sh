@@ -21,8 +21,7 @@ then
  
 else
 	COLOR="green"
-	MESSAGE="$2"
- 
+        MESSAGE="<b>$JOB_NAME</b> $2 " 
 fi
 
 echo $COLOR

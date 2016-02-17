@@ -2,6 +2,10 @@ JENKINS_NAME="docs-staging.hpcloud.com"
 DOC_SITE_NAME="docs.hpcloud.com"
 PRIMARY_WAN_IP="173.205.188.47"
 PRIMARY_LAN_IP="192.168.251.121"
+TEST_WAN_IP="173.205.188.46"
+TEST_LAN_IP="192.168.251.17"
+TEST_DOC_SITE_NAME="docs-staging.hpcloud.com:9099"
+
 
 
 hipChat () {  

@@ -258,23 +258,30 @@ var listofnodes=this.parentNode.children;
 }
 
 function expandall(){
-  var listofnodes=document.getElementsByClassName("headerH");
-  var allnodes=document.getElementsByClassName("insideSection");
-    for (var i=0; i<allnodes.length; i++){
-      var headline=listofnodes[i].parentNode.children[0].innerHTML;
-      allnodes[i].style.display="block";
-      listofnodes[i].parentNode.children[0].innerHTML="&#x25be;"+headline.substring(1);
-    }
-}
-
+  var allBodyDivs=getElementsByClassName('accordBodyDiv');
+  for (var j=0; j<allBodyDivs.length; j++) {
+  	var listofnodes=allAccordions[j].getElementsByClassName("headerH");
+  	//var listofnodes=document.getElementsByClassName("headerH");
+	 var allnodes=allAccordions[j].getElementsByClassName("insideSection");
+		 for (var i=0; i<allnodes.length; i++){
+      			var headline=listofnodes[i].parentNode.children[0].innerHTML;
+      			allnodes[i].style.display="block";
+      			listofnodes[i].parentNode.children[0].innerHTML="&#x25be;"+headline.substring(1);
+		 }
+	}
+   }
 
 function collapseall(){
-  var listofnodes=document.getElementsByClassName("headerH");
-  var allnodes=document.getElementsByClassName("insideSection");
+  var allBodyDivs=getElementsByClassName('accordBodyDiv');
+  for (var j=0; j<allBodyDivs.length; j++) {
+  	var listofnodes=allAccordions[j].getElementsByClassName("headerH");
+  	//var listofnodes=document.getElementsByClassName("headerH");
+	 var allnodes=allAccordions[j].getElementsByClassName("insideSection");
     for (var i=0; i<allnodes.length; i++){
       var headline=listofnodes[i].parentNode.children[0].innerHTML;
       allnodes[i].style.display="none";
       listofnodes[i].parentNode.children[0].innerHTML="&#x25b8;"+headline.substring(1);
     }
+  }  
 }
 //////////////end accordion functions///////////////////

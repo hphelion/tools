@@ -312,6 +312,8 @@ function collapseall(){
   		allnodes[m].innerHTML="&#x25b8;"+headline.substring(1);
   	}
   }
+}  
+  
   
   function expandall(){
   var allnodes=this.parentNode.childNodes; 

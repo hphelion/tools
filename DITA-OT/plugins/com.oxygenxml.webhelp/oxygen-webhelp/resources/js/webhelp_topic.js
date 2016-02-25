@@ -302,7 +302,7 @@ function expandall(){
 
 function collapseall(){
   var newnode=this.parentElement;
-  var allnodes=newnode.parentElement.childNodes; 
+  var allnodes=newnode.parentElement.children; 
   for (var m=0; m<allnodes.length; m++) {
   	if (allnodes[m].class=='insideSection') {
   		allnodes[m].style.display="none";
@@ -318,7 +318,7 @@ function collapseall(){
   
   function expandall(){
   var newnode=this.parentElement;
-  var allnodes=newnode.parentElement.childNodes; 
+  var allnodes=newnode.parentElement.children; 
   for (var m=0; m<allnodes.length; m++) {
   	if (allnodes[m].class=='insideSection') {
   		allnodes[m].style.display="block";

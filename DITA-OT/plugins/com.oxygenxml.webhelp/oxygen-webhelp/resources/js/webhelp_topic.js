@@ -173,9 +173,11 @@ $(document).ready(function () {
 
         if (document.getElementsByClassName("expandall").length && document.getElementsByClassName("collapseall").length) {       
           var expanding=document.getElementsByClassName("expandall");
-          expanding[0].addEventListener('click', expandall, false);
-          var collapsing=document.getElementsByClassName("collapseall");
-          collapsing[0].addEventListener('click', collapseall, false);
+          for (var k=0; k < expanding.length; k++) {
+              expanding[k].addEventListener('click', expandall, false);
+              var collapsing=document.getElementsByClassName("collapseall");
+              collapsing[k].addEventListener('click', collapseall, false);
+          }
 
         }
  /////////////// end accordions ///////////////////////////  

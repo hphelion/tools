@@ -288,7 +288,7 @@ function collapseall(){
 //////////////end accordion functions///////////////////
 */
 
-
+/*
 function expandall(){
   var listofnodes=this.parentNode.getElementsByClassName("headerH");
   var allnodes=this.parentNode.getElementsByClassName("insideSection");
@@ -298,13 +298,13 @@ function expandall(){
       listofnodes[i].parentNode.children[0].innerHTML="&#x25be;"+headline.substring(1);
     }
 }
-
+*/
 
 function collapseall(){
   var allnodes=this.parentNode.childNodes; 
   for (var m=0; m<allnodes.length; m++) {
   	if (allnodes[m].class=='insideSection') {
-  		allnodes[m]style.display="none";
+  		allnodes[m].style.display="none";
   		
   	}
   	if (allnodes[m].class=='headerH') {
@@ -313,6 +313,18 @@ function collapseall(){
   	}
   }
   
+  function expandall(){
+  var allnodes=this.parentNode.childNodes; 
+  for (var m=0; m<allnodes.length; m++) {
+  	if (allnodes[m].class=='insideSection') {
+  		allnodes[m].style.display="block";
+  		
+  	}
+  	if (allnodes[m].class=='headerH') {
+  		var headline=allnodes[m].innerHTML;
+  		allnodes[m].innerHTML="&#x25be;"+headline.substring(1);
+  	}
+  }
   
   /*var allnodes=document.getElementsByClassName("insideSection");
     for (var i=0; i<allnodes.length; i++){

@@ -257,6 +257,7 @@ var listofnodes=this.parentNode.children;
     }
 }
 
+/*
 function expandall(){
   var allBodyDivs=getElementsByClassName('accordBodyDiv');
   for (var j=0; j<allBodyDivs.length; j++) {
@@ -283,5 +284,29 @@ function collapseall(){
       listofnodes[i].parentNode.children[0].innerHTML="&#x25b8;"+headline.substring(1);
     }
   }  
+}
+//////////////end accordion functions///////////////////
+*/
+
+
+function expandall(){
+  var listofnodes=this.parentNode.getElementsByClassName("headerH");
+  var allnodes=this.parentNode.getElementsByClassName("insideSection");
+    for (var i=0; i<allnodes.length; i++){
+      var headline=listofnodes[i].parentNode.children[0].innerHTML;
+      allnodes[i].style.display="block";
+      listofnodes[i].parentNode.children[0].innerHTML="&#x25be;"+headline.substring(1);
+    }
+}
+
+
+function collapseall(){
+  var listofnodes=this.parentNode.getElementsByClassName("headerH");
+  var allnodes=this.parentNode.getElementsByClassName("insideSection");
+    for (var i=0; i<allnodes.length; i++){
+      var headline=listofnodes[i].parentNode.children[0].innerHTML;
+      allnodes[i].style.display="none";
+      listofnodes[i].parentNode.children[0].innerHTML="&#x25b8;"+headline.substring(1);
+    }
 }
 //////////////end accordion functions///////////////////

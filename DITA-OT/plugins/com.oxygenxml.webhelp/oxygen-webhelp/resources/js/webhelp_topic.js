@@ -174,9 +174,9 @@ $(document).ready(function () {
         if (document.getElementsByClassName("expandall").length && document.getElementsByClassName("collapseall").length) {       
           var expanding=document.getElementsByClassName("expandall");
           for (var k=0; k < expanding.length; k++) {
-              expanding[k].addEventListener('click', expandall(this), false);
+              expanding[k].addEventListener('click', expandall, false);
               var collapsing=document.getElementsByClassName("collapseall");
-              collapsing[k].addEventListener('click', collapseall(this), false);
+              collapsing[k].addEventListener('click', collapseall, false);
           }
 
         }

@@ -301,12 +301,24 @@ function expandall(){
 
 
 function collapseall(){
-  var listofnodes=this.parentNode.getElementsByClassName("headerH");
-  var allnodes=this.parentNode.getElementsByClassName("insideSection");
+  var allnodes=this.parentNode.childNodes; 
+  for (var m=0; m<allnodes.length; m++) {
+  	if (allnodes[m].class=='insideSection') {
+  		allnodes[m]style.display="none";
+  		
+  	}
+  	if (allnodes[m].class=='headerH') {
+  		var headline=allnodes[m].innerHTML;
+  		allnodes[m].innerHTML="&#x25b8;"+headline.substring(1);
+  	}
+  }
+  
+  
+  /*var allnodes=document.getElementsByClassName("insideSection");
     for (var i=0; i<allnodes.length; i++){
       var headline=listofnodes[i].parentNode.children[0].innerHTML;
       allnodes[i].style.display="none";
       listofnodes[i].parentNode.children[0].innerHTML="&#x25b8;"+headline.substring(1);
-    }
+    }*/
 }
 //////////////end accordion functions///////////////////

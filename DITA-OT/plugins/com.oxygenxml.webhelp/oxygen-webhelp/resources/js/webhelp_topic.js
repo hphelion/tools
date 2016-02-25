@@ -304,11 +304,11 @@ function collapseall(){
   
   var allnodes=this.parentElement.parentElement.children; 
   for (var m=0; m<allnodes.length; m++) {
-  	if (allnodes[m].class=='insideSection') {
+  	if (allnodes[m].className=='insideSection') {
   		allnodes[m].style.display="none";
   		
   	}
-  	if (allnodes[m].class=='headerH') {
+  	if (allnodes[m].className=='headerH') {
   		var headline=allnodes[m].innerHTML;
   		allnodes[m].innerHTML="&#x25b8;"+headline.substring(1);
   	}
@@ -320,11 +320,11 @@ function collapseall(){
  
   var allnodes=this.parentElement.parentElement.children; 
   for (var m=0; m<allnodes.length; m++) {
-  	if (allnodes[m].class=='insideSection') {
+  	if (allnodes[m].className=='insideSection') {
   		allnodes[m].style.display="block";
   		
   	}
-  	if (allnodes[m].class=='headerH') {
+  	if (allnodes[m].className=='headerH') {
   		var headline=allnodes[m].innerHTML;
   		allnodes[m].innerHTML="&#x25be;"+headline.substring(1);
   	}

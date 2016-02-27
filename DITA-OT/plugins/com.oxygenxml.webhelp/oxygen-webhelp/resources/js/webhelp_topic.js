@@ -294,12 +294,16 @@ function collapseall(){
 /* show hide functions are used in new accordions where you have subsections */
 
 function hide() {
-  var listofnodes=document.getElementsByClassName("headerH");
+  /*var listofnodes=document.getElementsByClassName("headerH");
   var allnodes=document.getElementsByClassName("insideSection");
      for (var i=0; i<allnodes.length; i++){
         var headline=listofnodes[i].parentNode.children[0].innerHTML;
         listofnodes[i].parentNode.children[0].innerHTML="&#x25b8;"+headline.substring(1);
-     }
+     }*/
+     $(this).parent().parent().children().children('.headerH').each(function() {
+    var head=$(this).html();
+    $(this).html("&#x25b8;"+head.substring(1));
+     });
   $(this).parent().parent().children().children('.insideSection').hide();
 }
 

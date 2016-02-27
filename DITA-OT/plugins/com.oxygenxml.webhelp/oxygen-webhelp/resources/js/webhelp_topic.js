@@ -320,27 +320,6 @@ function show() {
      $(this).parent().parent().children().children('.insideSection').show();
 }
 
-/* --- whole page --- */
-function expandpage(){
-  var listofnodes=document.getElementsByClassName("headerH");
-  var allnodes=document.getElementsByClassName("insideSection");
-    for (var i=0; i<allnodes.length; i++){
-      var headline=listofnodes[i].parentNode.children[0].innerHTML;
-      allnodes[i].style.display="block";
-      listofnodes[i].parentNode.children[0].innerHTML="&#x25be;"+headline.substring(1);
-    }
-}
-
-
-function collapsepage(){
-  var listofnodes=document.getElementsByClassName("headerH");
-  var allnodes=document.getElementsByClassName("insideSection");
-    for (var i=0; i<allnodes.length; i++){
-      var headline=listofnodes[i].parentNode.children[0].innerHTML;
-      allnodes[i].style.display="none";
-      listofnodes[i].parentNode.children[0].innerHTML="&#x25b8;"+headline.substring(1);
-    }
-}
 
 
 //////////////end accordion functions///////////////////

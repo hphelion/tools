@@ -173,9 +173,9 @@ $(document).ready(function () {
 /* ---   whole page   --- */
         if (document.getElementsByClassName("expandpage").length && document.getElementsByClassName("collapsepage").length) {       
           var expanding=document.getElementsByClassName("expandpage");
-          expanding[0].addEventListener('click', expandpage, false);
+          expanding[0].addEventListener('click', expandall, false);
           var collapsing=document.getElementsByClassName("collapsepage");
-          collapsing[0].addEventListener('click', collapsepage, false);
+          collapsing[0].addEventListener('click', collapseall, false);
 
         }
 /* ---   whole page   --- */
@@ -320,27 +320,6 @@ function show() {
      $(this).parent().parent().children().children('.insideSection').show();
 }
 
-/* --- whole page --- */
-function expandpage(){
-  var listofnodes=document.getElementsByClassName("headerH");
-  var allnodes=document.getElementsByClassName("insideSection");
-    for (var i=0; i<allnodes.length; i++){
-      var headline=listofnodes[i].parentNode.children[0].innerHTML;
-      allnodes[i].style.display="block";
-      listofnodes[i].parentNode.children[0].innerHTML="&#x25be;"+headline.substring(1);
-    }
-}
-
-
-function collapsepage(){
-  var listofnodes=document.getElementsByClassName("headerH");
-  var allnodes=document.getElementsByClassName("insideSection");
-    for (var i=0; i<allnodes.length; i++){
-      var headline=listofnodes[i].parentNode.children[0].innerHTML;
-      allnodes[i].style.display="none";
-      listofnodes[i].parentNode.children[0].innerHTML="&#x25b8;"+headline.substring(1);
-    }
-}
 
 
 //////////////end accordion functions///////////////////

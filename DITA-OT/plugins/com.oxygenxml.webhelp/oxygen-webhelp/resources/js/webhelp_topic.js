@@ -170,6 +170,15 @@ $(document).ready(function () {
               headers[i].addEventListener('click', accord, false);
           }
        }
+/* ---   whole page   --- */
+        if (document.getElementsByClassName("expandpage").length && document.getElementsByClassName("collapsepage").length) {       
+          var expanding=document.getElementsByClassName("expandpage");
+          expanding[0].addEventListener('click', expandpage, false);
+          var collapsing=document.getElementsByClassName("collapsepage");
+          collapsing[0].addEventListener('click', collapsepage, false);
+
+        }
+/* ---   whole page   --- */
 
       /* bind the event listeners for the expand collapse links- one kind for many subsections one kind for old single instances  */  
         if (document.getElementsByClassName("expandall").length && document.getElementsByClassName("collapseall").length) {  
@@ -310,6 +319,29 @@ function show() {
      });
      $(this).parent().parent().children().children('.insideSection').show();
 }
+
+/* --- whole page --- */
+function expandpage(){
+  var listofnodes=document.getElementsByClassName("headerH");
+  var allnodes=document.getElementsByClassName("insideSection");
+    for (var i=0; i<allnodes.length; i++){
+      var headline=listofnodes[i].parentNode.children[0].innerHTML;
+      allnodes[i].style.display="block";
+      listofnodes[i].parentNode.children[0].innerHTML="&#x25be;"+headline.substring(1);
+    }
+}
+
+
+function collapsepage(){
+  var listofnodes=document.getElementsByClassName("headerH");
+  var allnodes=document.getElementsByClassName("insideSection");
+    for (var i=0; i<allnodes.length; i++){
+      var headline=listofnodes[i].parentNode.children[0].innerHTML;
+      allnodes[i].style.display="none";
+      listofnodes[i].parentNode.children[0].innerHTML="&#x25b8;"+headline.substring(1);
+    }
+}
+
 
 //////////////end accordion functions///////////////////
 

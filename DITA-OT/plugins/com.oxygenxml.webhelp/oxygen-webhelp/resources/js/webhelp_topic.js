@@ -304,13 +304,19 @@ function hide() {
 }
 
 function show() {
-  var listofnodes=document.getElementsByClassName("headerH");
+  /*var listofnodes=document.getElementsByClassName("headerH");
   var allnodes=document.getElementsByClassName("insideSection");
      for (var i=0; i<allnodes.length; i++){
         var headline=listofnodes[i].parentNode.children[0].innerHTML;
         listofnodes[i].parentNode.children[0].innerHTML="&#x25be;"+headline.substring(1);
         $(this).parent().parent().children('.headerH').innerHTML+="&#x25be;";
-     }
+     } */
+     
+     $(this).parent().parent().children().children('.headerH').each(function() {
+    var head=$(this).html();
+    //$(this).html('hahah'+ head);
+    $(this).html("&#x25be;"+head.substring(1));
+     });
   $(this).parent().parent().children().children('.insideSection').show();
 }
 /* still need to change arrow  */

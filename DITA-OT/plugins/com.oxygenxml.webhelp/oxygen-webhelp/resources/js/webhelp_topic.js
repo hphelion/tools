@@ -172,13 +172,22 @@ $(document).ready(function () {
        }
 
         if (document.getElementsByClassName("expandall").length && document.getElementsByClassName("collapseall").length) {       
-          var expanding=document.getElementsByClassName("expandall");
+         /* var expanding=document.getElementsByClassName("expandall");
           for (var k=0; k < expanding.length; k++) {
               expanding[k].addEventListener('click', expandall, false);
               var collapsing=document.getElementsByClassName("collapseall");
               collapsing[k].addEventListener('click', collapseall, false);
-          }
+          }*/
+		
+              var expands=document.getElementsByClassName('expandall');
+              var collapse=document.getElementsByClassName('collapseall');
 
+              for (var j=0; j<expands.length; j++) {
+                   collapse[j].addEventListener('click', hide, false);
+
+                   expands[j].addEventListener('click', show, false);
+
+                }
         }
  /////////////// end accordions ///////////////////////////  
  /////////////// begin anchors ///////////////////////////
@@ -338,3 +347,12 @@ function collapseall(){
     }*/
 }
 //////////////end accordion functions///////////////////
+function hide() {
+
+  $(this).parent().parent().children().children('.insideSection').hide();
+}
+
+function show() {
+
+  $(this).parent().parent().children().children('.insideSection').show();
+}

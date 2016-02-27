@@ -159,6 +159,7 @@ $(document).ready(function () {
       ///////////////end HA ///////////////////////////	
       /////////////// begin accordions ///////////////////////////		
           
+      /* bind the event listeners for the headline itself   */    
         if (document.getElementsByClassName("headerH")){
 
            var headers=document.getElementsByClassName("headerH");  //h1
@@ -167,27 +168,28 @@ $(document).ready(function () {
               var headline=headers[i].innerHTML;
               headers[i].innerHTML="&#x25b8;"+headline;
               headers[i].addEventListener('click', accord, false);
-
           }
        }
 
-        if (document.getElementsByClassName("expandall").length && document.getElementsByClassName("collapseall").length) {       
-         /* var expanding=document.getElementsByClassName("expandall");
-          for (var k=0; k < expanding.length; k++) {
-              expanding[k].addEventListener('click', expandall, false);
-              var collapsing=document.getElementsByClassName("collapseall");
-              collapsing[k].addEventListener('click', collapseall, false);
-          }*/
-		
-              var expands=document.getElementsByClassName('expandall');
-              var collapse=document.getElementsByClassName('collapseall');
+      /* bind the event listeners for the expand collapse links- one kind for many subsecions one kind for old single instances  */  
+        if (document.getElementsByClassName("expandall").length && document.getElementsByClassName("collapseall").length) {  
+            if (document.getElementsByClassName("accordionWrapper").length) {
+               var expands=document.getElementsByClassName('expandall');
+               var collapse=document.getElementsByClassName('collapseall');
 
-              for (var j=0; j<expands.length; j++) {
+               for (var j=0; j<expands.length; j++) {
                    collapse[j].addEventListener('click', hide, false);
-
                    expands[j].addEventListener('click', show, false);
-
                 }
+            }
+            else {
+                var expanding=document.getElementsByClassName("expandall");
+                for (var k=0; k < expanding.length; k++) {
+                    expanding[k].addEventListener('click', expandall, false);
+                    var collapsing=document.getElementsByClassName("collapseall");
+                    collapsing[k].addEventListener('click', collapseall, false);
+                }
+            }
         }
  /////////////// end accordions ///////////////////////////  
  /////////////// begin anchors ///////////////////////////
@@ -247,6 +249,7 @@ function getSupportedPropertyName(properties) {
 
 
 /*added 12-2-15 NM shows hides sectiondivs */
+/* used in both old accordions and new accordions with subsections */
 //////////////begin accordion functions///////////////////
 function accord(){
 var listofnodes=this.parentNode.children;
@@ -266,93 +269,40 @@ var listofnodes=this.parentNode.children;
     }
 }
 
-/*
+/* expandal and collapseall functions are used in old accordions where you have no subsections */
 function expandall(){
-  var allBodyDivs=getElementsByClassName('accordBodyDiv');
-  for (var j=0; j<allBodyDivs.length; j++) {
-  	var listofnodes=allAccordions[j].getElementsByClassName("headerH");
-  	//var listofnodes=document.getElementsByClassName("headerH");
-	 var allnodes=allAccordions[j].getElementsByClassName("insideSection");
-		 for (var i=0; i<allnodes.length; i++){
-      			var headline=listofnodes[i].parentNode.children[0].innerHTML;
-      			allnodes[i].style.display="block";
-      			listofnodes[i].parentNode.children[0].innerHTML="&#x25be;"+headline.substring(1);
-		 }
-	}
-   }
-
-function collapseall(){
-  var allBodyDivs=getElementsByClassName('accordBodyDiv');
-  for (var j=0; j<allBodyDivs.length; j++) {
-  	var listofnodes=allAccordions[j].getElementsByClassName("headerH");
-  	//var listofnodes=document.getElementsByClassName("headerH");
-	 var allnodes=allAccordions[j].getElementsByClassName("insideSection");
-    for (var i=0; i<allnodes.length; i++){
-      var headline=listofnodes[i].parentNode.children[0].innerHTML;
-      allnodes[i].style.display="none";
-      listofnodes[i].parentNode.children[0].innerHTML="&#x25b8;"+headline.substring(1);
-    }
-  }  
-}
-//////////////end accordion functions///////////////////
-*/
-
-/*
-function expandall(){
-  var listofnodes=this.parentNode.getElementsByClassName("headerH");
-  var allnodes=this.parentNode.getElementsByClassName("insideSection");
+  var listofnodes=document.getElementsByClassName("headerH");
+  var allnodes=document.getElementsByClassName("insideSection");
     for (var i=0; i<allnodes.length; i++){
       var headline=listofnodes[i].parentNode.children[0].innerHTML;
       allnodes[i].style.display="block";
       listofnodes[i].parentNode.children[0].innerHTML="&#x25be;"+headline.substring(1);
     }
 }
-*/
+
 
 function collapseall(){
-  
-  var allnodes=this.parentElement.parentElement.children; 
-  for (var m=0; m<allnodes.length; m++) {
-  	if (allnodes[m].className=='sectiondiv insideSection') {
-  		allnodes[m].style.display="none";
-  		
-  	}
-  	if (allnodes[m].className=='title sectiontitle headerH') {
-  		var headline=allnodes[m].innerHTML;
-  		allnodes[m].innerHTML="&#x25b8;"+headline.substring(1);
-  	}
-  }
-}  
-  
-  
-  function expandall(){
- 
-  var allnodes=this.parentElement.parentElement.children; 
-  for (var m=0; m<allnodes.length; m++) {
-  	if (allnodes[m].className=='sectiondiv insideSection') {
-  		allnodes[m].style.display="block";
-  		
-  	}
-  	if (allnodes[m].className=='title sectiontitle headerH') {
-  		var headline=allnodes[m].innerHTML;
-  		allnodes[m].innerHTML="&#x25be;"+headline.substring(1);
-  	}
-  }
-  
-  /*var allnodes=document.getElementsByClassName("insideSection");
+  var listofnodes=document.getElementsByClassName("headerH");
+  var allnodes=document.getElementsByClassName("insideSection");
     for (var i=0; i<allnodes.length; i++){
       var headline=listofnodes[i].parentNode.children[0].innerHTML;
       allnodes[i].style.display="none";
       listofnodes[i].parentNode.children[0].innerHTML="&#x25b8;"+headline.substring(1);
-    }*/
+    }
 }
-//////////////end accordion functions///////////////////
-function hide() {
 
+/* show hide functions are used in new accordions where you have subsections */
+
+function hide() {
   $(this).parent().parent().children().children('.insideSection').hide();
 }
 
 function show() {
-
   $(this).parent().parent().children().children('.insideSection').show();
 }
+/* still need to change arrow  */
+//////////////end accordion functions///////////////////
+
+
+
+

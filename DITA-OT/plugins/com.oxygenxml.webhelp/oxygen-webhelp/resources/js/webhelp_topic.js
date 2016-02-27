@@ -93,7 +93,7 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
       { 
-      /////////////////begin HA////////////////////
+/* ------------------------begin HA-----------------------------------------------------------------*/
       	 if (document.getElementsByClassName('wrapper1').length) {
       	     var concontain=document.getElementsByClassName('oldcontentContainer');
       	     concontain[0].setAttribute('id', 'HP20HA__contentContainer');
@@ -156,8 +156,9 @@ $(document).ready(function () {
        transformPropertyHAHAHA = getSupportedPropertyName(transforms);
 
 }
-      ///////////////end HA ///////////////////////////	
-      /////////////// begin accordions ///////////////////////////		
+/* ------------------------end HA-----------------------------------------------------------------*/	
+
+/* ------------------------begin accordions-----------------------------------------------------------------*/		
           
       /* bind the event listeners for the headline itself   */    
         if (document.getElementsByClassName("headerH")){
@@ -200,8 +201,9 @@ $(document).ready(function () {
                 }
             }
         }
- /////////////// end accordions ///////////////////////////  
- /////////////// begin anchors ///////////////////////////
+/* ------------------------end accordions-----------------------------------------------------------------*/  
+
+/* ------------------------begin anchors-----------------------------------------------------------------*/
         
 // anchors code can be deleted if we use only drupal        
  var allAnchors=document.getElementsByTagName('A');
@@ -215,9 +217,10 @@ $(document).ready(function () {
      }
   }
 }); 
- /////////////// end anchors ///////////////////////////
 
-   /////////////// begin HA functions//////////////////////
+/* ------------------------end anchors-----------------------------------------------------------------*/
+
+/* ------------------------begin HA functions-----------------------------------------------------------------*/
   function setClickedItem(e) {
     removeActiveLinks();
  
@@ -253,13 +256,13 @@ function getSupportedPropertyName(properties) {
     }
     return null;
 }
-//////////////end HA functions///////////////////
+/* ------------------------end HA functions-----------------------------------------------------------------*/
   
 
 
 /*added 12-2-15 NM shows hides sectiondivs */
 /* used in both old accordions and new accordions with subsections */
-//////////////begin accordion functions///////////////////
+/* ------------------------begin accordion functions-----------------------------------------------------------------*/
 function accord(){
 var listofnodes=this.parentNode.children;
     for (var i=0; i<listofnodes.length; i++){
@@ -320,9 +323,7 @@ function show() {
      $(this).parent().parent().children().children('.insideSection').show();
 }
 
-
-
-//////////////end accordion functions///////////////////
+/* ------------------------end accordion functions-----------------------------------------------------------------*/
 
 
 

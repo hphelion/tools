@@ -172,10 +172,10 @@ $(document).ready(function () {
        }
 /* ---   whole page   --- */
         if (document.getElementsByClassName("expandpage").length && document.getElementsByClassName("collapsepage").length) {       
-          var expanding=document.getElementsByClassName("expandpage");
-          expanding[0].addEventListener('click', expandall, false);
-          var collapsing=document.getElementsByClassName("collapsepage");
-          collapsing[0].addEventListener('click', collapseall, false);
+          var expandpage=document.getElementsByClassName("expandpage");
+          expandpage[0].addEventListener('click', expandall, false);
+          var collapsepage=document.getElementsByClassName("collapsepage");
+          collapsepage[0].addEventListener('click', collapseall, false);
 
         }
 /* ---   whole page   --- */

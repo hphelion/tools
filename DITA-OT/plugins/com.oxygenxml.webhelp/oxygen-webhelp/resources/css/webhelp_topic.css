@@ -630,11 +630,11 @@ div.fignone img {
 color: #00b388;
 }
 
-.expandall {
+.expandall, .expandpage {
 color: rgb(0, 179, 136);
 cursor: pointer;
 }
-.collapseall {
+.collapseall, .collapsepage {
 color: rgb(0, 179, 136);
 cursor: pointer;
 }

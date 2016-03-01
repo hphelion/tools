@@ -38,7 +38,7 @@ mkdir ./media
 repo="devplat.docs"
 	echo "clone $repo"
 	rm -r $repo
-	if ! git clone -b ${devplat_docs_BRANCH} --single-branch  --depth 1 git@github.com:hphelion/${repo}.git ${repo}
+	if ! git clone -b ${devplat_docs_BRANCH} --single-branch git@github.com:hphelion/${repo}.git ${repo}
 	then
 		echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
 		exit 1
@@ -59,7 +59,7 @@ repo="devplat.docs"
 #repo="public.cloud.docs"
 #	echo "clone $repo"
 #	rm -r $repo
-#	git clone -b ${public_cloud_docs_BRANCH} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
+#	git clone -b ${public_cloud_docs_BRANCH} --single-branch git@github.com:hphelion/${repo}.git ${repo}
 #
 #	adjust_date_to_last_commit
 #
@@ -73,7 +73,7 @@ repo="devplat.docs"
 repo="carrier.grade.docs"
 	echo "clone $repo"
 	rm -r $repo
-	if ! git clone -b ${carrier_grade_docs_BRANCH} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
+	if ! git clone -b ${carrier_grade_docs_BRANCH} --single-branch git@github.com:hphelion/${repo}.git ${repo}
 	then
 		echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
 		exit 1
@@ -96,7 +96,7 @@ repo="carrier.grade.docs"
 repo="hcf.docs"
 	echo "clone $repo"
 	rm -r $repo
-	if ! git clone -b ${hcf_docs_BRANCH} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
+	if ! git clone -b ${hcf_docs_BRANCH} --single-branch git@github.com:hphelion/${repo}.git ${repo}
 	then
 		echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
 		exit 1
@@ -116,7 +116,7 @@ repo="hcf.docs"
 repo="hos.docs"
 	echo "clone $repo"
  	rm -r $repo
-	if ! git clone -b ${hos_docs_BRANCH} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
+	if ! git clone -b ${hos_docs_BRANCH} --single-branch git@github.com:hphelion/${repo}.git ${repo}
 	then
 		echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
 		exit 1
@@ -138,7 +138,7 @@ repo="hos.docs"
  repo="wrapper.docs"
 	echo "clone $repo"
 	rm -r $repo
-	if ! git clone -b bundle-2015-may --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
+	if ! git clone -b bundle-2015-may --single-branch git@github.com:hphelion/${repo}.git ${repo}
 	then
 		echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
 		exit 1

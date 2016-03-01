@@ -87,7 +87,7 @@ repo="carrier.grade.docs"
 	cp -rp ${repo}/media/${repo} ./media/${repo}
 	cp -rp ${repo}/CarrierGrade/ ./
         cp -rp ${repo}/CarrierGrade2.0/ ./
-        cp -rp $(repo)/CarrierGrade2.1/ ./
+        cp -rp ${repo}/CarrierGrade2.1/ ./
         cp -rp ${repo}/*.ditamap ./
 
 	rm -r ${repo}

@@ -93,7 +93,7 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
       { 
-      /////////////////begin HA////////////////////
+/* ------------------------begin HA-----------------------------------------------------------------*/
       	 if (document.getElementsByClassName('wrapper1').length) {
       	     var concontain=document.getElementsByClassName('oldcontentContainer');
       	     concontain[0].setAttribute('id', 'HP20HA__contentContainer');
@@ -156,9 +156,11 @@ $(document).ready(function () {
        transformPropertyHAHAHA = getSupportedPropertyName(transforms);
 
 }
-      ///////////////end HA ///////////////////////////	
-      /////////////// begin accordions ///////////////////////////		
+/* ------------------------end HA-----------------------------------------------------------------*/	
+
+/* ------------------------begin accordions-----------------------------------------------------------------*/		
           
+      /* bind the event listeners for the headline itself   */    
         if (document.getElementsByClassName("headerH")){
 
            var headers=document.getElementsByClassName("headerH");  //h1
@@ -167,19 +169,41 @@ $(document).ready(function () {
               var headline=headers[i].innerHTML;
               headers[i].innerHTML="&#x25b8;"+headline;
               headers[i].addEventListener('click', accord, false);
-
           }
        }
-
-        if (document.getElementsByClassName("expandall").length && document.getElementsByClassName("collapseall").length) {       
-          var expanding=document.getElementsByClassName("expandall");
-          expanding[0].addEventListener('click', expandall, false);
-          var collapsing=document.getElementsByClassName("collapseall");
-          collapsing[0].addEventListener('click', collapseall, false);
+/* ---   whole page   --- */
+        if (document.getElementsByClassName("expandpage").length && document.getElementsByClassName("collapsepage").length) {       
+          var expandpage=document.getElementsByClassName("expandpage");
+          expandpage[0].addEventListener('click', expandall, false);
+          var collapsepage=document.getElementsByClassName("collapsepage");
+          collapsepage[0].addEventListener('click', collapseall, false);
 
         }
- /////////////// end accordions ///////////////////////////  
- /////////////// begin anchors ///////////////////////////
+/* ---   whole page   --- */
+
+      /* bind the event listeners for the expand collapse links- one kind for many subsections one kind for old single instances  */  
+        if (document.getElementsByClassName("expandall").length && document.getElementsByClassName("collapseall").length) {  
+            if (document.getElementsByClassName("accordionWrapper").length) {
+               var expands=document.getElementsByClassName('expandall');
+               var collapse=document.getElementsByClassName('collapseall');
+
+               for (var j=0; j<expands.length; j++) {
+                   collapse[j].addEventListener('click', hide, false);
+                   expands[j].addEventListener('click', show, false);
+                }
+            }
+            else {
+                var expanding=document.getElementsByClassName("expandall");
+                for (var k=0; k < expanding.length; k++) {
+                    expanding[k].addEventListener('click', expandall, false);
+                    var collapsing=document.getElementsByClassName("collapseall");
+                    collapsing[k].addEventListener('click', collapseall, false);
+                }
+            }
+        }
+/* ------------------------end accordions-----------------------------------------------------------------*/  
+
+/* ------------------------begin anchors-----------------------------------------------------------------*/
         
 // anchors code can be deleted if we use only drupal        
  var allAnchors=document.getElementsByTagName('A');
@@ -193,9 +217,10 @@ $(document).ready(function () {
      }
   }
 }); 
- /////////////// end anchors ///////////////////////////
 
-   /////////////// begin HA functions//////////////////////
+/* ------------------------end anchors-----------------------------------------------------------------*/
+
+/* ------------------------begin HA functions-----------------------------------------------------------------*/
   function setClickedItem(e) {
     removeActiveLinks();
  
@@ -231,12 +256,13 @@ function getSupportedPropertyName(properties) {
     }
     return null;
 }
-//////////////end HA functions///////////////////
+/* ------------------------end HA functions-----------------------------------------------------------------*/
   
 
 
 /*added 12-2-15 NM shows hides sectiondivs */
-//////////////begin accordion functions///////////////////
+/* used in both old accordions and new accordions with subsections */
+/* ------------------------begin accordion functions-----------------------------------------------------------------*/
 function accord(){
 var listofnodes=this.parentNode.children;
     for (var i=0; i<listofnodes.length; i++){
@@ -255,6 +281,7 @@ var listofnodes=this.parentNode.children;
     }
 }
 
+/* expandal and collapseall functions are used in old accordions where you have no subsections */
 function expandall(){
   var listofnodes=document.getElementsByClassName("headerH");
   var allnodes=document.getElementsByClassName("insideSection");
@@ -275,4 +302,28 @@ function collapseall(){
       listofnodes[i].parentNode.children[0].innerHTML="&#x25b8;"+headline.substring(1);
     }
 }
-//////////////end accordion functions///////////////////
+
+/* show hide functions are used in new accordions where you have subsections */
+
+function hide() {
+
+     $(this).parent().parent().children().children('.headerH').each(function() {
+         var head=$(this).html();
+         $(this).html("&#x25b8;"+head.substring(1));
+     });
+     $(this).parent().parent().children().children('.insideSection').hide();
+}
+
+function show() {
+
+    $(this).parent().parent().children().children('.headerH').each(function() {
+         var head=$(this).html();
+         $(this).html("&#x25be;"+head.substring(1));
+     });
+     $(this).parent().parent().children().children('.insideSection').show();
+}
+
+/* ------------------------end accordion functions-----------------------------------------------------------------*/
+
+
+

@@ -212,7 +212,9 @@ function loadIframe(dynamicURL) {
         $('#frm').show();
         debug('anchorID ' + anchorID);
         var selector = "#" + anchorID +"";
-        $(selector).get(0).scrollIntoView();
+        var el = $('#frm').contents().find(selector);
+        var elDOM = el.get(0)
+        elDOM.scrollIntoView();
         $('div.tooltip').remove();
         $('#breadcrumbLinks').find('a').after('<span>&nbsp;/&nbsp;</span>');
         $('#breadcrumbLinks').find('span').last().html('&nbsp;&nbsp;');

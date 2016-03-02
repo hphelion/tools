@@ -205,7 +205,8 @@ $(document).ready(function () {
 
 /* ------------------------begin anchors-----------------------------------------------------------------*/
         
-// anchors code can be deleted if we use only drupal        
+// anchors code can be deleted if we use only drupal    
+/*
  var allAnchors=document.getElementsByTagName('A');
  for (var i=0; i<allAnchors.length; i++) {
      var hrf=allAnchors[i].href;
@@ -216,6 +217,8 @@ $(document).ready(function () {
      	 }
      }
   }
+*/  
+  
 }); 
 
 /* ------------------------end anchors-----------------------------------------------------------------*/

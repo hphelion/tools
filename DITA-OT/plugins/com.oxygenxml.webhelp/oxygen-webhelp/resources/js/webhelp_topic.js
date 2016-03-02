@@ -205,13 +205,14 @@ $(document).ready(function () {
         
 // anchors code can be deleted if we use only drupal  
 
-var alink = window.location.href;
-var count = 0;
-var hash = str.indexOf('#');
 
-while (hash !== -1) {
+var str = window.location.href;
+var count = 0;
+var pos = str.indexOf('#');
+
+while (pos !== -1) {
   count++;
-  hash = alink.indexOf('#', hash + 1);
+  pos = str.indexOf('#', pos + 1);
 }
 
 
@@ -221,7 +222,7 @@ while (hash !== -1) {
      var hrf=allAnchors[i].href;
      //if (hrf.indexOf('#')!=-1  || hrf.indexOf('../')!=-1) {
 	if (hrf.indexOf('#')!=-1) {
-	  if (hash<2) {
+	  if (count<2) {
             if (allAnchors[i].target!="_blank") {
             allAnchors[i].setAttribute('target', '_self');
      	 }

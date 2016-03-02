@@ -17,6 +17,11 @@ font-size: 14px;
    
 }
 
+div.topic span.ph.product-title {
+display:none;
+
+}
+
 p.heliondate {
 text-align: left;
 font-size: 10px;

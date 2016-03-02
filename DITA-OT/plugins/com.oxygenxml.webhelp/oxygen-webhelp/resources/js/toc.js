@@ -8,6 +8,7 @@ available in the base directory of this Oxygen Webhelp plugin.
  */
 
 var iframeDir = "";
+var anchorID = "";
 var wh = parseUri(window.location);
 var whUrl = wh.protocol + '://' + wh.authority + wh.directory;
 var islocal = wh.protocol == 'file';

@@ -206,27 +206,36 @@ $(document).ready(function () {
 // anchors code can be deleted if we use only drupal  
 
 
-var str = window.location.href;
+/*var str = window.location.href;
 var count = 0;
 var pos = str.indexOf('#');
 
 while (pos !== -1) {
   count++;
   pos = str.indexOf('#', pos + 1);
-}
+} */
 
 
  var allAnchors=document.getElementsByTagName('A');
  var current=window.location.href;
  for (var i=0; i<allAnchors.length; i++) {
      var hrf=allAnchors[i].href;
-     //if (hrf.indexOf('#')!=-1  || hrf.indexOf('../')!=-1) {
+    
 	if (hrf.indexOf('#')!=-1) {
-	  if (count<2) {
+	  if (hrf.indexOf('../')!=-1) {
+	  	var slash=current.lastIndexOf('/')+1;
+	  	var newurl=current.substr(0, slash);
+	  	var path=hrf.indexOf('/');
+	  	var newa=hrf.substr(path);
+	  	
             if (allAnchors[i].target!="_blank") {
+            	allAnchors[i].setAttribute('href', newa);
             allAnchors[i].setAttribute('target', '_self');
-     	 }
-       }	 
+     	   }
+         }	 
+         else if (allAnchors[i].target!="_blank") {
+          allAnchors[i].setAttribute('target', '_self');
+         }  
      }
   }
   

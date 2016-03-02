@@ -204,17 +204,17 @@ $(document).ready(function () {
  /////////////// begin anchors ///////////////////////////
         
 // anchors code can be deleted if we use only drupal  
-/*
+
  var allAnchors=document.getElementsByTagName('A');
  for (var i=0; i<allAnchors.length; i++) {
      var hrf=allAnchors[i].href;
-     if (hrf.indexOf('#')!=-1) {
+     if (hrf.indexOf('#')!=-1  || hrf.indexOf('../')!=-1) {
 
          if (allAnchors[i].target!="_blank") {
             allAnchors[i].setAttribute('target', '_self');
      	 }
      }
-  }*/
+  }
 }); 
  /////////////// end anchors ///////////////////////////
 

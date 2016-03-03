@@ -242,7 +242,7 @@ while (pos !== -1) {
    $('body').off('click', 'a');
    $('div').off('click', 'a');
     $('html').off('click', 'a');
-  var allAnchors=document.getElementsByTagName('A');
+  /*var allAnchors=document.getElementsByTagName('A');
  //var current=window.location.href;
  for (var i=0; i<allAnchors.length; i++) {
      var hrf=allAnchors[i].href;
@@ -254,7 +254,7 @@ while (pos !== -1) {
      	 }
      }
   }
-  
+  */
  
 
   

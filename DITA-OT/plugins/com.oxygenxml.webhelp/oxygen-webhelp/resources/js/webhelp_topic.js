@@ -238,7 +238,7 @@ while (pos !== -1) {
          }  
      }
   }
-  */
+  
   var allAnchors=document.getElementsByTagName('A');
  //var current=window.location.href;
  for (var i=0; i<allAnchors.length; i++) {
@@ -250,7 +250,10 @@ while (pos !== -1) {
             allAnchors[i].setAttribute('target', '_self');
      	 }
      }
-  }
+  }*/
+  
+  $('body').off('click', 'a');
+    $('body').udelegate('a', 'click');
   
 }); 
  /////////////// end anchors ///////////////////////////

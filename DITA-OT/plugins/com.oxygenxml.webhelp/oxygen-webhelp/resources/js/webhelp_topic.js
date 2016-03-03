@@ -205,7 +205,8 @@ $(document).ready(function () {
 
 /* ------------------------begin anchors-----------------------------------------------------------------*/
         
-// anchors code can be deleted if we use only drupal        
+// anchors code can be deleted if we use only drupal   
+/*
  $.browser.chrome = $.browser.webkit && !!window.chrome;
     if ($.browser.chrome) {
        var allAnchors=document.getElementsByTagName('A');
@@ -216,6 +217,8 @@ $(document).ready(function () {
      	   }
        }
     }
+*/    
+    
 }); 
 
 /* ------------------------end anchors-----------------------------------------------------------------*/

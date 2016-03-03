@@ -242,11 +242,11 @@ while (pos !== -1) {
    $('body').off('click', 'a');
    $('div').off('click', 'a');
     $('html').off('click', 'a');
-  /*var allAnchors=document.getElementsByTagName('A');
+  var allAnchors=document.getElementsByTagName('A');
  //var current=window.location.href;
  for (var i=0; i<allAnchors.length; i++) {
      var hrf=allAnchors[i].href;
-     if (hrf.indexOf('#')!=-1  && hrf.indexOf('../')===-1) {
+     if (hrf.indexOf('#')!=-1) {
 
          if (allAnchors[i].target!="_blank") {
          //	allAnchors[i].setAttribute('href', current + '#' + )
@@ -254,7 +254,7 @@ while (pos !== -1) {
      	 }
      }
   }
-  */
+  
  
 
   

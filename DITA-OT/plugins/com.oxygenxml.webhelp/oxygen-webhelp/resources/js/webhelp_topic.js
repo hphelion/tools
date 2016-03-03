@@ -242,17 +242,19 @@ while (pos !== -1) {
    $('body').off('click', 'a');
    $('div').off('click', 'a');
     $('html').off('click', 'a');
-  var allAnchors=document.getElementsByTagName('A');
- //var current=window.location.href;
- for (var i=0; i<allAnchors.length; i++) {
-     var hrf=allAnchors[i].href;
+    $.browser.chrome = $.browser.webkit && !!window.chrome;
+    if ($.browser.chrome) {
+       var allAnchors=document.getElementsByTagName('A');
+        //var current=window.location.href;
+       for (var i=0; i<allAnchors.length; i++) {
+         var hrf=allAnchors[i].href;
      
 
          if (allAnchors[i].target!="_blank") {
          //	allAnchors[i].setAttribute('href', current + '#' + )
             allAnchors[i].setAttribute('target', '_self');
      	 }
-     
+       }
   }
   
  

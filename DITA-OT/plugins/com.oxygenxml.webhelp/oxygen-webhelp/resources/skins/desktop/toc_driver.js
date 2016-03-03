@@ -210,6 +210,16 @@ function loadIframe(dynamicURL) {
             }
         }
         $('#frm').show();
+
+        $.browser.chrome = $.browser.webkit && !!window.chrome;
+        if ($.browser.chrome) {        
+            debug('anchorID ' + anchorID);
+            var selector = "#" + anchorID;
+            var el = $('#frm').contents().find(selector);
+            var elDOM = el.get(0);
+            elDOM.scrollIntoView();
+        }
+        
         $('div.tooltip').remove();
         $('#breadcrumbLinks').find('a').after('<span>&nbsp;/&nbsp;</span>');
         $('#breadcrumbLinks').find('span').last().html('&nbsp;&nbsp;');
@@ -413,6 +423,7 @@ function load(link) {
                 loadIframe(hr);
                 var p = parseUri(hr);
                 debug('load: parseUri(hr)=', p);
+                anchorID = p.anchor;
                 iframeDir = p.host + p.directory;
                 if (p.protocol == '' && p.path == '' && p.directory == '') {
                     iframeDir = '';

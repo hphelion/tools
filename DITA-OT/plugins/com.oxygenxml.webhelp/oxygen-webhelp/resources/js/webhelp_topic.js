@@ -246,13 +246,13 @@ while (pos !== -1) {
  //var current=window.location.href;
  for (var i=0; i<allAnchors.length; i++) {
      var hrf=allAnchors[i].href;
-     if (hrf.indexOf('#')!=-1) {
+     
 
          if (allAnchors[i].target!="_blank") {
          //	allAnchors[i].setAttribute('href', current + '#' + )
             allAnchors[i].setAttribute('target', '_self');
      	 }
-     }
+     
   }
   
  

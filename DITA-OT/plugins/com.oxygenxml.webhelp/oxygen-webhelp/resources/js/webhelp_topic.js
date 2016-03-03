@@ -253,7 +253,9 @@ while (pos !== -1) {
   }*/
   
   $('body').off('click', 'a');
-    $('body').udelegate('a', 'click');
+   $('div').off('click', 'a');
+    $('html').off('click', 'a');
+
   
 }); 
  /////////////// end anchors ///////////////////////////

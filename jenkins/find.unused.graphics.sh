@@ -21,7 +21,7 @@ if [[ $(diff files.in.dita.txt files.on.disk.txt  | grep ">" | sed 's|>||g') ]]
                                 find . -name $i
                         done
                 echo "================================================================================"
-				./hipchat-notification.sh red  145  "Build $BUILD_NUMBER $STATUS - Unused graphics found in the $REPO_BRANCH_TO_CHECK branch of the $REPO repo. Details <a href=\"$BUILD\">here</a>." 1
+				./hipchat-notification.sh red  145  "Build $BUILD_NUMBER $STATUS - Unused graphics found in the $REPO_BRANCH_TO_CHECK branch of the $REPO repo. Details <a href=\\"$BUILD\\">here</a>." 1
                 exit 1;
     else
                 echo "========================"

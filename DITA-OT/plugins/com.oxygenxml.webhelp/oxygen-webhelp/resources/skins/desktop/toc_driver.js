@@ -212,8 +212,8 @@ function loadIframe(dynamicURL) {
         $('#frm').show();
 
         $.browser.chrome = $.browser.webkit && !!window.chrome;
-        if ($.browser.chrome) {        
-            debug('anchorID ' + anchorID);
+        debug('anchorID ' + anchorID);
+        if ($.browser.chrome && !!anchorID) {                    
             var selector = "#" + anchorID;
             var el = $('#frm').contents().find(selector);
             var elDOM = el.get(0);

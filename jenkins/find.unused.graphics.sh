@@ -21,13 +21,14 @@ if [[ $(diff files.in.dita.txt files.on.disk.txt  | grep ">" | sed 's|>||g') ]]
                                 find . -name $i
                         done
                 echo "================================================================================"
-				./hipchat-notification.sh green  145  "Unused graphics found in the $REPO_BRANCH_TO_CHECK branch of the $REPO repo" 1
+				./hipchat-notification.sh green  145  "Build $BUILD_NUMBER $STATUS - Unused graphics found in the $REPO_BRANCH_TO_CHECK branch of the $REPO repo. Details <a href=\"${BUILD_URL}here\">.</a>" 1
                 exit 1;
     else
                 echo "========================"
                 echo "No unused graphics found"
                 echo "========================"
-                ./hipchat-notification.sh green  145  "No unused graphics found" 0
+                ./hipchat-notification.sh green  145  "Build $BUILD_NUMBER - No unused graphics found in the $REPO_BRANCH_TO_CHECK branch of the $REPO repo" 0
                 exit 0;
 fi
 
+Build $BUILD_NUMBER $STATUS (View the <a href="${BUILD_URL}console">build log</a>

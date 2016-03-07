@@ -142,7 +142,7 @@ echo start hos clone
 repo="hos.docs"
 	echo "clone $repo"
 	
-	if [[ $(git ls-remote ${repo} ${hos_docs_BRANCH} ) ]]; then
+	if [[ $(git ls-remote git@github.com:hphelion/${repo} $hos_docs_BRANCH ) ]]; then
     echo "Branch $hos_docs_BRANCH exists on github"
 	
 	echo "clone $repo"

@@ -38,7 +38,7 @@ mkdir ./media
 repo="devplat.docs"
 	echo "clone $repo"
 	
-	if [[ $(git ls-remote git@github.com:hphelion/${repo} ${devplat_docs_BRANCH}  | grep -v heads) ]]; then
+	if [[ $(git ls-remote git@github.com:hphelion/${repo} ${devplat_docs_BRANCH} ) ]]; then
     echo "Branch $devplat_docs_BRANCH exists on github"
 
 	rm -r $repo
@@ -81,7 +81,7 @@ repo="devplat.docs"
 repo="carrier.grade.docs"
 	echo "clone $repo"
 	
-	if [[ $(git ls-remote git@github.com:hphelion/${repo} ${carrier_grade_docs_BRANCH}  | grep -v heads) ]]; then
+	if [[ $(git ls-remote git@github.com:hphelion/${repo} ${carrier_grade_docs_BRANCH} ) ]]; then
     echo "Branch $devplat_docs_BRANCH exists on github"
 	
 	rm -r $repo
@@ -113,7 +113,7 @@ repo="carrier.grade.docs"
 repo="hcf.docs"
 	echo "clone $repo"
 	
-	if [[ $(git ls-remote git@github.com:hphelion/${repo} ${hcf_docs_BRANCH}  | grep -v heads) ]]; then
+	if [[ $(git ls-remote git@github.com:hphelion/${repo} ${hcf_docs_BRANCH} ) ]]; then
     echo "Branch $devplat_docs_BRANCH exists on github"
 	
 	rm -r $repo
@@ -141,7 +141,7 @@ repo="hcf.docs"
 echo start hos clone	
 	echo "clone $repo"
 	
-	if [[ $(git ls-remote ${repo} ${hos_docs_BRANCH}  | grep -v heads) ]]; then
+	if [[ $(git ls-remote ${repo} ${hos_docs_BRANCH} ) ]]; then
     echo "Branch $devplat_docs_BRANCH exists on github"
 	
 	echo "clone $repo"
@@ -175,7 +175,7 @@ echo stop hos clone
  repo="wrapper.docs"
 	echo "clone $repo"
 	
-	if [[ $(git ls-remote git@github.com:hphelion/${repo} ${bundle-2015-may}  | grep -v heads) ]]; then
+	if [[ $(git ls-remote git@github.com:hphelion/${repo} ${bundle-2015-may} ) ]]; then
     echo "Branch bundle-2015-may exists on github"
 	
 	rm -r $repo

@@ -82,7 +82,7 @@ repo="carrier.grade.docs"
 	echo "clone $repo"
 	
 	if [[ $(git ls-remote git@github.com:hphelion/${repo} ${carrier_grade_docs_BRANCH} ) ]]; then
-    echo "Branch $devplat_docs_BRANCH exists on github"
+    echo "Branch $carrier_grade_docs_BRANCH exists on github"
 	
 	rm -r $repo
 		if ! git clone -b ${carrier_grade_docs_BRANCH} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
@@ -114,7 +114,7 @@ repo="hcf.docs"
 	echo "clone $repo"
 	
 	if [[ $(git ls-remote git@github.com:hphelion/${repo} ${hcf_docs_BRANCH} ) ]]; then
-    echo "Branch $devplat_docs_BRANCH exists on github"
+    echo "Branch hcf_docs_BRANCH exists on github"
 	
 	rm -r $repo
 		if ! git clone -b ${hcf_docs_BRANCH} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
@@ -139,10 +139,11 @@ repo="hcf.docs"
 
 	
 echo start hos clone	
+repo="hos.docs"
 	echo "clone $repo"
 	
 	if [[ $(git ls-remote ${repo} ${hos_docs_BRANCH} ) ]]; then
-    echo "Branch $devplat_docs_BRANCH exists on github"
+    echo "Branch $hos_docs_BRANCH exists on github"
 	
 	echo "clone $repo"
  	rm -r $repo

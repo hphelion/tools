@@ -112,7 +112,7 @@ repo="hcf.docs"
 	rm -r ${repo}
 
 	
-	
+echo start hos clone	
 repo="hos.docs"
 	echo "clone $repo"
  	rm -r $repo
@@ -122,6 +122,8 @@ repo="hos.docs"
 		exit 1
 	fi
     
+echo stop hos clone
+
     adjust_date_to_last_commit
 
 	cp -rp ${repo}/community/ ./

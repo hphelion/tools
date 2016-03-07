@@ -37,13 +37,21 @@ mkdir ./media
 
 repo="devplat.docs"
 	echo "clone $repo"
-	rm -r $repo
-	if ! git clone -b ${devplat_docs_BRANCH} --single-branch  --depth 1 git@github.com:hphelion/${repo}.git ${repo}
-	then
-		echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
-		exit 1
-	fi
 	
+	if [[ $(git ls-remote git@github.com:hphelion/${repo} ${devplat_docs_BRANCH} ) ]]; then
+    echo "Branch $devplat_docs_BRANCH exists on github"
+
+	rm -r $repo
+		if ! git clone -b ${devplat_docs_BRANCH} --single-branch  --depth 1 git@github.com:hphelion/${repo}.git ${repo}
+		then
+			echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
+			exit 1
+		fi
+	
+	else
+		echo "Branch $devplat_docs_BRANCH does not exist on github.  Stopping the build."
+		exit 1
+	fi	
     
     adjust_date_to_last_commit
     
@@ -72,12 +80,21 @@ repo="devplat.docs"
 
 repo="carrier.grade.docs"
 	echo "clone $repo"
+	
+	if [[ $(git ls-remote git@github.com:hphelion/${repo} ${carrier_grade_docs_BRANCH} ) ]]; then
+    echo "Branch $carrier_grade_docs_BRANCH exists on github"
+	
 	rm -r $repo
-	if ! git clone -b ${carrier_grade_docs_BRANCH} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
-	then
-		echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
+		if ! git clone -b ${carrier_grade_docs_BRANCH} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
+		then
+			echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
+			exit 1
+		fi
+	
+	else
+		echo "Branch carrier_grade_docs_BRANCH does not exist on github.  Stopping the build."
 		exit 1
-	fi
+	fi	
 
 	
 	
@@ -95,12 +112,21 @@ repo="carrier.grade.docs"
 
 repo="hcf.docs"
 	echo "clone $repo"
+	
+	if [[ $(git ls-remote git@github.com:hphelion/${repo} ${hcf_docs_BRANCH} ) ]]; then
+    echo "Branch hcf_docs_BRANCH exists on github"
+	
 	rm -r $repo
-	if ! git clone -b ${hcf_docs_BRANCH} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
-	then
-		echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
+		if ! git clone -b ${hcf_docs_BRANCH} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
+		then
+			echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
+			exit 1
+		fi
+	
+	else
+		echo "Branch hcf_docs_BRANCH does not exist on github.  Stopping the build."
 		exit 1
-	fi
+	fi	
 
 
 	adjust_date_to_last_commit
@@ -112,15 +138,27 @@ repo="hcf.docs"
 	rm -r ${repo}
 
 	
+echo start hos clone	
 repo="hos.docs"
 	echo "clone $repo"
+	
+	if [[ $(git ls-remote git@github.com:hphelion/${repo} $hos_docs_BRANCH ) ]]; then
+    echo "Branch $hos_docs_BRANCH exists on github"
+	
+	echo "clone $repo"
  	rm -r $repo
-	if ! git clone -b ${hos_docs_BRANCH} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
-	then
-		echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
+		if ! git clone -b ${hos_docs_BRANCH} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
+		then
+			echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
+			exit 1
+		fi
+	
+	else
+		echo "Branch hos_docs_BRANCH does not exist on github.  Stopping the build."
 		exit 1
-	fi
+	fi	
     
+echo stop hos clone
 
     adjust_date_to_last_commit
 
@@ -137,12 +175,21 @@ repo="hos.docs"
  
  repo="wrapper.docs"
 	echo "clone $repo"
+	
+	if [[ $(git ls-remote git@github.com:hphelion/${repo} ${bundle-2015-may} ) ]]; then
+    echo "Branch bundle-2015-may exists on github"
+	
 	rm -r $repo
-	if ! git clone -b bundle-2015-may --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
-	then
-		echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
-		exit 1
-	fi
+		if ! git clone -b bundle-2015-may --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
+		then
+			echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
+			exit 1
+		fi
+		
+		else
+			echo "Branch $devplat_docs_BRANCH does not exist on github.  Stopping the build."
+			exit 1
+		fi	
     
     adjust_date_to_last_commit
 

@@ -1,4 +1,5 @@
 #!/bin/bash
+source <(curl -s https://raw.githubusercontent.com/hphelion/tools/master/jenkins/functionLibrary.sh)
 
 HIPCHAT_ROOM="$1"
 

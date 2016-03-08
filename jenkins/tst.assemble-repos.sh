@@ -29,17 +29,17 @@ function adjust_date_to_last_commit {
     echo "Branch $branch exists on github"
 	
 	rm -r $repo
-		if ! git clone -b ${branch} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
+		if ! git clone -b ${branch} --single-branch --depth 1 git@github.com:hphdelion/${repo}.git ${repo}
 		then
 			echo >&2 Cloning git@github.com:hphelion/${repo}.git failed.  Stopping the build.
 
-			hipChat FAIL "Cloning the $repo repo failed. Stopping the build." $HIPCHAT_ROOM
+			hipChat FAIL "Cloning the $repo repo failed. Stopping the build.  The files on docs.hpcloud.com were not changed." $HIPCHAT_ROOM
 			exit 1;
 		fi
 	
 	else
 		echo "Branch $branch does not exist on github.  Stopping the build."
-		hipChat FAIL "Branch $branch does not exist on in the $repo on github Stopping the build." $HIPCHAT_ROOM
+		hipChat FAIL "Branch <b>$branch</b> does not exist on in the $repo on github. Stopping the build. The files on docs.hpcloud.com were not changed." $HIPCHAT_ROOM
 
 		exit 1;
 	fi	

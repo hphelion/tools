@@ -1,5 +1,7 @@
 #!/bin/bash
 
+HIPCHAT_ROOM="$1"
+
 function adjust_date_to_last_commit {
 	pwd
     cd $repo

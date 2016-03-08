@@ -1,9 +1,12 @@
 #!/bin/bash
+source <(curl -s https://raw.githubusercontent.com/hphelion/tools/master/jenkins/functionLibrary.sh)
+
+HIPCHAT_ROOM="$1"
 
 function adjust_date_to_last_commit {
-pwd
+	pwd
     cd $repo
-pwd    
+	pwd    
     for t in $(find . -name "*.dita");
     do
     	echo $repo : $t
@@ -16,6 +19,34 @@ pwd
 	done
     cd -    
 }
+ 
+ function clone_repo {
+ repo=$1
+ branch=$2
+ 
+	echo "clone $repo"
+ 	if [[ $(git ls-remote git@github.com:hphelion/${repo} ${branch} ) ]]; then
+    echo "Branch $branch exists on github"
+	
+	rm -r $repo
+		if ! git clone -b ${branch} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
+		then
+			echo >&2 Cloning git@github.com:hphelion/${repo}.git failed.  Stopping the build.
+
+			hipChat FAIL "Cloning the <b>$repo repo failed.</b> Stopping the build.  The files on docs.hpcloud.com were not changed." $HIPCHAT_ROOM
+			exit 1;
+		fi
+	
+	else
+		echo "Branch $branch does not exist on github.  Stopping the build."
+		hipChat FAIL "Branch <b>$branch</b> does not exist on in the $repo on github. Stopping the build. The files on docs.hpcloud.com were not changed." $HIPCHAT_ROOM
+
+		exit 1;
+	fi	
+}
+ 
+ 
+ 
  
 pwd
 source ./tools/jenkins/publish-config.sh
@@ -36,19 +67,11 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 mkdir ./media
 
 repo="devplat.docs"
-	echo "clone $repo"
-	rm -r $repo
-	if ! git clone -b ${devplat_docs_BRANCH} --single-branch  --depth 1 git@github.com:hphelion/${repo}.git ${repo}
-	then
-		echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
-		exit 1
-	fi
-	
-    
+branch="$devplat_docs_BRANCH"
+
+	clone_repo $repo $branch
     adjust_date_to_last_commit
-    
 	cp -rp ${repo}/devplatform/ ./
-   # cp -rp ${repo}/media/${repo} ./
 	cp -rp ${repo}/media/${repo} ./media/${repo}
     cp -rp ${repo}/*.ditamap ./
     cp -rp ${repo}/hdp-html/ ./
@@ -71,40 +94,24 @@ repo="devplat.docs"
 
 
 repo="carrier.grade.docs"
-	echo "clone $repo"
-	rm -r $repo
-	if ! git clone -b ${carrier_grade_docs_BRANCH} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
-	then
-		echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
-		exit 1
-	fi
+branch="$carrier_grade_docs_BRANCH"
 
-	
-	
-	
+	clone_repo $repo $branch
     adjust_date_to_last_commit
-
 	cp -rp ${repo}/media/${repo} ./media/${repo}
 	cp -rp ${repo}/CarrierGrade/ ./
-        cp -rp ${repo}/CarrierGrade2.0/ ./
-        cp -rp ${repo}/CarrierGrade2.1/ ./
-        cp -rp ${repo}/*.ditamap ./
+    cp -rp ${repo}/CarrierGrade2.0/ ./
+    cp -rp ${repo}/CarrierGrade2.1/ ./
+    cp -rp ${repo}/*.ditamap ./
 
 	rm -r ${repo}
 
 
 repo="hcf.docs"
-	echo "clone $repo"
-	rm -r $repo
-	if ! git clone -b ${hcf_docs_BRANCH} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
-	then
-		echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
-		exit 1
-	fi
+branch="$hcf_docs_BRANCH"
 
-
+	clone_repo $repo $branch
 	adjust_date_to_last_commit
-
 	cp -rp ${repo}/media/${repo} ./media/${repo}
     cp -rp ${repo}/*.ditamap ./
 	cp -rp ${repo}/hcf/ ./
@@ -112,18 +119,12 @@ repo="hcf.docs"
 	rm -r ${repo}
 
 	
+echo start hos clone	
 repo="hos.docs"
-	echo "clone $repo"
- 	rm -r $repo
-	if ! git clone -b ${hos_docs_BRANCH} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
-	then
-		echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
-		exit 1
-	fi
-    
+branch="$hos_docs_BRANCH"
 
+	clone_repo $repo $branch
     adjust_date_to_last_commit
-
 	cp -rp ${repo}/community/ ./
     cp -rp ${repo}/commercial/ ./
     cp -rp ${repo}/helion/ ./
@@ -136,19 +137,13 @@ repo="hos.docs"
 
  
  repo="wrapper.docs"
-	echo "clone $repo"
-	rm -r $repo
-	if ! git clone -b bundle-2015-may --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
-	then
-		echo >&2 Cloning git@github.com:hphelion/${repo}.git faild.  Stopping the build.
-		exit 1
-	fi
-    
+branch="bundle-2015-may"
+ 
+	clone_repo $repo $branch
     adjust_date_to_last_commit
-
 	cp -r ${repo}/* ./
    
-    rm -r $repo
+	rm -r ${repo}
 
  
  

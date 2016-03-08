@@ -33,13 +33,13 @@ function adjust_date_to_last_commit {
 		then
 			echo >&2 Cloning git@github.com:hphelion/${repo}.git failed.  Stopping the build.
 
-			hipChat FAIL "Cloning the <b>$repo repo failed.</b> Stopping the build.  The files on docs.hpcloud.com were not changed." $HIPCHAT_ROOM
+			hipChat FAIL "Cloning the <b>$repo repo failed.</b> Stopping the build.  The files on docs.hpcloud.com were not changed. (See the <a href="$URL/console">build log</a> for more information.)" $HIPCHAT_ROOM
 			exit 1;
 		fi
 	
 	else
 		echo "Branch $branch does not exist on github.  Stopping the build."
-		hipChat FAIL "Branch <b>$branch</b> does not exist on in the $repo on github. Stopping the build. The files on docs.hpcloud.com were not changed." $HIPCHAT_ROOM
+		hipChat FAIL "Branch <b>$branch</b> does not exist on in the $repo on github. Stopping the build. The files on docs.hpcloud.com were not changed. (See the <a href="$URL/console">build log</a> for more information.)" $HIPCHAT_ROOM
 
 		exit 1;
 	fi	

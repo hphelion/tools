@@ -23,7 +23,7 @@ function adjust_date_to_last_commit {
  
 	echo "clone $repo"
  	if [[ $(git ls-remote git@github.com:hphelion/${repo} ${branch} ) ]]; then
-    echo "Branch $this.branch exists on github"
+    echo "Branch $branch exists on github"
 	
 	rm -r $repo
 		if ! git clone -b ${branch} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
@@ -34,7 +34,7 @@ function adjust_date_to_last_commit {
 		fi
 	
 	else
-		echo "Branch $this.branch does not exist on github.  Stopping the build."
+		echo "Branch $branch does not exist on github.  Stopping the build."
 		ABORT="yes"
 		exit 1;
 	fi	

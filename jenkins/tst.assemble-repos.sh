@@ -26,11 +26,13 @@ function adjust_date_to_last_commit {
 		if ! git clone -b ${this.branch} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
 		then
 			echo >&2 Cloning git@github.com:hphelion/${repo}.git failed.  Stopping the build.
+			ABORT="yes"
 			exit 1;
 		fi
 	
 	else
 		echo "Branch $this.branch does not exist on github.  Stopping the build."
+		ABORT="yes"
 		exit 1;
 	fi	
 }

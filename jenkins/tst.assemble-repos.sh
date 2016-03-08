@@ -18,12 +18,15 @@ function adjust_date_to_last_commit {
 }
  
  function clone_repo {
+ repo=$1
+ branch=$2
+ 
 	echo "clone $repo"
- 	if [[ $(git ls-remote git@github.com:hphelion/${repo} ${this.branch} ) ]]; then
+ 	if [[ $(git ls-remote git@github.com:hphelion/${repo} ${branch} ) ]]; then
     echo "Branch $this.branch exists on github"
 	
 	rm -r $repo
-		if ! git clone -b ${this.branch} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
+		if ! git clone -b ${branch} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
 		then
 			echo >&2 Cloning git@github.com:hphelion/${repo}.git failed.  Stopping the build.
 			ABORT="yes"
@@ -59,9 +62,9 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 mkdir ./media
 
 repo="devplat.docs"
-this.branch="bundle-2015-may"
+branch="$devplat_docs_BRANCH"
 
-	clone_repo 
+	clone_repo $repo $branch
     adjust_date_to_last_commit
 	cp -rp ${repo}/devplatform/ ./
 	cp -rp ${repo}/media/${repo} ./media/${repo}
@@ -86,9 +89,9 @@ this.branch="bundle-2015-may"
 
 
 repo="carrier.grade.docs"
-this.branch="bundle-2015-may"
+branch="$carrier_grade_docs_BRANCH"
 
-	clone_repo
+	clone_repo $repo $branch
     adjust_date_to_last_commit
 	cp -rp ${repo}/media/${repo} ./media/${repo}
 	cp -rp ${repo}/CarrierGrade/ ./
@@ -100,9 +103,9 @@ this.branch="bundle-2015-may"
 
 
 repo="hcf.docs"
-this.branch="hcf_docs_BRANCH"
+branch="$hcf_docs_BRANCH"
 
-	clone_repo
+	clone_repo $repo $branch
 	adjust_date_to_last_commit
 	cp -rp ${repo}/media/${repo} ./media/${repo}
     cp -rp ${repo}/*.ditamap ./
@@ -113,9 +116,9 @@ this.branch="hcf_docs_BRANCH"
 	
 echo start hos clone	
 repo="hos.docs"
-this.branch="$hos_docs_BRANCH"
+branch="$hos_docs_BRANCH"
 
-	clone_repo
+	clone_repo $repo $branch
     adjust_date_to_last_commit
 	cp -rp ${repo}/community/ ./
     cp -rp ${repo}/commercial/ ./
@@ -129,9 +132,9 @@ this.branch="$hos_docs_BRANCH"
 
  
  repo="wrapper.docs"
- this.branch="bundle-2015-may"
+branch="bundle-2015-may"
  
-	clone_repo
+	clone_repo $repo $branch
     adjust_date_to_last_commit
 	cp -r ${repo}/* ./
    

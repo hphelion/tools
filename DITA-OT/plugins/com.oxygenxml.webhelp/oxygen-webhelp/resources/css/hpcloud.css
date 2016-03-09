@@ -620,6 +620,19 @@ tr:first-child {
 }
 
 
+.table > thead > tr > * { 
+
+  background-color: #6a817c;
+  text-align: -webkit-left;
+  text-decoration: none;
+  line-height: 18px;
+  text-shadow: none;
+  color: rgb(255, 255, 255);
+  font-family: "MetricWeb-Semibold", " arial" ,"verdana", "helvetica", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+}
 
 .table > :first-child > tr:first-child > * { 
 

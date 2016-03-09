@@ -1,5 +1,8 @@
 #!/bin/bash
 
+REPO_BRANCH_TO_CHECK=$1 
+REPO=$2 
+
 
 find  . -name "*.png" -o -name "*.jpg" -o -name "*.bmp" -o -name "*.gif" | sed 's|.*/||g' > temp.txt
 cat temp.txt | sort | uniq > files.on.disk.txt

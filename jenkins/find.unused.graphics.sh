@@ -10,7 +10,7 @@ cat temp.txt | sort | uniq > files.on.disk.txt
 
 for i in `find . -type f`;
 do
-        egrep '(png|jpg|bmp|gif)' $i | sed 's|.* href=".*/\([^"]*\)".*|\1|g' | sed 's|.*src=".*/\([^"]*\)".*|\1|g' | grep -v "<" ;
+        egrep '(png|jpg|bmp|gif)' "$i" | sed 's|.* href=".*/\([^"]*\)".*|\1|g' | sed 's|.*src=".*/\([^"]*\)".*|\1|g' | grep -v "<" ;
 done > temp.txt
 
 cat temp.txt | sort | uniq > files.in.dita.txt
@@ -22,7 +22,7 @@ if [[ $(diff files.in.dita.txt files.on.disk.txt  | grep ">" | sed 's|>||g') ]]
                 echo "Graphics files that are not referenced by any file in this branch and repo"
                 for i in `diff files.in.dita.txt files.on.disk.txt  | grep ">" | sed 's|>||g'`
                         do
-                                find . -name $i
+                                find . -name "$i"
                         done
                 echo "================================================================================"
 				./hipchat-notification.sh red  $ROOM  "Build $BUILD_NUMBER $STATUS - Unused graphics found in the $REPO_BRANCH_TO_CHECK branch of the $REPO repo. Details <a href='$BUILD_URL/console'>here</a>." 1

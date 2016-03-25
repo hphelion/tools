@@ -749,3 +749,6 @@ margin-top: -16px;
 .widthAuto {
 	width: auto;
 }
+.nomaxheight {
+	height: auto;
+}

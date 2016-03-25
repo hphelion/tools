@@ -751,4 +751,5 @@ margin-top: -16px;
 }
 .nomaxheight {
 	height: auto;
+	max-height: none;
 }

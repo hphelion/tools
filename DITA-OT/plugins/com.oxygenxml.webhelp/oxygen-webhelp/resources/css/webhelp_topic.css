@@ -743,3 +743,7 @@ margin-top: -16px;
 .inlineThis {
 	display: inline;
 }
+.whitebackground {
+	background-color: white;
+}
+}

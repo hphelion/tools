@@ -746,4 +746,6 @@ margin-top: -16px;
 .whitebackground {
 	background-color: white;
 }
+.widthAuto {
+	width: auto;
 }

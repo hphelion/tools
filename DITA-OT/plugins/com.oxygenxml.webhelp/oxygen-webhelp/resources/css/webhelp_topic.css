@@ -749,6 +749,19 @@ margin-top: -16px;
 .width33 {
 	width: 33%;
 }
+
+.width66 {
+	width: 66%;
+}
+.width50 {
+	width: 50%;
+}
+.width75 {
+	width: 75%;
+}
+.width25 {
+	width: 25%;
+}
 .nomaxheight {
 	height: auto;
 	max-height: none;

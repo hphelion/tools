@@ -103,8 +103,10 @@ $(document).ready(function () {
       	$.getScript("http://docs-staging.hpcloud.com/z_test_hos.docs+hos-30+nancy/media/run_prettify.js");
       	var pretags=document.getElementsByTagName("PRE");
       	for (var q=0; q<pretags.length; q++) {
-      		//pretags[q].setAttribute('class', 'pre codeblock prettyprint');
-      		pretags[q].className+=" prettyprint";
+      		var currclass=pretags[q].className;
+      		var newclass=currclass + " prettyprint";
+      		pretags[q].setAttribute('class', newclass);
+      		//pretags[q].className+=" prettyprint";
       	}
 /* ------------------------begin HA-----------------------------------------------------------------*/
       	 if (document.getElementsByClassName('wrapper1').length) {

@@ -93,6 +93,12 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
       { 
+      	   if (document.getElementsByClassName('expandcode').length) {
+      	        var lonecodeblocks=document.getElementsByClassName('expandcode');
+      	      	for (var k=0; k<lonecodeblocks.length; k++) {
+      		    lonecodeblocks[k].addEventListener('click', expcode, false);
+      	        }
+      	    }
 /* ------------------------begin HA-----------------------------------------------------------------*/
       	 if (document.getElementsByClassName('wrapper1').length) {
       	     var concontain=document.getElementsByClassName('oldcontentContainer');

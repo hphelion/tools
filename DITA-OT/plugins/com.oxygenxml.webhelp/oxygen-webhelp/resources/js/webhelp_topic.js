@@ -94,7 +94,8 @@ $(document).ready(function () {
   $(document).ready(function()
       { 
       	
-      	$.getScript("https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js");
+      	//$.getScript("https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js");
+      	$.getScript("http://docs-staging.hpcloud.com/z_test_hos.docs+hos-30+nancy/media/run_prettify.js");
       	var pretags=document.getElementsByTagName("PRE");
       	for (var q=0; q<pretags.length; q++) {
       		pretags[q].setAttribute('class', 'pre codeblock prettyprint')

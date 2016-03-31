@@ -739,3 +739,6 @@ margin-top: -16px;
 .abstract > .hdphidden {
 	display: none;
 }
+.hiddencode {
+	display: none;
+}

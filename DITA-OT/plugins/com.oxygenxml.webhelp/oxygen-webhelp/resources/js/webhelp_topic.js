@@ -104,7 +104,7 @@ $(document).ready(function () {
       	var pretags=document.getElementsByTagName("PRE");
       	for (var q=0; q<pretags.length; q++) {
       		//pretags[q].setAttribute('class', 'pre codeblock prettyprint');
-      		pretags[q].className+="prettyprint";
+      		pretags[q].className+=" prettyprint";
       	}
 /* ------------------------begin HA-----------------------------------------------------------------*/
       	 if (document.getElementsByClassName('wrapper1').length) {

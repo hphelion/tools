@@ -96,7 +96,7 @@ $(document).ready(function () {
       	if (document.getElementsByClassName('expandcode').length) {
       	   var lonecodeblocks=document.getElementsByClassName('expandcode');
       	      	for (var k=0; k<lonecodeblocks.length; k++) {
-      		  lonecodeblocks[k].addEventListener('click', 'expcode');
+      		  lonecodeblocks[k].addEventListener('click', expcode, false);
       	        }
       	}
       	//$.getScript("https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js");
@@ -342,6 +342,6 @@ function show() {
 /* ------------------------end accordion functions-----------------------------------------------------------------*/
 
 function expcode() {
-	//this.next().css( "display", "block" );
-	this.nextSibling.style.display="block";
+	this.next().css( "display", "block" );
+	//this.nextSibling.style.display="block";
 }

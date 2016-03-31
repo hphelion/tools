@@ -766,3 +766,9 @@ margin-top: -16px;
 	height: auto;
 	max-height: none;
 }
+.hiddencode {
+	display: none;
+}
+.expandcode {
+	cursor: pointer;
+}

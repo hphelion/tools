@@ -341,6 +341,7 @@ function show() {
 
 /* ------------------------end accordion functions-----------------------------------------------------------------*/
 
-function expcode () {
-	this.next().css( "display", "block" );
+function expcode() {
+	//this.next().css( "display", "block" );
+	this.nextSibling.style.display="block";
 }

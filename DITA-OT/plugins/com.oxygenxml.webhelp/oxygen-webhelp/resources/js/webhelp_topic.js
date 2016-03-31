@@ -343,5 +343,11 @@ function show() {
 
 function expcode() {
 	//this.next().css( "display", "block" );
-	this.nextElementSibling.style.display="block";
+	var theblock=this.nextElementSiblin;
+	if (theblock.style.display="block") {
+		theblock.style.display="none"
+	}
+	else {
+		theblock.style.display="block"
+	}
 }

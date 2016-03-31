@@ -335,5 +335,14 @@ function show() {
 
 /* ------------------------end accordion functions-----------------------------------------------------------------*/
 
-
+function expcode() {
+	//this.next().css( "display", "block" );
+	var theblock=this.nextElementSibling;
+	if (theblock.style.display=="block") {
+		theblock.style.display="none";
+	}
+	else {
+		theblock.style.display="block";
+	}
+}
 

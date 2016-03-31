@@ -344,7 +344,7 @@ function show() {
 function expcode() {
 	//this.next().css( "display", "block" );
 	var theblock=this.nextElementSiblin;
-	if (theblock.style.display="block") {
+	if (theblock.style.display=="block") {
 		theblock.style.display="none"
 	}
 	else {

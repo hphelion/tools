@@ -742,3 +742,7 @@ margin-top: -16px;
 .hiddencode {
 	display: none;
 }
+.nomaxheight {
+	height: auto;
+	max-height: none;
+}

@@ -96,12 +96,12 @@ $(document).ready(function () {
 /*------------------ prettyprint ------------------------------------*/      	
         $.getScript("https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js");
       	//$.getScript("http://docs-staging.hpcloud.com/z_test_hos.docs+hos-30+nancy/media/run_prettify.js");
-      	var pretags=document.getElementsByTagName("PRE");
+      	/*var pretags=document.getElementsByTagName("PRE");
       	for (var q=0; q<pretags.length; q++) {
       		var currclass=pretags[q].className;
       		var newclass=currclass + " prettyprint";
       		pretags[q].setAttribute('class', newclass);
-      	}
+      	}*/
       	
 /*------------------ single accordion ------------------------------------*/
       	   if (document.getElementsByClassName('expandcode').length) {

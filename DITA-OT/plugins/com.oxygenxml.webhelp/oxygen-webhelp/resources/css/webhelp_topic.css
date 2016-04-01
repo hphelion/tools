@@ -773,3 +773,7 @@ margin-top: -16px;
 	cursor: pointer;
 	color: rgb(0, 179, 136);
 }
+.prettyprint {
+	border: none !important;
+	padding-left: 4px !important;
+}

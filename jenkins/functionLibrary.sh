@@ -39,7 +39,7 @@ auth="zKuxF5Bt5H9dpNysOSf8nRPw2GbT41f3vAS5jKSI"
 for i in `echo $3 |sed 's| |\n|g' `
 do
 
-
+echo $i
 room="$i"
 
 #amok 145

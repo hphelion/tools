@@ -35,7 +35,12 @@ echo $MESSAGE
 
 #Set HipChat authorization and room     
 auth="zKuxF5Bt5H9dpNysOSf8nRPw2GbT41f3vAS5jKSI"
-room="$3"  
+
+
+for i in `echo $3`
+do
+
+room="$i"  
 
 #amok 145
 #test 845
@@ -62,3 +67,4 @@ curl \
 EOP
 		 
 }
+done

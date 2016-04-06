@@ -36,9 +36,12 @@ echo $MESSAGE
 #Set HipChat authorization and room     
 auth="zKuxF5Bt5H9dpNysOSf8nRPw2GbT41f3vAS5jKSI"
 
+echo $3
 
 for i in `echo "$3"`
 do
+
+echo $i
 
 room="$i"  
 

@@ -37,7 +37,7 @@ echo $MESSAGE
 auth="zKuxF5Bt5H9dpNysOSf8nRPw2GbT41f3vAS5jKSI"
 
 
-for i in `echo $3`
+for i in `echo "$3"`
 do
 
 room="$i"  

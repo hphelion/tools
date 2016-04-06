@@ -40,6 +40,13 @@ for i in `echo $3 |sed 's| |\n|g' `
 do
 
 echo $i
+done
+
+
+for i in `echo $3 |sed 's| |\n|g' `
+do
+
+echo $i
 room="$i"
 
 #amok 145

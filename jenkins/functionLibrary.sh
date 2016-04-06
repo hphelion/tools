@@ -38,7 +38,7 @@ auth="zKuxF5Bt5H9dpNysOSf8nRPw2GbT41f3vAS5jKSI"
 
 echo $3
 
-for i in `echo "$3"`
+for i in $3
 do
 
 echo $i
@@ -70,4 +70,5 @@ curl \
 EOP
 		 
 }
+
 done

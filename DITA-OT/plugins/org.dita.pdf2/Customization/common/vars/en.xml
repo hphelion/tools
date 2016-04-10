@@ -49,7 +49,7 @@ See the accompanying license.txt file for applicable licenses.
     <variable id="Product Name">HPE Helion</variable>
 
     <!-- The footer that appears on odd-numbered pages. -->
-    <variable id="Body odd footer">&#169; Copyright Hewlett Packard Enterprise Development Company, L.P.<br/><a href="http://www.hpcloud.com/legal-documents">Legal documents and privacy policy</a>
+    <variable id="Body odd footer">&#169; Copyright Hewlett Packard Enterprise Development Company, L.P..
     </variable>
 
     <!-- The footer that appears on even-numbered pages. -->

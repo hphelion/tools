@@ -784,3 +784,6 @@ margin-top: -16px;
 .pointers {
 	cursor: pointer;
 }
+.tablesorter {
+	cursor: pointer;
+}

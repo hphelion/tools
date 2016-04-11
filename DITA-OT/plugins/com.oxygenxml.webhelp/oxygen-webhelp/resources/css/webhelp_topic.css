@@ -781,3 +781,6 @@ margin-top: -16px;
 	background-color: #6a817c;
 	color: white;
 }
+.pointers {
+	cursor: pointer;
+}

@@ -789,17 +789,17 @@ margin-top: -16px;
 }
 
 table.tablesorter .header {
-	background-image: url(http://docs-staging.hpcloud.com/hos.docs-hos-30/media/bg.png);
+	background-image: url(http://docs.hpcloud.com/media/bg.png);
 	background-repeat: no-repeat;
 	text-indent: 10px;
 
 }
 table.tablesorter .headerSortUp {
-	background-image: url(http://docs-staging.hpcloud.com/hos.docs-hos-30/media/asc.png);
+	background-image: url(http://docs.hpcloud.com/media/asc.png);
 	background-repeat: no-repeat;
 }
 table.tablesorter .headerSortDown {
-	background-image: url(http://docs-staging.hpcloud.com/hos.docs-hos-30/media/desc.png);
+	background-image: url(http://docs.hpcloud.com/media/desc.png);
 	background-repeat: no-repeat;
 }
 

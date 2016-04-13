@@ -739,10 +739,80 @@ margin-top: -16px;
 .abstract > .hdphidden {
 	display: none;
 }
-.hiddencode {
-	display: none;
+
+.inlineThis {
+	display: inline;
+}
+.whitebackground {
+	background-color: white;
+}
+.width33 {
+	width: 33%;
+}
+
+.width66 {
+	width: 66%;
+}
+.width50 {
+	width: 50%;
+}
+.width75 {
+	width: 75%;
+}
+.width25 {
+	width: 25%;
 }
 .nomaxheight {
 	height: auto;
 	max-height: none;
+}
+.hiddencode {
+	display: none;
+}
+.expandcode {
+	cursor: pointer;
+	color: rgb(0, 179, 136);
+}
+.prettyprint {
+	border: none !important;
+	padding-left: 7px !important;
+}
+.tablesubhead {
+	background-color: #6a817c;
+	color: white;
+}
+.pointers {
+	cursor: pointer;
+}
+.tablesorter {
+	cursor: pointer;
+}
+
+table.tablesorter {
+
+}
+table.tablesorter th {
+
+}
+table.tablesorter td {
+
+}
+table.tablesorter .even {
+	
+}
+table.tablesorter .odd {
+	
+}
+table.tablesorter .header {
+	background-image: url(bg.png);
+	background-repeat: no-repeat;
+
+}
+table.tablesorter .headerSortUp {
+	background-image: url(asc.png);
+	background-repeat: no-repeat;
+}
+table.tablesorter .headerSortDown {
+	background-image: url(desc.png);
+	background-repeat: no-repeat;
 }

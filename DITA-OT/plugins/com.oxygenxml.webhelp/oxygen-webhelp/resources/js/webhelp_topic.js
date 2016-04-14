@@ -94,7 +94,7 @@ $(document).ready(function () {
   $(document).ready(function()
       { 
 /*------------------ prettyprint ------------------------------------*/      	
-        $.getScript("https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js");
+       // $.getScript("https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js");
       	//$.getScript("http://docs-staging.hpcloud.com/z_test_hos.docs+hos-30+nancy/media/run_prettify.js");
       	/*var pretags=document.getElementsByTagName("PRE");
       	for (var q=0; q<pretags.length; q++) {
@@ -102,7 +102,7 @@ $(document).ready(function () {
       		var newclass=currclass + " prettyprint";
       		pretags[q].setAttribute('class', newclass);
       	}*/
-      	
+ //no need to load on every page     	
 /*------------------ single accordion ------------------------------------*/
       	   if (document.getElementsByClassName('expandcode').length) {
       	        var lonecodeblocks=document.getElementsByClassName('expandcode');

@@ -781,3 +781,25 @@ margin-top: -16px;
 	background-color: #6a817c;
 	color: white;
 }
+.pointers {
+	cursor: pointer;
+}
+.tablesorter {
+	cursor: pointer;
+}
+
+table.tablesorter .header {
+	background-image: url(http://docs.hpcloud.com/media/bg.png);
+	background-repeat: no-repeat;
+	text-indent: 10px;
+
+}
+table.tablesorter .headerSortUp {
+	background-image: url(http://docs.hpcloud.com/media/asc.png);
+	background-repeat: no-repeat;
+}
+table.tablesorter .headerSortDown {
+	background-image: url(http://docs.hpcloud.com/media/desc.png);
+	background-repeat: no-repeat;
+}
+

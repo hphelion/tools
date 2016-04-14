@@ -158,7 +158,7 @@ a {
   background-image: url(../img/frames.png);
 }
 #header #customLogo {
-  background-image: url("/var/lib/jenkkins/HPE-Helion.png");
+  /* background-image: url("/var/lib/jenkkins/HPE-Helion.png"); */
   background-size: contain;
   width: 140px;
   height: 49px !important;

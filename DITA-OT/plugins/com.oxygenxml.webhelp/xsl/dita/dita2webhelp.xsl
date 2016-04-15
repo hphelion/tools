@@ -164,7 +164,7 @@ available in the base directory of this Oxygen Webhelp plugin.
                   	    			  <p class="footer">&#169; Copyright 2016 Hewlett Packard Enterprise Development LP<br />
 						  <a href="http://www8.hp.com/us/en/hpe/legal/terms-of-use.html">Terms of Use</a> and
 						  <a href="https://www.hpe.com/us/en/legal/privacy.html">Privacy Policy</a>
-                  	    			  <a href="http://www.hpcloud.com/legal-documents">Legal documents and privacy policy</a></p> 
+						  </p> 
 
                     
                       <!--<a href="http://www.oxygenxml.com" target="_blank">

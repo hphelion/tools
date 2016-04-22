@@ -358,5 +358,5 @@ function expcode() {
 	}
 }
 function runCalc() {
-	"$("#disk__calc").load("../hos-html/diskCalc.html");
+	$("#disk__calc").load("../hos-html/diskCalc.html");
 }

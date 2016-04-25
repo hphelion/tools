@@ -843,6 +843,7 @@ available in the base directory of this Oxygen Webhelp plugin.
     <echo level="info">    Respond to the overflowing dita/topic files. Default is &quot;warn&quot;.</echo>
     <echo level="info"></echo>
     <echo level="info">  retain.topic.fo</echo>
+    <property name="retain.topic.fo" value="yes"/>
     <echo level="info">    Temporary FO file should be preserved in the output directory. Specify any value, such as &quot;yes&quot;, to preserve the file.</echo>
     <echo level="info"></echo>
     <echo level="info">  validate={true|false}</echo>

@@ -802,4 +802,6 @@ table.tablesorter .headerSortDown {
 	background-image: url(http://docs.hpcloud.com/media/desc.png);
 	background-repeat: no-repeat;
 }
-
+.noteInline {
+	display: inline;
+}

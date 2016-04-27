@@ -807,4 +807,5 @@ table.tablesorter .headerSortDown {
 }
 div.note.danger {
 	display: inline;
+	font-weight: bold;
 }

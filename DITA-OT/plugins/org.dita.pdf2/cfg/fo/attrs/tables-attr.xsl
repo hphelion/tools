@@ -130,6 +130,7 @@ See the accompanying license.txt file for applicable licenses.
 
   <xsl:attribute-set name="tbody.row">
     <!--Table body row-->
+    <xsl:attribute name="keep-together.within-page">always</xsl:attribute>
   </xsl:attribute-set>
 
   <xsl:attribute-set name="thead.row.entry">
@@ -151,6 +152,10 @@ See the accompanying license.txt file for applicable licenses.
 
   <xsl:attribute-set name="tbody.row.entry">
     <!--body cell-->
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="tbody.row.entry__firstcol" use-attribute-sets="tbody.row.entry">
+    <xsl:attribute name="font-weight">bold</xsl:attribute>
   </xsl:attribute-set>
 
   <xsl:attribute-set name="tbody.row.entry__content" use-attribute-sets="common.table.body.entry">

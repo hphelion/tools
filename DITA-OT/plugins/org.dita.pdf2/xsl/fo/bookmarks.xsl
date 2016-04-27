@@ -33,14 +33,11 @@ See the accompanying license.txt file for applicable licenses.
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:fo="http://www.w3.org/1999/XSL/Format"
-                xmlns:exsl="http://exslt.org/common"
                 xmlns:opentopic="http://www.idiominc.com/opentopic"
                 xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
-                xmlns:exslf="http://exslt.org/functions"
                 xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
                 xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder"
-                extension-element-prefixes="exsl"
-                exclude-result-prefixes="opentopic-index opentopic exslf opentopic-func ot-placeholder"
+                exclude-result-prefixes="opentopic-index opentopic opentopic-func ot-placeholder"
                 version="2.0">
 
     <xsl:variable name="map" select="//opentopic:map"/>
@@ -48,9 +45,7 @@ See the accompanying license.txt file for applicable licenses.
     <xsl:template match="*[contains(@class, ' topic/topic ')]" mode="bookmark">
         <xsl:variable name="mapTopicref" select="key('map-id', @id)[1]"/>
         <xsl:variable name="topicTitle">
-            <xsl:call-template name="getNavTitle">
-              <xsl:with-param name="topicNumber" select="1"/>
-            </xsl:call-template>
+            <xsl:call-template name="getNavTitle"/>
         </xsl:variable>
         
         <xsl:choose>
@@ -97,27 +92,17 @@ See the accompanying license.txt file for applicable licenses.
               </xsl:if>
             </xsl:for-each>
             <xsl:choose>
-                <xsl:when test="($ditaVersion &gt;= 1.1) and $map//*[contains(@class,' bookmap/toc ')][@href]"/>
-                <xsl:when test="($ditaVersion &gt;= 1.1) and ($map//*[contains(@class,' bookmap/toc ')]
-                          	or /*[contains(@class,' map/map ')][not(contains(@class,' bookmap/bookmap '))])">
+                <xsl:when test="$map//*[contains(@class,' bookmap/toc ')][@href]"/>
+                <xsl:when test="$map//*[contains(@class,' bookmap/toc ')]
+                              | /*[contains(@class,' map/map ')][not(contains(@class,' bookmap/bookmap '))]">
                     <fo:bookmark internal-destination="{$id.toc}">
                         <fo:bookmark-title>
-                            <xsl:call-template name="insertVariable">
-                                <xsl:with-param name="theVariableID" select="'Table of Contents'"/>
+                            <xsl:call-template name="getVariable">
+                                <xsl:with-param name="id" select="'Table of Contents'"/>
                             </xsl:call-template>
                         </fo:bookmark-title>
                     </fo:bookmark>
                 </xsl:when>
-  		          <xsl:when test="$ditaVersion &gt;= 1.1"/>
-                <xsl:otherwise>
-                    <fo:bookmark internal-destination="{$id.toc}">
-                        <fo:bookmark-title>
-                            <xsl:call-template name="insertVariable">
-                                <xsl:with-param name="theVariableID" select="'Table of Contents'"/>
-                            </xsl:call-template>
-                        </fo:bookmark-title>
-                    </fo:bookmark>
-                </xsl:otherwise>
             </xsl:choose>
             <xsl:for-each select="/*/*[contains(@class, ' topic/topic ')] |
                                   /*/ot-placeholder:glossarylist |
@@ -132,27 +117,17 @@ See the accompanying license.txt file for applicable licenses.
             </xsl:for-each>
             <xsl:if test="//opentopic-index:index.groups//opentopic-index:index.entry">
                 <xsl:choose>
-                    <xsl:when test="($ditaVersion &gt;= 1.1) and $map//*[contains(@class,' bookmap/indexlist ')][@href]"/>
-                    <xsl:when test="($ditaVersion &gt;= 1.1) and ($map//*[contains(@class,' bookmap/indexlist ')]
-                          	or /*[contains(@class,' map/map ')][not(contains(@class,' bookmap/bookmap '))])">
+                    <xsl:when test="$map//*[contains(@class,' bookmap/indexlist ')][@href]"/>
+                    <xsl:when test="$map//*[contains(@class,' bookmap/indexlist ')]
+                                  | /*[contains(@class,' map/map ')][not(contains(@class,' bookmap/bookmap '))]">
                         <fo:bookmark internal-destination="{$id.index}">
                             <fo:bookmark-title>
-                                <xsl:call-template name="insertVariable">
-                                    <xsl:with-param name="theVariableID" select="'Index'"/>
+                                <xsl:call-template name="getVariable">
+                                    <xsl:with-param name="id" select="'Index'"/>
                                 </xsl:call-template>
                             </fo:bookmark-title>
                         </fo:bookmark>
                     </xsl:when>
-                    <xsl:when test="$ditaVersion &gt;= 1.1"/>
-                    <xsl:otherwise>
-                        <fo:bookmark internal-destination="{$id.index}">
-                            <fo:bookmark-title>
-                                <xsl:call-template name="insertVariable">
-                                    <xsl:with-param name="theVariableID" select="'Index'"/>
-                                </xsl:call-template>
-                            </fo:bookmark-title>
-                        </fo:bookmark>
-                    </xsl:otherwise>
                 </xsl:choose>
             </xsl:if>
           </xsl:otherwise>
@@ -171,8 +146,8 @@ See the accompanying license.txt file for applicable licenses.
                 <xsl:attribute name="starting-state">hide</xsl:attribute>
             </xsl:if>
             <fo:bookmark-title>
-                <xsl:call-template name="insertVariable">
-                    <xsl:with-param name="theVariableID" select="'Table of Contents'"/>
+                <xsl:call-template name="getVariable">
+                    <xsl:with-param name="id" select="'Table of Contents'"/>
                 </xsl:call-template>
             </fo:bookmark-title>
         </fo:bookmark>
@@ -184,8 +159,8 @@ See the accompanying license.txt file for applicable licenses.
                 <xsl:attribute name="starting-state">hide</xsl:attribute>
             </xsl:if>
             <fo:bookmark-title>
-                <xsl:call-template name="insertVariable">
-                    <xsl:with-param name="theVariableID" select="'Index'"/>
+                <xsl:call-template name="getVariable">
+                    <xsl:with-param name="id" select="'Index'"/>
                 </xsl:call-template>
             </fo:bookmark-title>
         </fo:bookmark>
@@ -197,8 +172,8 @@ See the accompanying license.txt file for applicable licenses.
                 <xsl:attribute name="starting-state">hide</xsl:attribute>
             </xsl:if>
             <fo:bookmark-title>
-                <xsl:call-template name="insertVariable">
-                    <xsl:with-param name="theVariableID" select="'Glossary'"/>
+                <xsl:call-template name="getVariable">
+                    <xsl:with-param name="id" select="'Glossary'"/>
                 </xsl:call-template>
             </fo:bookmark-title>
             
@@ -213,8 +188,8 @@ See the accompanying license.txt file for applicable licenses.
                     <xsl:attribute name="starting-state">hide</xsl:attribute>
                 </xsl:if>
                 <fo:bookmark-title>
-                    <xsl:call-template name="insertVariable">
-                        <xsl:with-param name="theVariableID" select="'List of Tables'"/>
+                    <xsl:call-template name="getVariable">
+                        <xsl:with-param name="id" select="'List of Tables'"/>
                     </xsl:call-template>
                 </fo:bookmark-title>
                 
@@ -230,8 +205,8 @@ See the accompanying license.txt file for applicable licenses.
                     <xsl:attribute name="starting-state">hide</xsl:attribute>
                 </xsl:if>
                 <fo:bookmark-title>
-                    <xsl:call-template name="insertVariable">
-                        <xsl:with-param name="theVariableID" select="'List of Figures'"/>
+                    <xsl:call-template name="getVariable">
+                        <xsl:with-param name="id" select="'List of Figures'"/>
                     </xsl:call-template>
                 </fo:bookmark-title>
                 

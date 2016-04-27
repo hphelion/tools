@@ -805,3 +805,6 @@ table.tablesorter .headerSortDown {
 .noteInline {
 	display: inline;
 }
+div.note.danger {
+	display: inline;
+}

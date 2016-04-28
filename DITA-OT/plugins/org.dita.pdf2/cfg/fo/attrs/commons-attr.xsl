@@ -647,9 +647,17 @@ See the accompanying license.txt file for applicable licenses.
     </xsl:attribute-set>
 
     <xsl:attribute-set name="image__block">
+	    <xsl:attribute name="content-width">scale-to-fit</xsl:attribute>
+    <xsl:attribute name="content-height">100%</xsl:attribute>
+    <xsl:attribute name="width">100%</xsl:attribute>
+    <xsl:attribute name="scaling">uniform</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="image__inline">
+	    <xsl:attribute name="content-width">auto</xsl:attribute>
+    <xsl:attribute name="content-height">auto</xsl:attribute>
+    <xsl:attribute name="width">auto</xsl:attribute>
+    <xsl:attribute name="scaling">uniform</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="image">

@@ -21,11 +21,11 @@ CONSOLE=${BUILD_URL}console
 if [[ $1 == "FAIL" ]]
 then
 	COLOR="red"
-	MESSAGE="<b>$JOB_NAME</b> $2 "
+	MESSAGE="<b>$JOB_NAME</b> started by $4 $2 "
  
 else
 	COLOR="green"
-        MESSAGE="<b>$JOB_NAME</b> $2 " 
+        MESSAGE="<b>$JOB_NAME</b> started by $4 $2 " 
 fi
 
 echo $COLOR

@@ -8,8 +8,7 @@ TEST_DOC_SITE_NAME="docs-staging.hpcloud.com:9099"
 
 
 
-hipChat () {}  
-XXhipChat () {  
+hipChat () {  
 #Usage: hipChat (PASS|FAIL) "MESSAGE" ROOM
 
 

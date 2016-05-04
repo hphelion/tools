@@ -93,7 +93,7 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
     rm -r docs.hpcloud.com.ditamap
 	echo "clone $repo"
 	rm -r $repo
-	git clone -b  hos-30-test --single-branch git@github.com:hphelion/${repo}.git ${repo}
+	git clone -b  bundle-2015-may --single-branch git@github.com:hphelion/${repo}.git ${repo}
     
     adjust_date_to_last_commit
 

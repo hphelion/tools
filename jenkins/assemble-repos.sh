@@ -1,7 +1,7 @@
 #!/bin/bash
 source <(curl -s https://raw.githubusercontent.com/hphelion/tools/master/jenkins/functionLibrary.sh)
-
 HIPCHAT_ROOM="$1"
+
 
 function adjust_date_to_last_commit {
 	pwd
@@ -44,106 +44,94 @@ function adjust_date_to_last_commit {
 		exit 1;
 	fi	
 }
+
+
+
+hipChat PASS " #$BUILD_NUMBER started (<a href='$BUILD_URL'>Open</a>)"  $HIPCHAT_PASS
+
+
+WEB_SERVER_ROOT="/var/www/html"
+
+echo $Backup
+
+if [[ $Backup == "Yes" ]]
+then
+	ssh root@$PRIMARY_LAN_IP "sudo  rsync -avr --delete /var/www/html/ /var/www/htmlprevious"
+else
+	echo "Backup skipped at users request."
+fi
+
+
+rm -r *
+
+
+git clone -b master --single-branch git@github.com:hphelion/tools.git
+
+
+
+chmod 777 ./tools/jenkins/*
+
+#./tools/jenkins/assemble-repos.sh
+
+echo 1
  
- 
- 
- 
+if ! ./tools/jenkins/assemble-repos.sh $HIPCHAT_FAIL ;  then 
+exit 1;
+fi
+
+
 pwd
 source ./tools/jenkins/publish-config.sh
-cat    ./tools/jenkins/publish-config.sh
+ 
 echo "
 
 #################################################################
 
       devplat_docs_BRANCH = $devplat_docs_BRANCH
           hos_docs_BRANCH = $hos_docs_BRANCH
+          hos_docs_LEGACYBRANCH = $hos_docs_LEGACYBRANCH
 carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
  public_cloud_docs_BRANCH = $public_cloud_docs_BRANCH
           hcf_docs_BRANCH = $hcf_docs_BRANCH
 
 #################################################################
 "
- 
-mkdir ./media
-
-repo="devplat.docs"
-branch="$devplat_docs_BRANCH"
-
-	clone_repo $repo $branch
-    adjust_date_to_last_commit
-	cp -rp ${repo}/devplatform/ ./
-	cp -rp ${repo}/media/${repo} ./media/${repo}
-    cp -rp ${repo}/*.ditamap ./
-    cp -rp ${repo}/hdp-html/ ./
- 
-    rm -r $repo
- 
-  
-#repo="public.cloud.docs"
-#	echo "clone $repo"
-#	rm -r $repo
-#	git clone -b ${public_cloud_docs_BRANCH} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
-#
-#	adjust_date_to_last_commit
-#
-#	cp -rp ${repo}/file/ ./
-#	cp -rp ${repo}/publiccloud/ ./
-#   cp -rp ${repo}/*.ditamap ./
-#
-#	rm -r ${repo}
 
 
-repo="carrier.grade.docs"
-branch="$carrier_grade_docs_BRANCH"
 
-	clone_repo $repo $branch
-    adjust_date_to_last_commit
-	cp -rp ${repo}/media/${repo} ./media/${repo}
-	cp -rp ${repo}/CarrierGrade/ ./
-    cp -rp ${repo}/CarrierGrade2.0/ ./
-    cp -rp ${repo}/CarrierGrade2.1/ ./
-    cp -rp ${repo}/*.ditamap ./
-
-	rm -r ${repo}
-
-
-repo="hcf.docs"
-branch="$hcf_docs_BRANCH"
-
-	clone_repo $repo $branch
-	adjust_date_to_last_commit
-	cp -rp ${repo}/media/${repo} ./media/${repo}
-    cp -rp ${repo}/*.ditamap ./
-	cp -rp ${repo}/hcf/ ./
+   repo="hos.docs"
+	echo "clone $repo"
+ 	rm -r $repo
+	git clone -b hos-30 --single-branch git@github.com:hphelion/${repo}.git ${repo}
     
-	rm -r ${repo}
-
-	
-echo start hos clone	
-repo="hos.docs"
-branch="$hos_docs_BRANCH"
-
-	clone_repo $repo $branch
     adjust_date_to_last_commit
-	cp -rp ${repo}/community/ ./
-    cp -rp ${repo}/commercial/ ./
-    cp -rp ${repo}/helion/ ./
-    cp -rp ${repo}/hos-html/ ./
-	cp -rp ${repo}/media/ ./
-    cp -rp ${repo}/media/${repo} ./media/${repo}
-    cp -rp ${repo}/*.ditamap ./
+
+    cp -rp ${repo}/community/ ./3.x/
+    cp -rp ${repo}/commercial/ ./3.x/
+    cp -rp ${repo}/helion/ ./3.x/
+    cp -rp ${repo}/hos-html/ ./3.x/
+	cp -rp ${repo}/media/ ./3.x/
+    cp -rp ${repo}/media/${repo} ./3.x/media/${repo}
+    cp -rp ${repo}/*.ditamap ./3.x/
  
 	rm -r ${repo}
+    
+    
+    
 
  
  repo="wrapper.docs"
-branch="bundle-2015-may"
- 
-	clone_repo $repo $branch
+    rm -r docs.hpcloud.com.ditamap
+	echo "clone $repo"
+	rm -r $repo
+	git clone -b  hos-30-test --single-branch git@github.com:hphelion/${repo}.git ${repo}
+    
     adjust_date_to_last_commit
+
 	cp -r ${repo}/* ./
    
-	rm -r ${repo}
+    rm -r ${repo}
+
 
  
  

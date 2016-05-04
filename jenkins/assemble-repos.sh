@@ -46,38 +46,7 @@ function adjust_date_to_last_commit {
 }
 
 
-
-hipChat PASS " #$BUILD_NUMBER started (<a href='$BUILD_URL'>Open</a>)"  $HIPCHAT_PASS
-
-
-WEB_SERVER_ROOT="/var/www/html"
-
-echo $Backup
-
-if [[ $Backup == "Yes" ]]
-then
-	ssh root@$PRIMARY_LAN_IP "sudo  rsync -avr --delete /var/www/html/ /var/www/htmlprevious"
-else
-	echo "Backup skipped at users request."
-fi
-
-
-rm -r *
-
-
-git clone -b master --single-branch git@github.com:hphelion/tools.git
-
-
-
-chmod 777 ./tools/jenkins/*
-
-#./tools/jenkins/assemble-repos.sh
-
-echo 1
- 
-if ! ./tools/jenkins/assemble-repos.sh $HIPCHAT_FAIL ;  then 
-exit 1;
-fi
+  
 
 
 pwd

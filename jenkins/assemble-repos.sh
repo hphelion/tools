@@ -69,9 +69,10 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 
 
    repo="hos.docs"
+   echo start $repo clone
 	echo "clone $repo"
  	rm -r $repo
-	git clone -b hos-30 --single-branch git@github.com:hphelion/${repo}.git ${repo}
+	git clone -b $hos_docs_BRANCH --single-branch git@github.com:hphelion/${repo}.git ${repo}
     
     adjust_date_to_last_commit
 
@@ -85,15 +86,85 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
  
 	rm -r ${repo}
     
+	
+	
+repo="devplat.docs"
+echo start $repo clone
+branch="$devplat_docs_BRANCH"
+rm -r $repo
+	git clone -b $hos_docs_BRANCH --single-branch git@github.com:hphelion/${repo}.git ${repo}
     
+    adjust_date_to_last_commit
+	cp -rp ${repo}/devplatform/ ./
+	cp -rp ${repo}/media/${repo} ./media/${repo}
+    cp -rp ${repo}/*.ditamap ./
+    cp -rp ${repo}/hdp-html/ ./
+ 
+    rm -r $repo
+ 
+  
+
+repo="carrier.grade.docs"
+echo start $repo clone
+branch="$carrier_grade_docs_BRANCH"
+
+rm -r $repo
+	git clone -b $hos_docs_BRANCH --single-branch git@github.com:hphelion/${repo}.git ${repo}
     
+    adjust_date_to_last_commit
+	cp -rp ${repo}/media/${repo} ./media/${repo}
+	cp -rp ${repo}/CarrierGrade/ ./
+    cp -rp ${repo}/CarrierGrade2.0/ ./
+    cp -rp ${repo}/CarrierGrade2.1/ ./
+    cp -rp ${repo}/*.ditamap ./
+
+	rm -r ${repo}
+
+
+repo="hcf.docs"
+echo start $repo clone
+branch="$hcf_docs_BRANCH"
+rm -r $repo
+	git clone -b $hos_docs_BRANCH --single-branch git@github.com:hphelion/${repo}.git ${repo}
+    
+    adjust_date_to_last_commit
+	cp -rp ${repo}/media/${repo} ./media/${repo}
+    cp -rp ${repo}/*.ditamap ./
+	cp -rp ${repo}/hcf/ ./
+    
+	rm -r ${repo}
+
+	
+	
+repo="hos.docs"
+echo start $repo clone
+branch="$hos_docs_LEGACYBRANCH"
+rm -r $repo
+	git clone -b $hos_docs_BRANCH --single-branch git@github.com:hphelion/${repo}.git ${repo}
+    
+    adjust_date_to_last_commit
+	cp -rp ${repo}/community/ ./
+    cp -rp ${repo}/commercial/ ./
+    cp -rp ${repo}/helion/ ./
+    cp -rp ${repo}/hos-html/ ./
+	cp -rp ${repo}/media/ ./
+    cp -rp ${repo}/media/${repo} ./media/${repo}
+    cp -rp ${repo}/*.ditamap ./
+ 
+	rm -r ${repo}
+
+ 	echo "clone $repo"
+ repo="wrapper.docs"
+branch="bundle-2015-may"
+  rm -r $repo
+   rm -r docs.hpcloud.com.ditamap
+	git clone -b $hos_docs_BRANCH --single-branch git@github.com:hphelion/${repo}.git ${repo}
+    
+ 
+ 
+   
 
  
- repo="wrapper.docs"
-    rm -r docs.hpcloud.com.ditamap
-	echo "clone $repo"
-	rm -r $repo
-	git clone -b  bundle-2015-may --single-branch git@github.com:hphelion/${repo}.git ${repo}
     
     adjust_date_to_last_commit
 

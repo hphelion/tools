@@ -145,7 +145,7 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
     cp -rp ${repo}/commercial/ ./
     cp -rp ${repo}/helion/ ./
     cp -rp ${repo}/hos-html/ ./
-	cp -rp ${repo}/media/ ./
+	cp -rp ${repo}/media/* ./media/
     cp -rp ${repo}/media/${repo} ./media/${repo}
     cp -rp ${repo}/*.ditamap ./
  

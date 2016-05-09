@@ -68,6 +68,7 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 
 
 
+
     repo="hos.docs"
 	branch="$hos_docs_BRANCH"
 	echo "clone $repo branch $branch"
@@ -79,13 +80,15 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
     cp -rp ${repo}/commercial/ ./3.x/
     cp -rp ${repo}/helion/ ./3.x/
     cp -rp ${repo}/hos-html/ ./3.x/
-	cp -rp ${repo}/media/ ./3.x/
+	cp -rp ${repo}/media/ ./3.x/media/
     cp -rp ${repo}/media/${repo} ./3.x/media/${repo}
     cp -rp ${repo}/*.ditamap ./3.x/
  
 	rm -r ${repo}
     
 	
+mkdir media
+
 	
 	repo="devplat.docs"
 	branch="$devplat_docs_BRANCH"

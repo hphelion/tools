@@ -166,7 +166,7 @@ done
 for i in `find . -name "HOS.*xml"`
 do
 	sed -i 's|keys="|keys="WA|g' $i
-	sed -i 's|conkeyref="|conkeyref="WA|g' $i
+	sed -i 's|conkeyref="HOS-conrefs/|conkeyref="HOS-conrefs/WA|g' $i
 done
 	
 	

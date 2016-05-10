@@ -142,6 +142,27 @@ mkdir media
 	echo "clone $repo branch $branch"
  	rm -r $repo
 	clone_repo $repo $branch
+	
+	
+	#Special mod needed because different versions of hos use the same conrefs and key refs	
+	
+for i in `find . -name "*.ditamap"`
+do
+	sed -i 's|keyref="|keyref="WA|g' $i
+done
+
+for i in `find . -name "HOS.*xml"`
+do
+	sed -i 's|keys="|keys="WA|g' $i
+	sed -i 's|conkeyref="HOS-conrefs/|conkeyref="HOS-conrefs/WA|g' $i
+done
+	
+ 
+cd -
+
+
+
+
     adjust_date_to_last_commit
 	
 	cp -rp ${repo}/community/ ./
@@ -156,21 +177,6 @@ mkdir media
 	
 	cd $repo
 	
-#Special mod needed because different versions of hos use the same conrefs and key refs	
-	
-for i in `find . -name "*.ditamap"`
-do
-	sed -i 's|keyref="|keyref="WA|g' $i
-done
-
-for i in `find . -name "HOS.*xml"`
-do
-	sed -i 's|keys="|keys="WA|g' $i
-	sed -i 's|conkeyref="HOS-conrefs/|conkeyref="HOS-conrefs/WA|g' $i
-done
-	
-	
-cd -
 	
 	
 	

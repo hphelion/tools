@@ -145,7 +145,8 @@ mkdir media
 	
 	
 	#Special mod needed because different versions of hos use the same conrefs and key refs	
-	
+
+cd $repo	
 for i in `find . -name "*.ditamap"`
 do
 	sed -i 's|keyref="|keyref="WA|g' $i
@@ -175,7 +176,7 @@ cd -
  
 	rm -r ${repo}
 	
-	cd $repo
+	
 	
 	
 	

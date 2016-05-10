@@ -153,6 +153,26 @@ mkdir media
     cp -rp ${repo}/*.ditamap ./
  
 	rm -r ${repo}
+	
+	cd $repo
+	
+#Special mod needed because different versions of hos use the same conrefs and key refs	
+	
+for i in `find . -name "*.ditamap"`
+do
+	sed -i 's|keyref="|keyref="WA|g' $i
+done
+
+for i in `find . -name "HOS.*xml"`
+do
+	sed -i 's|keys="|keys="WA|g' $i
+	sed -i 's|conkeyref="|conkeyref="WA|g' $i
+done
+	
+	
+	
+	
+	
 
  
 	repo="wrapper.docs"

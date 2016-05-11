@@ -130,8 +130,12 @@ DITAVAL_FILE=my_ditaval.ditaval
 
 # The path of the directory of the DITAVAL input filter file
 DITAVAL_DIR=/usr/local/OxygenXMLDeveloper16/samples/dita
+echo $DITA_DIR
+echo $DITA_HOME
 
+java -jar $DITA_DIR/lib/dost.jar /i:build.on.push.ditamap /transtype:epub /ditadir:$DITA_DIR
 
+exit 1;
 "java"\
  -Xmx4512m\
  -classpath\

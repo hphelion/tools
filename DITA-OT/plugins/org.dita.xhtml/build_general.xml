@@ -2,7 +2,7 @@
      Sourceforge.net. See the accompanying license.txt file for 
      applicable licenses.--><!-- (c) Copyright IBM Corp. 2006 All Rights Reserved. --><project name="build_generaltargets">
 
-  <target name="dita.xhtml.init">
+  <target name="dita.xhtml.init" depends="xhtml.image-metadata">
     <condition property="out.ext" value=".html">
       <not>
         <isset property="out.ext"></isset>
@@ -13,6 +13,19 @@
     while processing very large (thousands of files) document sets. -->
     <condition property="dita.xhtml.reloadstylesheet" value="false">
       <not><isset property="dita.xhtml.reloadstylesheet"></isset></not>
+    </condition>
+  </target>
+  
+  <target name="xhtml.image-metadata" depends="xhtml.image-metadata-check" unless="xhtml.image-metadata.skip" description="Read image metadata">
+    <pipeline message="Read image metadata." taskname="image-metadata" tempdir="${dita.temp.dir}">
+      <module class="org.dita.dost.module.ImageMetadataModule">
+        <param name="outputdir" location="${output.dir}"></param>
+      </module>
+    </pipeline>
+  </target>
+  <target name="xhtml.image-metadata-check">
+    <condition property="xhtml.image-metadata.skip">
+      <isset property="noImagelist"></isset>
     </condition>
   </target>
 
@@ -47,18 +60,7 @@
       <param name="BASEDIR" expression="${basedir}"></param>
       <param name="OUTPUTDIR" expression="${output.dir}"></param>
       <param name="DBG" expression="${args.debug}" if="args.debug"></param>
-      <!--
-    
-Oxygen Webhelp plugin
-Copyright (c) 1998-2014 Syncro Soft SRL, Romania.  All rights reserved.
-Licensed under the terms stated in the license file EULA_Webhelp.txt 
-available in the base directory of this Oxygen Webhelp plugin.
-
--->
-  <!--EXM-21177 Default language for HTML, automatically added by integrator-->
-  
-<param name="DEFAULTLANG" expression="${args.default.language}" if="args.default.language"></param>
-
+      
   	  <xmlcatalog refid="dita.catalog"></xmlcatalog>
     </xslt>
   </target>
@@ -93,18 +95,7 @@ available in the base directory of this Oxygen Webhelp plugin.
       <param name="BASEDIR" expression="${basedir}"></param>
       <param name="OUTPUTDIR" expression="${output.dir}"></param>
       <param name="DBG" expression="${args.debug}" if="args.debug"></param>
-	  <!--
-    
-Oxygen Webhelp plugin
-Copyright (c) 1998-2014 Syncro Soft SRL, Romania.  All rights reserved.
-Licensed under the terms stated in the license file EULA_Webhelp.txt 
-available in the base directory of this Oxygen Webhelp plugin.
-
--->
-  <!--EXM-21177 Default language for HTML, automatically added by integrator-->
-  
-<param name="DEFAULTLANG" expression="${args.default.language}" if="args.default.language"></param>
-
+	  
       <xmlcatalog refid="dita.catalog"></xmlcatalog>
     </xslt>
   </target>
@@ -141,18 +132,7 @@ available in the base directory of this Oxygen Webhelp plugin.
       <param name="BASEDIR" expression="${basedir}"></param>
       <param name="OUTPUTDIR" expression="${output.dir}"></param>
       <param name="DBG" expression="${args.debug}" if="args.debug"></param>
-      <!--
-    
-Oxygen Webhelp plugin
-Copyright (c) 1998-2014 Syncro Soft SRL, Romania.  All rights reserved.
-Licensed under the terms stated in the license file EULA_Webhelp.txt 
-available in the base directory of this Oxygen Webhelp plugin.
-
--->
-  <!--EXM-21177 Default language for HTML, automatically added by integrator-->
-  
-<param name="DEFAULTLANG" expression="${args.default.language}" if="args.default.language"></param>
-
+      
       <!--New,To generate&copy all dita files in the inputmap.dir,not all files in dita.temp.dir -->
       <mapper type="regexp" from="^(${tempdirToinputmapdir.relative.value})(.*?)(\.(xml|dita))$$" to="\2${out.ext}"></mapper>
       <xmlcatalog refid="dita.catalog"></xmlcatalog>
@@ -189,18 +169,7 @@ available in the base directory of this Oxygen Webhelp plugin.
       <param name="BASEDIR" expression="${basedir}"></param>
       <param name="OUTPUTDIR" expression="${output.dir}"></param>
       <param name="DBG" expression="${args.debug}" if="args.debug"></param>
-	  <!--
-    
-Oxygen Webhelp plugin
-Copyright (c) 1998-2014 Syncro Soft SRL, Romania.  All rights reserved.
-Licensed under the terms stated in the license file EULA_Webhelp.txt 
-available in the base directory of this Oxygen Webhelp plugin.
-
--->
-  <!--EXM-21177 Default language for HTML, automatically added by integrator-->
-  
-<param name="DEFAULTLANG" expression="${args.default.language}" if="args.default.language"></param>
-
+	  
       <mapper type="regexp" from="^(${tempdirToinputmapdir.relative.value})(.*?)(\.(xml|dita))$$" to="\2${out.ext}"></mapper>
       <xmlcatalog refid="dita.catalog"></xmlcatalog>
     </xslt>
@@ -251,18 +220,7 @@ available in the base directory of this Oxygen Webhelp plugin.
       <param name="BASEDIR" expression="${basedir}"></param>
       <param name="OUTPUTDIR" expression="${output.dir}"></param>
       <param name="DBG" expression="${args.debug}" if="args.debug"></param>
-      <!--
-    
-Oxygen Webhelp plugin
-Copyright (c) 1998-2014 Syncro Soft SRL, Romania.  All rights reserved.
-Licensed under the terms stated in the license file EULA_Webhelp.txt 
-available in the base directory of this Oxygen Webhelp plugin.
-
--->
-  <!--EXM-21177 Default language for HTML, automatically added by integrator-->
-  
-<param name="DEFAULTLANG" expression="${args.default.language}" if="args.default.language"></param>
-
+      
       <xmlcatalog refid="dita.catalog"></xmlcatalog>
     </xslt>
   </target>
@@ -296,18 +254,7 @@ available in the base directory of this Oxygen Webhelp plugin.
       <param name="BASEDIR" expression="${basedir}"></param>
       <param name="OUTPUTDIR" expression="${output.dir}"></param>
       <param name="DBG" expression="${args.debug}" if="args.debug"></param>
-	  <!--
-    
-Oxygen Webhelp plugin
-Copyright (c) 1998-2014 Syncro Soft SRL, Romania.  All rights reserved.
-Licensed under the terms stated in the license file EULA_Webhelp.txt 
-available in the base directory of this Oxygen Webhelp plugin.
-
--->
-  <!--EXM-21177 Default language for HTML, automatically added by integrator-->
-  
-<param name="DEFAULTLANG" expression="${args.default.language}" if="args.default.language"></param>
-
+	  
       <xmlcatalog refid="dita.catalog"></xmlcatalog>
     </xslt>
   </target>

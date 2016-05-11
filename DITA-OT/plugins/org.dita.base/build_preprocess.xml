@@ -37,6 +37,47 @@
         <param name="setsystemid" value="${args.xml.systemid.set}"></param>
       </module>
     </pipeline>
+    <!-- generate list files -->
+    <job-helper file="outditafiles.list" property="outditafileslist"></job-helper>
+    <job-helper file="fullditamapandtopic.list" property="fullditamapandtopiclist"></job-helper>
+    <job-helper file="fullditatopic.list" property="fullditatopiclist"></job-helper>
+    <job-helper file="fullditamap.list" property="fullditamaplist"></job-helper>
+    <job-helper file="hrefditatopic.list" property="hrefditatopiclist"></job-helper>
+    <job-helper file="conref.list" property="conreflist"></job-helper>
+    <job-helper file="image.list" property="imagelist"></job-helper>
+    <job-helper file="flagimage.list" property="flagimagelist"></job-helper>
+    <job-helper file="html.list" property="htmllist"></job-helper>
+    <job-helper file="hreftargets.list" property="hreftargetslist"></job-helper>
+    <job-helper file="canditopics.list" property="canditopicslist"></job-helper>
+    <job-helper file="skipchunk.list" property="skipchunklist"></job-helper>
+    <job-helper file="subjectscheme.list" property="subjectschemelist"></job-helper>
+    <job-helper file="conreftargets.list" property="conreftargetslist"></job-helper>
+    <job-helper file="copytosource.list" property="copytosourcelist"></job-helper>
+    <job-helper file="subtargets.list" property="subtargetslist"></job-helper>
+    <job-helper file="conrefpush.list" property="conrefpushlist"></job-helper>
+    <job-helper file="keyref.list" property="keyreflist"></job-helper>
+    <job-helper file="coderef.list" property="codereflist"></job-helper>
+    <job-helper file="resourceonly.list" property="resourceonlylist"></job-helper>
+    <property name="outditafilesfile" value="outditafiles.list"></property>
+    <property name="fullditamapandtopicfile" value="fullditamapandtopic.list"></property>
+    <property name="fullditatopicfile" value="fullditatopic.list"></property>
+    <property name="fullditamapfile" value="fullditamap.list"></property>
+    <property name="hrefditatopicfile" value="hrefditatopic.list"></property>
+    <property name="conreffile" value="conref.list"></property>
+    <property name="imagefile" value="image.list"></property>
+    <property name="flagimagefile" value="flagimage.list"></property>
+    <property name="htmlfile" value="html.list"></property>
+    <property name="hreftargetsfile" value="hreftargets.list"></property>
+    <property name="canditopicsfile" value="canditopics.list"></property>
+    <property name="skipchunkfile" value="skipchunk.list"></property>
+    <property name="subjectschemefile" value="subjectscheme.list"></property>
+    <property name="conreftargetsfile" value="conreftargets.list"></property>
+    <property name="copytosourcefile" value="copytosource.list"></property>
+    <property name="subtargetsfile" value="subtargets.list"></property>
+    <property name="conrefpushfile" value="conrefpush.list"></property>
+    <property name="keyreffile" value="keyref.list"></property>
+    <property name="codereffile" value="coderef.list"></property>
+    <property name="resourceonlyfile" value="resourceonly.list"></property>
   </target>
 
   <!-- debug-filter
@@ -58,31 +99,43 @@
         <param name="setsystemid" value="${args.xml.systemid.set}"></param>
       </module>
     </pipeline>
+    <job-helper file="user.input.file.list" property="user.input.file"></job-helper>
+    <job-helper file="hreftargets.list" property="hreftargetslist"></job-helper>
+    <job-helper file="conref.list" property="conreflist"></job-helper>
+    <job-helper file="hrefditatopic.list" property="hrefditatopiclist"></job-helper>
+    <job-helper file="fullditatopic.list" property="fullditatopiclist"></job-helper>
+    <job-helper file="fullditamapandtopic.list" property="fullditamapandtopiclist"></job-helper>
+    <job-helper file="conreftargets.list" property="conreftargetslist"></job-helper>
+    <job-helper file="conrefpush.list" property="conrefpushlist"></job-helper>
+    <job-helper file="keyref.list" property="keyreflist"></job-helper>
+    <job-helper file="skipchunk.list" property="skipchunklist"></job-helper>
+    <job-helper file="canditopics.list" property="canditopicslist"></job-helper>
+    <job-helper file="resourceonly.list" property="resourceonlylist"></job-helper>
     <xmlpropertyreader file="${dita.temp.dir}/dita.xml.properties"></xmlpropertyreader>
     <dirname property="dita.map.output.dir" file="${output.dir}/${user.input.file}"></dirname>
     <condition property="noConref">
-      <equals arg1="${conreflist}" arg2=""></equals>
+      <length file="${dita.temp.dir}/${conreffile}" length="0"></length>
     </condition>
     <condition property="noMap">
-      <equals arg1="${fullditamaplist}" arg2=""></equals>
+      <length file="${dita.temp.dir}/${fullditamapfile}" length="0"></length>
     </condition>
     <condition property="noImagelist">
-      <equals arg1="${imagelist}" arg2=""></equals>
+      <length file="${dita.temp.dir}/${imagefile}" length="0"></length>
     </condition>
     <condition property="noHtmllist">
-      <equals arg1="${htmllist}" arg2=""></equals>
+      <length file="${dita.temp.dir}/${htmlfile}" length="0"></length>
     </condition>
     <condition property="noSublist">
-      <equals arg1="${subtargetslist}" arg2=""></equals>
+      <length file="${dita.temp.dir}/${subtargetsfile}" length="0"></length>
     </condition>
     <condition property="noConrefPush">
-      <equals arg1="${conrefpushlist}" arg2=""></equals>
+      <length file="${dita.temp.dir}/${conrefpushfile}" length="0"></length>
     </condition>
     <condition property="noKeyref">
-      <equals arg1="${keyreflist}" arg2=""></equals>
+      <length file="${dita.temp.dir}/${keyreffile}" length="0"></length>
     </condition>
     <condition property="noCoderef">
-      <equals arg1="${codereflist}" arg2=""></equals>
+      <length file="${dita.temp.dir}/${codereffile}" length="0"></length>
     </condition>
   </target>
   
@@ -124,10 +177,6 @@
     <xslt basedir="${dita.temp.dir}" taskname="conref" destdir="${dita.temp.dir}" includesfile="${dita.temp.dir}/${conreffile}" classpathref="dost.class.path" reloadstylesheet="${dita.preprocess.reloadstylesheet.conref}" style="${dita.plugin.org.dita.base.dir}/xsl/preprocess/conref.xsl" filenameparameter="file-being-processed">
       <mapper type="glob" from="*" to="*.cnrf"></mapper>
       <param name="DITAEXT" expression="${dita.ext}" if="dita.ext"></param>
-      <!-- Deprecated -->
-      <param name="BASEDIR" expression="${basedir}"></param>
-      <!-- Deprecated -->
-      <param name="TEMPDIR" expression="${dita.temp.dir}"></param>
       <param name="EXPORTFILE" expression="${exportfile.url}"></param>
       <param name="TRANSTYPE" expression="${transtype}"></param>
       
@@ -171,8 +220,6 @@
     <xslt taskname="mapref" basedir="${dita.temp.dir}" destdir="${dita.temp.dir}" includesfile="${dita.temp.dir}/${fullditamapfile}" extension=".ditamap.ref" classpathref="dost.class.path" reloadstylesheet="${dita.preprocess.reloadstylesheet.mapref}" style="${dita.plugin.org.dita.base.dir}/xsl/preprocess/mapref.xsl" filenameparameter="file-being-processed">
       <param name="DITAEXT" expression="${dita.ext}" if="dita.ext"></param>
       <param name="TRANSTYPE" expression="${transtype}"></param>
-      <!-- Deprecated -->
-      <param name="FILEREF" expression="file:"></param>
       
       <xmlcatalog refid="dita.catalog"></xmlcatalog>
     </xslt>
@@ -238,10 +285,18 @@
         <param name="transtype" value="${transtype}"></param>
       </module>
     </pipeline>
-  	
+    
+    <job-helper file="fullditatopic.list" property="fullditatopiclist"></job-helper>
+    <job-helper file="fullditamap.list" property="fullditamaplist"></job-helper>
+    <job-helper file="fullditamapandtopic.list" property="fullditamapandtopiclist"></job-helper>
+    <job-helper file="chunkedditamap.list" property="chunkedditamaplist"></job-helper>
+    <job-helper file="chunkedtopic.list" property="chunkedtopiclist"></job-helper>
+    <job-helper file="resourceonly.list" property="resourceonlylist"></job-helper>
+    <job-helper file="copytosource.list" property="copytosourcelist"></job-helper>
+    <job-helper file="copytotarget2sourcemap.list" property="copytotarget2sourcemaplist"></job-helper>
   	<xmlpropertyreader file="${dita.temp.dir}/dita.xml.properties"></xmlpropertyreader>
   	<condition property="noTopic">
-  	  	<equals arg1="${fullditatopiclist}" arg2=""></equals>
+  	    <length file="${dita.temp.dir}/${fullditatopicfile}" length="0"></length>
   	</condition>
   </target>
 
@@ -303,18 +358,7 @@
       <param name="TABLELINK" expression="${args.tablelink.style}" if="args.tablelink.style"></param>
       <param name="FIGURELINK" expression="${args.figurelink.style}" if="args.figurelink.style"></param>
       <param name="ONLYTOPICINMAP" expression="${onlytopic.in.map}" if="onlytopic.in.map"></param>
-      <!--
-    
-Oxygen Webhelp plugin
-Copyright (c) 1998-2014 Syncro Soft SRL, Romania.  All rights reserved.
-Licensed under the terms stated in the license file EULA_Webhelp.txt 
-available in the base directory of this Oxygen Webhelp plugin.
-
--->
-  <!--EXM-21177 Default language for HTML, automatically added by integrator-->
-  
-<param name="DEFAULTLANG" expression="${args.default.language}" if="args.default.language"></param>
-
+      
       <mapper type="glob" from="*" to="*.pull"></mapper>
       <xmlcatalog refid="dita.catalog"></xmlcatalog>
     </xslt>
@@ -335,7 +379,7 @@ available in the base directory of this Oxygen Webhelp plugin.
     <condition property="dita.preprocess.reloadstylesheet.flag-module" value="${dita.preprocess.reloadstylesheet}">
       <not><isset property="dita.preprocess.reloadstylesheet.flag-module"></isset></not>
     </condition>
-    <xslt taskname="preprocess_flag" basedir="${dita.temp.dir}" destdir="${dita.temp.dir}" includesfile="${dita.temp.dir}/${fullditatopicfile}" classpathref="dost.class.path" reloadstylesheet="${dita.preprocess.reloadstylesheet.flag-module}" style="${dita.script.dir}/preprocess/flag.xsl" filenameparameter="FILENAME" filedirparameter="FILEDIR">
+    <xslt taskname="preprocess_flag" basedir="${dita.temp.dir}" destdir="${dita.temp.dir}" includesfile="${dita.temp.dir}/${fullditatopicfile}" classpathref="dost.class.path" reloadstylesheet="${dita.preprocess.reloadstylesheet.flag-module}" style="${dita.plugin.org.dita.base.dir}/xsl/preprocess/flag.xsl" filenameparameter="FILENAME" filedirparameter="FILEDIR">
       <excludesfile name="${dita.temp.dir}${file.separator}${resourceonlyfile}" if="resourceonlyfile"></excludesfile>
       <includesfile name="${dita.temp.dir}/${chunkedtopicfile}" if="chunkedtopicfile"></includesfile>
 

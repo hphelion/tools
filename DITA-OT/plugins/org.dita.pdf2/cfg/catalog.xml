@@ -56,9 +56,11 @@ See the accompanying license.txt file for applicable licenses.
     <uri name="cfg:fo/i18n/ro.xml" uri="fo/i18n/ro.xml"></uri>
     <uri name="cfg:fo/i18n/ru_RU.xml" uri="fo/i18n/ru.xml"></uri>
     <uri name="cfg:fo/i18n/ru.xml" uri="fo/i18n/ru.xml"></uri>
+    <uri name="cfg:fo/i18n/sl_SI.xml" uri="fo/i18n/sl.xml"></uri>
+    <uri name="cfg:fo/i18n/sl.xml" uri="fo/i18n/sl.xml"></uri>
     <uri name="cfg:fo/i18n/sv_SE.xml" uri="fo/i18n/sv.xml"></uri>
     <uri name="cfg:fo/i18n/sv.xml" uri="fo/i18n/sv.xml"></uri>
-    <uri name="cfg:fo/i18n/zh_CN.xml" uri="fo/i18n/zh.xml"></uri>
+    <uri name="cfg:fo/i18n/zh_CN.xml" uri="fo/i18n/zh_CN.xml"></uri>
 
     <uri name="cfg:common/index/de_DE.xml" uri="common/index/de.xml"></uri>
     <uri name="cfg:common/index/de.xml" uri="common/index/de.xml"></uri>
@@ -84,7 +86,7 @@ See the accompanying license.txt file for applicable licenses.
     <uri name="cfg:common/index/ru.xml" uri="common/index/ru.xml"></uri>
     <uri name="cfg:common/index/sv_SE.xml" uri="common/index/sv.xml"></uri>
     <uri name="cfg:common/index/sv.xml" uri="common/index/sv.xml"></uri>
-    <uri name="cfg:common/index/zh_CN.xml" uri="common/index/zh.xml"></uri>
+    <uri name="cfg:common/index/zh_CN.xml" uri="common/index/zh_CN.xml"></uri>
 
   
 

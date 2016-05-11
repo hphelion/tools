@@ -3,4 +3,8 @@
   applicable licenses.--><allstrings>
   <stringfile>strings.xml</stringfile>
   
+<stringfile>../../plugins/net.sourceforge.dita4publishers.html5/strings/strings.xml</stringfile>
+<stringfile>../../plugins/com.oxygenxml.webhelp/oxygen-webhelp/resources/localization/strings.xml</stringfile>
+<stringfile>../../plugins/org.dita4publishers.common.html-develop/strings/strings.xml</stringfile>
+<stringfile>../../plugins/org.dita4publishers.epub-develop/strings/strings.xml</stringfile>
 </allstrings>

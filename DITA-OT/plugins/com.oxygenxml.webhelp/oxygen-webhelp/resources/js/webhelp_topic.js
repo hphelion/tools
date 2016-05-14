@@ -378,7 +378,11 @@ function copycode (){
 		codedivs[i].setAttribute('contenteditable', 'true');
 		codedivs[i].setAttribute('id', 'a'+i);
 	}
-	
+
+	 // select the contents
+  	this.previousSibling.select();
+   
+	document.execCommand('copy'); 
 	
 	
 		for (var j=0; j<codedivs.length; j++) {

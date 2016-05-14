@@ -95,7 +95,7 @@ $(document).ready(function () {
       { 
 $("pre").each(function(index) {
     // do something exciting with each div
-    var count="a" + index+1;
+    var count="a" + (parseInt(index) +1);
     $(this).after("<button type='button' onclick='copycode(" + count + ");'>Copy code</button>");
     $(this).wrap("<div class='codecopy' id='" + count + "'></div>");
     //$("button").on("click", copycode, false);

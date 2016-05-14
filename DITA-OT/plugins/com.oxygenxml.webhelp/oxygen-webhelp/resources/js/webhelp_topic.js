@@ -365,9 +365,9 @@ function expcode() {
 }
 function copycode (){
 	alert('ok');
-	 var $previous = $(this).prev('div');
+	 var $previous = $(this).prev();
 	//$(this).prev().wrap("<div class='codecopy'></div>");
-	$previous.wrap("<div class='codecopy' />");
+	$previous.wrap("<div class='codecopy'></div>");
 	//$(this).prev().attr('contenteditable', 'true');
 	$previous.attr('contenteditable', 'true');
 }

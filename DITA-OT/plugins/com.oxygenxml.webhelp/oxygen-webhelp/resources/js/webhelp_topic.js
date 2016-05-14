@@ -365,4 +365,5 @@ function expcode() {
 }
 function copycode (){
 	alert('ok');
+	$(this).prev().wrap("<div class='codecopy'></div>");
 }

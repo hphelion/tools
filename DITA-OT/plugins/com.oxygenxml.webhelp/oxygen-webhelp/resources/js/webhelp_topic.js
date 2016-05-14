@@ -95,8 +95,9 @@ $(document).ready(function () {
       { 
 $("pre").each(function() {
     // do something exciting with each div
-    $(this).append("<button type='button'>Copy code</button>");
-    $("button").addEventListener('click', copycode, false);
+    $(this).after("<button type='button'>Copy code</button>");
+    $("button").on("click", copycode);
+    //$("button").addEventListener('click', copycode, false);
 });
       	 
 /*------------------ prettyprint ------------------------------------*/      	

@@ -369,6 +369,6 @@ function copycode (){
 	// var $previous = $(this).prev();
 	//$(this).prev().wrap("<div class='codecopy'></div>");
 	//$previous.wrap("<div class='codecopy'></div>");
-	$(this).prev('div').attr('contenteditable', 'true');
+	$(this).prev().prev().attr('contenteditable', 'true');
 	//$previous.attr('contenteditable', 'true');
 }

@@ -95,7 +95,7 @@ $(document).ready(function () {
       { 
 $("pre").each(function() {
     // do something exciting with each div
-    $(this).after("<button type='button' onclick="copycode();">Copy code</button>");
+    $(this).after("<button type='button' onclick='copycode();'>Copy code</button>");
     $(this).wrap("<div class='codecopy'></div>");
     //$("button").on("click", copycode, false);
     //$("button").addEventListener('click', copycode, false);

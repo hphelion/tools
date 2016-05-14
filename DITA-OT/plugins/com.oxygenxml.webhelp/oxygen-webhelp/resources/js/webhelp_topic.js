@@ -96,7 +96,12 @@ $(document).ready(function () {
 $("pre").each(function(index) {
     // do something exciting with each div
     var count="a" + (parseInt(index) +1);
-    $(this).after("<button type='button' onclick='copycode(" + count + ");'>Copy code</button>");
+    //$(this).after("<button type='button' onclick='copycode(" + count + ");'>Copy code</button>");
+    var btn = document.createElement("BUTTON");        // Create a <button> element
+    btn.addEventListener('click', copycode, false);
+    var t = document.createTextNode("Copy Code");       // Create a text node
+    btn.appendChild(t);                                // Append the text to <button>
+    $(this).appendChild(btn);                    // Append <button> to <body>
     $(this).wrap("<div class='codecopy' id='" + count + "'></div>");
     //$("button").on("click", copycode, false);
     //$("button").addEventListener('click', copycode, false);
@@ -381,7 +386,7 @@ function copycode(count){
 	}
 
 	 // select the contents
-	 document.getElementById(count).select();
+	this.previousElementSibling.select();
   	//codedivs[count-1].select();
    
 	document.execCommand('copy'); 

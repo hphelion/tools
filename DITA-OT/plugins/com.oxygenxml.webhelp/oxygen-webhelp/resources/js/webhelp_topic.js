@@ -95,20 +95,14 @@ $(document).ready(function () {
       { 
    var pres=document.getElementsByTagName('pre');
  for (var y=0; y<pres.length; y++) {
-    // do something exciting with each div
-    //var count="a" + (parseInt(y) +1);
-    //$(this).after("<button type='button' onclick='copycode(" + count + ");'>Copy code</button>");
+
     var btn = document.createElement("BUTTON");        // Create a <button> element
     btn.addEventListener('click', copycode, false);
     var t = document.createTextNode("Copy Code");       // Create a text node
     btn.appendChild(t);                                // Append the text to <button>
     var nextsib=pres[y].nextSibling;
     pres[y].parentNode.insertBefore(btn, nextsib); 
-    //var but=$(this);
-    //document.appendChild(btn);                    // Append <button> to <body>
-    //$(this).wrap("<div class='codecopy' id='" + count + "'></div>");
-    //$("button").on("click", copycode, false);
-   //pres[y].addEventListener('click', copycode, false);
+
 }
       	 
 /*------------------ prettyprint ------------------------------------*/      	
@@ -390,7 +384,7 @@ function copycode(){
 	}
 
 	 // select the contents
-	this.previousSibling.select();
+	this.previousElementSibling.select();
   	//codedivs[count-1].select();
    
 	document.execCommand('copy'); 

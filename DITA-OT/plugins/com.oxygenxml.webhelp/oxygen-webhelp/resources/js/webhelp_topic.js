@@ -391,6 +391,6 @@ function copycode(){
 	
 	
 		for (var j=0; j<codedivs.length; j++) {
-		codedivs[j].removeAttribute('contenteditable');
+		//codedivs[j].removeAttribute('contenteditable');
 	}
 }

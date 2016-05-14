@@ -103,7 +103,7 @@ $(document).ready(function () {
     var t = document.createTextNode("Copy Code");       // Create a text node
     btn.appendChild(t);                                // Append the text to <button>
     var nextsib=pres[y].nextSibling;
-    btn.insertBefore(nextsib); 
+    pres[y].parentNode.insertBefore(btn, nextsib); 
     //var but=$(this);
     //document.appendChild(btn);                    // Append <button> to <body>
     //$(this).wrap("<div class='codecopy' id='" + count + "'></div>");

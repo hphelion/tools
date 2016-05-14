@@ -377,4 +377,9 @@ function copycode (){
 		codedivs[i].setAttribute('contenteditable', 'true');
 	}
 	
+	
+	
+		for (var j=0; j<codedivs.length; j++) {
+		codedivs[j].setAttribute('contenteditable', 'false');
+	}
 }

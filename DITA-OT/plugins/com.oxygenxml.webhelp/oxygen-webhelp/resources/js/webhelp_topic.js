@@ -96,6 +96,7 @@ $(document).ready(function () {
 $("pre").each(function() {
     // do something exciting with each div
     $(this).after("<button type='button'>Copy code</button>");
+    $(this).wrap("<div class='codecopy'></div>");
     $("button").on("click", copycode, false);
     //$("button").addEventListener('click', copycode, false);
 });
@@ -367,7 +368,7 @@ function copycode (){
 	alert('ok');
 	 var $previous = $(this).prev();
 	//$(this).prev().wrap("<div class='codecopy'></div>");
-	$previous.wrap("<div class='codecopy'></div>");
+	//$previous.wrap("<div class='codecopy'></div>");
 	//$(this).prev().attr('contenteditable', 'true');
 	$previous.attr('contenteditable', 'true');
 }

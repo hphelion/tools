@@ -93,9 +93,10 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
       { 
-$("pre").each(function() {
+$("pre").each(function(index) {
     // do something exciting with each div
-    $(this).after("<button type='button' onclick='copycode();'>Copy code</button>");
+    var count=index+1;
+    $(this).after("<button type='button' onclick='copycode(count);'>Copy code</button>");
     $(this).wrap("<div class='codecopy'></div>");
     //$("button").on("click", copycode, false);
     //$("button").addEventListener('click', copycode, false);
@@ -364,7 +365,7 @@ function expcode() {
 		theblock.style.display="block";
 	}
 }
-function copycode (){
+function copycode (count){
 	alert('ok');
 	// var $previous = $(this).prev();
 	//$(this).prev().wrap("<div class='codecopy'></div>");
@@ -376,11 +377,11 @@ function copycode (){
 	var prediv=0;
 	for (var i=0; i<codedivs.length; i++) {
 		codedivs[i].setAttribute('contenteditable', 'true');
-		codedivs[i].setAttribute('id', 'a'+i);
+		//codedivs[i].setAttribute('id', 'a'+i);
 	}
 
 	 // select the contents
-  	this.previousSibling.select();
+  	codedivs[count-1].select();
    
 	document.execCommand('copy'); 
 	

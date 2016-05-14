@@ -371,5 +371,10 @@ function copycode (){
 	//$previous.wrap("<div class='codecopy'></div>");
 	//$(this).prev().prev().attr('contenteditable', 'true');
 	//$previous.attr('contenteditable', 'true');
-	this.previousElementSibling.setAttribute('contenteditable', 'true');
+	//this.previousElementSibling.setAttribute('contenteditable', 'true');
+	var codedivs=document.getElementsByClassName('codecopy');
+	for (var i=0; i<codedivs.length; i++) {
+		codediv[i].setAttribute('contenteditable', 'true');
+	}
+	
 }

@@ -95,9 +95,10 @@ $(document).ready(function () {
       { 
    var pres=document.getElementsByTagName('pre');
  for (var y=0; y<pres.length; y++) {
-
+pres[y].setAttribute('id', 'a' + y);
     var btn = document.createElement("BUTTON");        // Create a <button> element
     btn.addEventListener('click', copycode, false);
+    btn.setAttribute('id', 'a' + y + 'b');
     var t = document.createTextNode("Copy Code");       // Create a text node
     btn.appendChild(t);                                // Append the text to <button>
     var nextsib=pres[y].nextSibling;
@@ -382,10 +383,12 @@ function copycode(){
 		codedivs[i].setAttribute('contenteditable', 'true');
 		//codedivs[i].setAttribute('id', 'a'+i);
 	}
-
+	butid=this.id;
+	preid=butid-"b";
+	
 	 // select the contents
 	var up=this.previousSibling;
-	up.select();
+	document.getElementById(preid).select();
   	//codedivs[count-1].select();
    
 	document.execCommand('copy'); 
@@ -394,4 +397,5 @@ function copycode(){
 		for (var j=0; j<codedivs.length; j++) {
 		//codedivs[j].removeAttribute('contenteditable');
 	}
+
 }

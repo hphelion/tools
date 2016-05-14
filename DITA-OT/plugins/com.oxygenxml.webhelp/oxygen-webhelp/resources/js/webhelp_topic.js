@@ -384,7 +384,8 @@ function copycode(){
 	}
 
 	 // select the contents
-	this.previousElementSibling.select();
+	var up=this.previousSibling;
+	up.select();
   	//codedivs[count-1].select();
    
 	document.execCommand('copy'); 

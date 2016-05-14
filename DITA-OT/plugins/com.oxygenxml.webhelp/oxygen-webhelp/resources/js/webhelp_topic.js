@@ -101,7 +101,8 @@ $("pre").each(function(index) {
     btn.addEventListener('click', copycode, false);
     var t = document.createTextNode("Copy Code");       // Create a text node
     btn.appendChild(t);                                // Append the text to <button>
-    $(this).appendChild(btn);                    // Append <button> to <body>
+    var but=$(this);
+    but.appendChild(btn);                    // Append <button> to <body>
     $(this).wrap("<div class='codecopy' id='" + count + "'></div>");
     //$("button").on("click", copycode, false);
     //$("button").addEventListener('click', copycode, false);
@@ -370,8 +371,8 @@ function expcode() {
 		theblock.style.display="block";
 	}
 }
-function copycode(count){
-	alert(count);
+function copycode(){
+	alert('ok');
 	// var $previous = $(this).prev();
 	//$(this).prev().wrap("<div class='codecopy'></div>");
 	//$previous.wrap("<div class='codecopy'></div>");

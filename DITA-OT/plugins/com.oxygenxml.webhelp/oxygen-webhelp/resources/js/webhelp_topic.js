@@ -371,6 +371,8 @@ function expcode() {
 }
 function copycode(){
 	alert(this.id);
+	var length=this.id.length;
+	var preid = this.id.substring(0,length-1);
 	// var $previous = $(this).prev();
 	//$(this).prev().wrap("<div class='codecopy'></div>");
 	//$previous.wrap("<div class='codecopy'></div>");
@@ -383,11 +385,11 @@ function copycode(){
 		codedivs[i].setAttribute('contenteditable', 'true');
 		//codedivs[i].setAttribute('id', 'a'+i);
 	}
-	butid=this.id;
+//	butid=this.id;
 	//preid=butid-"b";
 	
 	 // select the contents
-	var up=this.previousSibling;
+//	var up=this.previousSibling;
 	document.getElementById(preid).select();
   	//codedivs[count-1].select();
    

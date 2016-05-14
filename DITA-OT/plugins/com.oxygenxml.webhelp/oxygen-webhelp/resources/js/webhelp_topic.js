@@ -93,7 +93,11 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
       { 
-      	
+$("pre").each(function() {
+    // do something exciting with each div
+    $(this).append("<button type='button'>Copy code</button>");
+    $("button").addEventListener('click', copycode, false);
+});
       	 
 /*------------------ prettyprint ------------------------------------*/      	
        // $.getScript("https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js");
@@ -357,4 +361,7 @@ function expcode() {
 	else {
 		theblock.style.display="block";
 	}
+}
+function copycode (){
+	alert('ok');
 }

@@ -370,7 +370,7 @@ function expcode() {
 	}
 }
 function copycode(){
-	alert('ok');
+	alert(this.id-"b");
 	// var $previous = $(this).prev();
 	//$(this).prev().wrap("<div class='codecopy'></div>");
 	//$previous.wrap("<div class='codecopy'></div>");

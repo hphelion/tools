@@ -365,8 +365,8 @@ function expcode() {
 		theblock.style.display="block";
 	}
 }
-function copycode (count){
-	alert('ok');
+function copycode(count){
+	alert(count);
 	// var $previous = $(this).prev();
 	//$(this).prev().wrap("<div class='codecopy'></div>");
 	//$previous.wrap("<div class='codecopy'></div>");

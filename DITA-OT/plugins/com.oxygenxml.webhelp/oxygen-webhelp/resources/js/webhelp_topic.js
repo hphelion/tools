@@ -96,7 +96,7 @@ $(document).ready(function () {
 $("pre").each(function() {
     // do something exciting with each div
     $(this).after("<button type='button'>Copy code</button>");
-    $("button").on("click", copycode);
+    $("button").on("click", copycode, false);
     //$("button").addEventListener('click', copycode, false);
 });
       	 

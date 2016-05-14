@@ -95,9 +95,9 @@ $(document).ready(function () {
       { 
 $("pre").each(function(index) {
     // do something exciting with each div
-    var count=index+1;
-    $(this).after("<button type='button' onclick='copycode(count);'>Copy code</button>");
-    $(this).wrap("<div class='codecopy'></div>");
+    var count="a" + index+1;
+    $(this).after("<button type='button' onclick='copycode(" + count + ");'>Copy code</button>");
+    $(this).wrap("<div class='codecopy' id='" + count + "'></div>");
     //$("button").on("click", copycode, false);
     //$("button").addEventListener('click', copycode, false);
 });
@@ -381,7 +381,8 @@ function copycode (count){
 	}
 
 	 // select the contents
-  	codedivs[count-1].select();
+	 document.getElementById(count).select();
+  	//codedivs[count-1].select();
    
 	document.execCommand('copy'); 
 	

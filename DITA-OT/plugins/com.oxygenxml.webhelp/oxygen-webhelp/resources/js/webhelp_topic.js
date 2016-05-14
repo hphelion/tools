@@ -379,7 +379,7 @@ function copycode(){
 	var codedivs=document.getElementsByTagName('pre');
 	var prediv=0;
 	for (var i=0; i<codedivs.length; i++) {
-		codedivs[i].setAttribute('contenteditable');
+		codedivs[i].setAttribute('contenteditable', 'true');
 		//codedivs[i].setAttribute('id', 'a'+i);
 	}
 

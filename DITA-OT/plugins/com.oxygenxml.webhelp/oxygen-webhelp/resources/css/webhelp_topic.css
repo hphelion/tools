@@ -816,3 +816,6 @@ table.tablesorter .headerSortDown {
 	background-image: url(http://docs-staging.hpcloud.com/hos.docs-hos-30/media/desc.png);
 	background-repeat: no-repeat;
 }
+.codebutton {
+	display: block;
+}

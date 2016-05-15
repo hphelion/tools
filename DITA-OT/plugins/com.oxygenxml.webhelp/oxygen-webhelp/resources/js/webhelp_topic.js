@@ -390,9 +390,15 @@ function copycode(){
 	
 	 // select the contents
 //	var up=this.previousSibling;
-	document.getElementById(preid).select();
+	var textnode=document.getElementById(preid);
   	//codedivs[count-1].select();
-        $('#' + preid).select();
+        //$('#' + preid).select();
+        
+          var range = document.createRange();  
+  // set the Node to select the "range"
+  range.selectNode(textnode);
+  // add the Range to the set of window selections
+  window.getSelection().addRange(range);
 	document.execCommand('copy'); 
 	
 	

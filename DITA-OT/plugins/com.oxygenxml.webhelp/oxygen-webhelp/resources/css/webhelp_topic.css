@@ -809,3 +809,7 @@ div.note.danger {
 	display: inline;
 	font-weight: bold;
 }
+.codebutton {
+	display: block;
+	margin-left: 12px;
+}

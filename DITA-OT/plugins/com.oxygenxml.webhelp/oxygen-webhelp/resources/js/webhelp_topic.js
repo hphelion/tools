@@ -93,18 +93,19 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
       { 
-   var pres=document.getElementsByTagName('pre');
- for (var y=0; y<pres.length; y++) {
-pres[y].setAttribute('id', 'a' + y);
-    var btn = document.createElement("BUTTON");        // Create a <button> element
-    btn.addEventListener('click', copycode, false);
-    btn.setAttribute('id', 'a' + y + 'b');
-    var t = document.createTextNode("Copy Code");       // Create a text node
-    btn.appendChild(t);                                // Append the text to <button>
-    var nextsib=pres[y].nextSibling;
-    pres[y].parentNode.insertBefore(btn, nextsib); 
+         var pres=document.getElementsByTagName('pre');
+         for (var y=0; y<pres.length; y++) {
+             pres[y].setAttribute('id', 'a' + y);
+             var btn = document.createElement("BUTTON");        
+             btn.addEventListener('click', copycode, false);
+             btn.setAttribute('id', 'a' + y + 'b');
+             btn.setAttribute('class', 'codebutton');
+             var t = document.createTextNode("Copy Code");       
+             btn.appendChild(t);                               
+             var nextsib=pres[y].nextSibling;
+             pres[y].parentNode.insertBefore(btn, nextsib); 
 
-}
+         }
       	 
 /*------------------ prettyprint ------------------------------------*/      	
        // $.getScript("https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js");

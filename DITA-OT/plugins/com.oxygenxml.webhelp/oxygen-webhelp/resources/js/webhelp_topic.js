@@ -94,7 +94,8 @@ $(document).ready(function () {
   $(document).ready(function()
       { 
          var pres=document.getElementsByTagName('pre');
-         for (var y=0; y<pres.length; y++) {
+         if (pres.length) {
+           for (var y=0; y<pres.length; y++) {
              pres[y].setAttribute('id', 'a' + y);
              var btn = document.createElement("BUTTON");        
              btn.addEventListener('click', copycode, false);
@@ -105,7 +106,8 @@ $(document).ready(function () {
              var nextsib=pres[y].nextSibling;
              pres[y].parentNode.insertBefore(btn, nextsib); 
 
-         }
+           }
+         }  
       	 
 /*------------------ prettyprint ------------------------------------*/      	
        // $.getScript("https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js");
@@ -381,7 +383,14 @@ function copycode(){
         var range = document.createRange();  
         range.selectNode(textnode);
         window.getSelection().addRange(range);
-        document.execCommand('copy'); 
+        var succeed;
+        try {
+    	  succeed = document.execCommand("copy");
+        } 
+        catch(e) {
+          succeed = false;
+        }
+       // document.execCommand('copy'); 
 	textnode.setAttribute('contenteditable', 'false');
 
 }

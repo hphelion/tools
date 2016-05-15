@@ -92,8 +92,8 @@ $(document).ready(function () {
 });
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
-      { 
-      	 if (document.queryCommandSupported("copy")) {
+    { 
+      if (document.queryCommandSupported("copy")) {
          var pres=document.getElementsByTagName('pre');
          if (pres.length) {
            for (var y=0; y<pres.length; y++) {
@@ -109,7 +109,7 @@ $(document).ready(function () {
 
            }
          } 
-       }  
+      }  
       	 
 /*------------------ prettyprint ------------------------------------*/      	
        // $.getScript("https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js");
@@ -380,7 +380,6 @@ function copycode(){
 	var length=this.id.length;
 	var preid = this.id.substring(0,length-1);
         var textnode=document.getElementById(preid);
-	var codedivs=document.getElementsByTagName('pre');
 	textnode.setAttribute('contenteditable', 'true');
 	window.getSelection().removeAllRanges();
         var range = document.createRange();  
@@ -393,7 +392,5 @@ function copycode(){
         catch(e) {
           succeed = false;
         }
-        
-	textnode.setAttribute('contenteditable', 'false');
-
+        textnode.setAttribute('contenteditable', 'false');
 }

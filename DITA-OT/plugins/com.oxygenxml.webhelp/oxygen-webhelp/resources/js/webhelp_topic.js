@@ -359,3 +359,25 @@ function expcode() {
 	}
 }
 
+function copycode(){
+
+	var length=this.id.length;
+	var preid = this.id.substring(0,length-1);
+        var textnode=document.getElementById(preid);
+	var codedivs=document.getElementsByTagName('pre');
+	textnode.setAttribute('contenteditable', 'true');
+	window.getSelection().removeAllRanges();
+        var range = document.createRange();  
+        range.selectNode(textnode);
+        window.getSelection().addRange(range);
+        var succeed;
+        try {
+    	  succeed = document.execCommand("copy");
+        } 
+        catch(e) {
+          succeed = false;
+        }
+        
+	textnode.setAttribute('contenteditable', 'false');
+
+}

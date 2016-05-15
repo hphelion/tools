@@ -370,27 +370,17 @@ function expcode() {
 	}
 }
 function copycode(){
-	alert(this.id);
+
 	var length=this.id.length;
 	var preid = this.id.substring(0,length-1);
         var textnode=document.getElementById(preid);
 	var codedivs=document.getElementsByTagName('pre');
 	textnode.setAttribute('contenteditable', 'true');
-	/*for (var i=0; i<codedivs.length; i++) {
-	    codedivs[i].setAttribute('contenteditable', 'true');
-
-	}*/
-
 	window.getSelection().removeAllRanges();
         var range = document.createRange();  
-        // set the Node to select the "range"
         range.selectNode(textnode);
-        // add the Range to the set of window selections
         window.getSelection().addRange(range);
         document.execCommand('copy'); 
-       /* for (var j=0; j<codedivs.length; j++) {
-            codedivs[j].setAttribute('contenteditable', 'false');
-        }*/
 	textnode.setAttribute('contenteditable', 'false');
 
 }

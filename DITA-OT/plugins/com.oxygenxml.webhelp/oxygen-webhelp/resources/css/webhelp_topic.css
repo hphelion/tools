@@ -818,4 +818,5 @@ table.tablesorter .headerSortDown {
 }
 .codebutton {
 	display: block;
+	margin-left: 12px;
 }

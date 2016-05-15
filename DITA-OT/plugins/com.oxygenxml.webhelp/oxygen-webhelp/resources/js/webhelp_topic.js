@@ -373,37 +373,23 @@ function copycode(){
 	alert(this.id);
 	var length=this.id.length;
 	var preid = this.id.substring(0,length-1);
-	// var $previous = $(this).prev();
-	//$(this).prev().wrap("<div class='codecopy'></div>");
-	//$previous.wrap("<div class='codecopy'></div>");
-	//$(this).prev().prev().attr('contenteditable', 'true');
-	//$previous.attr('contenteditable', 'true');
-	//this.previousElementSibling.setAttribute('contenteditable', 'true');
+
 	var codedivs=document.getElementsByTagName('pre');
 	var prediv=0;
 	for (var i=0; i<codedivs.length; i++) {
-		codedivs[i].setAttribute('contenteditable', 'true');
-		//codedivs[i].setAttribute('id', 'a'+i);
+	    codedivs[i].setAttribute('contenteditable', 'true');
+
 	}
-//	butid=this.id;
-	//preid=butid-"b";
-	
-	 // select the contents
-//	var up=this.previousSibling;
+
 	var textnode=document.getElementById(preid);
-  	//codedivs[count-1].select();
-        //$('#' + preid).select();
-        
-          var range = document.createRange();  
-  // set the Node to select the "range"
-  range.selectNode(textnode);
-  // add the Range to the set of window selections
-  window.getSelection().addRange(range);
-	document.execCommand('copy'); 
-	
-	
-		for (var j=0; j<codedivs.length; j++) {
-		//codedivs[j].removeAttribute('contenteditable');
-	}
+        var range = document.createRange();  
+        // set the Node to select the "range"
+        range.selectNode(textnode);
+        // add the Range to the set of window selections
+        window.getSelection().addRange(range);
+        document.execCommand('copy'); 
+        for (var j=0; j<codedivs.length; j++) {
+            codedivs[j].setAttribute('contenteditable', 'false');
+        }
 
 }

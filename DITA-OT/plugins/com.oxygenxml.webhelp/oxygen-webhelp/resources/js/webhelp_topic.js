@@ -93,6 +93,7 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
       { 
+      if (document.queryCommandSupported("copy")) {
          var pres=document.getElementsByTagName('pre');
          if (pres.length) {
            for (var y=0; y<pres.length; y++) {
@@ -107,7 +108,8 @@ $(document).ready(function () {
              pres[y].parentNode.insertBefore(btn, nextsib); 
 
            }
-         }  
+         } 
+        }  
       	 
 /*------------------ prettyprint ------------------------------------*/      	
        // $.getScript("https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js");

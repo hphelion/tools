@@ -93,6 +93,7 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
     { 
+      /*------------------ copy button ------------------------------------*/      
       if (document.queryCommandSupported("copy")) {
          var pres=document.getElementsByTagName('pre');
          if (pres.length) {
@@ -110,7 +111,7 @@ $(document).ready(function () {
            }
          } 
       }  
-      	 
+      	 /*------------------ end copy button ------------------------------------*/      
 /*------------------ prettyprint ------------------------------------*/      	
        // $.getScript("https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js");
       	//$.getScript("http://docs-staging.hpcloud.com/z_test_hos.docs+hos-30+nancy/media/run_prettify.js");
@@ -374,7 +375,7 @@ function expcode() {
 		theblock.style.display="block";
 	}
 }
-
+/*------------------ copy function ------------------------------------*/      
 function copycode(){
 
 	var length=this.id.length;

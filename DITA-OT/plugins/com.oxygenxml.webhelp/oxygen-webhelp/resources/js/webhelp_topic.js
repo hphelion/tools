@@ -381,7 +381,7 @@ function copycode(){
         var textnode=document.getElementById(preid);
 	var codedivs=document.getElementsByTagName('pre');
 	textnode.setAttribute('contenteditable', 'true');
-
+	window.getSelection().removeAllRanges();
         var range = document.createRange();  
         range.selectNode(textnode);
         window.getSelection().addRange(range);
@@ -394,5 +394,5 @@ function copycode(){
         }
        // document.execCommand('copy'); 
 	textnode.setAttribute('contenteditable', 'false');
-	window.getSelection().removeAllRanges();
+
 }

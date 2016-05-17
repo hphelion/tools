@@ -10,5 +10,6 @@
 #     click from one file to another.
 #
 devplatform/1.1devplatform.ALS-developer-trial-quick-start.html devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.html
+3.x/helion/operations/alarmresolution.html 3.x/helion/operations/alarm_resolutions.html 
 
 

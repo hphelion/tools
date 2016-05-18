@@ -94,7 +94,7 @@ $(document).ready(function () {
   $(document).ready(function()
     { 
       /*------------------ copy button ------------------------------------*/      
-      if (document.queryCommandSupported("copy")) {
+      /*if (document.queryCommandSupported("copy")) {
          var pres=document.getElementsByTagName('pre');
          if (pres.length) {
            for (var y=0; y<pres.length; y++) {
@@ -110,7 +110,8 @@ $(document).ready(function () {
 
            }
          } 
-      }  
+      } *
+      
       	 /*------------------ end copy button ------------------------------------*/      
 /*------------------ prettyprint ------------------------------------*/      	
        // $.getScript("https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js");
@@ -376,7 +377,7 @@ function expcode() {
 	}
 }
 /*------------------ copy function ------------------------------------*/      
-function copycode(){
+/*function copycode(){
 
 	var length=this.id.length;
 	var preid = this.id.substring(0,length-1);
@@ -395,3 +396,4 @@ function copycode(){
         }
         textnode.setAttribute('contenteditable', 'false');
 }
+*/

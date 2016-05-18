@@ -94,8 +94,8 @@ $(document).ready(function () {
   $(document).ready(function()
     { 
       /*------------------ copy button ------------------------------------*/      
-      /*if (document.queryCommandSupported("copy")) {
-         var pres=document.getElementsByTagName('pre');
+      if (document.queryCommandSupported("copy")) {
+         var pres=document.getElementsByClassName('copybutton');
          if (pres.length) {
            for (var y=0; y<pres.length; y++) {
              pres[y].setAttribute('id', 'a' + y);
@@ -110,7 +110,7 @@ $(document).ready(function () {
 
            }
          } 
-      } *
+      } 
       
       	 /*------------------ end copy button ------------------------------------*/      
 /*------------------ prettyprint ------------------------------------*/      	
@@ -377,7 +377,7 @@ function expcode() {
 	}
 }
 /*------------------ copy function ------------------------------------*/      
-/*function copycode(){
+function copycode(){
 
 	var length=this.id.length;
 	var preid = this.id.substring(0,length-1);
@@ -396,4 +396,4 @@ function expcode() {
         }
         textnode.setAttribute('contenteditable', 'false');
 }
-*/
+

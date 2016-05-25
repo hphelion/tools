@@ -67,7 +67,8 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 "
 
 
-
+echo 1
+find . -name docs.hpcloud.com.HDP.ditamap
 
     repo="hos.docs"
 	branch="$hos_docs_BRANCH"
@@ -89,7 +90,8 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 	
 mkdir media
 
-	
+echo 2
+find . -name docs.hpcloud.com.HDP.ditamap
 	repo="devplat.docs"
 	branch="$devplat_docs_BRANCH"
 	echo "clone $repo branch $branch"
@@ -104,7 +106,8 @@ mkdir media
  
     rm -r $repo
  
-  
+ echo 3
+ find . -name docs.hpcloud.com.HDP.ditamap
 
 	repo="carrier.grade.docs"
 	branch="$carrier_grade_docs_BRANCH"
@@ -121,7 +124,8 @@ mkdir media
 
 	rm -r ${repo}
 
-
+echo 4
+find . -name docs.hpcloud.com.HDP.ditamap
 	repo="hcf.docs"
 	branch="$hcf_docs_BRANCH"
 	echo "clone $repo branch $branch"
@@ -135,7 +139,8 @@ mkdir media
     
 	rm -r ${repo}
 
-	
+echo 5
+find . -name docs.hpcloud.com.HDP.ditamap
 	
 	repo="hos.docs"
 	branch="$hos_docs_LEGACYBRANCH"
@@ -157,7 +162,8 @@ mkdir media
 	rm -r ${repo}
 	
 	 
- 
+echo 6
+find . -name docs.hpcloud.com.HDP.ditamap
 	repo="wrapper.docs"
 	branch="bundle-2015-may"
 	echo "clone $repo branch $branch"
@@ -170,5 +176,6 @@ mkdir media
     rm -r ${repo}
 
 
- 
+echo 7
+find . -name docs.hpcloud.com.HDP.ditamap
  

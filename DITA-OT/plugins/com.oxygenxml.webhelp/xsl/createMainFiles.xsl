@@ -365,7 +365,6 @@ available in the base directory of this Oxygen Webhelp plugin.
             <div id="leftPane">
               <div id="bck_toc">
                 <div id="searchBlock" style="display:none;">
-		<xsl:comment>
 		      <script>
 		      (function() {
 		       var cx = '016914425578488494023:1oxcmxx-5wg';
@@ -378,7 +377,6 @@ available in the base directory of this Oxygen Webhelp plugin.
 			 })();
 			 </script>
 			<div class="gcse-search"></div>
-			</xsl:comment>	  
                 </div>
 
                 <div id="preload">

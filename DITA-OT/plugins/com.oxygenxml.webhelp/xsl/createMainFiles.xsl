@@ -365,20 +365,20 @@ available in the base directory of this Oxygen Webhelp plugin.
             <div id="leftPane">
               <div id="bck_toc">
                 <div id="searchBlock" style="display:none;">
-                   <script>
-                   (function() {
-                   var cx = '016914425578488494023:1oxcmxx-5wg';
-                   var gcse = document.createElement('script');
-	           gcse.type = 'text/javascript';
-	           gcse.async = true;
-		      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-		          var s = document.getElementsByTagName('script')[0];
-			      s.parentNode.insertBefore(gcse, s);
-			        })();
-				</script>
-				<gcse:search></gcse:search>
-				  
-				  
+		<xsl:comment>
+		      <script>
+		      (function() {
+		       var cx = '016914425578488494023:1oxcmxx-5wg';
+		       var gcse = document.createElement('script');
+		       gcse.type = 'text/javascript';
+		       gcse.async = true;
+		       gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+		       var s = document.getElementsByTagName('script')[0];
+		       s.parentNode.insertBefore(gcse, s);
+			 })();
+			 </script>
+			 <gcse:search></gcse:search>
+			</xsl:comment>	  
                 </div>
 
                 <div id="preload">

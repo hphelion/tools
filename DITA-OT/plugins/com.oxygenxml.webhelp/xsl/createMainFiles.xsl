@@ -377,7 +377,7 @@ available in the base directory of this Oxygen Webhelp plugin.
 		       s.parentNode.insertBefore(gcse, s);
 			 })();
 			 </script>
-			 <gcse:search></gcse:search>
+			<div class="gcse-search"></div>
 			</xsl:comment>	  
                 </div>
 

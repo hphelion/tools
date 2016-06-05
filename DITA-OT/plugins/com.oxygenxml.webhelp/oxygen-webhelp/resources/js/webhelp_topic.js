@@ -47,15 +47,6 @@ function getPath(currentUrl) {
  * @param words {array} words to be highlighted
  */
 function highlightSearchTerm(words) {
-/* added by JGL 5 June 16 */
-
-if (window.self == window.top) {
-var naked = window.location.href
-var framed = naked.replace("docs.hpcloud.com/", "docs.hpcloud.com/index.html#");
-window.location.replace(framed)}
-
-
-
     if (top==self) {
         if (words != null) {
             // highlight each term in the content view

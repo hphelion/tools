@@ -326,7 +326,18 @@ available in the base directory of this Oxygen Webhelp plugin.
           <div id="header">
             <div id="lHeader">
               <xsl:if test="not($withFrames)">
-                <div id="productTitle"><img src="oxygen-webhelp/resources/img/hpe-logo.png" alt="HPE Helion" height="42" style="padding-top:5px;" />
+                <div id="productTitle"><img src="oxygen-webhelp/resources/img/hpe-logo.png" alt="HPE Helion" height="42" style="padding-top:5px;" /><div style="float:right;width:500px"><script>
+		  (function() {
+		      var cx = '016914425578488494023:1oxcmxx-5wg';
+		          var gcse = document.createElement('script');
+			      gcse.type = 'text/javascript';
+			          gcse.async = true;
+				      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+				          var s = document.getElementsByTagName('script')[0];
+					      s.parentNode.insertBefore(gcse, s);
+					        })();
+						</script>
+						<gcse:searchresults-only></gcse:searchresults-only></div>
                   <h1>  
                     <!-- <xsl:copy-of select="$title"/> removed JLarsen 6/19/2015  -->
                   </h1>

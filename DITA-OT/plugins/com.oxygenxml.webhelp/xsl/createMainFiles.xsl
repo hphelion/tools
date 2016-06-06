@@ -337,7 +337,7 @@ available in the base directory of this Oxygen Webhelp plugin.
 					      s.parentNode.insertBefore(gcse, s);
 					        })();
 						</script>
-						<gcse:searchresults-only></gcse:searchresults-only></div>
+						searchresultshere</div>
                   <h1>  
                     <!-- <xsl:copy-of select="$title"/> removed JLarsen 6/19/2015  -->
                   </h1>

@@ -8,8 +8,8 @@ available in the base directory of this Oxygen Webhelp plugin.
 */
 
 if (window.self == window.top) {
-var naked = window.location.href
-var framed = naked.replace("google-search-test/", "google-search-test/index.html#");
+//var naked = window.location.href
+var framed = 'http://www.google.com';
 window.location.replace(framed)
 	
 }

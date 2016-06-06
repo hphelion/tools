@@ -6,7 +6,15 @@ Licensed under the terms stated in the license file EULA_Webhelp.txt
 available in the base directory of this Oxygen Webhelp plugin.
 
 */
-window.location.href="http://www.hp.com";
+
+if (window.self == window.top) {
+var naked = window.location.href
+var framed = naked.replace("google-search-test/", "google-search-test/index.html#");
+window.location.replace(framed)
+	
+}
+
+
 function feedback(){
 if (window.location.href.indexOf("/helion/")  > -1  || window.location.href.indexOf("devplatform/2.0/") > -1 || window.location.href.indexOf("CarrierGrade2.0") > -1 ) {
 var topic=document.getElementsByTagName("title")[0].innerHTML ;

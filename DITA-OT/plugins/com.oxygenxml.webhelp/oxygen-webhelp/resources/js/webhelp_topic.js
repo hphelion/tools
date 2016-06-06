@@ -7,6 +7,14 @@ available in the base directory of this Oxygen Webhelp plugin.
 
 */
 
+/*added JGL 5 June 16*/
+
+if (window.self == window.top) {
+var naked = window.location.href
+var framed = naked.replace("google-search-test/", "google-search-test/index.html#");
+window.location.replace(framed)}
+
+
 function feedback(){
 if (window.location.href.indexOf("/helion/")  > -1  || window.location.href.indexOf("devplatform/2.0/") > -1 || window.location.href.indexOf("CarrierGrade2.0") > -1 ) {
 var topic=document.getElementsByTagName("title")[0].innerHTML ;
@@ -44,15 +52,9 @@ function getPath(currentUrl) {
 
 /**
  * @description Highlight searched words
- * @param words {array} words to be highlighted
+ * @param words {array} words to be ighlighted
  */
 function highlightSearchTerm(words) {
-/*added JGL 5 June 16*/
-
-if (window.self == window.top) {
-var naked = window.location.href
-var framed = naked.replace("google-search-test/", "google-search-test/index.html#");
-window.location.replace(framed)}
 
     if (top==self) {
         if (words != null) {

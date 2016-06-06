@@ -326,7 +326,7 @@ available in the base directory of this Oxygen Webhelp plugin.
           <div id="header">
             <div id="lHeader">
               <xsl:if test="not($withFrames)">
-                <div id="productTitle"><img src="oxygen-webhelp/resources/img/hpe-logo.png" alt="HPE Helion" height="42" style="padding-top:5px;" />
+                <div id="productTitle"><img src="oxygen-webhelp/resources/img/hpe-logo.png" alt="HPE Helion" height="42" style="padding-top:5px;" /><div style="float:right; width:500px;><gsce:search linkTarget="_top"></gsce:search></div>
                   <h1>  
                     <!-- <xsl:copy-of select="$title"/> removed JLarsen 6/19/2015  -->
                   </h1>
@@ -376,7 +376,7 @@ available in the base directory of this Oxygen Webhelp plugin.
 		       s.parentNode.insertBefore(gcse, s);
 			 })();
 			 </script>
-			<div class="gcse-search"></div>
+			<div class="gcse-search linkTarget='top'"></div>
                 </div>
 
                 <div id="preload">

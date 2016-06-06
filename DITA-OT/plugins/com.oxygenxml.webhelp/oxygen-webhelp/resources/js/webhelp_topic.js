@@ -85,7 +85,7 @@ $(document).ready(function () {
                 $('#permalink').hide();
             }
         } else {
-            $("<div class='frames'><div class='wFrames'><a href=" + getPath(location.pathname) + ">With Frames</a></div></div>").prependTo('.navheader');							        
+            $("<div class='frames'><div class='wFrames'><a href=" + getPath(location.pathname) + ">See the Table of Contents</a></div></div>").prependTo('.navheader');							        
             $('#permalink').hide();
         }
     }

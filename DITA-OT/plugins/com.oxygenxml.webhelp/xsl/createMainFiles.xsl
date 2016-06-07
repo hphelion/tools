@@ -128,7 +128,7 @@ available in the base directory of this Oxygen Webhelp plugin.
       <div class="tab" id="content" style="display:inline">
         <span onclick="showMenu('content')" id="content.label">
           <xsl:call-template name="getWebhelpString">
-            <xsl:with-param name="stringName" select="'Content'"/>
+            <xsl:with-param name="stringName" select="'Contenta'"/>
           </xsl:call-template>
         </span>
       </div>
@@ -307,7 +307,7 @@ available in the base directory of this Oxygen Webhelp plugin.
                   padding:0px 5px 0px 5px;
               }
               #contentMenuItem:before{
-                  content:"Contents";
+                  content:"Contentb";
               }</style>
             <xsl:if test="not($withFrames)">
               <div style="width: 100%; vertical-align: middle; text-align: center; height: 100%;">

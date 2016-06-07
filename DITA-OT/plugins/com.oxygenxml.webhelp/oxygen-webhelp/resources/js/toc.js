@@ -147,7 +147,7 @@ function redirect(link) {
 function initTabs() {
     if (! tabsInitialized) {
         // Get the tabs internationalization text
-        var contentLinkText = getLocalization("Content");
+        var contentLinkText = getLocalization("Contents");
         var searchLinkText = getLocalization("Search");
         var indexLinkText = getLocalization("Index");
         var IndexPlaceholderText = getLocalization("IndexFilterPlaceholder");

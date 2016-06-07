@@ -351,23 +351,6 @@ available in the base directory of this Oxygen Webhelp plugin.
                   </div>
                 </div>
               </xsl:if>
-              <table class="tool" cellpadding="0" cellspacing="0">
-                <tr>
-                  <td>
-                    <xsl:call-template name="create-tabs-divs"/>                    
-                  </td>
-                  <td>
-                    <div id="productToolbar">
-                      <div id="breadcrumbLinks">
-                        <xsl:comment> </xsl:comment>
-                      </div>
-                      <div id="navigationLinks">
-                        <xsl:comment> </xsl:comment>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
             </div>
             <div id="space">
               <xsl:comment/>

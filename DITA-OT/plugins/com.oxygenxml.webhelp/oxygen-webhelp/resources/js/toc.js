@@ -183,7 +183,7 @@ function showMenu(displayTab) {
     }
 
     initTabs();
-    var tabs = new Array("content", "search", "index");
+    var tabs = new Array("content", "index");
     for (var i = 0; i < tabs.length; i++) {
         var currentTabId = tabs[i];
         // generates menu tabs

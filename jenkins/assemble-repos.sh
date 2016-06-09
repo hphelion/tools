@@ -16,7 +16,7 @@ function adjust_date_to_last_commit {
     	touch -d "`git log -1 --date=iso --pretty=format:%ad $t | sed 's| +.*||'` " $t
         stat --format=%y $t
 
-	date -d"`git log -1 --date=iso --pretty=format:%ad 1.1commerical.services-vol ume-overview.dita`" +'%d %b %Y' > $t.time
+	date -d"`git log -1 --date=iso --pretty=format:%ad $t`" +'%d %b %Y' > $t.time
 
         echo""
 	done

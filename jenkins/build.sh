@@ -61,8 +61,7 @@ chmod -R 777 ./tools/jenkins/
 
 
 
-#./tools/jenkins/inject_date.sh -file
-
+./tools/jenkins/inject_date.sh -file
 
 
  

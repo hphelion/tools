@@ -10,18 +10,11 @@ function adjust_date_to_last_commit {
     for t in $(find . -name "*.dita");
     do
     	echo $repo : $t
-       date -d"`git log -1 --date=iso --pretty=format:%ad $t`" +'%d %b %Y' 
-	
-	date -d"`git log -1 --date=iso --pretty=format:%ad $t`" +'%d %b %Y' > $t.time
-	
-	
-	stat --format=%y $t
+        stat --format=%y $t
     	git log -1 --date=iso --pretty=format:%ad $t | sed 's| +.*||'
         echo""
     	touch -d "`git log -1 --date=iso --pretty=format:%ad $t | sed 's| +.*||'` " $t
         stat --format=%y $t
-
-
         echo""
 	done
     cd -    
@@ -36,7 +29,7 @@ function adjust_date_to_last_commit {
     echo "Branch $branch exists on github"
 	
 	rm -r $repo
-		if ! git clone -b ${branch} --single-branch  git@github.com:hphelion/${repo}.git ${repo}
+		if ! git clone -b ${branch} --single-branch --depth 2 git@github.com:hphelion/${repo}.git ${repo}
 		then
 			echo >&2 Cloning git@github.com:hphelion/${repo}.git failed.  Stopping the build.
 
@@ -88,7 +81,7 @@ find . -name docs.hpcloud.com.HDP.ditamap
     cp -rp ${repo}/commercial/ ./3.x/
     cp -rp ${repo}/helion/ ./3.x/
     cp -rp ${repo}/hos-html/ ./3.x/
-    cp -rp ${repo}/media/ ./3.x/media/
+	cp -rp ${repo}/media/ ./3.x/media/
     cp -rp ${repo}/media/${repo} ./3.x/media/${repo}
     cp -rp ${repo}/*.ditamap ./3.x/
  
@@ -106,8 +99,8 @@ find . -name docs.hpcloud.com.HDP.ditamap
 	clone_repo $repo $branch
     adjust_date_to_last_commit
 	
-    cp -rp ${repo}/devplatform/ ./
-    cp -rp ${repo}/media/${repo} ./media/${repo}
+	cp -rp ${repo}/devplatform/ ./
+	cp -rp ${repo}/media/${repo} ./media/${repo}
     cp -rp ${repo}/*.ditamap ./
     cp -rp ${repo}/hdp-html/ ./
  

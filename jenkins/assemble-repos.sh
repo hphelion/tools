@@ -36,7 +36,7 @@ function adjust_date_to_last_commit {
     echo "Branch $branch exists on github"
 	
 	rm -r $repo
-		if ! git clone -b ${branch} --single-branch --depth 1 git@github.com:hphelion/${repo}.git ${repo}
+		if ! git clone -b ${branch} --single-branch  git@github.com:hphelion/${repo}.git ${repo}
 		then
 			echo >&2 Cloning git@github.com:hphelion/${repo}.git failed.  Stopping the build.
 

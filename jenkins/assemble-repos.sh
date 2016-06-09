@@ -15,6 +15,9 @@ function adjust_date_to_last_commit {
         echo""
     	touch -d "`git log -1 --date=iso --pretty=format:%ad $t | sed 's| +.*||'` " $t
         stat --format=%y $t
+
+	date -d"`git log -1 --date=iso --pretty=format:%ad 1.1commerical.services-vol ume-overview.dita`" +'%d %b %Y' > $t.time
+
         echo""
 	done
     cd -    
@@ -81,7 +84,7 @@ find . -name docs.hpcloud.com.HDP.ditamap
     cp -rp ${repo}/commercial/ ./3.x/
     cp -rp ${repo}/helion/ ./3.x/
     cp -rp ${repo}/hos-html/ ./3.x/
-	cp -rp ${repo}/media/ ./3.x/media/
+    cp -rp ${repo}/media/ ./3.x/media/
     cp -rp ${repo}/media/${repo} ./3.x/media/${repo}
     cp -rp ${repo}/*.ditamap ./3.x/
  
@@ -99,8 +102,8 @@ find . -name docs.hpcloud.com.HDP.ditamap
 	clone_repo $repo $branch
     adjust_date_to_last_commit
 	
-	cp -rp ${repo}/devplatform/ ./
-	cp -rp ${repo}/media/${repo} ./media/${repo}
+    cp -rp ${repo}/devplatform/ ./
+    cp -rp ${repo}/media/${repo} ./media/${repo}
     cp -rp ${repo}/*.ditamap ./
     cp -rp ${repo}/hdp-html/ ./
  

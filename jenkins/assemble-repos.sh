@@ -10,13 +10,17 @@ function adjust_date_to_last_commit {
     for t in $(find . -name "*.dita");
     do
     	echo $repo : $t
-        stat --format=%y $t
+        
+	
+	date -d"`git log -1 --date=iso --pretty=format:%ad $t`" +'%d %b %Y' > $t.time
+	
+	
+	stat --format=%y $t
     	git log -1 --date=iso --pretty=format:%ad $t | sed 's| +.*||'
         echo""
     	touch -d "`git log -1 --date=iso --pretty=format:%ad $t | sed 's| +.*||'` " $t
         stat --format=%y $t
 
-	date -d"`git log -1 --date=iso --pretty=format:%ad $t`" +'%d %b %Y' > $t.time
 
         echo""
 	done

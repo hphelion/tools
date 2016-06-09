@@ -61,7 +61,24 @@ chmod -R 777 ./tools/jenkins/
 
 
 
-./tools/jenkins/inject_date.sh -file
+#./tools/jenkins/inject_date.sh -file
+
+for i in `find  -name "*.dita" -not -path "./publiccloud/api/*"`
+do
+
+	j=`echo $i | sed 's|\.dita$|\.html|'`
+	fullpath=`echo $j | sed 's|\.\/|./out/webhelp/|'`
+	echo $fullpath
+
+
+	DATE=`stat --format=%y $i`
+
+
+	PRETTYDATE=`date -d"$DATE" +'%d %b %Y'`
+
+	sed -i "s|<\/h1>|</h1><p class=\"heliondate\">Last updated: $PRETTYDATE<a href=\"\" class="xref" style=\"float:right\" onclick=\"window.print()\">Print this page</a> </p>|" $fullpath
+
+done
 
 
  

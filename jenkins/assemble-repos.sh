@@ -45,7 +45,15 @@ function adjust_date_to_last_commit {
 	fi	
 }
 
-
+function grab_the_repo {
+	echo "clone $repo branch $branch"
+ 	rm -r $repo
+	cp -r /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/$repo ./
+    cd $repo 
+    git checkout $branch
+    cd -
+ }
+  
   
 
 
@@ -72,9 +80,7 @@ find . -name docs.hpcloud.com.HDP.ditamap
 
     repo="hos.docs"
 	branch="$hos_docs_BRANCH"
-	echo "clone $repo branch $branch"
- 	rm -r $repo
-	clone_repo $repo $branch
+	grab_the_repo
     adjust_date_to_last_commit
 
     cp -rp ${repo}/community/ ./3.x/
@@ -86,17 +92,13 @@ find . -name docs.hpcloud.com.HDP.ditamap
     cp -rp ${repo}/*.ditamap ./3.x/
  
 	rm -r ${repo}
-    
-	
-mkdir media
+ 
+	mkdir media
 
-echo 2
-find . -name docs.hpcloud.com.HDP.ditamap
+
 	repo="devplat.docs"
 	branch="$devplat_docs_BRANCH"
-	echo "clone $repo branch $branch"
- 	rm -r $repo
-	clone_repo $repo $branch
+	grab_the_repo
     adjust_date_to_last_commit
 	
 	cp -rp ${repo}/devplatform/ ./
@@ -106,14 +108,11 @@ find . -name docs.hpcloud.com.HDP.ditamap
  
     rm -r $repo
  
- echo 3
- find . -name docs.hpcloud.com.HDP.ditamap
+
 
 	repo="carrier.grade.docs"
 	branch="$carrier_grade_docs_BRANCH"
-	echo "clone $repo branch $branch"
- 	rm -r $repo
-	clone_repo $repo $branch
+	grab_the_repo
     adjust_date_to_last_commit
 	
 	cp -rp ${repo}/media/${repo} ./media/${repo}
@@ -124,13 +123,10 @@ find . -name docs.hpcloud.com.HDP.ditamap
 
 	rm -r ${repo}
 
-echo 4
-find . -name docs.hpcloud.com.HDP.ditamap
+
 	repo="hcf.docs"
 	branch="$hcf_docs_BRANCH"
-	echo "clone $repo branch $branch"
- 	rm -r $repo
-	clone_repo $repo $branch
+	grab_the_repo
     adjust_date_to_last_commit
 	
 	cp -rp ${repo}/media/${repo} ./media/${repo}
@@ -139,16 +135,11 @@ find . -name docs.hpcloud.com.HDP.ditamap
     
 	rm -r ${repo}
 
-echo 5
-find . -name docs.hpcloud.com.HDP.ditamap
+
 	
 	repo="hos.docs"
 	branch="$hos_docs_LEGACYBRANCH"
-	echo "clone $repo branch $branch"
- 	rm -r $repo
-	clone_repo $repo $branch
-	
-	  
+	grab_the_repo
     adjust_date_to_last_commit
 	
 	cp -rp ${repo}/community/ ./
@@ -161,14 +152,10 @@ find . -name docs.hpcloud.com.HDP.ditamap
  
 	rm -r ${repo}
 	
-	 
-echo 6
-find . -name docs.hpcloud.com.HDP.ditamap
+
 	repo="wrapper.docs"
 	branch="bundle-2015-may"
-	echo "clone $repo branch $branch"
- 	rm -r $repo
-	clone_repo $repo $branch
+	grab_the_repo
     adjust_date_to_last_commit
 
 	cp -r ${repo}/* ./
@@ -176,6 +163,5 @@ find . -name docs.hpcloud.com.HDP.ditamap
     rm -r ${repo}
 
 
-echo 7
-find . -name docs.hpcloud.com.HDP.ditamap
+
  

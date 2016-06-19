@@ -29,7 +29,7 @@ function adjust_date_to_last_commit {
     echo "Branch $branch exists on github"
 	
 	rm -r $repo
-		if ! git clone --local /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/$repo ${repo}
+		if ! git clone --local --branch ${branch} /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/$repo ${repo}
 		then
 			echo >&2 Cloning git@github.com:hphelion/${repo}.git failed.  Stopping the build.
 
@@ -44,16 +44,7 @@ function adjust_date_to_last_commit {
 		exit 1;
 	fi	
 }
-
-function grab_the_repo {
-	echo "clone $repo branch $branch"
- 	rm -r $repo
-	cp -r /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/$repo ./
-    cd $repo 
-    git checkout $branch
-    cd -
- }
-  
+ 
   
 
 

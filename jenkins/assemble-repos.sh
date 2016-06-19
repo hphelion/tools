@@ -25,7 +25,7 @@ function adjust_date_to_last_commit {
  branch=$2
  
 	echo "clone $repo"
- 	if [[ $(git ls-remote git@github.com:hphelion/${repo} ${branch} ) ]]; then
+ 	if [[ $(git ls-remote /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/${repo} ${branch} ) ]]; then
     echo "Branch $branch exists on github"
 	
 	rm -r $repo

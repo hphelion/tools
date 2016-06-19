@@ -29,7 +29,7 @@ function adjust_date_to_last_commit {
     echo "Branch $branch exists on github"
 	
 	rm -r $repo
-		if ! git clone -b ${branch} --single-branch --depth 2 git@github.com:hphelion/${repo}.git ${repo}
+		if ! git clone --local /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/$repo ${repo}
 		then
 			echo >&2 Cloning git@github.com:hphelion/${repo}.git failed.  Stopping the build.
 
@@ -80,7 +80,7 @@ find . -name docs.hpcloud.com.HDP.ditamap
 
     repo="hos.docs"
 	branch="$hos_docs_BRANCH"
-	grab_the_repo
+	clone_repo
     adjust_date_to_last_commit
 
     cp -rp ${repo}/community/ ./3.x/
@@ -98,7 +98,7 @@ find . -name docs.hpcloud.com.HDP.ditamap
 
 	repo="devplat.docs"
 	branch="$devplat_docs_BRANCH"
-	grab_the_repo
+	clone_repo
     adjust_date_to_last_commit
 	
 	cp -rp ${repo}/devplatform/ ./
@@ -112,7 +112,7 @@ find . -name docs.hpcloud.com.HDP.ditamap
 
 	repo="carrier.grade.docs"
 	branch="$carrier_grade_docs_BRANCH"
-	grab_the_repo
+	clone_repo
     adjust_date_to_last_commit
 	
 	cp -rp ${repo}/media/${repo} ./media/${repo}
@@ -126,7 +126,7 @@ find . -name docs.hpcloud.com.HDP.ditamap
 
 	repo="hcf.docs"
 	branch="$hcf_docs_BRANCH"
-	grab_the_repo
+	clone_repo
     adjust_date_to_last_commit
 	
 	cp -rp ${repo}/media/${repo} ./media/${repo}
@@ -139,7 +139,7 @@ find . -name docs.hpcloud.com.HDP.ditamap
 	
 	repo="hos.docs"
 	branch="$hos_docs_LEGACYBRANCH"
-	grab_the_repo
+	clone_repo
     adjust_date_to_last_commit
 	
 	cp -rp ${repo}/community/ ./
@@ -155,7 +155,7 @@ find . -name docs.hpcloud.com.HDP.ditamap
 
 	repo="wrapper.docs"
 	branch="bundle-2015-may"
-	grab_the_repo
+	clone_repo
     adjust_date_to_last_commit
 
 	cp -r ${repo}/* ./

@@ -99,20 +99,20 @@ $(document).ready(function () {
 netcounter=0;
 netimages = [
 
-'Mid-Scale-External-VM.png',
-'Mid-Scale-External-API.png',
-'Mid-Scale-Internal-API.png',
-'Mid-Scale-Swift.png',
-'Mid-Scale-ISCSI.png',
-'Mid-Scale-Guest.png',
-'Mid-Scale-Provider.png',
-'Mid-Scale-Octavia.png',
-'Mid-Scale-Management.png',
-'Mid-Scale-Conf.png', 
-'Mid-Scale-AllNetworks.png'];
+'http://docs-staging.hpcloud.com/z_test_hos.docs+nancy30+nancy/media/Mid-Scale-External-VM.png',
+'http://docs-staging.hpcloud.com/z_test_hos.docs+nancy30+nancy/media/Mid-Scale-External-API.png',
+'http://docs-staging.hpcloud.com/z_test_hos.docs+nancy30+nancy/media/Mid-Scale-Internal-API.png',
+'http://docs-staging.hpcloud.com/z_test_hos.docs+nancy30+nancy/media/Mid-Scale-Swift.png',
+'http://docs-staging.hpcloud.com/z_test_hos.docs+nancy30+nancy/media/Mid-Scale-ISCSI.png',
+'http://docs-staging.hpcloud.com/z_test_hos.docs+nancy30+nancy/media/Mid-Scale-Guest.png',
+'http://docs-staging.hpcloud.com/z_test_hos.docs+nancy30+nancy/media/Mid-Scale-Provider.png',
+'http://docs-staging.hpcloud.com/z_test_hos.docs+nancy30+nancy/media/Mid-Scale-Octavia.png',
+'http://docs-staging.hpcloud.com/z_test_hos.docs+nancy30+nancy/media/Mid-Scale-Management.png',
+'http://docs-staging.hpcloud.com/z_test_hos.docs+nancy30+nancy/media/Mid-Scale-Conf.png', 
+'http://docs-staging.hpcloud.com/z_test_hos.docs+nancy30+nancy/media/Mid-Scale-AllNetworks.png'];
 
 var getnetworks=document.getElementsByClassName('midScaleAllNetworks');
-getnetworks[0].innerHTML='<div id="allmaps"><img id="solid" src="Mid-Scale-AllNetworks.png"><img id="all" src="clear.png" border="0" width="1000" height="800" orgWidth="1000" orgHeight="800" usemap="#networks" alt="" /><map name="networks" id="allnets"><area  alt="" title="All Networks" href="#" shape="rect" coords="2,323,135,365" style="outline:none;" target="_self" onclick="changeimg(10);"      /><area class="spot"  id="n0" alt="" title="EXTERNAL-VM" href="#" shape="rect" coords="16,67,128,88" style="outline:none;" target="_self" onclick="changeimg(0);"      /><area class="spot"   id="n1" alt="" title="EXTERNAL-API" href="#" shape="rect" coords="12,93,128,117" style="outline:none;" target="_self" onclick="changeimg(1);"      /><area class="spot" id="n2"  alt="" title="INTERNAL-API" href="#" shape="rect" coords="16,143,132,167" style="outline:none;" target="_self" onclick="changeimg(2);"      /><area class="spot" id="n3"  alt="" title="SWIFT" href="#" shape="rect" coords="12,170,128,188" style="outline:none;" target="_self" onclick="changeimg(3);"      /><area class="spot" id="n4"  alt="" title="ISCSI" href="#" shape="rect" coords="11,190,140,211" style="outline:none;" target="_self" onclick="changeimg(4);"      /><area class="spot"  id="n5" alt="" title="GUEST (vxlan)" href="#" shape="rect" coords="11,213,140,230" style="outline:none;" target="_self" onclick="changeimg(5);"      /><area class="spot"  id="n6" alt="" title="Provider VLANs" href="#" shape="rect" coords="12,231,141,249" style="outline:none;" target="_self" onclick="changeimg(6);"      /><area class="spot" id="n7"  alt="" title="OCTAVIA-MGMT" href="#" shape="rect" coords="9,250,134,271" style="outline:none;" target="_self" onclick="changeimg(7);"      /><area class="spot" id="n8"  alt="" title="MANAGEMENT" href="#" shape="rect" coords="5,273,138,291" style="outline:none;" target="_self" onclick="changeimg(8);"      /><area class="spot" id="n9"  alt="" title="CONF" href="#" shape="rect" coords="4,292,132,313" style="outline:none;" target="_self" onclick="changeimg(9);"      /></map></div>';
+getnetworks[0].innerHTML='<div id="allmaps"><img id="solid" src="http://docs-staging.hpcloud.com/z_test_hos.docs+nancy30+nancy/media/Mid-Scale-AllNetworks.png"><img id="all" src="clear.png" border="0" width="1000" height="800" orgWidth="1000" orgHeight="800" usemap="#networks" alt="" /><map name="networks" id="allnets"><area  alt="" title="All Networks" href="#" shape="rect" coords="2,323,135,365" style="outline:none;" target="_self" onclick="changeimg(10);"      /><area class="spot"  id="n0" alt="" title="EXTERNAL-VM" href="#" shape="rect" coords="16,67,128,88" style="outline:none;" target="_self" onclick="changeimg(0);"      /><area class="spot"   id="n1" alt="" title="EXTERNAL-API" href="#" shape="rect" coords="12,93,128,117" style="outline:none;" target="_self" onclick="changeimg(1);"      /><area class="spot" id="n2"  alt="" title="INTERNAL-API" href="#" shape="rect" coords="16,143,132,167" style="outline:none;" target="_self" onclick="changeimg(2);"      /><area class="spot" id="n3"  alt="" title="SWIFT" href="#" shape="rect" coords="12,170,128,188" style="outline:none;" target="_self" onclick="changeimg(3);"      /><area class="spot" id="n4"  alt="" title="ISCSI" href="#" shape="rect" coords="11,190,140,211" style="outline:none;" target="_self" onclick="changeimg(4);"      /><area class="spot"  id="n5" alt="" title="GUEST (vxlan)" href="#" shape="rect" coords="11,213,140,230" style="outline:none;" target="_self" onclick="changeimg(5);"      /><area class="spot"  id="n6" alt="" title="Provider VLANs" href="#" shape="rect" coords="12,231,141,249" style="outline:none;" target="_self" onclick="changeimg(6);"      /><area class="spot" id="n7"  alt="" title="OCTAVIA-MGMT" href="#" shape="rect" coords="9,250,134,271" style="outline:none;" target="_self" onclick="changeimg(7);"      /><area class="spot" id="n8"  alt="" title="MANAGEMENT" href="#" shape="rect" coords="5,273,138,291" style="outline:none;" target="_self" onclick="changeimg(8);"      /><area class="spot" id="n9"  alt="" title="CONF" href="#" shape="rect" coords="4,292,132,313" style="outline:none;" target="_self" onclick="changeimg(9);"      /></map></div>';
 }    	
       /*------------------end network diagrams-------------------------------*/	
     	

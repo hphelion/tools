@@ -815,21 +815,22 @@ div.note.danger {
 }
 #allmaps {
 	position: relative;
-	top: 10px;
-	left: 10px;
+	/*top: 10px;
+	left: 10px;*/
 	z-index: 10;
+	width: 100%;
 }
 #solid {
 	z-index: 10;
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	display: inline;
+	display: block;
 }
 #all {
 	z-index: 20;
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	display: inline;
+	display: block;
 }

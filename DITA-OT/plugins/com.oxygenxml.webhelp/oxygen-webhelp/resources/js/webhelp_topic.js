@@ -7,21 +7,13 @@ available in the base directory of this Oxygen Webhelp plugin.
 
 */
 
-if (window.self == window.top) {
-//var naked = window.location.href
-var framed = 'http://www.google.com';
-window.location.replace(framed)
-	
-}
-
-
 function feedback(){
 if (window.location.href.indexOf("/helion/")  > -1  || window.location.href.indexOf("devplatform/2.0/") > -1 || window.location.href.indexOf("CarrierGrade2.0") > -1 ) {
 var topic=document.getElementsByTagName("title")[0].innerHTML ;
 var tmp=topic.replace(/<[^>]*>/, "");
 var topic=tmp.replace(/<\/[^>]*>/, "");
 
-document.getElementById("feedback").innerHTML = "<a href=\"mailto:heliondocs@hpe.com&subject=Feedback on '"+topic+"'&body=Thank you for providing the Helion Documentation Team with feedback about this topic!  Please replace this text with your feedback.%0D%0A %0D%0ALeave the title unchanged, because this will make it clear to us what topic you are providing feedback about.  If you need support, please contact your HPE Support representative.%0D%0A %0D%0AThanks for helping us improve the documentation!\">Feedback to the Helion Docs Team</a>  ";
+document.getElementById("feedback").innerHTML = "<a href=\"mailto:heliondocs@hpe.com?subject=Feedback on '"+topic+"'&body=Thank you for providing the Helion Documentation Team with feedback about this topic!  Please replace this text with your feedback.%0D%0A %0D%0ALeave the title unchanged, because this will make it clear to us what topic you are providing feedback about.  If you need support, please contact your HPE Support representative.%0D%0A %0D%0AThanks for helping us improve the documentation!\">Feedback to the Helion Docs Team</a>  ";
 }else {document.getElementById("feedback").style.display = "none";}
 }
 
@@ -86,7 +78,7 @@ $(document).ready(function () {
                 $('#permalink').hide();
             }
         } else {
-            $("<div class='frames'><div class='wFrames'><a href=" + getPath(location.pathname) + ">With Frames</a></div></div>").prependTo('.navheader');							        
+            $("<div class='frames'><div class='wFrames'><a href=" + getPath(location.pathname) + ">See the Table of Contents</a></div></div>").prependTo('.navheader');							        
             $('#permalink').hide();
         }
     }
@@ -100,9 +92,10 @@ $(document).ready(function () {
 });
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
-      { 
+    { 
+      /*------------------ copy button ------------------------------------*/      
       if (document.queryCommandSupported("copy")) {
-         var pres=document.getElementsByTagName('pre');
+         var pres=document.getElementsByClassName('copybutton');
          if (pres.length) {
            for (var y=0; y<pres.length; y++) {
              pres[y].setAttribute('id', 'a' + y);
@@ -117,8 +110,9 @@ $(document).ready(function () {
 
            }
          } 
-        }  
-      	 
+      } 
+      
+      	 /*------------------ end copy button ------------------------------------*/      
 /*------------------ prettyprint ------------------------------------*/      	
        // $.getScript("https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js");
       	//$.getScript("http://docs-staging.hpcloud.com/z_test_hos.docs+hos-30+nancy/media/run_prettify.js");
@@ -382,12 +376,12 @@ function expcode() {
 		theblock.style.display="block";
 	}
 }
+/*------------------ copy function ------------------------------------*/      
 function copycode(){
 
 	var length=this.id.length;
 	var preid = this.id.substring(0,length-1);
         var textnode=document.getElementById(preid);
-	var codedivs=document.getElementsByTagName('pre');
 	textnode.setAttribute('contenteditable', 'true');
 	window.getSelection().removeAllRanges();
         var range = document.createRange();  
@@ -400,7 +394,5 @@ function copycode(){
         catch(e) {
           succeed = false;
         }
-       // document.execCommand('copy'); 
-	textnode.setAttribute('contenteditable', 'false');
-
+        textnode.setAttribute('contenteditable', 'false');
 }

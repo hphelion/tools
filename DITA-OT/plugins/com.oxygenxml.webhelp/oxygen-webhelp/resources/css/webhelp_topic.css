@@ -822,15 +822,17 @@ div.note.danger {
 }
 #solid {
 	z-index: 10;
-	position: absolute;
+	position: fixed;
+	/*position: relative;
 	top: 0px;
-	left: 0px;
-	display: block;
+	left: 0px;*/
+	
 }
 #all {
 	z-index: 20;
-	position: absolute;
+	position: fixed;
+	/*position: relative;
 	top: 0px;
-	left: 0px;
-	display: block;
+	left: 0px;*/
+	
 }

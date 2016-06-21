@@ -93,6 +93,29 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
     { 
+    	
+    	/*------------------network diagrams-------------------------------*/
+    	if (document.getElementsByClassName('midScaleAllNetworks').length) {
+netcounter=0;
+netimages = [
+
+'Mid-Scale-External-VM.png',
+'Mid-Scale-External-API.png',
+'Mid-Scale-Internal-API.png',
+'Mid-Scale-Swift.png',
+'Mid-Scale-ISCSI.png',
+'Mid-Scale-Guest.png',
+'Mid-Scale-Provider.png',
+'Mid-Scale-Octavia.png',
+'Mid-Scale-Management.png',
+'Mid-Scale-Conf.png', 
+'Mid-Scale-AllNetworks.png'];
+
+var getnetworks=document.getElementsByClassName('midScaleAllNetworks');
+getnetworks[0].innerHTML='<div id="allmaps"><img id="solid" src="Mid-Scale-AllNetworks.png"><img id="all" src="clear.png" border="0" width="1000" height="800" orgWidth="1000" orgHeight="800" usemap="#networks" alt="" /><map name="networks" id="allnets"><area  alt="" title="All Networks" href="#" shape="rect" coords="2,323,135,365" style="outline:none;" target="_self" onclick="changeimg(10);"      /><area class="spot"  id="n0" alt="" title="EXTERNAL-VM" href="#" shape="rect" coords="16,67,128,88" style="outline:none;" target="_self" onclick="changeimg(0);"      /><area class="spot"   id="n1" alt="" title="EXTERNAL-API" href="#" shape="rect" coords="12,93,128,117" style="outline:none;" target="_self" onclick="changeimg(1);"      /><area class="spot" id="n2"  alt="" title="INTERNAL-API" href="#" shape="rect" coords="16,143,132,167" style="outline:none;" target="_self" onclick="changeimg(2);"      /><area class="spot" id="n3"  alt="" title="SWIFT" href="#" shape="rect" coords="12,170,128,188" style="outline:none;" target="_self" onclick="changeimg(3);"      /><area class="spot" id="n4"  alt="" title="ISCSI" href="#" shape="rect" coords="11,190,140,211" style="outline:none;" target="_self" onclick="changeimg(4);"      /><area class="spot"  id="n5" alt="" title="GUEST (vxlan)" href="#" shape="rect" coords="11,213,140,230" style="outline:none;" target="_self" onclick="changeimg(5);"      /><area class="spot"  id="n6" alt="" title="Provider VLANs" href="#" shape="rect" coords="12,231,141,249" style="outline:none;" target="_self" onclick="changeimg(6);"      /><area class="spot" id="n7"  alt="" title="OCTAVIA-MGMT" href="#" shape="rect" coords="9,250,134,271" style="outline:none;" target="_self" onclick="changeimg(7);"      /><area class="spot" id="n8"  alt="" title="MANAGEMENT" href="#" shape="rect" coords="5,273,138,291" style="outline:none;" target="_self" onclick="changeimg(8);"      /><area class="spot" id="n9"  alt="" title="CONF" href="#" shape="rect" coords="4,292,132,313" style="outline:none;" target="_self" onclick="changeimg(9);"      /></map></div>';
+}    	
+      /*------------------end network diagrams-------------------------------*/	
+    	
       /*------------------ copy button ------------------------------------*/      
       if (document.queryCommandSupported("copy")) {
          var pres=document.getElementsByClassName('copybutton');
@@ -112,7 +135,7 @@ $(document).ready(function () {
          } 
       } 
       
-      	 /*------------------ end copy button ------------------------------------*/      
+ /*------------------ end copy button ------------------------------------*/      
 /*------------------ prettyprint ------------------------------------*/      	
        // $.getScript("https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js");
       	//$.getScript("http://docs-staging.hpcloud.com/z_test_hos.docs+hos-30+nancy/media/run_prettify.js");
@@ -395,4 +418,21 @@ function copycode(){
           succeed = false;
         }
         textnode.setAttribute('contenteditable', 'false');
+}
+
+/*-----------------network images function------------------*/
+function changeimg(x) {
+	netcounter++;
+	var solid=document.getElementById('solid');
+	if (netcounter>0) {
+		if (x<10) {
+		var all=document.getElementById('all');
+		all.src="Mid-Scale-AllTransparent.png";
+	}
+	
+	else {
+		document.getElementById('all').src="clear.png";
+	}
+	}
+	solid.src=netimages[x];
 }

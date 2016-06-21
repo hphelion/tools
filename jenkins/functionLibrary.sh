@@ -60,7 +60,7 @@ echo $CONSOLE
 #Send notification to hipchat
  
 curl \
-	--insecure
+	--insecure \
 	--header "Authorization: Bearer $auth" \
 	--header "Content-Type: application/json" \
 	--request 'POST' \

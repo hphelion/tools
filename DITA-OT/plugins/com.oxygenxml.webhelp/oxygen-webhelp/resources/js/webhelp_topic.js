@@ -96,7 +96,7 @@ $(document).ready(function () {
     	
     	/*------------------network diagrams-------------------------------*/
     	if (document.getElementsByClassName('midScaleAllNetworks').length) {
-
+netcounter=0;
 
 netimages = [
 

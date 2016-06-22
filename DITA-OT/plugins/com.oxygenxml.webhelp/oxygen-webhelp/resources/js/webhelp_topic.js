@@ -96,13 +96,8 @@ $(document).ready(function () {
     	
     	/*------------------network diagrams-------------------------------*/
     	if (document.getElementsByClassName('midScaleAllNetworks').length) {
-netcounter=0;
-
-document.addEventListener("contextmenu", function(e){
-    if (e.target.class === "midScaleAllNetworks") {
-        e.preventDefault();
-    }
-}, false);
+	var noclick=document.getElementsByClassName('noclickhere');
+noclick[0].innerHTML="<div class='midScaleAllNetworks' oncontextmenu='noclick(); return false;''></div>";
 
 netimages = [
 
@@ -443,4 +438,7 @@ function changeimg(x) {
 	}
 	}
 	solid.src=netimages[x];
+}
+function noclick() {
+  return false;
 }

@@ -97,6 +97,13 @@ $(document).ready(function () {
     	/*------------------network diagrams-------------------------------*/
     	if (document.getElementsByClassName('midScaleAllNetworks').length) {
 netcounter=0;
+
+document.addEventListener("contextmenu", function(e){
+    if (e.target.class === "midScaleAllNetworks") {
+        e.preventDefault();
+    }
+}, false);
+
 netimages = [
 
 'http://docs-staging.hpcloud.com/z_test_hos.docs+nancy30+nancy/media/Mid-Scale-External-VM.png',

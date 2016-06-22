@@ -97,7 +97,7 @@ $(document).ready(function () {
     	/*------------------network diagrams-------------------------------*/
     	if (document.getElementsByClassName('midScaleAllNetworks').length) {
 	var noclick=document.getElementsByClassName('noclickhere');
-noclick[0].innerHTML="<div class='midScaleAllNetworks' oncontextmenu='noclick(); return false;''></div>";
+noclick[0].innerHTML="<div class='midScaleAllNetworks' oncontextmenu='noclick(); return false;'></div>";
 
 netimages = [
 

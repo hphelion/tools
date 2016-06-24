@@ -403,6 +403,8 @@ function copycode(){
         textnode.setAttribute('contenteditable', 'false');
 }
 
+
+
 /*-----------------network images function------------------*/
 function changeimg(x) {
 	netcounter++;
@@ -410,11 +412,11 @@ function changeimg(x) {
 	if (netcounter>0) {
 		if (x<10) {
 		var all=document.getElementById('all');
-		all.src="http://docs-staging.hpcloud.com/z_test_hos.docs+nancy30+nancy/media/Mid-Scale-AllTransparent.png";
+		all.src="http://docs.hpcloud.com/3.x/media/networkImages/Mid-Scale-AllTransparent.png";
 	}
 	
 	else {
-		document.getElementById('all').src="http://docs-staging.hpcloud.com/z_test_hos.docs+nancy30+nancy/media/clear.png";
+		document.getElementById('all').src="http://docs.hpcloud.com/3.x/media/networkImages/clear.png";
 	}
 	}
 	solid.src=netimages[x];

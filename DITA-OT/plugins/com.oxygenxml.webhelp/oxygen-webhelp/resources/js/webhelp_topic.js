@@ -93,7 +93,7 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
     { 
-    	   $.getScript("http://docs-staging.hpcloud.com/hos.docs-hos-30/oxygen-webhelp/resources/js/networkimages.js");
+    	   $.getScript("http://docs.hpcloud.com/oxygen-webhelp/resources/js/networkimages.js");
 
     	/*------------------network diagrams-------------------------------*/
   	

@@ -93,7 +93,7 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
     { 
-    	   $.getScript("networkdiagrams.js");
+    	   $.getScript("networkimages.js");
 
     	/*------------------network diagrams-------------------------------*/
   	

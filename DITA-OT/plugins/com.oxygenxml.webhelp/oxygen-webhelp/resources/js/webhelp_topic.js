@@ -415,7 +415,7 @@ function changeimg(x, y) {
 	netcounter++;
 	var solid=document.getElementById('solid');
 	if (netcounter>0) {
-		if (x<y) {
+		if (x<10) {
 		var all=document.getElementById('all');
 		all.src="http://docs.hpcloud.com/3.x/media/networkImages/Mid-Scale-AllTransparent.png";
 	}

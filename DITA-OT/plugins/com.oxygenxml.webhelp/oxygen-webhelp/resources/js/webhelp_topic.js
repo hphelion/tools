@@ -411,11 +411,11 @@ function copycode(){
 
 
 /*-----------------network images function------------------*/
-function changeimg(x) {
+function changeimg(x, y) {
 	netcounter++;
 	var solid=document.getElementById('solid');
 	if (netcounter>0) {
-		if (x<10) {
+		if (x<y) {
 		var all=document.getElementById('all');
 		all.src="http://docs.hpcloud.com/3.x/media/networkImages/Mid-Scale-AllTransparent.png";
 	}

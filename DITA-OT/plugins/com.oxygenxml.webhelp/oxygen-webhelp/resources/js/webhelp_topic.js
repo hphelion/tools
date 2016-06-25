@@ -96,8 +96,8 @@ $(document).ready(function () {
     	if (document.getElementsByClassName('midScaleAllNetworks').length) {
     	   $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/networkimages.js");
     	}
-    	else if (document.getElementsByClassName('entryscaleDed').length) {
-    	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/networkimages2.js");		
+    	else if (document.getElementsByClassName('entryScaleDedicated').length) {
+    	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryScaleDedicated.js");		
     	}
     	/*------------------network diagrams-------------------------------*/
   	

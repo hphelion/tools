@@ -417,9 +417,9 @@ function copycode(){
 
 /*-----------------network images function------------------*/
 function changeimg(x) {
-	netcounter++;
+	//netcounter++;
 	var solid=document.getElementById('solid');
-	if (netcounter>0) {
+	/*if (netcounter>0) {
 		if (x<10) {
 		var all=document.getElementById('all');
 		all.src="http://docs.hpcloud.com/3.x/media/networkImages/Mid-Scale-AllTransparent.png";
@@ -428,7 +428,7 @@ function changeimg(x) {
 	else {
 		document.getElementById('all').src="http://docs.hpcloud.com/3.x/media/networkImages/clear.png";
 	}
-	}
+	}*/
 	solid.src=netimages[x];
 }
 function noclick() {

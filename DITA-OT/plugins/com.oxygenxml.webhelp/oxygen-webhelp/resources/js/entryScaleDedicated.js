@@ -8,7 +8,7 @@
     'http://docs.hpcloud.com/3.x/media/entryScaleDed/Entry-ScaleDedicatedProviderVLANS.png',
     'http://docs.hpcloud.com/3.x/media/entryScaleDed/Entry-ScaleDedicatedOctavia.png',
     'http://docs.hpcloud.com/3.x/media/entryScaleDed/Entry-ScaleDedicatedManagement.png',
-    'http://docs.hpcloud.com/3.x/media/entryScaleDed/Entry-ScaleDedicatedAllNetworks.png',
+    'http://docs.hpcloud.com/3.x/media/entryScaleDed/Entry-ScaleDedicatedAllNetworks.png'];
 
 var getnetworks=document.getElementsByClassName('entryScaleDedicated');
 

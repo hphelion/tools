@@ -99,6 +99,11 @@ $(document).ready(function () {
     	else if (document.getElementsByClassName('entryScaleDedicated').length) {
     	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryScaleDedicated.js");		
     	}
+    	
+    	    	else if (document.getElementsByClassName('entryScale').length) {
+    	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryscale.js");		
+    	}
+    	
 
     	/*------------------network diagrams-------------------------------*/
   	
@@ -411,10 +416,10 @@ function copycode(){
 
 
 /*-----------------network images function------------------*/
-function changeimg(x, y) {
-	netcounter++;
+function changeimg(x) {
+	//netcounter++;
 	var solid=document.getElementById('solid');
-	if (netcounter>0) {
+	/*if (netcounter>0) {
 		if (x<10) {
 		var all=document.getElementById('all');
 		all.src="http://docs.hpcloud.com/3.x/media/networkImages/Mid-Scale-AllTransparent.png";
@@ -423,7 +428,7 @@ function changeimg(x, y) {
 	else {
 		document.getElementById('all').src="http://docs.hpcloud.com/3.x/media/networkImages/clear.png";
 	}
-	}
+	}*/
 	solid.src=netimages[x];
 }
 function noclick() {

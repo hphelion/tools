@@ -99,6 +99,12 @@ $(document).ready(function () {
     	else if (document.getElementsByClassName('entryScaleDedicated').length) {
     	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryScaleDedicated.js");		
     	}
+    	
+    	    	else if (document.getElementsByClassName('entryScaleDedicated').length) {
+    	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryScaleDedicated.js");		
+    	}
+    	
+
     	/*------------------network diagrams-------------------------------*/
   	
       /*------------------end network diagrams-------------------------------*/	

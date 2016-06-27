@@ -97,11 +97,11 @@ $(document).ready(function () {
     	   $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/networkimages.js");
     	}
     	else if (document.getElementsByClassName('entryScaleDedicated').length) {
-    	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryScaleDedicated.js");		
+    	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryscaleDed.js");		
     	}
     	
-    	    	else if (document.getElementsByClassName('entryScaleDedicated').length) {
-    	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryScaleDedicated.js");		
+    	    	else if (document.getElementsByClassName('entryScale').length) {
+    	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryscale.js");		
     	}
     	
 

@@ -846,3 +846,7 @@ div.note.danger {
 	position: relative;
 	height: 800px;
 }
+.entryScaleDedicated {
+	position: relative;
+	height: 900px;
+}

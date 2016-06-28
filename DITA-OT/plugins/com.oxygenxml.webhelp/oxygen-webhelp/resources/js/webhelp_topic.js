@@ -100,8 +100,8 @@ $(document).ready(function () {
     	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryScaleDedicated.js");		
     	}
     	
-    	    	else if (document.getElementsByClassName('entryScale').length) {
-    	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryscale.js");		
+    	else if (document.getElementsByClassName('entryScale').length) {
+    	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryScale.js");		
     	}
     	
 

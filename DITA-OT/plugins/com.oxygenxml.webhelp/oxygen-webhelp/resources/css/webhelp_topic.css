@@ -859,3 +859,17 @@ div.note.danger {
 	display: inline;
 	margin-top: -900px;
 }
+
+.entryScaleCeph {
+	position: relative;
+	height: 1000px;
+}
+#all3 {
+	z-index: 20;
+
+	position: relative;
+	top: 0px;
+	left: 0px;
+	display: inline;
+	margin-top: -1000px;
+}

@@ -94,7 +94,7 @@ $(document).ready(function () {
   $(document).ready(function()
     { 
     	
-if (document.getEementsByClassName("keystoneVideo").length) {
+if (document.getElementsByClassName("keystoneVideo").length) {
 alert("something is wrong");
 vidDiv=document.getElementsByClassName("keystoneVideo");
 

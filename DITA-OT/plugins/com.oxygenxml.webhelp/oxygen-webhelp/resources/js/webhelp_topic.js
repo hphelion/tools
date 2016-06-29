@@ -104,6 +104,10 @@ $(document).ready(function () {
     	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryScale.js");		
     	}
     	
+    	else if (document.getElementsByClassName('entryScaleCeph').length) {
+    	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryScaleCeph.js");		
+    	}
+    	
 
     	/*------------------network diagrams-------------------------------*/
   	

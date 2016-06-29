@@ -156,9 +156,7 @@ available in the base directory of this Oxygen Webhelp plugin.
 			
 					  
 					  
-                  	    			<p class="footer">The OpenStack&#174; Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation 
-                  	    			  in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation 
-                  	    			  or the OpenStack community.</p>
+                  	    			<p class="footer">The OpenStack&#174; Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation or the OpenStack community.</p>
 						  <p class="footer">Cloud Foundry is a trademark and/or registered trademark of <a href="https://www.cloudfoundry.org/">CloudFoundry.org</a> Foundation, Inc. in the United States and/or other countries.</p>
 
                   	    			  <p class="footer">&#169; Copyright 2016 Hewlett Packard Enterprise Development LP<br />

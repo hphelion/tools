@@ -98,7 +98,7 @@ if (document.getElementsByClassName("keystoneVideo").length) {
 alert("something is wrong");
 vidDiv=document.getElementsByClassName("keystoneVideo");
 
-vidDiv[0].innerHTML='<video width="320" height="240" controls><source src="http://docs-staging.hpcloud.com/hos.docs-hos-40/media/video/keyMovie.mp4" type="video/mp4">Your browser does not support the video tag.</video>';
+vidDiv[0].innerHTML='<video width="1040" height="585" controls><source src="http://docs-staging.hpcloud.com/hos.docs-hos-40/media/video/keyMovie.mp4" type="video/mp4">Your browser does not support the video tag.</video>';
 }
     	if (document.getElementsByClassName('midScaleAllNetworks').length) {
     	   $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/networkimages.js");

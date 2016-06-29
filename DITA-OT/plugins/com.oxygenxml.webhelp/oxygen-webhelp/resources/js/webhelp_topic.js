@@ -93,6 +93,13 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
     { 
+    	
+if (document.getEementsByClassName("keystoneVideo").length) {
+
+vidDiv=document.getElementsByClassName("keystoneVideo");
+
+vidDiv[0].innerHTML='<video width="320" height="240" controls><source src="http://docs-staging.hpcloud.com/hos.docs-hos-40/media/video/keyMovie.mp4" type="video/mp4">Your browser does not support the video tag.</video>';
+}
     	if (document.getElementsByClassName('midScaleAllNetworks').length) {
     	   $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/networkimages.js");
     	}

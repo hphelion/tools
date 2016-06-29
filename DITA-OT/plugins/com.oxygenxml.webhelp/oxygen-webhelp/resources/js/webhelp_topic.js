@@ -100,8 +100,12 @@ $(document).ready(function () {
     	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryScaleDedicated.js");		
     	}
     	
-    	    	else if (document.getElementsByClassName('entryScale').length) {
-    	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryscale.js");		
+    	else if (document.getElementsByClassName('entryScale').length) {
+    	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryScale.js");		
+    	}
+    	
+    	else if (document.getElementsByClassName('entryScaleCeph').length) {
+    	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryScaleCeph.js");		
     	}
     	
 
@@ -417,18 +421,9 @@ function copycode(){
 
 /*-----------------network images function------------------*/
 function changeimg(x) {
-	//netcounter++;
+
 	var solid=document.getElementById('solid');
-	/*if (netcounter>0) {
-		if (x<10) {
-		var all=document.getElementById('all');
-		all.src="http://docs.hpcloud.com/3.x/media/networkImages/Mid-Scale-AllTransparent.png";
-	}
-	
-	else {
-		document.getElementById('all').src="http://docs.hpcloud.com/3.x/media/networkImages/clear.png";
-	}
-	}*/
+
 	solid.src=netimages[x];
 }
 function noclick() {

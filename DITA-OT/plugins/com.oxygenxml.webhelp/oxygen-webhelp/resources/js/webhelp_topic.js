@@ -95,7 +95,7 @@ $(document).ready(function () {
     { 
     	
 if (document.getEementsByClassName("keystoneVideo").length) {
-
+alert("something is wrong");
 vidDiv=document.getElementsByClassName("keystoneVideo");
 
 vidDiv[0].innerHTML='<video width="320" height="240" controls><source src="http://docs-staging.hpcloud.com/hos.docs-hos-40/media/video/keyMovie.mp4" type="video/mp4">Your browser does not support the video tag.</video>';

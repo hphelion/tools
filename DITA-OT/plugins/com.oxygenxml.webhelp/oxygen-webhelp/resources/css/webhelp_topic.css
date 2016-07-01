@@ -873,3 +873,6 @@ div.note.danger {
 	display: inline;
 	margin-top: -1000px;
 }
+video::-webkit-media-controls-enclosure {
+  width: 50%;
+}

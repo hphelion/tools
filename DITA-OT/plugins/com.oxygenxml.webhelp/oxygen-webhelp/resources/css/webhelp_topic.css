@@ -875,6 +875,5 @@ div.note.danger {
 }
 video::-webkit-media-controls-enclosure {
   width: 65%;
-  color: green;
-  background-color: green;
+
 }

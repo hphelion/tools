@@ -102,15 +102,15 @@ if (document.getElementsByClassName("keystoneVideo").length) {
     	if (document.getElementsByClassName('midScaleAllNetworks').length) {
     	   $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/networkimages.js");
     	}
-    	else if (document.getElementsByClassName('entryScaleDedicated').length) {
+    	if (document.getElementsByClassName('entryScaleDedicated').length) {
     	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryScaleDedicated.js");		
     	}
     	
-    	else if (document.getElementsByClassName('entryScale').length) {
+    	if (document.getElementsByClassName('entryScale').length) {
     	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryScale.js");		
     	}
     	
-    	else if (document.getElementsByClassName('entryScaleCeph').length) {
+    	if (document.getElementsByClassName('entryScaleCeph').length) {
     	    $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/entryScaleCeph.js");		
     	}
     	

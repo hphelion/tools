@@ -157,7 +157,7 @@ $(document).ready(function () {
       	    }
 /* ------------------------begin HA-----------------------------------------------------------------*/
       	 if (document.getElementsByClassName('wrapper1').length) {
-      	    
+      	       $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/haimages.js");
 }
 /* ------------------------end HA-----------------------------------------------------------------*/	
 

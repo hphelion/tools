@@ -877,3 +877,7 @@ video::-webkit-media-controls-enclosure {
   width: 65%;
 
 }
+
+.rewriteThis {
+	display: none;
+}

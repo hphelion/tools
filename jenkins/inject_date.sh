@@ -9,7 +9,7 @@
 echo ===start inject_date.sh===
 for i in `find  -name "*.dita" -not -path "./publiccloud/api/*"`
 do
-
+    echo ""
     j=`echo $i | sed 's|\.dita$|\.html|'`
     fullpath=`echo $j | sed 's|\.\/|./out/webhelp/|'`
     echo $fullpath
@@ -41,6 +41,8 @@ do
 		touch -d "$PRETTYDATE"  $fullpath
 		echo after time change	
 		stat --format=%y   $fullpath 
+	else
+		echo Skipping $fullpath 
 	fi
 	
 done

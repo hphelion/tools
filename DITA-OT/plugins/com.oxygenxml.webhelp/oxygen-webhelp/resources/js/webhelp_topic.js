@@ -98,7 +98,7 @@ $(document).ready(function () {
     		var alink=allATags[i].href;
     		var frontPos=alink.search('3.x');
     		var twoStrings=alink.split(frontPos);
-    		if twoStrings.length>1 {
+    		if (twoStrings.length>1) {
     		allATags[i].href= twoStrings[0] + "#" + twoStrings[1];
     		}
     		else {

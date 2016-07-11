@@ -94,7 +94,7 @@ $(document).ready(function () {
   $(document).ready(function()
     { 
     	var allATags=document.getElementByTagName('A');
-    	for (var i=0; i<allATags.length) {
+    	for (var i=0; i<allATags.length; i++) {
     		var alink=allATags[i].href;
     		var frontPos=alink.search('3.x');
     		var twoStrings=alink.split(frontPos);

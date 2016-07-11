@@ -93,6 +93,18 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
     { 
+    	var allATags=document.getElementByTagName('A');
+    	for (var i=0; i<allATags.length) {
+    		var alink=allATags[i].href;
+    		var frontPos=alink.search('3.x');
+    		var twoStrings=alink.split(frontPos);
+    		if twoStrings.length>1 {
+    		allATags[i].href= twoStrings[0] + "#" + twoStrings[1];
+    		}
+    		else {
+    			allATags[i].href='#' + alink;
+    		}
+    	}
     	if (document.getElementsByClassName("keystoneVideo").length) {
             vidDiv=document.getElementsByClassName("keystoneVideo");
 

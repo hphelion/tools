@@ -93,7 +93,7 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
     { 
-    	var allATags=document.getElementByTagName('A');
+    	var allATags=document.getElementsByTagName('A');
     	for (var i=0; i<allATags.length; i++) {
     		var alink=allATags[i].href;
     		var frontPos=alink.search('3.x');

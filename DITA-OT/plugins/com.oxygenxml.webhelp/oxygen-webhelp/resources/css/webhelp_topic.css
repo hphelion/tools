@@ -887,9 +887,9 @@ video::-webkit-media-controls-enclosure {
 	font-family: sans-serif;
 	font-size: 18px;
 	visibility: hidden;
-	position: absolute;
+	position: relative;
 	background-color: #fafafa;
-	top: 45px;
+	top: -545px;
 	left: 30px;
 	border: 2px solid black;
 	opacity: 0;
@@ -900,7 +900,7 @@ video::-webkit-media-controls-enclosure {
 }
 .overview {
 	z-index: 1;
-	position: absolute;
-	top: 20px;
-	left: 20px;
+}
+.svc {
+	height: 600px;
 }

@@ -464,7 +464,7 @@ function showdesc(x) {
 	var inner=pop[0].innerHTML;
 	pop[0].style.visibility='visible';
 	pop[0].innerHTML=x + "<p>";
-	pop[0].style.top="60px";
+	pop[0].style.top="-545px";
         pop[0].style.left="48px";
     pop[0].style.padding="30px";
     pop[0].style.width="500px";

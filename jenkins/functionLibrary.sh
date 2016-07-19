@@ -34,7 +34,7 @@ echo $MESSAGE
 
 
 #Set HipChat authorization and room     
-auth="zKuxF5Bt5H9dpNysOSf8nRPw2GbT41f3vAS5jKSI"
+auth="U9LoIThHLKGGL49vLtiUJWinLHXJepo9zJVXbmCc"
 echo $3
 for i in `echo $3 | sed 's|,|\n|g'`
 do

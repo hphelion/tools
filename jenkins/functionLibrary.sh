@@ -11,18 +11,12 @@ TEST_DOC_SITE_NAME="docs-staging.hpcloud.com:9099"
 
 
 extractBranch () {
-
-BRANCH=`echo "$1" | sed 's| .*||g'`
-echo $BRANCH
-
+echo "$1" | sed 's| .*||g'
 }
 
 
 extractRepo () {
-
-REPO=`echo "$1" | sed 's|.*of the \([^ ]*\) repo)|\1|g'`
-return $REPO
-
+echo "$1" | sed 's|.*of the \([^ ]*\) repo)|\1|g'
 }
 
 

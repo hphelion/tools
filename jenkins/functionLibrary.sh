@@ -10,17 +10,17 @@ TEST_DOC_SITE_NAME="docs-staging.hpcloud.com:9099"
 
 
 
-extractBranch ($REPO_BRANCH_VARIABLE) {
+extractBranch () {
 
-BRANCH=`echo "$REPO_BRANCH_VARIABLE" | sed 's| .*||g' | grep -v $REPO`
+BRANCH=`echo "$1" | sed 's| .*||g' | grep -v $REPO`
 return $BRANCH
 
 }
 
 
-extractRepo ($REPO_BRANCH_VARIABLE) {
+extractRepo () {
 
-REPO=`echo "$REPO_BRANCH_VARIABLE" | sed 's|.*of the \([^ ]*\) repo)|\1|g'`
+REPO=`echo "$1" | sed 's|.*of the \([^ ]*\) repo)|\1|g'`
 return $REPO
 
 }

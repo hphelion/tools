@@ -8,6 +8,25 @@ TEST_DOC_SITE_NAME="docs-staging.hpcloud.com:9099"
 
 
 
+
+
+extractBranch (REPO-BRANCH-VARIABLE) {
+
+BRANCH=`echo "$REPO-BRANCH-VARIABLE" | sed 's| .*||g' | grep -v $REPO`
+return $BRANCH
+
+}
+
+
+extractRepo (REPO-BRANCH-VARIABLE) {
+
+REPO=`echo "$REPO-BRANCH-VARIABLE" | sed 's|.*of the \([^ ]*\) repo)|\1|g'`
+return $REPO
+
+}
+
+
+
 hipChat () {  
 #Usage: hipChat (PASS|FAIL) "MESSAGE" ROOM
 

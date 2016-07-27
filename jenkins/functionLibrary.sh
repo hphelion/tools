@@ -13,7 +13,7 @@ TEST_DOC_SITE_NAME="docs-staging.hpcloud.com:9099"
 extractBranch () {
 
 BRANCH=`echo "$1" | sed 's| .*||g'`
-return $BRANCH
+echo $BRANCH
 
 }
 

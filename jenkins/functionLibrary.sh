@@ -9,10 +9,10 @@ TEST_DOC_SITE_NAME="docs-staging.hpcloud.com:9099"
 
 
 
-
+ 
 
 extractBranch () {
-echo "$1" | sed 's| .*$||g'
+echo "$1" | sed 's|\([^ ]*\).*$|\1|g'
 }
 
 

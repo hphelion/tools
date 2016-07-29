@@ -13,7 +13,7 @@ TEST_LAN_IP="192.168.251.17" 		#Internal IP address for docs-staging.hpcloud.com
 
 
 get_the_tools_repo () {
-	if [[ -z "$1" ]];
+	if [[ -n "$1" ]];
 	then 
 		1="master"
 	fi

@@ -13,7 +13,7 @@ TEST_LAN_IP="192.168.251.17" 		#Internal IP address for docs-staging.hpcloud.com
 
 
 get_the_tools_repo () {
-	if [[ -n $1 ]]
+	if [[ -z $1 ]]
 	then 
 	$1="master"
 	git clone -b $1 --local /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/tools

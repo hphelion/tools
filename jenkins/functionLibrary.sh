@@ -13,17 +13,18 @@ TEST_LAN_IP="192.168.251.17" 		#Internal IP address for docs-staging.hpcloud.com
 
 
 get_the_tools_repo () {
-	if [[  "$1" == "" ]];
+	if [[ -z "$1"   ]];
 	then 
 		branch="master"
-	else 
-		branch="$1"
+	else
+		branch=$1
 	fi
-	
-	echo "cloning $branch branch of tools repo"
-	
-	git clone -b $branch --local /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/tools
+	echo ">>> Cloning $branch branch of tools repo"
+    rm -r tools
+	git clone -b $1 --local /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/tools
+	chmod 755 ./tools/jenkins/*.sh
 }
+ 
 
 
 function adjust_date_to_last_commit {

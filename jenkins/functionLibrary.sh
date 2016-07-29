@@ -12,6 +12,12 @@ TEST_LAN_IP="192.168.251.17" 		#Internal IP address for docs-staging.hpcloud.com
 
 
 
+get_the_tools_repo () {
+	if [[ -n $1 ]]
+	then 
+	$1="master"
+	git clone -b $1 --local /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/tools
+}
 
 
 function adjust_date_to_last_commit {
@@ -70,13 +76,8 @@ extractRepo () {
 
 hipChat () {  
 #Usage: hipChat (PASS|FAIL) "MESSAGE" ROOM
-
-
 #Set the URL to the console output for this build
 CONSOLE=${BUILD_URL}console
-
-
-
 
 if [[ $1 == "FAIL" ]]
 then
@@ -91,8 +92,6 @@ fi
 echo $COLOR
 echo $MESSAGE
  
-
-
 #Set HipChat authorization and room     
 auth="U9LoIThHLKGGL49vLtiUJWinLHXJepo9zJVXbmCc"
 echo $3

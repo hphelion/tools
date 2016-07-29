@@ -6,6 +6,14 @@
 # Do not use the -time switch on public documents.
 # If you want to get the date from the timestamp instead of the commit, use -file
 
+
+get_the_tools_repo () {
+	if [[ -n $1 ]]
+	then 
+	$1="master"
+	git clone -b $1 --local /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/tools
+}
+
 echo ===start inject_date.sh===
 for i in `find  -name "*.dita" -not -path "./publiccloud/api/*"`
 do

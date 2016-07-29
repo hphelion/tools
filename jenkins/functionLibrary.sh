@@ -10,6 +10,7 @@ TEST_LAN_IP="192.168.251.17" 		#Internal IP address for docs-staging.hpcloud.com
 #TEST_DOC_SITE_NAME="docs-staging.hpcloud.com:9099"
 
 
+ 
 
 
 get_the_tools_repo () {
@@ -21,7 +22,11 @@ get_the_tools_repo () {
 	fi
 	echo ">>> Cloning $branch branch of tools repo"
     rm -r tools
-	git clone -b $1 --local /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/tools
+	if ! git clone -b $1 --local /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/tools
+	then
+		echo >&2 Cloning git@github.com:hphelion/tools.git failed.  Stopping the build.
+		exit 1
+	fi
 	chmod 755 ./tools/jenkins/*.sh
 }
  

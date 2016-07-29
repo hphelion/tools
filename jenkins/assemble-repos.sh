@@ -1,56 +1,15 @@
 #!/bin/bash
+
+#Set some variables and functions
 source <(curl -s https://raw.githubusercontent.com/hphelion/tools/master/jenkins/functionLibrary.sh)
+
+#Set the variable to whatever was passed to this script.
 HIPCHAT_ROOM="$1"
 
-
-function adjust_date_to_last_commit {
-	pwd
-    cd $repo
-	pwd    
-    for t in $(find . -name "*.dita");
-    do
-    	echo $repo : $t
-        stat --format=%y $t
-    	git log -1 --date=iso --pretty=format:%ad $t | sed 's| +.*||'
-        echo""
-    	touch -d "`git log -1 --date=iso --pretty=format:%ad $t | sed 's| +.*||'` " $t
-        stat --format=%y $t
-        echo""
-	done
-    cd -    
-}
- 
- function clone_repo {
- repo=$1
- branch=$2
- 
-	echo "clone $repo"
- 	if [[ $(git ls-remote /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/${repo} ${branch} ) ]]; then
-    echo "Branch $branch exists on github"
-	
-	rm -r $repo
-		if ! git clone --local --branch ${branch} /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/$repo ${repo}
-		then
-			echo >&2 Cloning git@github.com:hphelion/${repo}.git failed.  Stopping the build.
-
-			hipChat FAIL "Cloning the <b>$repo repo failed.</b> Stopping the build.  The files on docs.hpcloud.com were not changed." $HIPCHAT_ROOM
-			exit 1;
-		fi
-	
-	else
-		echo "Branch $branch does not exist on github.  Stopping the build."
-		hipChat FAIL "Branch <b>$branch</b> does not exist on in the $repo on github. Stopping the build. The files on docs.hpcloud.com were not changed." $HIPCHAT_ROOM
-
-		exit 1;
-	fi	
-}
- 
-  
-
-
-pwd
+#Set the variables that define the publish branch for all repos
 source ./tools/jenkins/publish-config.sh
  
+#write publish branch variables to stdout so we know what is going on 
 echo "
 
 #################################################################
@@ -66,14 +25,21 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 "
 
 
-echo 1
-find . -name docs.hpcloud.com.HDP.ditamap
+ 
+#find . -name docs.hpcloud.com.HDP.ditamap
+################################################################################
 
+ 
+# For each repo, clone it and checkout publish branch, adjust the modification
+# date of the ditafiles to the date of the last commit copy files into place
+# for the final build.
+ 
     repo="hos.docs"
 	branch="$hos_docs_BRANCH"
 	clone_repo $repo $branch
     adjust_date_to_last_commit
-
+	
+	mkdir media
     cp -rp ${repo}/community/ ./3.x/
     cp -rp ${repo}/commercial/ ./3.x/
     cp -rp ${repo}/helion/ ./3.x/
@@ -81,10 +47,9 @@ find . -name docs.hpcloud.com.HDP.ditamap
 	cp -rp ${repo}/media/ ./3.x/media/
     cp -rp ${repo}/media/${repo} ./3.x/media/${repo}
     cp -rp ${repo}/*.ditamap ./3.x/
- 
 	rm -r ${repo}
- 
-	mkdir media
+
+	
 
 
 	repo="devplat.docs"

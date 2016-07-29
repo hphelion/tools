@@ -1,23 +1,69 @@
+
+
+#Set some global variables
 JENKINS_NAME="docs-staging.hpcloud.com"
 DOC_SITE_NAME="docs.hpcloud.com"
-PRIMARY_WAN_IP="173.205.188.47"
-PRIMARY_LAN_IP="192.168.251.121"
-TEST_WAN_IP="173.205.188.46"
-TEST_LAN_IP="192.168.251.17"
-TEST_DOC_SITE_NAME="docs-staging.hpcloud.com:9099"
+PRIMARY_WAN_IP="173.205.188.47"		#External IP address for docs.hpcloud.com
+PRIMARY_LAN_IP="192.168.251.121"	#Internal IP address for docs.hpcloud.com
+TEST_WAN_IP="173.205.188.46" 		#External IP address for docs-staging.hpcloud.com
+TEST_LAN_IP="192.168.251.17" 		#Internal IP address for docs-staging.hpcloud.com
+#TEST_DOC_SITE_NAME="docs-staging.hpcloud.com:9099"
 
 
 
+
+
+
+function adjust_date_to_last_commit {
+    cd $repo  
+    for t in $(find . -name "*.dita");
+    do
+    	echo $repo : $t
+        stat --format=%y $t
+    	git log -1 --date=iso --pretty=format:%ad $t | sed 's| +.*||'
+        echo""
+    	touch -d "`git log -1 --date=iso --pretty=format:%ad $t | sed 's| +.*||'` " $t
+        stat --format=%y $t
+        echo""
+	done
+    cd -    
+}
+ 
+ function clone_repo {
+	#Clone the repo from the cannonical copy and set the branch
+	repo=$1
+	branch=$2
+	echo "clone $repo"
+ 	if [[ $(git ls-remote /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/${repo} ${branch} ) ]]; 
+	then
+		echo "Branch $branch exists on github"
+	
+		rm -r $repo
+			if ! git clone --local --branch ${branch} /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/$repo ${repo}
+			then
+				echo >&2 Cloning /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/$repo failed.  Stopping the build.
+				hipChat FAIL "Cloning the <b>$repo repo failed.</b> Stopping the build.  No published files were not changed." $HIPCHAT_ROOM
+				exit 1;
+			fi
+	
+	else
+		echo "Branch $branch does not exist on github.  Stopping the build."
+		hipChat FAIL "Branch <b>$branch</b> does not exist on in the $repo on github. Stopping the build. No published files were not changed." $HIPCHAT_ROOM
+		exit 1;
+	fi	
+}
 
  
 
 extractBranch () {
-echo "$1" | sed 's|\([^ ]*\).*$|\1|'
+	#Extract the branch from the a string taken from $HUDSON_HOME/doc-build-resources/repos+branches.txt
+	echo "$1" | sed 's|\([^ ]*\).*$|\1|'
 }
 
 
 extractRepo () {
-echo "$1" | sed 's|.*of the \([^ ]*\) repo)|\1|'
+	#Extract the repo from the a string taken from $HUDSON_HOME/doc-build-resources/repos+branches.txt
+	echo "$1" | sed 's|.*of the \([^ ]*\) repo)|\1|'
 }
 
 
@@ -39,7 +85,7 @@ then
  
 else
 	COLOR="green"
-        MESSAGE="<b>$JOB_NAME</b> started by $BUILD_USER_FIRST_NAME $2 " 
+    MESSAGE="<b>$JOB_NAME</b> started by $BUILD_USER_FIRST_NAME $2 " 
 fi
 
 echo $COLOR
@@ -65,9 +111,7 @@ room="$i"
 
 #amok 145
 #test 845
-
-
-
+ 
   
 echo $CONSOLE
  

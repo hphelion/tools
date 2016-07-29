@@ -21,8 +21,8 @@ get_the_tools_repo () {
 		branch=$1
 	fi
 	echo ">>> Cloning $branch branch of tools repo"
-    rm -r tools
-	if !  git clone  --local  -b $branch --single-branch --depth 1 /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/tools
+    rm -r tools || true
+	if !  git clone --local -b $branch --single-branch --depth 1 /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/tools
 	then
 		echo >&2 Cloning git@github.com:hphelion/tools.git failed.  Stopping the build.
 		exit 1

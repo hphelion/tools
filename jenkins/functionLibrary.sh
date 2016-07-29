@@ -19,7 +19,10 @@ get_the_tools_repo () {
 	else 
 		branch="$1"
 	fi
-	git clone -b $1 --local /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/tools
+	
+	echo "cloning $branch branch of tools repo"
+	
+	git clone -b $branch --local /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/tools
 }
 
 

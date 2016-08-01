@@ -14,7 +14,7 @@ TEST_LAN_IP="192.168.251.17" 		#Internal IP address for docs-staging.hpcloud.com
 
 
 get_the_tools_repo () {
-echo ">>> Starting function \"get_the_tools_repo\""
+    echo ">>> Starting function \"get_the_tools_repo\""
 	if [[ -z "$1"   ]];
 	then 
 		branch="master"
@@ -29,12 +29,14 @@ echo ">>> Starting function \"get_the_tools_repo\""
 		exit 1
 	fi
 	chmod 755 ./tools/jenkins/*.sh
+	
+	echo ">>> Stopping function \"get_the_tools_repo\""
 }
  
 
 
 function adjust_date_to_last_commit {
-echo ">>> Starting function \"adjust_date_to_last_commit\""
+    echo ">>> Starting function \"adjust_date_to_last_commit\""
     cd $repo  
     for t in $(find . -name "*.dita");
     do
@@ -47,10 +49,11 @@ echo ">>> Starting function \"adjust_date_to_last_commit\""
         echo""
 	done
     cd -    
+	    echo ">>> Stopping function \"adjust_date_to_last_commit\""
 }
  
  function clone_repo {
- echo ">>> Starting function \"clone_repo\""
+    echo ">>> Starting function \"clone_repo\""
 	#Clone the repo from the cannonical copy and set the branch
 	repo=$1
 	branch=$2
@@ -72,6 +75,7 @@ echo ">>> Starting function \"adjust_date_to_last_commit\""
 		hipChat FAIL "Branch <b>$branch</b> does not exist on in the $repo on github. Stopping the build. No published files were not changed." $HIPCHAT_ROOM
 		exit 1;
 	fi	
+	 echo ">>> Stopping function \"clone_repo\""
 }
 
  
@@ -226,6 +230,6 @@ echo "$PUSHED_BY" | sed  's/^\(.\)/\U\1/' >  ./out/webhelp/pushedBY.txt
 
 sudo cp /var/lib/jenkins/HPE-Helion.png ./out/webhelp/
 
-
+echo ">>> Stopping function \"build.on.push\""
 
 }

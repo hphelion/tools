@@ -14,6 +14,7 @@ TEST_LAN_IP="192.168.251.17" 		#Internal IP address for docs-staging.hpcloud.com
 
 
 get_the_tools_repo () {
+echo ">>> Starting function \"get_the_tools_repo\""
 	if [[ -z "$1"   ]];
 	then 
 		branch="master"
@@ -33,6 +34,7 @@ get_the_tools_repo () {
 
 
 function adjust_date_to_last_commit {
+echo ">>> Starting function \"adjust_date_to_last_commit\""
     cd $repo  
     for t in $(find . -name "*.dita");
     do
@@ -48,6 +50,7 @@ function adjust_date_to_last_commit {
 }
  
  function clone_repo {
+ echo ">>> Starting function \"clone_repo\""
 	#Clone the repo from the cannonical copy and set the branch
 	repo=$1
 	branch=$2
@@ -148,7 +151,7 @@ done
 
 
 build.on.push () {
-
+echo ">>> Starting function \"build.on.push\""
 
 HIPCHAT_PASS="1232"
 HIPCHAT_FAIL="1232,1295"

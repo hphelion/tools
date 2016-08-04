@@ -8,13 +8,16 @@ PRIMARY_LAN_IP="192.168.251.121"	#Internal IP address for docs.hpcloud.com
 TEST_WAN_IP="173.205.188.46" 		#External IP address for docs-staging.hpcloud.com
 TEST_LAN_IP="192.168.251.17" 		#Internal IP address for docs-staging.hpcloud.com
 #TEST_DOC_SITE_NAME="docs-staging.hpcloud.com:9099"
+#TEST_DOC_SITE_NAME="docs-staging.hpcloud.com:9099"
 
 
  
 
 
 get_the_tools_repo () {
-    echo ">>> Starting function \"get_the_tools_repo\""
+    echo ">>> Start function \"get_the_tools_repo\""
+	
+	#If no argument was passed to the function, use the master branch.  Otherwise use the argument as the branch
 	if [[ -z "$1"   ]];
 	then 
 		branch="master"
@@ -22,47 +25,70 @@ get_the_tools_repo () {
 		branch=$1
 	fi
 	echo ">>> Cloning $branch branch of tools repo"
+	
+	#The tools repo should not be there already, but try to remove it--just in case
     rm -r tools || true
+	
+	#Do a single-branch, shallow clone of the tools repo from /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/tools
+	#If anything goes wrong, stop the build.
 	if !  git clone --local -b $branch --single-branch --depth 1 /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/tools
 	then
 		echo >&2 Cloning git@github.com:hphelion/tools.git failed.  Stopping the build.
 		exit 1
 	fi
+	
+	#Make sure that the scripts in the jenkins folder are executable
 	chmod 755 ./tools/jenkins/*.sh
 	
-	echo ">>> Stopping function \"get_the_tools_repo\""
+	echo ">>> Finish function \"get_the_tools_repo\""
 }
  
 
 
 function adjust_date_to_last_commit {
-    echo ">>> Starting function \"adjust_date_to_last_commit\""
+    echo ">>> Start function \"adjust_date_to_last_commit\""
+	#Note that this only works on a complete repo.  A shallow clone does not have all the needed info.
+	
+	#cd into the repo
     cd $repo  
-    for t in $(find . -name "*.dita");
+	
+    #for each dita file, 
+	for t in $(find . -name "*.dita");
     do
     	echo $repo : $t
         stat --format=%y $t
+		
+		#get the date of the last commit of the file
     	git log -1 --date=iso --pretty=format:%ad $t | sed 's| +.*||'
         echo""
+		
+		#Change the modification date of the ditafile so that it is equal to the date of the last commit
     	touch -d "`git log -1 --date=iso --pretty=format:%ad $t | sed 's| +.*||'` " $t
         stat --format=%y $t
         echo""
 	done
+	
+	#Return to the original directory
     cd -    
-	    echo ">>> Stopping function \"adjust_date_to_last_commit\""
+	    echo ">>> Finish function \"adjust_date_to_last_commit\""
 }
  
  function clone_repo {
-    echo ">>> Starting function \"clone_repo\""
-	#Clone the repo from the cannonical copy and set the branch
+    echo ">>> Start function \"clone_repo\""
+	#Set branch and repo variables from the function's arguments
 	repo=$1
 	branch=$2
 	echo "clone $repo"
+	
+	#Check to make sure that the branch exists
  	if [[ $(git ls-remote /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/${repo} ${branch} ) ]]; 
 	then
-		echo "Branch $branch exists on github"
-	
-		rm -r $repo
+		echo "Branch $branch exists"
+		
+		#If the branch exists, remove any old copy of the repo
+		rm -r $repo || true
+		
+			#Clone the repo from /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/, notify hipchat if the pull fails
 			if ! git clone --local --branch ${branch} /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/$repo ${repo}
 			then
 				echo >&2 Cloning /var/lib/jenkins/workspace/ADMIN--pull-all-repos/cannonical/$repo failed.  Stopping the build.
@@ -71,29 +97,30 @@ function adjust_date_to_last_commit {
 			fi
 	
 	else
-		echo "Branch $branch does not exist on github.  Stopping the build."
-		hipChat FAIL "Branch <b>$branch</b> does not exist on in the $repo on github. Stopping the build. No published files were not changed." $HIPCHAT_ROOM
+		#If the branch does not exist, notify HipChat and exit.
+		echo "Branch $branch does not exist.  Stopping the build."
+		hipChat FAIL "Branch <b>$branch</b> does not exist on in the $repo. Stopping the build. No published files were not changed." $HIPCHAT_ROOM
 		exit 1;
 	fi	
-	 echo ">>> Stopping function \"clone_repo\""
+	 echo ">>> Finish function \"clone_repo\""
 }
 
  
 
-extractBranch () {
+ function extractBranch () {
 	#Extract the branch from the a string taken from $HUDSON_HOME/doc-build-resources/repos+branches.txt
 	echo "$1" | sed 's|\([^ ]*\).*$|\1|'
 }
 
 
-extractRepo () {
+ function extractRepo () {
 	#Extract the repo from the a string taken from $HUDSON_HOME/doc-build-resources/repos+branches.txt
 	echo "$1" | sed 's|.*of the \([^ ]*\) repo)|\1|'
 }
 
 
 
-hipChat () {  
+function hipChat () {  
 #Usage: hipChat (PASS|FAIL) "MESSAGE" ROOM
 #Set the URL to the console output for this build
 CONSOLE=${BUILD_URL}console
@@ -154,9 +181,10 @@ done
 
 
 
-build.on.push () {
-echo ">>> Starting function \"build.on.push\""
+function build.on.push () {
+echo ">>> Start function \"build.on.push\""
 
+#Set the HipChat rooms to notify in case of a pass or fail of this build
 HIPCHAT_PASS="1232"
 HIPCHAT_FAIL="1232,1295"
 #docs 1295
@@ -174,7 +202,7 @@ if [ ! -f build.on.push.ditamap ]; then
 fi
 
 
-#Get repo name
+#Get repo name from the jenkins env variable $GIT_URL
 REPO=`echo "$GIT_URL" | sed 's|.*/||g' | sed 's|\.git$||g'`
 
  
@@ -184,6 +212,8 @@ get_the_tools_repo
 
 echo "Building HTML docs:"
  
+ 
+ #Get some information about the push to use later, 
 if [ -z "$BRANCH_TO_BUILD" ]
 then
 	PUSHED_BY=`git log -1 | grep Author | sed 's|.*: \([^<]*\)<.*|\1|' | sed 's| .*||'`
@@ -223,13 +253,13 @@ rm -r ./out/ || true /dev/null 2>&1
 
 find ./out/webhelp/ -name "*.html" -exec sed -i  s'|\(<p class="footer">The OpenStack[^<]*\)</p>||' {} \;
 
-
+#Write files that document the URL of this build and who pushed it (used in index.html)
 echo "$BUILD_URL" >  ./out/webhelp/buildURL.txt
 echo "$PUSHED_BY" | sed  's/^\(.\)/\U\1/' >  ./out/webhelp/pushedBY.txt
 
 
 sudo cp /var/lib/jenkins/HPE-Helion.png ./out/webhelp/
 
-echo ">>> Stopping function \"build.on.push\""
+echo ">>> Finish function \"build.on.push\""
 
 }

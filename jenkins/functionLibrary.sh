@@ -249,7 +249,7 @@ rm -r ./out/ || true /dev/null 2>&1
 
 
 #Inject the date and time
-./tools/jenkins/inject_date.sh -time
+inject_date -time
 
 find ./out/webhelp/ -name "*.html" -exec sed -i  s'|\(<p class="footer">The OpenStack[^<]*\)</p>||' {} \;
 
@@ -266,13 +266,7 @@ echo ">>> Finish function \"build.on.push\""
 
 
 
-
-
-
-
-
-
-
+ 
 
 
 assemble_repos () {
@@ -396,61 +390,73 @@ function production_build () {
  
 	echo "Building HTML docs:"
  
-#	if [ -z "$BRANCH_TO_BUILD" ]
-#	then
-#		PUSHED_BY=`git log -1 | grep Author | sed 's|.*: \([^<]*\)<.*|\1|' | sed 's| .*||'`
-#		BRANCH=`echo $GIT_BRANCH | sed 's|.*\/||'`
- #   
-#	else
-#		GIT_BRANCH=$BRANCH_TO_BUILD
-#		BRANCH=`echo $GIT_BRANCH | sed 's|.*\/||'`
-#		git checkout $BRANCH
-#		git pull
-#		PUSHED_BY=$BUILD_USER_FIRST_NAME
- #   
-#	fi
 
-
-#	echo "###"
- 
-#	echo $GIT_BRANCH
-#	echo $BRANCH
-
-
-#Don't build these branches:
-#if [ "$BRANCH" = "hos2.0ga" ] || [ "$BRANCH" = "ditaval-test" ]|| [ "$BRANCH" = "pdf_test" ]|| [ "$BRANCH" = "doc-split-test" ]
-#then
-#	exit 0
-#fi
-
-#echo "###"
-
-
-#remove old output files
-rm -r ./out/ || true
+	#remove old output files
+	rm -r ./out/ || true
 
  
-chmod -R 777 ./tools/jenkins/
-
-./tools/jenkins/license.sh
+	./tools/jenkins/license.sh
  
-./tools/jenkins/oxygen-webhelp-build.sh docs.hpcloud.com.ditamap	
-./tools/jenkins/inject_google_analytics.sh ./out/webhelp/
-./tools/jenkins/inject_redirects.sh
-./tools/jenkins/inject_date.sh -file
+	./tools/jenkins/oxygen-webhelp-build.sh docs.hpcloud.com.ditamap	
+	./tools/jenkins/inject_google_analytics.sh ./out/webhelp/
+	./tools/jenkins/inject_redirects.sh
+	inject_date -file
 
-
- 
-cp -r ./commercial/GA1/RollYourOwn11/  out/webhelp/commercial/GA1/RollYourOwn11/
-cp -r ./commercial/GA1/RollYourOwn10/  out/webhelp/commercial/GA1/RollYourOwn10/
-cp -r ./media/ ./out/webhelp/
-cp -r ./hdp-html/ ./out/webhelp/
-cp -r ./hcf/media ./out/webhelp/hcf/media
-cp -r ./3.x/media ./out/webhelp/3.x/media
-cp -r ./file/  out/webhelp/file/
-cp -r ./ServerArtifacts/404.html  out/webhelp/404.html
-cp -r ./ServerArtifacts/htaccess.with.rewrite.rules  out/webhelp/.htaccess
+	cp -r ./commercial/GA1/RollYourOwn11/  out/webhelp/commercial/GA1/RollYourOwn11/
+	cp -r ./commercial/GA1/RollYourOwn10/  out/webhelp/commercial/GA1/RollYourOwn10/
+	cp -r ./media/ ./out/webhelp/
+	cp -r ./hdp-html/ ./out/webhelp/
+	cp -r ./hcf/media ./out/webhelp/hcf/media
+	cp -r ./3.x/media ./out/webhelp/3.x/media
+	cp -r ./file/  out/webhelp/file/
+	cp -r ./ServerArtifacts/404.html  out/webhelp/404.html
+	cp -r ./ServerArtifacts/htaccess.with.rewrite.rules  out/webhelp/.htaccess
 
 
 }
 
+function inject_date () {
+	echo ===start inject_date===
+	for i in `find  -name "*.dita" -not -path "./publiccloud/api/*"`
+	do
+		echo ""
+		j=`echo $i | sed 's|\.dita$|\.html|'`
+		fullpath=`echo $j | sed 's|\.\/|./out/webhelp/|'`
+		echo $fullpath
+		#DATE=`git log -1 --date=short --pretty=format:%ad $i`
+
+		if [ "$1" == "-file" ]
+		then
+    
+			DATE=`stat --format=%y $i`
+		else
+
+			DATE=`git log -1 --date=iso --pretty=format:%ad $i | sed 's| +.*||'` ; echo $DATE
+		fi
+
+		if [ "$1" == "-time" ]
+		then
+			PRETTYDATE=`date -d"$DATE" +'%d %b %Y (%H:%M UTC)'`	
+		else
+			PRETTYDATE=`date -d"$DATE" +'%d %b %Y'`
+		fi
+
+		if [ -e $fullpath ]
+		then
+			sed -i "s|<\/h1>|</h1><p class=\"heliondate\">Last updated: $PRETTYDATE<a href=\"\" class="xref" style=\"float:right\" onclick=\"window.print()\">Print this page</a> </p>|" $fullpath    
+			echo starting from 	
+			pwd
+			echo before time change
+			stat --format=%y   $fullpath 
+			touch -d "$PRETTYDATE"  $fullpath
+			echo after time change	
+			stat --format=%y   $fullpath 
+		else
+			echo Skipping $fullpath 
+		fi
+	
+	done
+	echo ===end inject_date===
+
+
+}

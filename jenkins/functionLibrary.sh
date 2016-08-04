@@ -299,8 +299,6 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 #################################################################
 "
 
- 
- 
 # For each repo, clone it and checkout publish branch, adjust the modification
 # date of the ditafiles to the date of the last commit copy files into place
 # for the final build.
@@ -386,11 +384,7 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
     adjust_date_to_last_commit
 
 	cp -r ${repo}/* ./
-   
     rm -r ${repo}
-
-
-
 
 }
 
@@ -398,42 +392,38 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 
 
 function production_build () {
-#Call assemble-repos.sh before running
+	#NOTE: Call assemble-repos.sh before running
  
-
-echo "Building HTML docs:"
+	echo "Building HTML docs:"
  
-if [ -z "$BRANCH_TO_BUILD" ]
-then
-	PUSHED_BY=`git log -1 | grep Author | sed 's|.*: \([^<]*\)<.*|\1|' | sed 's| .*||'`
-    BRANCH=`echo $GIT_BRANCH | sed 's|.*\/||'`
-    
-else
-    GIT_BRANCH=$BRANCH_TO_BUILD
-    BRANCH=`echo $GIT_BRANCH | sed 's|.*\/||'`
-    git checkout $BRANCH
-    git pull
-    PUSHED_BY=$BUILD_USER_FIRST_NAME
-    
-fi
+#	if [ -z "$BRANCH_TO_BUILD" ]
+#	then
+#		PUSHED_BY=`git log -1 | grep Author | sed 's|.*: \([^<]*\)<.*|\1|' | sed 's| .*||'`
+#		BRANCH=`echo $GIT_BRANCH | sed 's|.*\/||'`
+ #   
+#	else
+#		GIT_BRANCH=$BRANCH_TO_BUILD
+#		BRANCH=`echo $GIT_BRANCH | sed 's|.*\/||'`
+#		git checkout $BRANCH
+#		git pull
+#		PUSHED_BY=$BUILD_USER_FIRST_NAME
+ #   
+#	fi
 
 
+#	echo "###"
  
-
-
-echo "###"
- 
-echo $GIT_BRANCH
-echo $BRANCH
+#	echo $GIT_BRANCH
+#	echo $BRANCH
 
 
 #Don't build these branches:
-if [ "$BRANCH" = "hos2.0ga" ] || [ "$BRANCH" = "ditaval-test" ]|| [ "$BRANCH" = "pdf_test" ]|| [ "$BRANCH" = "doc-split-test" ]
-then
-	exit 0
-fi
+#if [ "$BRANCH" = "hos2.0ga" ] || [ "$BRANCH" = "ditaval-test" ]|| [ "$BRANCH" = "pdf_test" ]|| [ "$BRANCH" = "doc-split-test" ]
+#then
+#	exit 0
+#fi
 
-echo "###"
+#echo "###"
 
 
 #remove old output files
@@ -443,33 +433,14 @@ rm -r ./out/ || true
 chmod -R 777 ./tools/jenkins/
 
 ./tools/jenkins/license.sh
-
-
-
-
-
-
+ 
 ./tools/jenkins/oxygen-webhelp-build.sh docs.hpcloud.com.ditamap	
-#./tools/jenkins/inject_tableau_code.sh
 ./tools/jenkins/inject_google_analytics.sh ./out/webhelp/
-#./tools/jenkins/insert_disclaimer.sh
 ./tools/jenkins/inject_redirects.sh
-
-
-
-
-
 ./tools/jenkins/inject_date.sh -file
 
 
  
- 
-#echo "copy start"
-#sudo rm -r /var/www/html/dita-test-build/*
-#sudo cp -r /var/lib/jenkins/workspace/helion-dita-build/out/webhelp/* /var/www/html/dita-test-build/
-#sudo chmod -R 755 /var/www/html/dita-test-build/
-
-
 cp -r ./commercial/GA1/RollYourOwn11/  out/webhelp/commercial/GA1/RollYourOwn11/
 cp -r ./commercial/GA1/RollYourOwn10/  out/webhelp/commercial/GA1/RollYourOwn10/
 cp -r ./media/ ./out/webhelp/

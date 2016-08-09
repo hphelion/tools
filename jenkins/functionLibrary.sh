@@ -203,91 +203,6 @@ done
 
 
 
-function build.on.push () {
-echo "
->>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
-
-
-#Set the HipChat rooms to notify in case of a pass or fail of this build
-HIPCHAT_PASS="1232"
-HIPCHAT_FAIL="1232,1295"
-#docs 1295
-#test 845
-
-
-#Notify hipChat that build has started
-hipChat PASS " #$BUILD_NUMBER started (<a href='$BUILD_URL'>Open</a>)"  $HIPCHAT_PASS
-
-
-#Check to make sure that the build.on.push ditamap exists. else quit.
-if [ ! -f build.on.push.ditamap ]; then
-    echo ">>>> build.on.push.ditamap not found. Nothing to build."
-    exit 0;
-fi
-
-
-#Get repo name from the jenkins env variable $GIT_URL
-REPO=`echo "$GIT_URL" | sed 's|.*/||g' | sed 's|\.git$||g'`
-
- 
-#Get the tools repo 
-get_the_tools_repo
-
-
-echo ">>>> Building HTML docs:"
- 
- 
- #Get some information about the push to use later, 
-if [ -z "$BRANCH_TO_BUILD" ]
-then
-	PUSHED_BY=`git log -1 | grep Author | sed 's|.*: \([^<]*\)<.*|\1|' | sed 's| .*||'`
-    BRANCH=`echo $GIT_BRANCH | sed 's|.*\/||'`
-    
-else
-    GIT_BRANCH=$BRANCH_TO_BUILD
-    BRANCH=`echo $GIT_BRANCH | sed 's|.*\/||'`
-    git checkout $BRANCH
-    git pull
-    PUSHED_BY=$BUILD_USER_FIRST_NAME
-fi
-
-
-#There should not be any old output files...but just in case 
-rm -r ./out/ || true /dev/null 2>&1
-
-
-#Write the oXygen license file
-license
-
-
-#Build the build.on.push ditamap
-oxygen-webhelp-build build.on.push.ditamap
-
-
-#Insert the  disclaimer snippet, if there is one.
-insert_disclaimer
-
-
-#Insert any redirects
-inject_redirects
-
-
-#Inject the date and time
-inject_date -time
-
-find ./out/webhelp/ -name "*.html" -exec sed -i  s'|\(<p class="footer">The OpenStack[^<]*\)</p>||' {} \;
-
-#Write files that document the URL of this build and who pushed it (used in index.html)
-echo "$BUILD_URL" >  ./out/webhelp/buildURL.txt
-echo "$PUSHED_BY" | sed  's/^\(.\)/\U\1/' >  ./out/webhelp/pushedBY.txt
-
-
-sudo cp /var/lib/jenkins/HPE-Helion.png ./out/webhelp/
-
- echo ">>> END ${FUNCNAME[0]}
- "
- }
-
 
 function insert_disclaimer () {
 echo "
@@ -424,37 +339,6 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 
 
 
-function production_build () {
-echo "
->>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
-
- 	#NOTE: Call assemble-repos before running
-
-	#remove old output files
-	rm -r ./out/ || true
-
- 
-	license
- 
-	oxygen-webhelp-build docs.hpcloud.com.ditamap	
-	./tools/jenkins/inject_google_analytics.sh ./out/webhelp/
-	inject_redirects
-	inject_date -file
-
-	cp -r ./commercial/GA1/RollYourOwn11/  out/webhelp/commercial/GA1/RollYourOwn11/
-	cp -r ./commercial/GA1/RollYourOwn10/  out/webhelp/commercial/GA1/RollYourOwn10/
-	cp -r ./media/ ./out/webhelp/
-	cp -r ./hdp-html/ ./out/webhelp/
-	cp -r ./hcf/media ./out/webhelp/hcf/media
-	cp -r ./3.x/media ./out/webhelp/3.x/media
-	cp -r ./file/  out/webhelp/file/
-	cp -r ./ServerArtifacts/404.html  out/webhelp/404.html
-	cp -r ./ServerArtifacts/htaccess.with.rewrite.rules  out/webhelp/.htaccess
-
- echo ">>> END ${FUNCNAME[0]}
- "
- }
-
 function inject_date () {
 echo "
 >>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
@@ -482,6 +366,16 @@ echo "
 		else
 			PRETTYDATE=`date -d"$DATE" +'%d %b %Y'`
 		fi
+
+		
+		if [ "$1" == "-full" ]
+		then
+			PRETTYDATE=`git log -1 --pretty=format:"%an %ae \"%s\" %H" $i`	
+		fi
+		
+		
+		
+		
 
 		if [ -e $fullpath ]
 		then
@@ -742,5 +636,121 @@ cp ./tools/DITA-OT/plugins/com.oxygenxml.webhelp/oxygen-webhelp/resources/css/Me
 
 
 
+function build.on.push () {
+echo "
+>>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+
+
+#Set the HipChat rooms to notify in case of a pass or fail of this build
+HIPCHAT_PASS="1232"
+HIPCHAT_FAIL="1232,1295"
+#docs 1295
+#test 845
+
+
+#Notify hipChat that build has started
+hipChat PASS " #$BUILD_NUMBER started (<a href='$BUILD_URL'>Open</a>)"  $HIPCHAT_PASS
+
+
+#Check to make sure that the build.on.push ditamap exists. else quit.
+if [ ! -f build.on.push.ditamap ]; then
+    echo ">>>> build.on.push.ditamap not found. Nothing to build."
+    exit 0;
+fi
+
+
+#Get repo name from the jenkins env variable $GIT_URL
+REPO=`echo "$GIT_URL" | sed 's|.*/||g' | sed 's|\.git$||g'`
+
+ 
+#Get the tools repo 
+get_the_tools_repo
+
+
+echo ">>>> Building HTML docs:"
+ 
+ 
+ #Get some information about the push to use later, 
+if [ -z "$BRANCH_TO_BUILD" ]
+then
+	PUSHED_BY=`git log -1 | grep Author | sed 's|.*: \([^<]*\)<.*|\1|' | sed 's| .*||'`
+    BRANCH=`echo $GIT_BRANCH | sed 's|.*\/||'`
+    
+else
+    GIT_BRANCH=$BRANCH_TO_BUILD
+    BRANCH=`echo $GIT_BRANCH | sed 's|.*\/||'`
+    git checkout $BRANCH
+    git pull
+    PUSHED_BY=$BUILD_USER_FIRST_NAME
+fi
+
+
+#There should not be any old output files...but just in case 
+rm -r ./out/ || true /dev/null 2>&1
+
+
+#Write the oXygen license file
+license
+
+
+#Build the build.on.push ditamap
+oxygen-webhelp-build build.on.push.ditamap
+
+
+#Insert the  disclaimer snippet, if there is one.
+insert_disclaimer
+
+
+#Insert any redirects
+inject_redirects
+
+
+#Inject the date and time
+inject_date -time
+
+find ./out/webhelp/ -name "*.html" -exec sed -i  s'|\(<p class="footer">The OpenStack[^<]*\)</p>||' {} \;
+
+#Write files that document the URL of this build and who pushed it (used in index.html)
+echo "$BUILD_URL" >  ./out/webhelp/buildURL.txt
+echo "$PUSHED_BY" | sed  's/^\(.\)/\U\1/' >  ./out/webhelp/pushedBY.txt
+
+
+sudo cp /var/lib/jenkins/HPE-Helion.png ./out/webhelp/
+
+ echo ">>> END ${FUNCNAME[0]}
+ "
+ }
+
+
+function production_build () {
+echo "
+>>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+
+ 	#NOTE: Call assemble-repos before running
+
+	#remove old output files
+	rm -r ./out/ || true
+
+ 
+	license
+ 
+	oxygen-webhelp-build docs.hpcloud.com.ditamap	
+	./tools/jenkins/inject_google_analytics.sh ./out/webhelp/
+	inject_redirects
+	inject_date -file
+
+	cp -r ./commercial/GA1/RollYourOwn11/  out/webhelp/commercial/GA1/RollYourOwn11/
+	cp -r ./commercial/GA1/RollYourOwn10/  out/webhelp/commercial/GA1/RollYourOwn10/
+	cp -r ./media/ ./out/webhelp/
+	cp -r ./hdp-html/ ./out/webhelp/
+	cp -r ./hcf/media ./out/webhelp/hcf/media
+	cp -r ./3.x/media ./out/webhelp/3.x/media
+	cp -r ./file/  out/webhelp/file/
+	cp -r ./ServerArtifacts/404.html  out/webhelp/404.html
+	cp -r ./ServerArtifacts/htaccess.with.rewrite.rules  out/webhelp/.htaccess
+
+ echo ">>> END ${FUNCNAME[0]}
+ "
+ }
 
 

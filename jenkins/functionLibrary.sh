@@ -40,8 +40,7 @@ echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	#Make sure that the scripts in the jenkins folder are executable
 	chmod 755 ./tools/jenkins/*.sh
 	
- echo "END ${FUNCNAME[0]}
- "
+ echo "END ${FUNCNAME[0]}"
  }
  
 
@@ -72,8 +71,7 @@ echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	
 	#Return to the original directory
     cd -    
- echo "END ${FUNCNAME[0]}
- "
+ echo "END ${FUNCNAME[0]} "
  }
  
 function clone_repo {
@@ -116,8 +114,7 @@ function extractBranch () {
 echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	#Extract the branch from the a string taken from $HUDSON_HOME/doc-build-resources/repos+branches.txt
 	echo "$1" | sed 's|\([^ ]*\).*$|\1|'
- echo "END ${FUNCNAME[0]}
- "
+ echo "END ${FUNCNAME[0]}"
  }
 
 
@@ -126,8 +123,7 @@ echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 	#Extract the repo from the a string taken from $HUDSON_HOME/doc-build-resources/repos+branches.txt
 	echo "$1" | sed 's|.*of the \([^ ]*\) repo)|\1|'
- echo "END ${FUNCNAME[0]}
- "
+ echo "END ${FUNCNAME[0]}"
  }
 
 
@@ -190,9 +186,9 @@ curl \
 	"message_format":"html"
 }
 EOP
-done		 
- echo END ${FUNCNAME[0]}
- "
+done	
+	 
+ echo " END ${FUNCNAME[0]} "
  }
 
 
@@ -223,9 +219,7 @@ HIPCHAT_ROOM="$1"
 source ./tools/jenkins/publish-config.sh
  
 #write publish branch variables to stdout so we know what is going on 
-echo "
-
-#################################################################
+echo "#################################################################
 
       devplat_docs_BRANCH = $devplat_docs_BRANCH
           hos_docs_BRANCH = $hos_docs_BRANCH
@@ -234,8 +228,7 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
  public_cloud_docs_BRANCH = $public_cloud_docs_BRANCH
           hcf_docs_BRANCH = $hcf_docs_BRANCH
 
-#################################################################
-"
+#################################################################"
 
 # For each repo, clone it and checkout publish branch, adjust the modification
 # date of the ditafiles to the date of the last commit copy files into place
@@ -382,8 +375,7 @@ echo " Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	
 	done
 
-echo "END ${FUNCNAME[0]}
- "
+echo "END ${FUNCNAME[0]}"
  }
 
 
@@ -399,8 +391,7 @@ echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 		sed -i "s|\([^>]\)</h1>|\1</h1> $DISCLAIMER|g" $i
 	done
 
- echo "END ${FUNCNAME[0]}
- "
+ echo "END ${FUNCNAME[0]}"
  }
 
 
@@ -415,8 +406,7 @@ echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 		sed -i "s|function loadIframe(dynamicURL) {|function loadIframe(dynamicURL) { $REDIRECT |"  ./out/webhelp/oxygen-webhelp/resources/skins/desktop/toc_driver.js
 	done < inter-helpset-redirects.tmp 
 
- echo "END ${FUNCNAME[0]}
- "
+ echo "END ${FUNCNAME[0]}"
  }
 
 
@@ -438,8 +428,7 @@ SGN=MCwCFDDNusJoEVUc9F8j3jbCgNofpljwAhQVGwO5WPSaMVLfmtXLIlZxFMJ99w\=\=
 -------END-LICENSE-KEY-------
 " > ./tools/DITA-OT/plugins/com.oxygenxml.webhelp/licensekey.txt
 
- echo "END ${FUNCNAME[0]}
- "
+ echo "END ${FUNCNAME[0]}"
  }
 
 
@@ -615,8 +604,7 @@ DITAVAL_DIR=/usr/local/OxygenXMLDeveloper16/samples/dita
  
 cp ./tools/DITA-OT/plugins/com.oxygenxml.webhelp/oxygen-webhelp/resources/css/Metric* ./out/webhelp/oxygen-webhelp/resources/css/
 
- echo "END ${FUNCNAME[0]}
- "
+ echo "END ${FUNCNAME[0]}"
  }
 
 
@@ -701,8 +689,7 @@ echo "$PUSHED_BY" | sed  's/^\(.\)/\U\1/' >  ./out/webhelp/pushedBY.txt
 
 sudo cp /var/lib/jenkins/HPE-Helion.png ./out/webhelp/
 
- echo "END ${FUNCNAME[0]}
- "
+ echo "END ${FUNCNAME[0]} "
  }
 
 

@@ -352,7 +352,8 @@ echo " Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 		
 		if [ "$1" == "-full" ]
 		then
-			PRETTYDATE=`git log -1 --pretty=format:"%an %ae \"%s\" %H" $i`	
+			EXTRA=`git log -1 --pretty=format:"%an %ae \"%s\" %H" $i`	
+			PRETTYDATE=$PRETTYDATE$EXTRA
 		fi
 		
 		

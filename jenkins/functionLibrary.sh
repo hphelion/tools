@@ -15,7 +15,8 @@ TEST_LAN_IP="192.168.251.17" 		#Internal IP address for docs-staging.hpcloud.com
 
 
 get_the_tools_repo () {
-    echo ">>> START ${FUNCNAME[0]} from functionLibrary.sh"
+echo ">>>>
+>>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	
 	#If no argument was passed to the function, use the master branch.  Otherwise use the argument as the branch
 	if [[ -z "$1"   ]];
@@ -40,13 +41,15 @@ get_the_tools_repo () {
 	#Make sure that the scripts in the jenkins folder are executable
 	chmod 755 ./tools/jenkins/*.sh
 	
-    echo ">>> END ${FUNCNAME[0]} from functionLibrary.sh"
+ echo ">>> END ${FUNCNAME[0]}
+ "
 }
  
 
 
 function adjust_date_to_last_commit {
-    echo ">>> START ${FUNCNAME[0]} from functionLibrary.sh"
+echo ">>>>
+>>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	
 	#Note that this only works on a complete repo.  A shallow clone does not have all the needed info.
 	
@@ -71,11 +74,13 @@ function adjust_date_to_last_commit {
 	
 	#Return to the original directory
     cd -    
-    echo ">>> END ${FUNCNAME[0]} from functionLibrary.sh"
+ echo ">>> END ${FUNCNAME[0]}
+ "
 }
  
  function clone_repo {
-    echo ">>> START ${FUNCNAME[0]} from functionLibrary.sh"
+echo ">>>>
+>>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	
 	#Set branch and repo variables from the function's arguments
 	repo=$1
@@ -104,30 +109,38 @@ function adjust_date_to_last_commit {
 		hipChat FAIL "Branch <b>$branch</b> does not exist on in the $repo. Stopping the build. No published files were not changed." $HIPCHAT_ROOM
 		exit 1;
 	fi	
-    echo ">>> END ${FUNCNAME[0]} from functionLibrary.sh"
+ echo ">>> END ${FUNCNAME[0]}
+ "
 }
 
  
 
  function extractBranch () {
-    echo ">>> START ${FUNCNAME[0]} from functionLibrary.sh"
+echo ">>>>
+>>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	#Extract the branch from the a string taken from $HUDSON_HOME/doc-build-resources/repos+branches.txt
 	echo "$1" | sed 's|\([^ ]*\).*$|\1|'
-	echo ">>> END ${FUNCNAME[0]} from functionLibrary.sh"
+ echo ">>> END ${FUNCNAME[0]}
+ "
 }
 
 
  function extractRepo () {
-    echo ">>> START ${FUNCNAME[0]} from functionLibrary.sh"
+echo ">>>>
+>>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+
 	#Extract the repo from the a string taken from $HUDSON_HOME/doc-build-resources/repos+branches.txt
 	echo "$1" | sed 's|.*of the \([^ ]*\) repo)|\1|'
-	echo ">>> END ${FUNCNAME[0]} from functionLibrary.sh"
+ echo ">>> END ${FUNCNAME[0]}
+ "
 }
 
 
 
 function hipChat () {
-    echo ">>> START ${FUNCNAME[0]} from functionLibrary.sh"
+echo ">>>>
+>>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+
 #Usage: hipChat (PASS|FAIL) "MESSAGE" ROOM
 #Set the URL to the console output for this build
 CONSOLE=${BUILD_URL}console
@@ -184,13 +197,16 @@ curl \
 }
 EOP
 done		 
-    echo ">>> END ${FUNCNAME[0]} from functionLibrary.sh"
+ echo ">>> END ${FUNCNAME[0]}
+ "
 }
 
 
 
 function build.on.push () {
-    echo ">>> START ${FUNCNAME[0]} from functionLibrary.sh"
+echo ">>>>
+>>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+
 
 #Set the HipChat rooms to notify in case of a pass or fail of this build
 HIPCHAT_PASS="1232"
@@ -268,13 +284,15 @@ echo "$PUSHED_BY" | sed  's/^\(.\)/\U\1/' >  ./out/webhelp/pushedBY.txt
 
 sudo cp /var/lib/jenkins/HPE-Helion.png ./out/webhelp/
 
- echo ">>> END ${FUNCNAME[0]} from functionLibrary.sh"
-
+ echo ">>> END ${FUNCNAME[0]}
+ "
 }
 
 
 function insert_disclaimer () {
-    echo ">>> START ${FUNCNAME[0]} from functionLibrary.sh"
+echo ">>>>
+>>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+
 	DISCLAIMER=`cat disclaimer_snippet` || true
 	for i in `find ./out/webhelp -name "*.html"`
 	do
@@ -283,12 +301,14 @@ function insert_disclaimer () {
 
 	done
 
- echo ">>> END ${FUNCNAME[0]} from functionLibrary.sh"
- 
+ echo ">>> END ${FUNCNAME[0]}
+ "
 }
 
 function assemble_repos () {
-    echo ">>> START ${FUNCNAME[0]} from functionLibrary.sh"
+echo ">>>>
+>>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+
 
 #Set the variable to whatever was passed to this script.
 HIPCHAT_ROOM="$1"
@@ -397,7 +417,8 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 
 	cp -r ${repo}/* ./
     rm -r ${repo}
- echo ">>> END ${FUNCNAME[0]} from functionLibrary.sh"
+ echo ">>> END ${FUNCNAME[0]}
+ "
 }
 
 
@@ -407,7 +428,9 @@ function production_build () {
 
 	#NOTE: Call assemble-repos before running
 	
-    echo ">>> START ${FUNCNAME[0]} from functionLibrary.sh"
+echo ">>>>
+>>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+
  
 
 	#remove old output files
@@ -431,11 +454,14 @@ function production_build () {
 	cp -r ./ServerArtifacts/404.html  out/webhelp/404.html
 	cp -r ./ServerArtifacts/htaccess.with.rewrite.rules  out/webhelp/.htaccess
 
- echo ">>> END ${FUNCNAME[0]} from functionLibrary.sh"
+ echo ">>> END ${FUNCNAME[0]}
+ "
 }
 
 function inject_date () {
-    echo ">>> START ${FUNCNAME[0]} from functionLibrary.sh"
+echo ">>>>
+>>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+
 	for i in `find  -name "*.dita" -not -path "./publiccloud/api/*"`
 	do
 		echo ""
@@ -475,14 +501,16 @@ function inject_date () {
 		fi
 	
 	done
- echo ">>> END ${FUNCNAME[0]} from functionLibrary.sh"
 
-
+echo ">>> END ${FUNCNAME[0]}
+ "
 }
 
 
 function inject_disclaimer () {
-    echo ">>> START ${FUNCNAME[0]} from functionLibrary.sh"
+echo ">>>>
+>>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+
 	
 	DISCLAIMER=`cat disclaimer_snippet` || true
 
@@ -492,13 +520,16 @@ function inject_disclaimer () {
 		sed -i "s|\([^>]\)</h1>|\1</h1> $DISCLAIMER|g" $i
 	done
 
- echo ">>> END ${FUNCNAME[0]} from functionLibrary.sh"
+ echo ">>> END ${FUNCNAME[0]}
+ "
 
 }
 
 
 function inject_redirects () {
-    echo ">>> START ${FUNCNAME[0]} from functionLibrary.sh"
+echo ">>>>
+>>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+
 
 	grep -v "^#" ./tools/jenkins/inter-helpset-redirects.txt > inter-helpset-redirects.tmp 
   
@@ -507,14 +538,17 @@ function inject_redirects () {
 		sed -i "s|function loadIframe(dynamicURL) {|function loadIframe(dynamicURL) { $REDIRECT |"  ./out/webhelp/oxygen-webhelp/resources/skins/desktop/toc_driver.js
 	done < inter-helpset-redirects.tmp 
 
- echo ">>> END ${FUNCNAME[0]} from functionLibrary.sh"
+ echo ">>> END ${FUNCNAME[0]}
+ "
 }
 
 
 
 
 function license () {
-    echo ">>> START ${FUNCNAME[0]} from functionLibrary.sh"
+echo ">>>>
+>>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+
 echo "------START-LICENSE-KEY------
 Registration_Name=Eucalyptus Systems
 Company=Eucalyptus Systems
@@ -528,13 +562,16 @@ SGN=MCwCFDDNusJoEVUc9F8j3jbCgNofpljwAhQVGwO5WPSaMVLfmtXLIlZxFMJ99w\=\=
 -------END-LICENSE-KEY-------
 " > ./tools/DITA-OT/plugins/com.oxygenxml.webhelp/licensekey.txt
 
- echo ">>> END ${FUNCNAME[0]} from functionLibrary.sh"
+ echo ">>> END ${FUNCNAME[0]}
+ "
 }
 
 
 
 oxygen-webhelp-build () {
-    echo ">>> START ${FUNCNAME[0]} from functionLibrary.sh"
+echo ">>>>
+>>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+
 
 if [ -z "$1" ]
 	then
@@ -703,7 +740,8 @@ DITAVAL_DIR=/usr/local/OxygenXMLDeveloper16/samples/dita
  
 cp ./tools/DITA-OT/plugins/com.oxygenxml.webhelp/oxygen-webhelp/resources/css/Metric* ./out/webhelp/oxygen-webhelp/resources/css/
 
- echo ">>> END ${FUNCNAME[0]} from functionLibrary.sh"
+ echo ">>> END ${FUNCNAME[0]}
+ "
 
 }
 

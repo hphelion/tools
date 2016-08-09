@@ -15,8 +15,7 @@ TEST_LAN_IP="192.168.251.17" 		#Internal IP address for docs-staging.hpcloud.com
 
 
 function get_the_tools_repo () {
-echo "
->>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	
 	#If no argument was passed to the function, use the master branch.  Otherwise use the argument as the branch
 	if [[ -z "$1"   ]];
@@ -25,7 +24,7 @@ echo "
 	else
 		branch=$1
 	fi
-	echo ">>> Cloning $branch branch of tools repo"
+	echo "Cloning $branch branch of tools repo"
 	
 	#The tools repo should not be there already, but try to remove it--just in case
     rm -r tools || true
@@ -41,15 +40,14 @@ echo "
 	#Make sure that the scripts in the jenkins folder are executable
 	chmod 755 ./tools/jenkins/*.sh
 	
- echo ">>> END ${FUNCNAME[0]}
+ echo "END ${FUNCNAME[0]}
  "
  }
  
 
 
 function adjust_date_to_last_commit {
-echo "
->>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	
 	#Note that this only works on a complete repo.  A shallow clone does not have all the needed info.
 	
@@ -74,23 +72,22 @@ echo "
 	
 	#Return to the original directory
     cd -    
- echo ">>> END ${FUNCNAME[0]}
+ echo "END ${FUNCNAME[0]}
  "
  }
  
 function clone_repo {
-echo "
->>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	
 	#Set branch and repo variables from the function's arguments
 	repo=$1
 	branch=$2
-	echo ">>>> clone $repo"
+	echo "clone $repo"
 	
 	#Check to make sure that the branch exists
  	if [[ $(git ls-remote /var/lib/jenkins/workspace/ADMIN--pull-all-repos/canonical/${repo} ${branch} ) ]]; 
 	then
-		echo ">>>> Branch $branch exists"
+		echo "Branch $branch exists"
 		
 		#If the branch exists, remove any old copy of the repo
 		rm -r $repo || true
@@ -105,41 +102,38 @@ echo "
 	
 	else
 		#If the branch does not exist, notify HipChat and exit.
-		echo ">>>> Branch $branch does not exist.  Stopping the build."
+		echo "Branch $branch does not exist.  Stopping the build."
 		hipChat FAIL "Branch <b>$branch</b> does not exist on in the $repo. Stopping the build. No published files were not changed." $HIPCHAT_ROOM
 		exit 1;
 	fi	
- echo ">>> END ${FUNCNAME[0]}
+ echo "END ${FUNCNAME[0]}
  "
  }
 
  
 
 function extractBranch () {
-echo "
->>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	#Extract the branch from the a string taken from $HUDSON_HOME/doc-build-resources/repos+branches.txt
 	echo "$1" | sed 's|\([^ ]*\).*$|\1|'
- echo ">>> END ${FUNCNAME[0]}
+ echo "END ${FUNCNAME[0]}
  "
  }
 
 
 function extractRepo () {
-echo "
->>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 	#Extract the repo from the a string taken from $HUDSON_HOME/doc-build-resources/repos+branches.txt
 	echo "$1" | sed 's|.*of the \([^ ]*\) repo)|\1|'
- echo ">>> END ${FUNCNAME[0]}
+ echo "END ${FUNCNAME[0]}
  "
  }
 
 
 
 function hipChat () {
-echo "
->>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 #Usage: hipChat (PASS|FAIL) "MESSAGE" ROOM
 #Set the URL to the console output for this build
@@ -155,8 +149,8 @@ else
     MESSAGE="<b>$JOB_NAME</b> started by $BUILD_USER_FIRST_NAME $2 " 
 fi
 
-echo ">>>>  $COLOR"
-echo ">>>>  $MESSAGE"
+echo "$COLOR"
+echo "$MESSAGE"
  
 #Set HipChat authorization and room     
 auth="U9LoIThHLKGGL49vLtiUJWinLHXJepo9zJVXbmCc"
@@ -197,7 +191,7 @@ curl \
 }
 EOP
 done		 
- echo ">>> END ${FUNCNAME[0]}
+ echo END ${FUNCNAME[0]}
  "
  }
 
@@ -205,24 +199,21 @@ done
 
 
 function insert_disclaimer () {
-echo "
->>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 	DISCLAIMER=`cat disclaimer_snippet` || true
 	for i in `find ./out/webhelp -name "*.html"`
 	do
-		echo ">>>> Inject disclaimer into $i"
+		echo "Inject disclaimer into $i"
 		sed -i "s|\([^>]\)</h1>|\1</h1> $DISCLAIMER|g" $i
 
 	done
 
- echo ">>> END ${FUNCNAME[0]}
- "
+ echo "END ${FUNCNAME[0]}"
  }
 
 function assemble_repos () {
-echo "
->>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 
 #Set the variable to whatever was passed to this script.
@@ -332,16 +323,14 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 
 	cp -r ${repo}/* ./
     rm -r ${repo}
- echo ">>> END ${FUNCNAME[0]}
- "
+ echo "END ${FUNCNAME[0]}"
  }
 
 
 
 
 function inject_date () {
-echo "
->>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo " Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 	for i in `find  -name "*.dita" -not -path "./publiccloud/api/*"`
 	do
@@ -388,37 +377,35 @@ echo "
 			# echo after time change	
 			stat --format=%y   $fullpath 
 		else
-			echo >>>> Skipping $fullpath 
+			echo Skipping $fullpath 
 		fi
 	
 	done
 
-echo ">>> END ${FUNCNAME[0]}
+echo "END ${FUNCNAME[0]}
  "
  }
 
 
 function inject_disclaimer () {
-echo "
->>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 	
 	DISCLAIMER=`cat disclaimer_snippet` || true
 
 	for i in `find ./out/webhelp -name "*.html"`
 	do
-		echo ">>>> inject disclaimer into $i"
+		echo "Inject disclaimer into $i"
 		sed -i "s|\([^>]\)</h1>|\1</h1> $DISCLAIMER|g" $i
 	done
 
- echo ">>> END ${FUNCNAME[0]}
+ echo "END ${FUNCNAME[0]}
  "
  }
 
 
 function inject_redirects () {
-echo "
->>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 
 	grep -v "^#" ./tools/jenkins/inter-helpset-redirects.txt > inter-helpset-redirects.tmp 
@@ -428,7 +415,7 @@ echo "
 		sed -i "s|function loadIframe(dynamicURL) {|function loadIframe(dynamicURL) { $REDIRECT |"  ./out/webhelp/oxygen-webhelp/resources/skins/desktop/toc_driver.js
 	done < inter-helpset-redirects.tmp 
 
- echo ">>> END ${FUNCNAME[0]}
+ echo "END ${FUNCNAME[0]}
  "
  }
 
@@ -436,8 +423,7 @@ echo "
 
 
 function license () {
-echo "
->>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 echo "------START-LICENSE-KEY------
 Registration_Name=Eucalyptus Systems
@@ -452,15 +438,14 @@ SGN=MCwCFDDNusJoEVUc9F8j3jbCgNofpljwAhQVGwO5WPSaMVLfmtXLIlZxFMJ99w\=\=
 -------END-LICENSE-KEY-------
 " > ./tools/DITA-OT/plugins/com.oxygenxml.webhelp/licensekey.txt
 
- echo ">>> END ${FUNCNAME[0]}
+ echo "END ${FUNCNAME[0]}
  "
  }
 
 
 
 function oxygen-webhelp-build () {
-echo "
->>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 
 if [ -z "$1" ]
@@ -476,7 +461,7 @@ rm -r out
 
 export XEP_HOME=/usr/local/RenderX/XEP
 
-echo ">>>> Setting environment variables…"
+echo "Setting environment variables…"
 
 # this assumes you've already exported XEP_HOME (if you're using XEP)
 
@@ -486,17 +471,17 @@ export DITAC_HOME="`pwd`/tools/ditac/ditac-2_4_0"
 export DOC_HOME="`pwd`"
 export PRODUCT_DIR="./products"
 export ANT_HOME="$DITA_HOME/tools/ant"
-echo >>>> DITA_HOME IS $DITA_HOME
-echo >>>> DOC_HOME is $DOC_HOME
-echo >>>> PRODUCT_DIR is $PRODUCT_DIR
-echo >>>> ANT_HOME is $ANT_HOME
+echo DITA_HOME IS $DITA_HOME
+echo DOC_HOME is $DOC_HOME
+echo PRODUCT_DIR is $PRODUCT_DIR
+echo ANT_HOME is $ANT_HOME
 
 CUR_PWD="`pwd`"
 
 # Get the absolute path of DITAOT's home directory
 cd "$DITA_HOME"
 DITA_DIR="`pwd`"
-echo >>>> DITA_DIR is $DITA_DIR
+echo DITA_DIR is $DITA_DIR
 cd "$CUR_PWD"
 
 # Make sure ant binary is executable
@@ -630,15 +615,14 @@ DITAVAL_DIR=/usr/local/OxygenXMLDeveloper16/samples/dita
  
 cp ./tools/DITA-OT/plugins/com.oxygenxml.webhelp/oxygen-webhelp/resources/css/Metric* ./out/webhelp/oxygen-webhelp/resources/css/
 
- echo ">>> END ${FUNCNAME[0]}
+ echo "END ${FUNCNAME[0]}
  "
  }
 
 
 
 function build.on.push () {
-echo "
->>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 
 #Set the HipChat rooms to notify in case of a pass or fail of this build
@@ -654,7 +638,7 @@ hipChat PASS " #$BUILD_NUMBER started (<a href='$BUILD_URL'>Open</a>)"  $HIPCHAT
 
 #Check to make sure that the build.on.push ditamap exists. else quit.
 if [ ! -f build.on.push.ditamap ]; then
-    echo ">>>> build.on.push.ditamap not found. Nothing to build."
+    echo "build.on.push.ditamap not found. Nothing to build."
     exit 0;
 fi
 
@@ -667,7 +651,7 @@ REPO=`echo "$GIT_URL" | sed 's|.*/||g' | sed 's|\.git$||g'`
 get_the_tools_repo
 
 
-echo ">>>> Building HTML docs:"
+echo "Building HTML docs:"
  
  
  #Get some information about the push to use later, 
@@ -717,14 +701,13 @@ echo "$PUSHED_BY" | sed  's/^\(.\)/\U\1/' >  ./out/webhelp/pushedBY.txt
 
 sudo cp /var/lib/jenkins/HPE-Helion.png ./out/webhelp/
 
- echo ">>> END ${FUNCNAME[0]}
+ echo "END ${FUNCNAME[0]}
  "
  }
 
 
 function production_build () {
-echo "
->>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
  	#NOTE: Call assemble-repos before running
 
@@ -749,8 +732,7 @@ echo "
 	cp -r ./ServerArtifacts/404.html  out/webhelp/404.html
 	cp -r ./ServerArtifacts/htaccess.with.rewrite.rules  out/webhelp/.htaccess
 
- echo ">>> END ${FUNCNAME[0]}
- "
+ echo "END ${FUNCNAME[0]}"
  }
 
 

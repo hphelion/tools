@@ -269,7 +269,7 @@ echo ">>> Finish function \"build.on.push\""
  
 
 
-assemble_repos () {
+function assemble_repos () {
  
 
 #Set the variable to whatever was passed to this script.

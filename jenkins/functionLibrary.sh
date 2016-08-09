@@ -85,12 +85,12 @@ echo "
 	#Set branch and repo variables from the function's arguments
 	repo=$1
 	branch=$2
-	echo "clone $repo"
+	echo ">>>> clone $repo"
 	
 	#Check to make sure that the branch exists
  	if [[ $(git ls-remote /var/lib/jenkins/workspace/ADMIN--pull-all-repos/canonical/${repo} ${branch} ) ]]; 
 	then
-		echo "Branch $branch exists"
+		echo ">>>> Branch $branch exists"
 		
 		#If the branch exists, remove any old copy of the repo
 		rm -r $repo || true
@@ -105,7 +105,7 @@ echo "
 	
 	else
 		#If the branch does not exist, notify HipChat and exit.
-		echo "Branch $branch does not exist.  Stopping the build."
+		echo ">>>> Branch $branch does not exist.  Stopping the build."
 		hipChat FAIL "Branch <b>$branch</b> does not exist on in the $repo. Stopping the build. No published files were not changed." $HIPCHAT_ROOM
 		exit 1;
 	fi	
@@ -155,8 +155,8 @@ else
     MESSAGE="<b>$JOB_NAME</b> started by $BUILD_USER_FIRST_NAME $2 " 
 fi
 
-echo $COLOR
-echo $MESSAGE
+echo >>>>  $COLOR
+echo >>>>  $MESSAGE
  
 #Set HipChat authorization and room     
 auth="U9LoIThHLKGGL49vLtiUJWinLHXJepo9zJVXbmCc"
@@ -221,7 +221,7 @@ hipChat PASS " #$BUILD_NUMBER started (<a href='$BUILD_URL'>Open</a>)"  $HIPCHAT
 
 #Check to make sure that the build.on.push ditamap exists. else quit.
 if [ ! -f build.on.push.ditamap ]; then
-    echo "build.on.push.ditamap not found. Nothing to build."
+    echo ">>>> build.on.push.ditamap not found. Nothing to build."
     exit 0;
 fi
 
@@ -234,7 +234,7 @@ REPO=`echo "$GIT_URL" | sed 's|.*/||g' | sed 's|\.git$||g'`
 get_the_tools_repo
 
 
-echo "Building HTML docs:"
+echo ">>>> Building HTML docs:"
  
  
  #Get some information about the push to use later, 
@@ -296,7 +296,7 @@ echo "
 	DISCLAIMER=`cat disclaimer_snippet` || true
 	for i in `find ./out/webhelp -name "*.html"`
 	do
-		echo "inject disclaimer into $i"
+		echo ">>>> Inject disclaimer into $i"
 		sed -i "s|\([^>]\)</h1>|\1</h1> $DISCLAIMER|g" $i
 
 	done
@@ -461,10 +461,10 @@ echo "
 
 	for i in `find  -name "*.dita" -not -path "./publiccloud/api/*"`
 	do
-		echo ""
+		# echo ""
 		j=`echo $i | sed 's|\.dita$|\.html|'`
 		fullpath=`echo $j | sed 's|\.\/|./out/webhelp/|'`
-		echo $fullpath
+		# echo $fullpath
 		#DATE=`git log -1 --date=short --pretty=format:%ad $i`
 
 		if [ "$1" == "-file" ]
@@ -486,15 +486,15 @@ echo "
 		if [ -e $fullpath ]
 		then
 			sed -i "s|<\/h1>|</h1><p class=\"heliondate\">Last updated: $PRETTYDATE<a href=\"\" class="xref" style=\"float:right\" onclick=\"window.print()\">Print this page</a> </p>|" $fullpath    
-			echo starting from 	
-			pwd
-			echo before time change
+			# echo starting from 	
+			# pwd
+			# echo before time change
 			stat --format=%y   $fullpath 
 			touch -d "$PRETTYDATE"  $fullpath
-			echo after time change	
+			# echo after time change	
 			stat --format=%y   $fullpath 
 		else
-			echo Skipping $fullpath 
+			echo >>>> Skipping $fullpath 
 		fi
 	
 	done
@@ -513,7 +513,7 @@ echo "
 
 	for i in `find ./out/webhelp -name "*.html"`
 	do
-		echo "inject disclaimer into $i"
+		echo ">>>> inject disclaimer into $i"
 		sed -i "s|\([^>]\)</h1>|\1</h1> $DISCLAIMER|g" $i
 	done
 
@@ -582,7 +582,7 @@ rm -r out
 
 export XEP_HOME=/usr/local/RenderX/XEP
 
-echo "Setting environment variables…"
+echo ">>>> Setting environment variables…"
 
 # this assumes you've already exported XEP_HOME (if you're using XEP)
 
@@ -592,27 +592,27 @@ export DITAC_HOME="`pwd`/tools/ditac/ditac-2_4_0"
 export DOC_HOME="`pwd`"
 export PRODUCT_DIR="./products"
 export ANT_HOME="$DITA_HOME/tools/ant"
-echo DITA_HOME IS $DITA_HOME
-echo DOC_HOME is $DOC_HOME
-echo PRODUCT_DIR is $PRODUCT_DIR
-echo ANT_HOME is $ANT_HOME
+echo >>>> DITA_HOME IS $DITA_HOME
+echo >>>> DOC_HOME is $DOC_HOME
+echo >>>> PRODUCT_DIR is $PRODUCT_DIR
+echo >>>> ANT_HOME is $ANT_HOME
 
 CUR_PWD="`pwd`"
 
 # Get the absolute path of DITAOT's home directory
 cd "$DITA_HOME"
 DITA_DIR="`pwd`"
-echo DITA_DIR is $DITA_DIR
+echo >>>> DITA_DIR is $DITA_DIR
 cd "$CUR_PWD"
 
 # Make sure ant binary is executable
 if [ -f "$DITA_DIR"/tools/ant/bin/ant ] && [ ! -x "$DITA_DIR"/tools/ant/bin/ant ]; then
-echo "*** chmoding ant binary so it's executable ***"
+# echo "*** chmoding ant binary so it's executable ***"
 chmod +x "$DITA_DIR"/tools/ant/bin/ant
 fi
 
-echo "*** Setting ant environment variables ***"
-echo "Xmx4012m "
+#echo "*** Setting ant environment variables ***"
+#echo "Xmx4012m "
 free 
 export ANT_OPTS="-Xmx4012m $ANT_OPTS"
 export ANT_OPTS="$ANT_OPTS -Djavax.xml.transform.TransformerFactory=net.sf.saxon.TransformerFactoryImpl"
@@ -620,9 +620,9 @@ export ANT_OPTS="$ANT_OPTS -Djavax.xml.transform.TransformerFactory=net.sf.saxon
 #export DOC_VERSION_NUMBER=$(sed -n '/shortversionnumber">/ s/[^<]*<p><ph[^>]*>\([^<]*\).*/\1/p' ./shared/conrefs.dita)
 #echo "  DOC VERSION NUMBER: " $DOC_VERSION_NUMBER
 
-echo "*** Adding project-specific version of ant to path ***"
+#echo "*** Adding project-specific version of ant to path ***"
 export PATH="$DITA_DIR"/tools/ant/bin:"$PATH"
-echo " DITA ANT PATH is " $DITA_DIR "+/tools/ant/bin"
+#echo " DITA ANT PATH is " $DITA_DIR "+/tools/ant/bin"
 
  
 NEW_CLASSPATH="$DITA_DIR/lib/dost.jar"
@@ -655,7 +655,7 @@ fi
 #DITA_HOME="./"
 
  
-echo $DITA_HOME
+#echo $DITA_HOME
 
 # Oxygen Webhelp plugin
 # Copyright (c) 1998-2014 Syncro Soft SRL, Romania.  All rights reserved.
@@ -669,8 +669,8 @@ echo $DITA_HOME
 # The path of the DITA Open Toolkit install directory
 DITA_OT_INSTALL_DIR="./tools/DITA-OT/"
 
-echo DITA_OT_INSTALL_DIR
-echo $DITA_OT_INSTALL_DIR
+#echo DITA_OT_INSTALL_DIR
+#echo $DITA_OT_INSTALL_DIR
 
 
 
@@ -687,8 +687,8 @@ TRANSTYPE=webhelp
 # DITA_MAP_BASE_DIR=/home/test/oxygen-webhelp/OxygenXMLEditor/samples/dita/flowers
 DITA_MAP_BASE_DIR=`pwd`
 
-echo DITA_MAP_BASE_DIR
-echo $DITA_MAP_BASE_DIR
+#echo DITA_MAP_BASE_DIR
+#echo $DITA_MAP_BASE_DIR
 
 
 

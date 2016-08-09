@@ -14,7 +14,7 @@ TEST_LAN_IP="192.168.251.17" 		#Internal IP address for docs-staging.hpcloud.com
  
 
 
-get_the_tools_repo () {
+function get_the_tools_repo () {
 echo "
 >>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	
@@ -458,7 +458,7 @@ SGN=MCwCFDDNusJoEVUc9F8j3jbCgNofpljwAhQVGwO5WPSaMVLfmtXLIlZxFMJ99w\=\=
 
 
 
-oxygen-webhelp-build () {
+function oxygen-webhelp-build () {
 echo "
 >>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 

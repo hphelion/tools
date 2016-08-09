@@ -59,17 +59,17 @@ echo "
     #for each dita file, 
 	for t in $(find . -name "*.dita");
     do
-    	echo $repo : $t
+    	#echo $repo : $t
         stat --format=%y $t
 		
 		#get the date of the last commit of the file
     	git log -1 --date=iso --pretty=format:%ad $t | sed 's| +.*||'
-        echo""
+        #echo""
 		
 		#Change the modification date of the ditafile so that it is equal to the date of the last commit
     	touch -d "`git log -1 --date=iso --pretty=format:%ad $t | sed 's| +.*||'` " $t
         stat --format=%y $t
-        echo""
+        #echo""
 	done
 	
 	#Return to the original directory

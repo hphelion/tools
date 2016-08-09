@@ -155,8 +155,8 @@ else
     MESSAGE="<b>$JOB_NAME</b> started by $BUILD_USER_FIRST_NAME $2 " 
 fi
 
-echo >>>>  $COLOR
-echo >>>>  $MESSAGE
+echo ">>>>  $COLOR"
+echo ">>>>  $MESSAGE"
  
 #Set HipChat authorization and room     
 auth="U9LoIThHLKGGL49vLtiUJWinLHXJepo9zJVXbmCc"

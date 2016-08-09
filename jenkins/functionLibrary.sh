@@ -42,8 +42,7 @@ echo "
 	chmod 755 ./tools/jenkins/*.sh
 	
  echo ">>> END ${FUNCNAME[0]}
- "
-}
+ "}
  
 
 
@@ -75,10 +74,9 @@ echo "
 	#Return to the original directory
     cd -    
  echo ">>> END ${FUNCNAME[0]}
- "
-}
+ "}
  
- function clone_repo {
+function clone_repo {
 echo "
 >>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	
@@ -110,30 +108,27 @@ echo "
 		exit 1;
 	fi	
  echo ">>> END ${FUNCNAME[0]}
- "
-}
+ "}
 
  
 
- function extractBranch () {
+function extractBranch () {
 echo "
 >>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	#Extract the branch from the a string taken from $HUDSON_HOME/doc-build-resources/repos+branches.txt
 	echo "$1" | sed 's|\([^ ]*\).*$|\1|'
  echo ">>> END ${FUNCNAME[0]}
- "
-}
+ "}
 
 
- function extractRepo () {
+function extractRepo () {
 echo "
 >>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 	#Extract the repo from the a string taken from $HUDSON_HOME/doc-build-resources/repos+branches.txt
 	echo "$1" | sed 's|.*of the \([^ ]*\) repo)|\1|'
  echo ">>> END ${FUNCNAME[0]}
- "
-}
+ "}
 
 
 
@@ -198,8 +193,7 @@ curl \
 EOP
 done		 
  echo ">>> END ${FUNCNAME[0]}
- "
-}
+ "}
 
 
 
@@ -285,8 +279,7 @@ echo "$PUSHED_BY" | sed  's/^\(.\)/\U\1/' >  ./out/webhelp/pushedBY.txt
 sudo cp /var/lib/jenkins/HPE-Helion.png ./out/webhelp/
 
  echo ">>> END ${FUNCNAME[0]}
- "
-}
+ "}
 
 
 function insert_disclaimer () {
@@ -302,8 +295,7 @@ echo "
 	done
 
  echo ">>> END ${FUNCNAME[0]}
- "
-}
+ "}
 
 function assemble_repos () {
 echo "
@@ -418,20 +410,16 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 	cp -r ${repo}/* ./
     rm -r ${repo}
  echo ">>> END ${FUNCNAME[0]}
- "
-}
+ "}
 
 
 
 
 function production_build () {
-
-	#NOTE: Call assemble-repos before running
-	
 echo "
 >>>> Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
- 
+ 	#NOTE: Call assemble-repos before running
 
 	#remove old output files
 	rm -r ./out/ || true
@@ -455,8 +443,7 @@ echo "
 	cp -r ./ServerArtifacts/htaccess.with.rewrite.rules  out/webhelp/.htaccess
 
  echo ">>> END ${FUNCNAME[0]}
- "
-}
+ "}
 
 function inject_date () {
 echo "
@@ -503,8 +490,7 @@ echo "
 	done
 
 echo ">>> END ${FUNCNAME[0]}
- "
-}
+ "}
 
 
 function inject_disclaimer () {
@@ -521,9 +507,7 @@ echo "
 	done
 
  echo ">>> END ${FUNCNAME[0]}
- "
-
-}
+ "}
 
 
 function inject_redirects () {
@@ -539,8 +523,7 @@ echo "
 	done < inter-helpset-redirects.tmp 
 
  echo ">>> END ${FUNCNAME[0]}
- "
-}
+ "}
 
 
 
@@ -563,8 +546,7 @@ SGN=MCwCFDDNusJoEVUc9F8j3jbCgNofpljwAhQVGwO5WPSaMVLfmtXLIlZxFMJ99w\=\=
 " > ./tools/DITA-OT/plugins/com.oxygenxml.webhelp/licensekey.txt
 
  echo ">>> END ${FUNCNAME[0]}
- "
-}
+ "}
 
 
 
@@ -741,9 +723,7 @@ DITAVAL_DIR=/usr/local/OxygenXMLDeveloper16/samples/dita
 cp ./tools/DITA-OT/plugins/com.oxygenxml.webhelp/oxygen-webhelp/resources/css/Metric* ./out/webhelp/oxygen-webhelp/resources/css/
 
  echo ">>> END ${FUNCNAME[0]}
- "
-
-}
+ "}
 
 
 

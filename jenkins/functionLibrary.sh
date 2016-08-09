@@ -237,7 +237,7 @@ rm -r ./out/ || true /dev/null 2>&1
 
 
 #Build the build.on.push ditamap
-./tools/jenkins/oxygen-webhelp-build.sh build.on.push.ditamap
+oxygen-webhelp-build build.on.push.ditamap
 
 
 #Insert the  disclaimer snippet, if there is one.

@@ -15,7 +15,7 @@ TEST_LAN_IP="192.168.251.17" 		#Internal IP address for docs-staging.hpcloud.com
 
 
 get_the_tools_repo () {
-echo ">>>>
+echo "
 >>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	
 	#If no argument was passed to the function, use the master branch.  Otherwise use the argument as the branch
@@ -48,7 +48,7 @@ echo ">>>>
 
 
 function adjust_date_to_last_commit {
-echo ">>>>
+echo "
 >>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	
 	#Note that this only works on a complete repo.  A shallow clone does not have all the needed info.
@@ -79,7 +79,7 @@ echo ">>>>
 }
  
  function clone_repo {
-echo ">>>>
+echo "
 >>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	
 	#Set branch and repo variables from the function's arguments
@@ -116,7 +116,7 @@ echo ">>>>
  
 
  function extractBranch () {
-echo ">>>>
+echo "
 >>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	#Extract the branch from the a string taken from $HUDSON_HOME/doc-build-resources/repos+branches.txt
 	echo "$1" | sed 's|\([^ ]*\).*$|\1|'
@@ -126,7 +126,7 @@ echo ">>>>
 
 
  function extractRepo () {
-echo ">>>>
+echo "
 >>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 	#Extract the repo from the a string taken from $HUDSON_HOME/doc-build-resources/repos+branches.txt
@@ -138,7 +138,7 @@ echo ">>>>
 
 
 function hipChat () {
-echo ">>>>
+echo "
 >>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 #Usage: hipChat (PASS|FAIL) "MESSAGE" ROOM
@@ -204,7 +204,7 @@ done
 
 
 function build.on.push () {
-echo ">>>>
+echo "
 >>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 
@@ -290,7 +290,7 @@ sudo cp /var/lib/jenkins/HPE-Helion.png ./out/webhelp/
 
 
 function insert_disclaimer () {
-echo ">>>>
+echo "
 >>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 	DISCLAIMER=`cat disclaimer_snippet` || true
@@ -306,7 +306,7 @@ echo ">>>>
 }
 
 function assemble_repos () {
-echo ">>>>
+echo "
 >>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 
@@ -428,7 +428,7 @@ function production_build () {
 
 	#NOTE: Call assemble-repos before running
 	
-echo ">>>>
+echo "
 >>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
  
@@ -459,7 +459,7 @@ echo ">>>>
 }
 
 function inject_date () {
-echo ">>>>
+echo "
 >>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 	for i in `find  -name "*.dita" -not -path "./publiccloud/api/*"`
@@ -508,7 +508,7 @@ echo ">>> END ${FUNCNAME[0]}
 
 
 function inject_disclaimer () {
-echo ">>>>
+echo "
 >>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 	
@@ -527,7 +527,7 @@ echo ">>>>
 
 
 function inject_redirects () {
-echo ">>>>
+echo "
 >>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 
@@ -546,7 +546,7 @@ echo ">>>>
 
 
 function license () {
-echo ">>>>
+echo "
 >>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 echo "------START-LICENSE-KEY------
@@ -569,7 +569,7 @@ SGN=MCwCFDDNusJoEVUc9F8j3jbCgNofpljwAhQVGwO5WPSaMVLfmtXLIlZxFMJ99w\=\=
 
 
 oxygen-webhelp-build () {
-echo ">>>>
+echo "
 >>>> Startgin ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 

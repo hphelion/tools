@@ -397,9 +397,9 @@ function production_build () {
  
 	./tools/jenkins/license.sh
  
-	./tools/jenkins/oxygen-webhelp-build.sh docs.hpcloud.com.ditamap	
+	oxygen-webhelp-build docs.hpcloud.com.ditamap	
 	./tools/jenkins/inject_google_analytics.sh ./out/webhelp/
-	./tools/jenkins/inject_redirects.sh
+	inject_redirects
 	inject_date -file
 
 	cp -r ./commercial/GA1/RollYourOwn11/  out/webhelp/commercial/GA1/RollYourOwn11/

@@ -15,7 +15,7 @@ TEST_LAN_IP="192.168.251.17" 		#Internal IP address for docs-staging.hpcloud.com
 
 
 function get_the_tools_repo () {
-echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	
 	#If no argument was passed to the function, use the master branch.  Otherwise use the argument as the branch
 	if [[ -z "$1"   ]];
@@ -46,7 +46,7 @@ echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 
 function adjust_date_to_last_commit {
-echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	
 	#Note that this only works on a complete repo.  A shallow clone does not have all the needed info.
 	
@@ -75,7 +75,7 @@ echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
  }
  
 function clone_repo {
-echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	
 	#Set branch and repo variables from the function's arguments
 	repo=$1
@@ -111,7 +111,7 @@ echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
  
 
 function extractBranch () {
-echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	#Extract the branch from the a string taken from $HUDSON_HOME/doc-build-resources/repos+branches.txt
 	echo "$1" | sed 's|\([^ ]*\).*$|\1|'
  echo "END ${FUNCNAME[0]}"
@@ -119,7 +119,7 @@ echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 
 function extractRepo () {
-echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 	#Extract the repo from the a string taken from $HUDSON_HOME/doc-build-resources/repos+branches.txt
 	echo "$1" | sed 's|.*of the \([^ ]*\) repo)|\1|'
@@ -129,7 +129,7 @@ echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 
 function hipChat () {
-echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 #Usage: hipChat (PASS|FAIL) "MESSAGE" ROOM
 #Set the URL to the console output for this build
@@ -195,7 +195,7 @@ done
 
 
 function insert_disclaimer () {
-echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 	DISCLAIMER=`cat disclaimer_snippet` || true
 	for i in `find ./out/webhelp -name "*.html"`
@@ -209,7 +209,7 @@ echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
  }
 
 function assemble_repos () {
-echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 
 #Set the variable to whatever was passed to this script.
@@ -323,7 +323,7 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 
 
 function inject_date () {
-echo " Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 	for i in `find  -name "*.dita" -not -path "./publiccloud/api/*"`
 	do
@@ -357,8 +357,6 @@ echo " Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 		fi
 		
 		
-		
-		
 
 		if [ -e $fullpath ]
 		then
@@ -381,7 +379,7 @@ echo "END ${FUNCNAME[0]}"
 
 
 function inject_disclaimer () {
-echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 	
 	DISCLAIMER=`cat disclaimer_snippet` || true
@@ -397,7 +395,7 @@ echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 
 function inject_redirects () {
-echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 
 	grep -v "^#" ./tools/jenkins/inter-helpset-redirects.txt > inter-helpset-redirects.tmp 
@@ -414,7 +412,7 @@ echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 
 function license () {
-echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 echo "------START-LICENSE-KEY------
 Registration_Name=Eucalyptus Systems
@@ -435,7 +433,7 @@ SGN=MCwCFDDNusJoEVUc9F8j3jbCgNofpljwAhQVGwO5WPSaMVLfmtXLIlZxFMJ99w\=\=
 
 
 function oxygen-webhelp-build () {
-echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 
 if [ -z "$1" ]
@@ -611,7 +609,7 @@ cp ./tools/DITA-OT/plugins/com.oxygenxml.webhelp/oxygen-webhelp/resources/css/Me
 
 
 function build.on.push () {
-echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 
 #Set the HipChat rooms to notify in case of a pass or fail of this build
@@ -695,7 +693,7 @@ sudo cp /var/lib/jenkins/HPE-Helion.png ./out/webhelp/
 
 
 function production_build () {
-echo "Starting ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
  	#NOTE: Call assemble-repos before running
 

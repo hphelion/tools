@@ -904,3 +904,6 @@ video::-webkit-media-controls-enclosure {
 .svc {
 	height: 600px;
 }
+.normalPlease {
+	font-size: 11px;
+}

@@ -891,4 +891,8 @@ font-size: 18px;
 .tutorials ul {
 	list-style-type: circle;
 }
-
+.tutorials li {
+   
+    font-size: 4em;
+    margin: 0 0 0 2em;
+}

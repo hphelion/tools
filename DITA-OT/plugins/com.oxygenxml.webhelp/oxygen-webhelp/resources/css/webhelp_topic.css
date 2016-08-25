@@ -883,16 +883,13 @@ video::-webkit-media-controls-enclosure {
 }
 .tutorials {
 width: 70%;
-margin-left: 100px !important;
+margin-left: 10px !important;
 }
 .tutorials p {
 font-size: 18px;
+  line-height: 200%;
 }
 .tutorials ul {
 	list-style-type: circle;
 }
-.tutorials li {
-   list-style: decimal-leading-zero;
-    font-size: 4em !important;
-    margin: 0 0 0 2em !important;
-}
+

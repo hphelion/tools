@@ -887,7 +887,7 @@ margin-left: 10px !important;
 }
 .tutorials p {
 font-size: 18px;
-  line-height: 200%;
+  line-height: 260%;
 }
 .tutorials ul {
 	list-style-type: circle;
@@ -895,7 +895,7 @@ font-size: 18px;
 
 .tutorials li {
   list-style: decimal-leading-zero;
-  font-size: 20px !important;
-    line-height: 200%;
+  font-size: 1em !important;
+    line-height: 260%;
   margin: 0 0 0 2em !important;
  }

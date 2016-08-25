@@ -892,7 +892,7 @@ font-size: 18px;
 	list-style-type: circle;
 }
 .tutorials li {
-   
+   list-style: decimal-leading-zero;
     font-size: 4em !important;
     margin: 0 0 0 2em !important;
 }

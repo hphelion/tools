@@ -881,3 +881,13 @@ video::-webkit-media-controls-enclosure {
 .rewriteThis {
 	display: none;
 }
+.tutorials {
+width: 70%;	
+}
+.tutorials p {
+font-size: 14px;
+}
+.tutorials ul {
+	list-style-type: circle;
+}
+

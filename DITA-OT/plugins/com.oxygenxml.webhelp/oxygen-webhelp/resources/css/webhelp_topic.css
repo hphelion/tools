@@ -882,7 +882,7 @@ video::-webkit-media-controls-enclosure {
 	display: none;
 }
 .tutorials {
-width: 75vw;
+width: 65vw;
 margin-left: 70px !important;
 }
 .tutorials p {
@@ -902,7 +902,7 @@ font-size: 18px;
 font-size: 12px !important;
   line-height: 110% !important;
   background-color: #e0f3f1 !important;
-  width: 100vw !important;
+  max-width: 100vw !important;
 }
 .tutorials h2 {
 	border-bottom: 4px !important;

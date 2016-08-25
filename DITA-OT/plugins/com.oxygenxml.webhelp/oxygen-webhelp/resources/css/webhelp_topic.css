@@ -893,3 +893,9 @@ font-size: 18px;
 	list-style-type: circle;
 }
 
+.tutorials li {
+  list-style: decimal-leading-zero;
+  font-size: 20px !important;
+    line-height: 200%;
+  margin: 0 0 0 2em !important;
+ }

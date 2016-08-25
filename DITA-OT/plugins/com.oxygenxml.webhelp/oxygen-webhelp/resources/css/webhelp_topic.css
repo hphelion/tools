@@ -899,6 +899,6 @@ font-size: 18px;
     line-height: 260%;
   }
 .tutorials pre {
-font-size: 12px;
-  line-height: 100%;
+font-size: 12px !important;
+  line-height: 100% !important;
 }

@@ -900,5 +900,6 @@ font-size: 18px;
   }
 .tutorials pre {
 font-size: 12px !important;
-  line-height: 100% !important;
+  line-height: 80% !important;
+  background-color: #e0f3f1;
 }

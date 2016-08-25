@@ -904,6 +904,6 @@ font-size: 12px !important;
   background-color: #e0f3f1 !important;
 }
 .tutorials h2 {
-	border-bottom: 0px !important;
-	font-size: 30px;
+	border-bottom: 4px !important;
+	font-size: 30px !important;
 }

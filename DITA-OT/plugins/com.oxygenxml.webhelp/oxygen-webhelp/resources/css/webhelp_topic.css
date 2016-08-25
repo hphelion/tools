@@ -882,8 +882,8 @@ video::-webkit-media-controls-enclosure {
 	display: none;
 }
 .tutorials {
-width: 70%;
-margin-left: 10px !important;
+width: 85%;
+margin-left: 30px !important;
 }
 .tutorials p {
 font-size: 18px;

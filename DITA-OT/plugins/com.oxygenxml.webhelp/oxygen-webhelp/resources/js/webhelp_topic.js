@@ -98,6 +98,12 @@ $(document).ready(function () {
 
             vidDiv[0].innerHTML='<video width="1040" height="585" controls><source src="https://docs.hpcloud.com/3.x/media/video/KeystoneTokenValidationExample.mp4" type="video/mp4">Your browser does not support the video tag.</video>';
         }
+        if (document.getElementsByClassName("DashboardWalkThrough").length) {
+           horizonVid=document.getElementsByClassName("DashboardWalkThrough");
+horizonVid[0].innerHTML='<video width="1280" height="720" controls><source src="https://docs.hpcloud.com/3.x/media/video/Horizon/HorizonBackupOverview.mp4" type="video/mp4">Your browser does not support the video tag.</video>';
+        
+       }
+        
     	if (document.getElementsByClassName('midScaleAllNetworks').length) {
     	   $.getScript("https://docs.hpcloud.com/oxygen-webhelp/resources/js/networkimages.js");
     	}

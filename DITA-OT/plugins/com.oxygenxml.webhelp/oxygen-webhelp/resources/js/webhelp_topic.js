@@ -100,7 +100,7 @@ $(document).ready(function () {
         }
         if (document.getElementsByClassName("DashboardWalkThrough").length) {
            horizonVid=document.getElementsByClassName("DashboardWalkThrough");
-horizonVid[0].innerHTML='<video width="1280" height="720" controls><source src="../media/video/Horizon/HorizonBackupOverview.mp4" type="video/mp4">Your browser does not support the video tag.</video>';
+horizonVid[0].innerHTML='<video width="1280" height="720" controls><source src="../../media/video/Horizon/HorizonBackupOverview.mp4" type="video/mp4">Your browser does not support the video tag.</video>';
         
        }
         

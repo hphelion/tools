@@ -882,7 +882,7 @@ video::-webkit-media-controls-enclosure {
 	display: none;
 }
 
-/* the following are example styles to show changes possible for future tutorial style */
+/* the following are example styles to show changes possible for future tutorial style based on class added to body tag */
 .tutorials {
 width: 55vw;
 margin-left: 70px !important;

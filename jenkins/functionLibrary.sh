@@ -737,3 +737,27 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
  }
 
 
+ function pull_repo () {
+	repo=$1
+ 
+	if [[ ! -d "$repo" ]]; then
+		echo "$repo does not exist.  Cloning..."
+ 		git clone git@github.com:hphelion/$repo.git
+	else
+		echo "$repo exists."
+	fi
+	 
+	cd $repo
+
+	git fetch --all
+
+	for branch in `git branch -r | sed 's|.*/||'`
+	do
+		git checkout $branch
+		#git pull  
+		git reset --hard origin/$branch
+	done
+    
+	cd -
+	
+ }

@@ -881,6 +881,8 @@ video::-webkit-media-controls-enclosure {
 .rewriteThis {
 	display: none;
 }
+
+/* the following are example styles to show changes possible for future tutorial style */
 .tutorials {
 width: 55vw;
 margin-left: 70px !important;

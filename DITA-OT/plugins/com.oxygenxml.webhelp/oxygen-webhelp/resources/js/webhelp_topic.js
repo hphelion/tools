@@ -97,7 +97,7 @@ $(document).ready(function () {
     			if (document.getElementsByClassName("highlightThis").length) {
     		           var wordsToHighlight= document.getElementsByClassName("highlightThis");
     	                   for (var w=0; w<wordsToHighlight.length; w++) {
-    		   	      wordsToHighlight[w].setAttribute("backgroundColor", "yellow");
+    		   	      wordsToHighlight[w].setAttribute("style", "background-color: yellow;");
     	                   }
     		        }
     			

@@ -149,7 +149,8 @@ echo "$COLOR"
 echo "$MESSAGE"
  
 #Set HipChat authorization and room     
-auth="U9LoIThHLKGGL49vLtiUJWinLHXJepo9zJVXbmCc"
+#auth="U9LoIThHLKGGL49vLtiUJWinLHXJepo9zJVXbmCc"
+auth="Rvwgu6is7Hc88okkE75Uy4pJWa5oUyxrKqwXGZZI" #Doc Jenkins
 echo $3
 for i in `echo $3 | sed 's|,|\n|g'`
 do

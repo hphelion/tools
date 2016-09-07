@@ -230,7 +230,6 @@ echo "#################################################################
 carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
  public_cloud_docs_BRANCH = $public_cloud_docs_BRANCH
           hcf_docs_BRANCH = $hcf_docs_BRANCH
-          hrc_docs_BRANCH = $hrc_docs_BRANCH
 
 
 #################################################################"
@@ -297,18 +296,6 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 	rm -r ${repo}
 
 
-	repo="hrc.docs"
-	branch="$hrc_docs_BRANCH"
-	clone_repo $repo $branch
-    adjust_date_to_last_commit
-	
-	#cp -rp ${repo}/media/${repo} ./media/${repo}
-    cp -rp ${repo}/*.ditamap ./
-	cp -rp ${repo}/hrc/ ./
-    
-	rm -r ${repo}
-	
-	
 	repo="hos.docs"
 	branch="$hos_docs_LEGACYBRANCH"
 	clone_repo $repo $branch

@@ -93,6 +93,15 @@ $(document).ready(function () {
 /*added 12-2-15 NM add event listeners to all sections of class headerH */
   $(document).ready(function()
     { 
+    		if (document.getElementsByClassName("highlightThis").length)  {
+    			if (window.location.href.indexOf("docs-staging") > -1) {
+    		           var wordsToHighlight= document.getElementsByClassName("highlightThis");
+    	                   for (var w=0; w<wordsToHighlight.length; w++) {
+    		   	      wordsToHighlight[w].setAttribute("style", "background-color: #ffff00;");
+    	                   }
+    		        }
+    			
+    		}
     	if (document.getElementsByClassName("keystoneVideo").length) {
             vidDiv=document.getElementsByClassName("keystoneVideo");
 

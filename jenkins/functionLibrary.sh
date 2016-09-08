@@ -10,6 +10,8 @@ TEST_LAN_IP="192.168.251.17" 		#Internal IP address for docs-staging.hpcloud.com
 #TEST_DOC_SITE_NAME="docs-staging.hpcloud.com:9099"
 #TEST_DOC_SITE_NAME="docs-staging.hpcloud.com:9099"
 
+HUDSON_HOME="/var/lib/jenkins"
+
 
  
 

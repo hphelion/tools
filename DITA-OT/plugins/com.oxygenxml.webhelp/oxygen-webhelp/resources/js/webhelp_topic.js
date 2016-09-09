@@ -105,7 +105,7 @@ $(document).ready(function () {
     	if (document.getElementsByClassName("keystoneVideo").length) {
             vidDiv=document.getElementsByClassName("keystoneVideo");
 
-            vidDiv[0].innerHTML='<video width="1040" height="585" controls><source src="https://docs.hpcloud.com/3.x/media/video/KeystoneTokenValidationExample.mp4" type="video/mp4">Your browser does not support the video tag.</video>';
+            vidDiv[0].innerHTML='<video width="1280" height="720" controls><source src="https://docs.hpcloud.com/3.x/media/video/KeystoneTokenValidationExample.mp4" type="video/mp4">Your browser does not support the video tag.</video>';
         }
         if (document.getElementsByClassName("DashboardWalkThrough").length) {
            horizonVid=document.getElementsByClassName("DashboardWalkThrough");

@@ -31,7 +31,7 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	#The tools repo should not be there already, but try to remove it--just in case
     rm -r tools || true
 	
-	#Do a single-branch, shallow clone of the tools repo from /var/lib/jenkins/workspace/ADMIN--pull-all-repos/canonical/tools
+	#Do a single-branch, shallow clone of the tools repo from ${HUDSON_HOME}/canonical/
 	#If anything goes wrong, stop the build.
 	if !  git clone --local -b $branch --single-branch --depth 1 ${HUDSON_HOME}/canonical/tools
 	then
@@ -85,17 +85,17 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	echo "clone $repo"
 	
 	#Check to make sure that the branch exists
- 	if [[ $(git ls-remote /var/lib/jenkins/workspace/ADMIN--pull-all-repos/canonical/${repo} ${branch} ) ]]; 
+ 	if [[ $(git ls-remote ${HUDSON_HOME}/canonical/${repo} ${branch} ) ]]; 
 	then
 		echo "Branch $branch exists"
 		
 		#If the branch exists, remove any old copy of the repo
 		rm -r $repo || true
 		
-			#Clone the repo from /var/lib/jenkins/workspace/ADMIN--pull-all-repos/canonical/, notify hipchat if the pull fails
-			if ! git clone --local --branch ${branch} /var/lib/jenkins/workspace/ADMIN--pull-all-repos/canonical/$repo ${repo}
+			#Clone the repo from ${HUDSON_HOME}/canonical/, notify hipchat if the pull fails
+			if ! git clone --local --branch ${branch} ${HUDSON_HOME}/canonical/$repo ${repo}
 			then
-				echo >&2 Cloning /var/lib/jenkins/workspace/ADMIN--pull-all-repos/canonical/$repo failed.  Stopping the build.
+				echo >&2 ${HUDSON_HOME}/canonical/$repo failed.  Stopping the build.
 				hipChat FAIL "Cloning the <b>$repo repo failed.</b> Stopping the build.  No published files were not changed." $HIPCHAT_ROOM
 				exit 1;
 			fi

@@ -237,10 +237,7 @@ available in the base directory of this Oxygen Webhelp plugin.
               href="oxygen-webhelp/resources/css/toc.css">
               <xsl:comment/>
             </link>
-	   <link rel="stylesheet" type="text/css"
-              href="oxygen-webhelp/resources/css/hpcloud.css">
-              <xsl:comment/>
-            </link>		
+
             
 			
             <link rel="stylesheet" type="text/css" 
@@ -252,6 +249,14 @@ available in the base directory of this Oxygen Webhelp plugin.
                 <xsl:comment/>
             </link>
             <!-- custom CSS -->
+          
+          
+          <link rel="stylesheet" type="text/css"
+            href="oxygen-webhelp/resources/css/hpcloud.css">
+            <xsl:comment/>
+          </link>		          
+          
+          
             <xsl:if test="string-length($CSS)>0">
                 <xsl:variable name="urltest"> <!-- test for URL -->
                     <xsl:call-template name="url-string">

@@ -39,7 +39,7 @@ available in the base directory of this Oxygen Webhelp plugin.
     
       <xsl:apply-templates select="*[contains(@class,' topic/linklist ')]"/>
      
-     <xsl:text>&#160; !!!</xsl:text>
+     <xsl:text> </xsl:text>
    </div>
   </xsl:template>
 

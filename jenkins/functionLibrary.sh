@@ -561,10 +561,12 @@ DITA_MAP_BASE_DIR=`pwd`
 
 
 # The name of the DITAVAL input filter file 
-DITAVAL_FILE=my_ditaval.ditaval
+#DITAVAL_FILE=my_ditaval.ditaval
+DITAVAL_FILE=CG.ditaval
 
 # The path of the directory of the DITAVAL input filter file
 DITAVAL_DIR=/usr/local/OxygenXMLDeveloper16/samples/dita
+DITAVAL_DIR=$DITA_MAP_BASE_DIR
 
 
 "java"\

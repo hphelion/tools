@@ -431,11 +431,13 @@ span.wintitle {
 
 
 
-
+/*m GMCG  What on earth does this do?
 #productTitle { 
   height: 90px !important;
   background-color: #3f3f3f !important;
 }
+*/
+
 
 pre {
     background-color: #E1EFF5;
@@ -576,11 +578,14 @@ tr:first-child {
    background-color: rgb(208, 126, 160) !important;
 }
 */
+
+/* GMCG Why??? 
 .tool tbody:first-child tr:first-child td {
  background-color: rgb(000, 000, 000) !important;
- /*now reset the frames first child tr*/
  margin-bottom:.5em;
 }
+*/
+
 
 /*.row.entry. {
   background-color: rgb(28, 126, 160) !important;
@@ -625,10 +630,15 @@ tr:first-child {
 }
 /*get old style for above*/
 
+
+/* GMCG Why? - this kills chunking - was hidden by css errors, I think !!!
 .related-links {
   visibility: hidden !important;
-  /*/remeber to ask*/
+
 }
+*/
+
+
 /*//////////////////////////////////////////////*/
 
 #topic_ckw_kbc_ws__inlineA{

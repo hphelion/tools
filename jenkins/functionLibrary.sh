@@ -82,7 +82,7 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	#Set branch and repo variables from the function's arguments
 	repo=$1
 	branch=$2
-	echo "clone $repo"
+	echo "clone $branch branch of the $repo repo:"
 	
 	#Check to make sure that the branch exists
  	if [[ $(git ls-remote ${HUDSON_HOME}/canonical/${repo} ${branch} ) ]]; 

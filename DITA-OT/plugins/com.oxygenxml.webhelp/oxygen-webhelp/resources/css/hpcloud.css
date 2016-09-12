@@ -658,7 +658,7 @@ background-color: #cccccc !important;
 }
 
 pre.codeblock {
-    /* background-color: #E1EFF5; */
+    background-color: #EEE;   /* GMCG make the same as webhelp_topic.css   this may be a mistake!*/
     font-size:10pt;
     font-family:"consolas", monospace !important;
 }

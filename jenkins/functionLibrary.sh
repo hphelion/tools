@@ -113,19 +113,15 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
  
 
 function extractBranch () {
-echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	#Extract the branch from the a string taken from $HUDSON_HOME/doc-build-resources/repos+branches.txt
 	echo "$1" | sed 's|\([^ ]*\).*$|\1|'
- echo "END ${FUNCNAME[0]}"
  }
 
 
 function extractRepo () {
-echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
 	#Extract the repo from the a string taken from $HUDSON_HOME/doc-build-resources/repos+branches.txt
 	echo "$1" | sed 's|.*of the \([^ ]*\) repo)|\1|'
- echo "END ${FUNCNAME[0]}"
  }
 
 

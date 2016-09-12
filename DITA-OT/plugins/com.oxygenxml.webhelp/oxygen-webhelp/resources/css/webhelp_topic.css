@@ -193,10 +193,11 @@ div.footer span.xmlauthor{
 
 /*----------------*/
 /*The copyright.*/
+/* GMCG This looks wrong so removing ! 
 div, td{
     font-size:10pt;
 }
-
+*/
 div.copyright{
     font-size:8pt;
     padding-top:1em;

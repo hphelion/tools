@@ -774,6 +774,9 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	 BRANCH=$2
 	 DITAVALFILE=$3
 	 
+	 echo "REPO=$REPO"
+	 echo "BRANCH=$BRANCH"
+	 echo "DITAVALFILE=$DITAVALFILE"
 	 
 	 if [[ ! -d "$DITAVALFILE" ]]; then
 		DITAVALFILE=""

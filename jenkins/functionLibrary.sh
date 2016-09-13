@@ -778,10 +778,11 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	 echo "BRANCH=$BRANCH"
 	 echo "DITAVALFILE=$DITAVALFILE"
 	 
-	 if [[ ! -d "$DITAVALFILE" ]]; then
-		DITAVALFILE=""
-	else
+	 if [[ -n "$DITAVALFILE" ]]; then
+		
 		DITAVALFILE="-${DITAVALFILE}"
+	else
+		DITAVALFILE=""
 	fi
 echo "DITAVALFILE=$DITAVALFILE"
 	#Create a folder on the server for this build

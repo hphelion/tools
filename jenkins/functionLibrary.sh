@@ -783,13 +783,13 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	else
 		DITAVALFILE="-$DITAVALFILE"
 	fi
-
+echo "DITAVALFILE=$DITAVALFILE"
 	#Create a folder on the server for this build
 	sudo mkdir /var/www/html/${REPO}-${BRANCH}${DITAVALFILE}/
 
 
 	#Copy the helpset to the server
-    "5 XXX copy to /var/www/html/${REPO}-${BRANCH}/" 
+    echo "5 XXX copy to /var/www/html/${REPO}-${BRANCH}${DITAVALFILE}/" 
 	sudo rsync -r --partial --delete --ignore-times   ./out/webhelp/  /var/www/html/${REPO}-${BRANCH}${DITAVALFILE}/
  
  

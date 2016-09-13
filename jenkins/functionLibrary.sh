@@ -784,7 +784,8 @@ if [ -z "$DITAVALFILE" ]; then
 	echo "DITAVALFILE not found"
 	
 else 
-	DITAVALFILE="-${DITAVALFILE}" 
+	temp="$DITAVALFILE"
+	DITAVALFILE="-${temp}" 
 	echo "changed $DITAVALFILE to not found"
 
 fi	 

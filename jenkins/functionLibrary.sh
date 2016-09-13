@@ -778,12 +778,27 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	 echo "BRANCH=$BRANCH"
 	 echo "DITAVALFILE=$DITAVALFILE"
 	 
-	 if [[ -n "$DITAVALFILE" ]]; then
-		DITAVALFILE=""
-		
-	else
-		DITAVALFILE="-${DITAVALFILE}"
-	fi
+	 
+if [ -z "$DITAVALFILE" ]; then 
+	DITAVALFILE="" 
+	echo "DITAVALFILE not found"
+	
+else 
+	DITAVALFILE="-${DITAVALFILE}" 
+	echo "changed $DITAVALFILE to not found"
+
+fi	 
+	 
+	 
+	 
+#	 if [[ -n "$DITAVALFILE" ]]; then
+#		DITAVALFILE=""
+#		
+#	else
+#		DITAVALFILE="-${DITAVALFILE}"
+#	fi
+
+	
 echo "DITAVALFILE=$DITAVALFILE"
 	#Create a folder on the server for this build
 	sudo mkdir /var/www/html/${REPO}-${BRANCH}${DITAVALFILE}/

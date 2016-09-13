@@ -769,7 +769,7 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
  
  function copy_to_staging () {
- 	 
+ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)" 
 	 REPO=$1
 	 BRANCH=$2
 	 DITAVALFILE=$3
@@ -799,5 +799,5 @@ BUILD_TO_CHECK=/var/www/html/${REPO}-${BRANCH}${DITAVALFILE}/
 " > /var/lib/jenkins/workspace/BuildVersion.properties
 
  
- 
+  echo "END ${FUNCNAME[0]}"
  }

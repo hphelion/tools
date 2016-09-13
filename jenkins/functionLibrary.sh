@@ -766,3 +766,38 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	cd -
 	
  }
+
+ 
+ function copy_to_staging () {
+ 	 
+	 REPO=$1
+	 BRANCH=$2
+	 DITAVALFILE=$3
+	 
+	 
+	 if [[ ! -d "$DITAVALFILE" ]]; then
+		DITAVALFILE=""
+	else
+		DITAVALFILE="-$DITAVALFILE"
+	fi
+
+	#Create a folder on the server for this build
+	sudo mkdir /var/www/html/${REPO}-${BRANCH}${DITAVALFILE}/
+
+
+	#Copy the helpset to the server
+    "5 XXX copy to /var/www/html/${REPO}-${BRANCH}/" 
+	sudo rsync -r --partial --delete --ignore-times   ./out/webhelp/  /var/www/html/${REPO}-${BRANCH}${DITAVALFILE}/
+ 
+ 
+	#Notify HipChat that the build completed (if the build fails, the job configuration notifies of failure)
+	hipChat PASS "Build $BUILD_NUMBER on <b>$GIT_BRANCH</b>:  $STATUS (View the <a href='${BUILD_URL}console'>build log</a> or the <a href='http://173.205.188.46/hos.docs-${GIT_BRANCH}'>current build</a> of this branch.)"  $HIPCHAT_PASS
+
+
+echo "# Saving some version properties
+BUILD_TO_CHECK=/var/www/html/${REPO}-${BRANCH}${DITAVALFILE}/
+" > /var/lib/jenkins/workspace/BuildVersion.properties
+
+ 
+ 
+ }

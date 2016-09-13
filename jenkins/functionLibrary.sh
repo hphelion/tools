@@ -433,8 +433,10 @@ SGN=MCwCFDDNusJoEVUc9F8j3jbCgNofpljwAhQVGwO5WPSaMVLfmtXLIlZxFMJ99w\=\=
 
 
 
-function oxygen-webhelp-build () {
+ function oxygen-webhelp-build () {
 echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+
+echo "XXX $1 XXX $2" 
 
 
 if [ -z "$1" ]
@@ -444,6 +446,17 @@ if [ -z "$1" ]
 	else
 		DITAMAP_FILE="$1"
 fi
+
+
+
+if [ -n "$2" ]
+	then
+		# The name and path of any DITAVAL file
+		DITAVAL_PATH_FILE="$2"
+fi
+
+
+echo "1 XXX DITAVAL_FILE = $DITAVAL_PATH_FILE"
 
 rm -r temp
 rm -r out
@@ -562,11 +575,11 @@ DITA_MAP_BASE_DIR=`pwd`
 
 # The name of the DITAVAL input filter file 
 #DITAVAL_FILE=my_ditaval.ditaval
-DITAVAL_FILE=CG.ditaval
+#DITAVAL_FILE=CG.ditaval
 
 # The path of the directory of the DITAVAL input filter file
 #DITAVAL_DIR=/usr/local/OxygenXMLDeveloper16/samples/dita
-DITAVAL_DIR=$DITA_MAP_BASE_DIR
+#DITAVAL_DIR=$DITA_MAP_BASE_DIR
 
 
 "java"\
@@ -596,8 +609,8 @@ DITAVAL_DIR=$DITA_MAP_BASE_DIR
  "-Doutput.dir=$DITA_MAP_BASE_DIR/out/$TRANSTYPE"\
  "-Ddita.temp.dir=$DITA_MAP_BASE_DIR/temp/$TRANSTYPE"\
  "-Dargs.hide.parent.link=no"\
- "-Dargs.filter=$DITAVAL_DIR/$DITAVAL_FILE"\
- "-Ddita.input.valfile=$DITAVAL_DIR/$DITAVAL_FILE"\
+ "-Dargs.filter=$DITAVAL_PATH_FILE"\
+ "-Ddita.input.valfile=$DITAVAL_PATH_FILE"\
  "-Ddita.dir=$DITA_OT_INSTALL_DIR"\
  "-Dargs.xhtml.classattr=yes"\
  "-Dargs.input=$DITA_MAP_BASE_DIR/$DITAMAP_FILE"\
@@ -610,9 +623,12 @@ cp ./tools/DITA-OT/plugins/com.oxygenxml.webhelp/oxygen-webhelp/resources/css/Me
  }
 
 
-
 function build.on.push () {
 echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
+
+DITAVAL_PATH_FILE=$1
+
+echo "2 XXX DITAVAL = $DITAVAL_PATH_FILE"
 
 
 #Set the HipChat rooms to notify in case of a pass or fail of this build
@@ -668,7 +684,9 @@ license
 
 
 #Build the build.on.push ditamap
-oxygen-webhelp-build build.on.push.ditamap
+
+echo "XXX passing DITAVAL oxygen-webhelp-build build.on.push.ditamap $DITAVAL_PATH_FILE " 
+oxygen-webhelp-build build.on.push.ditamap $DITAVAL_PATH_FILE
 
 
 #Insert the  disclaimer snippet, if there is one.
@@ -692,8 +710,7 @@ echo "$PUSHED_BY" | sed  's/^\(.\)/\U\1/' >  ./out/webhelp/pushedBY.txt
 sudo cp /var/lib/jenkins/HPE-Helion.png ./out/webhelp/
 
  echo "END ${FUNCNAME[0]} "
- }
-
+ } 
 
 function production_build () {
 echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"

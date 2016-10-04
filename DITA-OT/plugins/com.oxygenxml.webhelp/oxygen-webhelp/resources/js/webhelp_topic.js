@@ -8,7 +8,7 @@ available in the base directory of this Oxygen Webhelp plugin.
 */
 
 function feedback(){
-if (window.location.href.indexOf("/helion/")  > -1  || window.location.href.indexOf("stackato") > -1 || window.location.href.indexOf("devplatform/2.0/") > -1 || window.location.href.indexOf("CarrierGrade2.0") > -1 ) {
+if (window.location.href.indexOf("/helion/")  > -1  || window.location.href.indexOf("stackato") > -1 ) {
 var topic=document.getElementsByTagName("title")[0].innerHTML ;
 var tmp=topic.replace(/<[^>]*>/, "");
 var topic=tmp.replace(/<\/[^>]*>/, "");

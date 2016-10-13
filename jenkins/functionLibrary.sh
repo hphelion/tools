@@ -1,7 +1,7 @@
 
 
 #Set some global variables
-JENKINS_NAME="docs-staging.hpcloud.com"
+JENKINS_NAME="15.184.4.11"
 DOC_SITE_NAME="docs.hpcloud.com"
 
 PRIMARY_WAN_IP="173.205.188.47"		#External IP address for docs.hpcloud.com

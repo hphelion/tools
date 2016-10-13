@@ -3,10 +3,16 @@
 #Set some global variables
 JENKINS_NAME="docs-staging.hpcloud.com"
 DOC_SITE_NAME="docs.hpcloud.com"
+
 PRIMARY_WAN_IP="173.205.188.47"		#External IP address for docs.hpcloud.com
-PRIMARY_LAN_IP="192.168.251.121"	#Internal IP address for docs.hpcloud.com
-TEST_WAN_IP="173.205.188.46" 		#External IP address for docs-staging.hpcloud.com
-TEST_LAN_IP="192.168.251.17" 		#Internal IP address for docs-staging.hpcloud.com
+
+#PRIMARY_LAN_IP="192.168.251.121"	#Internal IP address for docs.hpcloud.com
+PRIMARY_LAN_IP="173.205.188.47"	 #Internal IP address for docs.hpcloud.com
+
+TEST_WAN_IP="15.184.4.11" 		#External IP address for docs-staging.hpcloud.com
+
+TEST_LAN_IP="15.184.4.11" 		#Internal IP address for docs-staging.hpcloud.com
+
 #TEST_DOC_SITE_NAME="docs-staging.hpcloud.com:9099"
 #TEST_DOC_SITE_NAME="docs-staging.hpcloud.com:9099"
 
@@ -436,14 +442,15 @@ SGN=MCwCFDDNusJoEVUc9F8j3jbCgNofpljwAhQVGwO5WPSaMVLfmtXLIlZxFMJ99w\=\=
  function oxygen-webhelp-build () {
 echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
-echo "XXX $1 XXX $2" 
 
+#Check to see if a ditamap was passed to the function as argument 1
 
 if [ -z "$1" ]
 	then
-		# The name of the input DITA map file
+		# If no map was passed to the function, set the ditamap variable to build to docs.hpcloud.com.ditamap
 		DITAMAP_FILE=docs.hpcloud.com.ditamap
 	else
+		# otherwise set the ditamap variable to the 1st argument passed to the function
 		DITAMAP_FILE="$1"
 fi
 
@@ -451,15 +458,14 @@ fi
 
 if [ -n "$2" ]
 	then
-		# The name and path of any DITAVAL file
+		# If a second argument was passed to the function, set the ditaval path value variable.
 		DITAVAL_PATH_FILE="$2"
 fi
 
 
-echo "1 XXX DITAVAL_FILE = $DITAVAL_PATH_FILE"
+ 
 
-rm -r temp
-rm -r out
+rm -r temprm -r out
 
 export XEP_HOME=/usr/local/RenderX/XEP
 
@@ -492,18 +498,16 @@ if [ -f "$DITA_DIR"/tools/ant/bin/ant ] && [ ! -x "$DITA_DIR"/tools/ant/bin/ant 
 chmod +x "$DITA_DIR"/tools/ant/bin/ant
 fi
 
-#echo "*** Setting ant environment variables ***"
-#echo "Xmx4012m "
+# Setting ant environment variables 
+ 
 free 
 export ANT_OPTS="-Xmx4012m $ANT_OPTS"
 export ANT_OPTS="$ANT_OPTS -Djavax.xml.transform.TransformerFactory=net.sf.saxon.TransformerFactoryImpl"
-#export ANT_HOME="$DITA_DIR"/tools/ant
-#export DOC_VERSION_NUMBER=$(sed -n '/shortversionnumber">/ s/[^<]*<p><ph[^>]*>\([^<]*\).*/\1/p' ./shared/conrefs.dita)
 #echo "  DOC VERSION NUMBER: " $DOC_VERSION_NUMBER
 
-#echo "*** Adding project-specific version of ant to path ***"
+#Adding project-specific version of ant to path
 export PATH="$DITA_DIR"/tools/ant/bin:"$PATH"
-#echo " DITA ANT PATH is " $DITA_DIR "+/tools/ant/bin"
+
 
  
 NEW_CLASSPATH="$DITA_DIR/lib/dost.jar"
@@ -581,6 +585,7 @@ DITA_MAP_BASE_DIR=`pwd`
 #DITAVAL_DIR=/usr/local/OxygenXMLDeveloper16/samples/dita
 #DITAVAL_DIR=$DITA_MAP_BASE_DIR
 
+#Build the documentation
 
 "java"\
  -Xmx4512m\
@@ -759,7 +764,6 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	for branch in `git branch -r | sed 's|.*/||'`
 	do
 		git checkout $branch
-		#git pull  
 		git reset --hard origin/$branch
 	done
     
@@ -778,26 +782,19 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	 echo "BRANCH=$BRANCH"
 	 echo "DITAVALFILE=$DITAVALFILE"
 	 
-	 
+# Check to see if a ditaval file was passed to the function 	 
 if [ -z "$DITAVALFILE" ]; then 
 	DITAVALFILE="" 
 	echo "DITAVALFILE not found"
-	
 else 
 	temp="$DITAVALFILE"
 	DITAVALFILE="-${temp}" 
-	echo "changed DITAVALFILE to not $DITAVALFILE "
+	echo "changed DITAVALFILE to $DITAVALFILE "
 
 fi	 
 	 
+
 	 
-	 
-#	 if [[ -n "$DITAVALFILE" ]]; then
-#		DITAVALFILE=""
-#		
-#	else
-#		DITAVALFILE="-${DITAVALFILE}"
-#	fi
 
 	
 echo "DITAVALFILE=$DITAVALFILE"

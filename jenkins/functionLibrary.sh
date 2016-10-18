@@ -39,7 +39,7 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	
 	#Do a single-branch, shallow clone of the tools repo from ${HUDSON_HOME}/canonical/
 	#If anything goes wrong, stop the build.
-	if !  git clone --local -b $branch --single-branch   1 ${HUDSON_HOME}/canonical/tools
+	if !  git clone --local -b $branch --single-branch   ${HUDSON_HOME}/canonical/tools
 	then
 		echo >&2 Cloning git@github.com:hphelion/tools.git failed.  Stopping the build.
 		exit 1

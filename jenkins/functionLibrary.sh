@@ -733,7 +733,7 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
  
 	license
  
-	oxygen-webhelp-build docs.hpcloud.com.ditamap	
+	oxygen-webhelp-build docs.hpcloud.com.ditamap	$i
 	./tools/jenkins/inject_google_analytics.sh ./out/webhelp/
 	inject_redirects
 	inject_date -file

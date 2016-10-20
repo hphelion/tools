@@ -45,6 +45,11 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 		exit 1
 	fi
 	
+	cd tools
+	git checkout $branch
+	cd ..
+	
+	
 	#Make sure that the scripts in the jenkins folder are executable
 	chmod 755 ./tools/jenkins/*.sh
 	
@@ -642,7 +647,7 @@ HIPCHAT_FAIL="1232,1295"
 #docs 1295
 #test 845
 
-
+  
 #Notify hipChat that build has started
 hipChat PASS " #$BUILD_NUMBER started (<a href='$BUILD_URL'>Open</a>)"  $HIPCHAT_PASS
 

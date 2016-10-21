@@ -234,6 +234,7 @@ source ./tools/jenkins/publish-config.sh
 echo "#################################################################
 
       devplat_docs_BRANCH = $devplat_docs_BRANCH
+	  stackato_docs_BRANCH = $stackato_docs_BRANCH
           hos_docs_BRANCH = $hos_docs_BRANCH
           hos_docs_LEGACYBRANCH = $hos_docs_LEGACYBRANCH
 carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
@@ -274,6 +275,20 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 	cp -rp ${repo}/media/${repo} ./media/${repo}
     cp -rp ${repo}/*.ditamap ./
     cp -rp ${repo}/hdp-html/ ./
+ 
+    rm -r $repo
+ 
+ 
+ 
+ 	repo="stackato.docs"
+	branch="$stackato_docs_BRANCH"
+	clone_repo $repo $branch
+    adjust_date_to_last_commit
+	
+	cp -rp ${repo}/stackato/ ./
+	cp -rp ${repo}/media/${repo} ./media/${repo}
+    cp -rp ${repo}/*.ditamap ./
+ 
  
     rm -r $repo
  

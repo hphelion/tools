@@ -765,7 +765,40 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
  echo "END ${FUNCNAME[0]}"
  }
+ 
+ 
+ 
+ 
+ function new_production_build () {
+echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
+ 	#NOTE: Call assemble-repos before running
+
+	#remove old output files
+	rm -r ./out/ || true
+
+ 
+	license
+ 
+	oxygen-webhelp-build build.on.push.ditamap	$i
+	./tools/jenkins/inject_google_analytics.sh ./out/webhelp/
+	inject_redirects
+	inject_date -file
+
+	cp -r ./commercial/GA1/RollYourOwn11/  out/webhelp/commercial/GA1/RollYourOwn11/
+	cp -r ./commercial/GA1/RollYourOwn10/  out/webhelp/commercial/GA1/RollYourOwn10/
+	cp -r ./media/ ./out/webhelp/
+	cp -r ./hdp-html/ ./out/webhelp/
+	cp -r ./hcf/media ./out/webhelp/hcf/media
+	cp -r ./3.x/media ./out/webhelp/3.x/media
+	cp -r ./file/  out/webhelp/file/
+	cp -r ./ServerArtifacts/404.html  out/webhelp/404.html
+	cp -r ./ServerArtifacts/htaccess.with.rewrite.rules  out/webhelp/.htaccess
+
+ echo "END ${FUNCNAME[0]}"
+ }
+ 
+ 
 
  function pull_repo () {
 	repo=$1

@@ -772,6 +772,8 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
  function new_production_build () {
 echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
+
+
  	#NOTE: Call assemble-repos before running
 
 	#remove old output files
@@ -781,7 +783,7 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
  
 	license
  
-	oxygen-webhelp-build build.on.push.ditamap	$1
+	oxygen-webhelp-build $1	$2
 	./tools/jenkins/inject_google_analytics.sh ./out/webhelp/
 	inject_redirects
 	inject_date -file

@@ -474,7 +474,7 @@ if [ -z "$1" ]
 		DITAMAP_FILE="$1"
 fi
 
-
+echo "DITAMAP_FILE = $DITAMAP_FILE"
 
 if [ -n "$2" ]
 	then
@@ -482,7 +482,7 @@ if [ -n "$2" ]
 		DITAVAL_PATH_FILE="$2"
 fi
 
-
+echo "DITAVAL_PATH_FILE = $DITAVAL_PATH_FILE"
  
 
 rm -r temprm -r out
@@ -777,10 +777,11 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	#remove old output files
 	rm -r ./out/ || true
 
+	echo "DITAVAL = $1"
  
 	license
  
-	oxygen-webhelp-build build.on.push.ditamap	$i
+	oxygen-webhelp-build build.on.push.ditamap	$1
 	./tools/jenkins/inject_google_analytics.sh ./out/webhelp/
 	inject_redirects
 	inject_date -file

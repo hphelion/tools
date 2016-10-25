@@ -63,6 +63,18 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	
 	#Note that this only works on a complete repo.  A shallow clone does not have all the needed info.
 	
+	#If no argument was passed to the function, use the repo variable branch.  Otherwise use the argument as the branch
+	if [[ -z "$1"   ]];
+	then 
+		using $repo
+	else
+		repo=$1
+	fi
+	
+	
+	
+	
+	
 	#cd into the repo
     cd $repo  
 	

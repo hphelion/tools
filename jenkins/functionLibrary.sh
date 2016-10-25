@@ -47,6 +47,7 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	
 	cd tools
 	git checkout $branch
+	git branch
 	cd ..
 	
 	

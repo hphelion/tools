@@ -504,10 +504,10 @@ $(function () {
         } else {
             currentHref = window.location.href;
             
-            if (window.location.href.indexOf('gabx') != -1)
+            if (  window.location.href.indexOf('hos-3.x') == -1 && window.location.href.indexOf('3.x') != -1     )
             {
-               //redirect(window.location.href);
-               redirect("http://www.google.com");
+               redirect(window.location.href);
+               
             }
             else
             {

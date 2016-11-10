@@ -506,7 +506,8 @@ $(function () {
             
             if (window.location.href.indexOf('gabx') != -1)
             {
-               redirect(window.location.href);
+               //redirect(window.location.href);
+               redirect("http://www.google.com");
             }
             else
             {

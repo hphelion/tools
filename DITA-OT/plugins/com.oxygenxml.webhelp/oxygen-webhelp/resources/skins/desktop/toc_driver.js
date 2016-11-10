@@ -503,7 +503,16 @@ $(function () {
 
         } else {
             currentHref = window.location.href;
-            load(window.location.href);
+            
+            if (window.location.href.indexOf('gabx') != -1)
+            {
+               redirect(window.location.href);
+            }
+            else
+            {
+              load(window.location.href);  
+            }
+            
         }
     });
     // Since the event is only triggered when the hash changes, we need to trigger

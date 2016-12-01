@@ -1,5 +1,4 @@
 
-
 #Set some global variables
 JENKINS_NAME="15.184.4.11"
 DOC_SITE_NAME="docs.hpcloud.com"
@@ -7,8 +6,8 @@ DOC_SITE_NAME="docs.hpcloud.com"
 PRIMARY_WAN_IP="173.205.188.47"		#External IP address for docs.hpcloud.com
 
 #PRIMARY_LAN_IP="192.168.251.121"	#Internal IP address for docs.hpcloud.com
-#PRIMARY_LAN_IP="173.205.188.47"	 #Internal IP address for docs.hpcloud.com
-PRIMARY_LAN_IP="15.184.4.9Ó	 	#Internal IP address for docs.hpcloud.com
+#PRIMARY_LAN_IP="173.205.188.47"		#Internal IP address for docs.hpcloud.com
+PRIMARY_LAN_IP=Ò15.184.4.9Ó		#Internal IP address for docs.hpcloud.com
 
 TEST_WAN_IP="15.184.4.11" 		#External IP address for docs-staging.hpcloud.com
 

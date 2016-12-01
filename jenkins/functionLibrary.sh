@@ -36,7 +36,7 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	echo "Cloning $branch branch of tools repo"
 	
 	#The tools repo should not be there already, but try to remove it--just in case
-    rm -r tools || true
+    	rm -r tools || true
 	
 	#Do a single-branch, shallow clone of the tools repo from ${HUDSON_HOME}/canonical/
 	#If anything goes wrong, stop the build.

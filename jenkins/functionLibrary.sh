@@ -247,9 +247,10 @@ source ./tools/jenkins/publish-config.sh
 echo "#################################################################
 
       devplat_docs_BRANCH = $devplat_docs_BRANCH
-	  stackato_docs_BRANCH = $stackato_docs_BRANCH
+     stackato_docs_BRANCH = $stackato_docs_BRANCH
+        hos_docs_40BRANCH = $hos_docs_40BRANCH
           hos_docs_BRANCH = $hos_docs_BRANCH
-          hos_docs_LEGACYBRANCH = $hos_docs_LEGACYBRANCH
+    hos_docs_LEGACYBRANCH = $hos_docs_LEGACYBRANCH
 carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
  public_cloud_docs_BRANCH = $public_cloud_docs_BRANCH
           hcf_docs_BRANCH = $hcf_docs_BRANCH
@@ -260,6 +261,22 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 # For each repo, clone it and checkout publish branch, adjust the modification
 # date of the ditafiles to the date of the last commit copy files into place
 # for the final build.
+ 
+    repo="hos.docs"
+	branch="$hos_docs_40BRANCH"
+	clone_repo $repo $branch
+    adjust_date_to_last_commit
+	
+	mkdir media
+    cp -rp ${repo}/community/ ./4.x/
+    cp -rp ${repo}/commercial/ ./4.x/
+    cp -rp ${repo}/helion/ ./4.x/
+    cp -rp ${repo}/hos-html/ ./4.x/
+	cp -rp ${repo}/media/ ./4.x/media/
+    cp -rp ${repo}/media/${repo} ./4.x/media/${repo}
+    cp -rp ${repo}/*.ditamap ./4.x/
+	rm -r ${repo}
+
  
     repo="hos.docs"
 	branch="$hos_docs_BRANCH"

@@ -519,7 +519,7 @@ rm -r temprm -r out
 
 export XEP_HOME=/usr/local/RenderX/XEP
 
-echo "Setting environment variables…"
+echo "Setting environment variables"
 
 # this assumes you've already exported XEP_HOME (if you're using XEP)
 
@@ -622,8 +622,7 @@ TRANSTYPE=webhelp
 # DITA_MAP_BASE_DIR=/home/test/oxygen-webhelp/OxygenXMLEditor/samples/dita/flowers
 DITA_MAP_BASE_DIR=`pwd`
 
-#echo DITA_MAP_BASE_DIR
-#echo $DITA_MAP_BASE_DIR
+echo "DITA_MAP_BASE_DIR is: $DITA_MAP_BASE_DIR"
 
 
 

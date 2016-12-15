@@ -276,6 +276,7 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 	cp -rp ${repo}/media/ ./4.x/media/
     cp -rp ${repo}/media/${repo} ./4.x/media/${repo}
     cp -rp ${repo}/*.ditamap ./4.x/
+    cp -rp ${repo}/*.ditaval ./4.x/
 	rm -r ${repo}
 
  

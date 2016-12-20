@@ -384,6 +384,11 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 function inject_date () {
 echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 
+if [ "DONOTHING" == "DONOTHING" ]
+then
+    echo "Not injecting date"
+else
+
 	for i in `find  -name "*.dita" -not -path "./publiccloud/api/*"`
 	do
 		# echo ""
@@ -432,6 +437,9 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 		fi
 	
 	done
+	
+if	
+	
 
 echo "END ${FUNCNAME[0]}"
  }

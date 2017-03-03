@@ -249,6 +249,7 @@ echo "#################################################################
 
       devplat_docs_BRANCH = $devplat_docs_BRANCH
      stackato_docs_BRANCH = $stackato_docs_BRANCH
+        hos_docs_50BRANCH = $hos_docs_50BRANCH
         hos_docs_40BRANCH = $hos_docs_40BRANCH
           hos_docs_BRANCH = $hos_docs_BRANCH
     hos_docs_LEGACYBRANCH = $hos_docs_LEGACYBRANCH
@@ -263,6 +264,22 @@ carrier_grade_docs_BRANCH = $carrier_grade_docs_BRANCH
 # date of the ditafiles to the date of the last commit copy files into place
 # for the final build.
  
+    repo="hos.docs"
+	branch="$hos_docs_50BRANCH"
+	clone_repo $repo $branch
+    adjust_date_to_last_commit
+	
+	mkdir media
+    cp -rp ${repo}/community/ ./5.x/
+    cp -rp ${repo}/commercial/ ./5.x/
+    cp -rp ${repo}/helion/ ./5.x/
+    cp -rp ${repo}/hos-html/ ./5.x/
+	cp -rp ${repo}/media/ ./5.x/media/
+    cp -rp ${repo}/media/${repo} ./5.x/media/${repo}
+    cp -rp ${repo}/*.ditamap ./5.x/
+    cp -rp ${repo}/*.ditaval ./5.x/
+	rm -r ${repo}
+
     repo="hos.docs"
 	branch="$hos_docs_40BRANCH"
 	clone_repo $repo $branch

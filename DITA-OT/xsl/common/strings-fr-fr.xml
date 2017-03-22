@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- This file is part of the DITA Open Toolkit project hosted on 
-   Sourceforge.net. See the accompanying license.txt file for 
-   applicable licenses.-->
-<!-- (c) Copyright IBM Corp. 2004, 2005 All Rights Reserved. -->
+<!--
+This file is part of the DITA Open Toolkit project.
+
+Copyright 2004, 2005 IBM Corporation
+
+See the accompanying LICENSE file for applicable license.
+-->
 
 <strings xml:lang="fr-fr">
    <!-- French -->
@@ -62,6 +65,7 @@
    <str name="task_prereq">Avant de commencer</str>
    <str name="task_postreq">Que faire ensuite</str>
    <str name="task_procedure">Procédure</str>
+   <str name="task_procedure_unordered">Procédure</str>
    <str name="task_results">Résultats</str>
 
    <str name="Copyright">Copyright</str>
@@ -71,11 +75,4 @@
    <str name="CloseQuote">"</str>
    <str name="ColonSymbol"> :</str>
    
-   <!-- For odt transform -->
-   <str name="On the page"> à la page </str>
-   <str name="Related Links">Liens connexes</str>
-   <str name="List item">Articles.</str>
-   <str name="Foot note">Note de bas de page.</str>
-   <str name="Page"> la page </str>
-   <str name="Unordered List bullet">&#8226;</str>
 </strings>

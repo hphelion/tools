@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 This file is part of the DITA Open Toolkit project.
-See the accompanying license.txt file for applicable licenses.
+
+Copyright 2012 Eero Helenius
+
+See the accompanying LICENSE file for applicable license.
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:fo="http://www.w3.org/1999/XSL/Format"
   exclude-result-prefixes="xs"
   version="2.0">
+
+  <xsl:template match="*[contains(@class, ' reference/reference ')]" mode="processTopic"
+                name="processReference">
+    <fo:block xsl:use-attribute-sets="reference">
+      <xsl:apply-templates select="." mode="commonTopicProcessing"/>
+    </fo:block>
+  </xsl:template>
+  
+  <!-- Deprecated, retained for backwards compatibility -->
+  <xsl:template match="*" mode="processReference">
+    <xsl:call-template name="processReference"/>
+  </xsl:template>
 
   <xsl:template match="*[contains(@class, ' reference/refbody ')]" priority="1">
     <xsl:variable name="level" as="xs:integer">
@@ -54,7 +69,11 @@ See the accompanying license.txt file for applicable licenses.
 
       <xsl:if test="@relcolwidth">
         <xsl:variable name="fix-relcolwidth">
-          <xsl:apply-templates select="." mode="fix-relcolwidth"/>
+          <xsl:apply-templates select="." mode="fix-relcolwidth">
+            <xsl:with-param name="number-cells">
+              <xsl:apply-templates select="*[1]" mode="count-max-simpletable-cells"/>
+            </xsl:with-param>
+          </xsl:apply-templates>
         </xsl:variable>
         <xsl:call-template name="createSimpleTableColumns">
           <xsl:with-param name="theColumnWidthes" select="$fix-relcolwidth"/>
@@ -278,14 +297,14 @@ See the accompanying license.txt file for applicable licenses.
               <xsl:with-param name="entryCol" select="1"/>
             </xsl:apply-templates>
           </xsl:when>
-          <xsl:otherwise>
+          <xsl:when test="../*[contains(@class,' reference/property ')]/*[contains(@class,' reference/proptype ')]">
             <xsl:call-template name="createEmptyPropertyHeadEntry">
               <xsl:with-param name="entryCol" select="1"/>
               <xsl:with-param name="keyCol" select="$keyCol"/>
               <xsl:with-param name="hasVerticalBorder" select="'yes'"/>
               <xsl:with-param name="frame" select="$frame"/>
             </xsl:call-template>
-          </xsl:otherwise>
+          </xsl:when>
         </xsl:choose>
         <xsl:choose>
           <xsl:when test="*[contains(@class, ' reference/propvaluehd ')]">
@@ -293,14 +312,14 @@ See the accompanying license.txt file for applicable licenses.
               <xsl:with-param name="entryCol" select="2"/>
             </xsl:apply-templates>
           </xsl:when>
-          <xsl:otherwise>
+          <xsl:when test="../*[contains(@class,' reference/property ')]/*[contains(@class,' reference/propvalue ')]">
             <xsl:call-template name="createEmptyPropertyHeadEntry">
               <xsl:with-param name="entryCol" select="2"/>
               <xsl:with-param name="keyCol" select="$keyCol"/>
               <xsl:with-param name="hasVerticalBorder" select="'yes'"/>
               <xsl:with-param name="frame" select="$frame"/>
             </xsl:call-template>
-          </xsl:otherwise>
+          </xsl:when>
         </xsl:choose>
         <xsl:choose>
           <xsl:when test="*[contains(@class, ' reference/propdeschd ')]">
@@ -308,14 +327,14 @@ See the accompanying license.txt file for applicable licenses.
               <xsl:with-param name="entryCol" select="3"/>
             </xsl:apply-templates>
           </xsl:when>
-          <xsl:otherwise>
+          <xsl:when test="../*[contains(@class,' reference/property ')]/*[contains(@class,' reference/propdesc ')]">
             <xsl:call-template name="createEmptyPropertyHeadEntry">
               <xsl:with-param name="entryCol" select="3"/>
               <xsl:with-param name="keyCol" select="$keyCol"/>
               <xsl:with-param name="hasVerticalBorder" select="'no'"/>
               <xsl:with-param name="frame" select="$frame"/>
             </xsl:call-template>
-          </xsl:otherwise>
+          </xsl:when>
         </xsl:choose>
       </fo:table-row>
     </fo:table-header>
@@ -399,60 +418,5 @@ See the accompanying license.txt file for applicable licenses.
       </xsl:choose>
     </fo:table-cell>
   </xsl:template>
-
-  <!-- RFE 2882109: Combine this common code with topic/topic rule. -->
-  <!--
-  <xsl:template match="*[contains(@class, ' reference/reference ')]">
-    <xsl:variable name="topicType">
-      <xsl:call-template name="determineTopicType"/>
-    </xsl:variable>
-
-    <xsl:choose>
-      <xsl:when test="$topicType = 'topicChapter'">
-        <xsl:call-template name="processTopicChapter"/>
-      </xsl:when>
-      <xsl:when test="$topicType = 'topicAppendix'">
-        <xsl:call-template name="processTopicAppendix"/>
-      </xsl:when>
-      <xsl:when test="$topicType = 'topicPart'">
-        <xsl:call-template name="processTopicPart"/>
-      </xsl:when>
-      <xsl:when test="$topicType = 'topicPreface'">
-        <xsl:call-template name="processTopicPreface"/>
-      </xsl:when>
-      <xsl:when test="$topicType = 'topicSimple'">
-        <xsl:variable name="page-sequence-reference">
-          <xsl:choose>
-            <xsl:when test="$mapType = 'bookmap'">
-              <xsl:value-of select="'body-sequence'"/>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:value-of select="'ditamap-body-sequence'"/>
-            </xsl:otherwise>
-          </xsl:choose>
-        </xsl:variable>
-        <xsl:choose>
-          <xsl:when test="not(ancestor::*[contains(@class,' topic/topic ')])">
-            <fo:page-sequence master-reference="{$page-sequence-reference}" xsl:use-attribute-sets="__force__page__count">
-              <xsl:call-template name="insertBodyStaticContents"/>
-              <fo:flow flow-name="xsl-region-body">
-                <xsl:call-template name="processReference"/>
-              </fo:flow>
-            </fo:page-sequence>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:call-template name="processReference"/>
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:when>
-      <xsl:when test="$topicType = 'topicAbstract'"/>
-      <xsl:otherwise>
-        <xsl:call-template name="processUnknowTopic">
-          <xsl:with-param name="topicType" select="$topicType"/>
-        </xsl:call-template>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
-  -->
 
 </xsl:stylesheet>

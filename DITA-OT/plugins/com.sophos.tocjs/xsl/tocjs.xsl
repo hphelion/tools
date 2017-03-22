@@ -1,11 +1,11 @@
 <!-- 
-  This file is part of the DITA Open Toolkit project hosted on
-  Sourceforge.net. See the accompanying license.txt file for
-  applicable licenses.
-  
-  (C) Copyright Shawn McKenzie, 2007. All Rights Reserved.
-  *-->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+This file is part of the DITA Open Toolkit project.
+
+Copyright 2007 Shawn McKenzie
+
+See the accompanying LICENSE file for applicable license.
+-->
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   
   <xsl:import href="topicref.xsl"/>
   <!--<xsl:import href="topichead.xsl"/>-->
@@ -13,7 +13,6 @@
   <xsl:import href="gethref.xsl"/>
  
   <xsl:param name="contentwin"/>
-  <xsl:param name="ditaext"/>
   <xsl:param name="htmlext"/>
   <xsl:output method="text" encoding="UTF-8"/>
 

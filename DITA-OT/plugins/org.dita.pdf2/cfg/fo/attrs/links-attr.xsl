@@ -27,8 +27,8 @@ These terms and conditions supersede the terms and conditions in any
 licensing agreement to the extent that such terms and conditions conflict
 with those set forth herein.
 
-This file is part of the DITA Open Toolkit project hosted on Sourceforge.net. 
-See the accompanying license.txt file for applicable licenses.
+This file is part of the DITA Open Toolkit project.
+See the accompanying LICENSE file for applicable license.
 -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" version="2.0">
@@ -51,46 +51,46 @@ See the accompanying license.txt file for applicable licenses.
     </xsl:attribute-set>
 
     <xsl:attribute-set name="related-links.ul" use-attribute-sets="ul">
-		<xsl:attribute name="start-indent"><xsl:value-of select="$side-col-width"/></xsl:attribute>
-	</xsl:attribute-set>
+    <xsl:attribute name="start-indent"><xsl:value-of select="$side-col-width"/></xsl:attribute>
+  </xsl:attribute-set>
 
     <xsl:attribute-set name="related-links.ul.li" use-attribute-sets="ul.li">
-	</xsl:attribute-set>
+  </xsl:attribute-set>
 
     <xsl:attribute-set name="related-links.ul.li__label" use-attribute-sets="ul.li__label">
-	</xsl:attribute-set>
+  </xsl:attribute-set>
 
-	<xsl:attribute-set name="related-links.ul.li__label__content" use-attribute-sets="ul.li__label__content">
-	</xsl:attribute-set>
+  <xsl:attribute-set name="related-links.ul.li__label__content" use-attribute-sets="ul.li__label__content">
+  </xsl:attribute-set>
 
-	<xsl:attribute-set name="related-links.ul.li__body" use-attribute-sets="ul.li__body">
-	</xsl:attribute-set>
+  <xsl:attribute-set name="related-links.ul.li__body" use-attribute-sets="ul.li__body">
+  </xsl:attribute-set>
 
-	<xsl:attribute-set name="related-links.ul.li__content" use-attribute-sets="ul.li__content">
-	</xsl:attribute-set>
+  <xsl:attribute-set name="related-links.ul.li__content" use-attribute-sets="ul.li__content">
+  </xsl:attribute-set>
 
-	<xsl:attribute-set name="related-links.ol" use-attribute-sets="ol">
-		<xsl:attribute name="start-indent"><xsl:value-of select="$side-col-width"/></xsl:attribute>
-	</xsl:attribute-set>
+  <xsl:attribute-set name="related-links.ol" use-attribute-sets="ol">
+    <xsl:attribute name="start-indent"><xsl:value-of select="$side-col-width"/></xsl:attribute>
+  </xsl:attribute-set>
 
     <xsl:attribute-set name="related-links.ol.li" use-attribute-sets="ol.li">
-	</xsl:attribute-set>
+  </xsl:attribute-set>
 
     <xsl:attribute-set name="related-links.ol.li__label" use-attribute-sets="ol.li__label">
-	</xsl:attribute-set>
+  </xsl:attribute-set>
 
-	<xsl:attribute-set name="related-links.ol.li__label__content" use-attribute-sets="ol.li__label__content">
-	</xsl:attribute-set>
+  <xsl:attribute-set name="related-links.ol.li__label__content" use-attribute-sets="ol.li__label__content">
+  </xsl:attribute-set>
 
-	<xsl:attribute-set name="related-links.ol.li__body" use-attribute-sets="ol.li__body">
-	</xsl:attribute-set>
+  <xsl:attribute-set name="related-links.ol.li__body" use-attribute-sets="ol.li__body">
+  </xsl:attribute-set>
 
-	<xsl:attribute-set name="related-links.ol.li__content" use-attribute-sets="ol.li__content">
-	</xsl:attribute-set>
+  <xsl:attribute-set name="related-links.ol.li__content" use-attribute-sets="ol.li__content">
+  </xsl:attribute-set>
 
     <xsl:attribute-set name="related-links.title">
-		<xsl:attribute name="font-weight">bold</xsl:attribute>
-	</xsl:attribute-set>
+    <xsl:attribute name="font-weight">bold</xsl:attribute>
+  </xsl:attribute-set>
 
     <xsl:attribute-set name="linkinfo">
     </xsl:attribute-set>

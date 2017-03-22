@@ -1,10 +1,13 @@
-<?xml version="1.0"?>
-<!-- This file is part of the DITA Open Toolkit project hosted on 
-     Sourceforge.net. See the accompanying license.txt file for 
-     applicable licenses.-->
-<!-- (c) Copyright IBM Corp. 2006 All Rights Reserved. -->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<?xml version="1.0" encoding="UTF-8"?><!--
+This file is part of the DITA Open Toolkit project.
 
-  <xsl:import href="troff/step2.xsl"/>
+Copyright 2006 IBM Corporation
+
+See the accompanying LICENSE file for applicable license.
+--><xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
+
+  <xsl:import href="step2.xsl"/>
+
+  
 
 </xsl:stylesheet>

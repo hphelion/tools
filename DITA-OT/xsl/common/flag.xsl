@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- This file is part of the DITA Open Toolkit project hosted on 
- Sourceforge.net. See the accompanying license.txt file for 
- applicable licenses.-->
-<!-- (c) Copyright IBM Corp. 2007, 2009 All Rights Reserved. -->
+<!--
+This file is part of the DITA Open Toolkit project.
+
+Copyright 2007, 2009 IBM Corporation
+
+See the accompanying LICENSE file for applicable license.
+-->
 <!-- Updates:
      20090421 robander: Updated so that "flagrules" in all templates
               specifies a default. Can simplify calls from other XSL
@@ -11,24 +14,21 @@
               elsewhere with no processing trade-off.
               -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-  version="1.0" 
-  xmlns:exsl="http://exslt.org/common" 
+  version="2.0"  
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:dita2html="http://dita-ot.sourceforge.net/ns/200801/dita2html"
   xmlns:ditamsg="http://dita-ot.sourceforge.net/ns/200704/ditamsg"
-  exclude-result-prefixes="exsl dita2html ditamsg">
+  exclude-result-prefixes="dita2html ditamsg xs">
  
  <xsl:template name="getrules">
-  <xsl:variable name="domains">
-   <xsl:value-of select="normalize-space(ancestor-or-self::*[contains(@class,' topic/topic ')][1]/@domains)"/>
-  </xsl:variable>
+   <xsl:variable name="domains" select="normalize-space(ancestor-or-self::*[contains(@class,' topic/topic ')][1]/@domains)"
+     as="xs:string"/>
   <xsl:variable name="tmp_props">
    <xsl:call-template name="getExtProps">
     <xsl:with-param name="domains" select="$domains"/>
    </xsl:call-template>
   </xsl:variable>
-  <xsl:variable name="props">
-   <xsl:value-of select="substring-after($tmp_props, ',')"/>
-  </xsl:variable>
+  <xsl:variable name="props" select="substring-after($tmp_props, ',')" as="xs:string"/>
   <!-- Test for the flagging attributes. If found, call 'gen-prop' with the values to use. Otherwise return -->
   <xsl:if test="@audience and not($FILTERFILE='')">
    <xsl:call-template name="gen-prop">
@@ -145,7 +145,7 @@
    </xsl:call-template>
   </xsl:variable>
   <xsl:choose>
-   <xsl:when test="exsl:node-set($flag-result)/prop">
+   <xsl:when test="$flag-result/prop">
     <xsl:copy-of select="$flag-result"/>
    </xsl:when>
    <xsl:otherwise>
@@ -216,9 +216,7 @@
       <xsl:apply-templates select="." mode="getChildNode"/>
      </xsl:variable>
      <!-- get the location of schemekeydef.xml -->
-     <xsl:variable name="KEYDEF-FILE">
-      <xsl:value-of select="concat($WORKDIR,$PATH2PROJ,'schemekeydef.xml')"/>
-     </xsl:variable>
+     <xsl:variable name="KEYDEF-FILE" select="concat($WORKDIR,$PATH2PROJ,'schemekeydef.xml')" as="xs:string"/>
      <!--keydef.xml contains the val  -->
      <xsl:if test="(document($KEYDEF-FILE, /)//*[@keys=$val])">
       <!-- copy needed elements -->
@@ -261,9 +259,9 @@
   <xsl:param name="cvffilename" select="@source"/>
   <xsl:param name="childnodes"/>
   <!--get the location of dita.xml.properties-->
-  <xsl:variable name="INITIAL-PROPERTIES-FILE">
-   <xsl:value-of select="translate(concat($WORKDIR , $PATH2PROJ , 'subject_scheme.dictionary'), '\', '/')"/>
-  </xsl:variable>
+  <xsl:variable name="INITIAL-PROPERTIES-FILE"
+    select="translate(concat($WORKDIR , $PATH2PROJ , 'subject_scheme.dictionary'), '\', '/')"
+    as="xs:string"/>
   
   <xsl:variable name="PROPERTIES-FILE">
    <xsl:choose>
@@ -291,9 +289,7 @@
    <xsl:variable name="submfile">
     <xsl:value-of select="$cvffilename"/><xsl:text>.subm</xsl:text>
    </xsl:variable>
-   <xsl:variable name="cvffilepath">
-    <xsl:value-of select="concat($WORKDIR,$PATH2PROJ,$submfile)"/>
-   </xsl:variable>
+   <xsl:variable name="cvffilepath" select="concat($WORKDIR,$PATH2PROJ,$submfile)" as="xs:string"/>
    <xsl:if test="document($cvffilepath,/)//*[@keys=$value]//*[@keys=$flag]">
     <!-- copy the child node for flag and just copy the first element whose keys=$flag-->
     <!--xsl:for-each select="document($cvffilepath,/)//*[@keys=$value]/*"-->
@@ -451,8 +447,8 @@
    <xsl:call-template name="getrules"/>
   </xsl:param>
   <xsl:choose>
-   <xsl:when test="exsl:node-set($flagrules)/*">
-    <xsl:apply-templates select="exsl:node-set($flagrules)/*[1]" mode="conflict-check"/>
+   <xsl:when test="$flagrules/*">
+    <xsl:apply-templates select="$flagrules/*[1]" mode="conflict-check"/>
    </xsl:when>
    <xsl:otherwise>
     <xsl:value-of select="'false'"/>
@@ -484,14 +480,14 @@
   <xsl:param name="flagrules">
    <xsl:call-template name="getrules"/>
   </xsl:param>
-  <xsl:apply-templates select="exsl:node-set($flagrules)/prop[1]" mode="start-flagit"/>
+  <xsl:apply-templates select="$flagrules/prop[1]" mode="start-flagit"/>
  </xsl:template>
  
  <xsl:template name="end-flagit">
   <xsl:param name="flagrules">
    <xsl:call-template name="getrules"/>
   </xsl:param>
-  <xsl:apply-templates select="exsl:node-set($flagrules)/prop[last()]" mode="end-flagit"/>
+  <xsl:apply-templates select="$flagrules/prop[last()]" mode="end-flagit"/>
  </xsl:template>
  
  <!-- Use @rev to find the first active flagged revision.
@@ -633,14 +629,13 @@
   <xsl:param name="flagrules">
    <xsl:call-template name="getrules"/>
   </xsl:param>
-  <xsl:apply-templates select="exsl:node-set($flagrules)/revprop[last()]" mode="end-revflagit"/>
+  <xsl:apply-templates select="$flagrules/revprop[last()]" mode="end-revflagit"/>
  </xsl:template>
  
  
  <xsl:template match="*" mode="ditamsg:conflict-text-style-applied">
   <xsl:call-template name="output-message">
-   <xsl:with-param name="msgnum">054</xsl:with-param>
-   <xsl:with-param name="msgsev">W</xsl:with-param>
+   <xsl:with-param name="id" select="'DOTX054W'"/>
   </xsl:call-template>
  </xsl:template>
  
@@ -664,9 +659,9 @@
  <!-- No flagging attrs allowed to process in phrases - output a message when in debug mode. -->
  <xsl:template name="flagcheck">
   
-  <xsl:variable name="domains">
-   <xsl:value-of select="normalize-space(ancestor-or-self::*[contains(@class,' topic/topic ')][1]/@domains)"/>
-  </xsl:variable>
+  <xsl:variable name="domains"
+    select="normalize-space(ancestor-or-self::*[contains(@class,' topic/topic ')][1]/@domains)"
+    as="xs:string"/>
   <xsl:variable name="props">
    <xsl:if test="contains($domains, 'a(props')">
     <xsl:value-of select="normalize-space(substring-before(substring-after($domains,'a(props'), ')'))"/>

@@ -1,0 +1,534 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2017"><meta name="DC.rights.owner" content="(C) Copyright 2017"><meta name="DC.Type" content="reference"><meta name="abstract" content="DITA Open Toolkit 2.4.4 is a maintenance release that fixes issues reported in DITA-OT 2.4, which includes Apache FOP 2.1, a new long-form syntax for dita command options, and additional code referencing extensions."><meta name="description" content="DITA Open Toolkit 2.4.4 is a maintenance release that fixes issues reported in DITA-OT 2.4, which includes Apache FOP 2.1, a new long-form syntax for dita command options, and additional code referencing extensions."><meta name="DC.Format" content="XHTML"><meta name="DC.Identifier" content="ID"><link rel="stylesheet" type="text/css" href="../css/commonltr.css"><link rel="stylesheet" type="text/css" href="../css/dita-ot-doc.css"><title>DITA Open Toolkit 2.4.4 Release Notes</title></head><body id="ID"><header role="banner"><div class="header">
+  <p>DITA Open Toolkit</p>
+  <hr>
+</div></header><nav role="toc"><ul><li><a href="../index.html">DITA Open Toolkit 2.4</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a></li><li><a href="../user-guide/dita-and-dita-ot-resources.html">DITA Resources</a></li><li><a href="../license/index.html">License</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">2.4.4</span> Release Notes</h1>
+
+  <div class="abstract">
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">2.4.4</span> is a maintenance release that fixes issues
+      reported in DITA-OT <span class="keyword">2.4</span>, which includes <span class="ph">Apache FOP <span class="ph">2.1</span>,
+        a new long-form syntax for <span class="keyword cmdname">dita</span> command options, and additional code referencing
+        extensions</span>.</p>
+    <p class="p">Issue numbers correspond to the tracking number in the <span class="ph">
+        <a class="xref" href="https://github.com/dita-ot/dita-ot/issues" target="_blank">GitHub issues tracker</a></span>.</p>
+  </div>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title2" id="ID__v244">
+    <h2 class="title topictitle2" id="ariaid-title2">Maintenance Release <span class="keyword">2.4.4</span></h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit Release <span class="keyword">2.4.4</span> includes the following bug fixes.</p>
+        <ul class="ul">
+          
+          <li class="li" id="v244__2564">DITA-OT 2.4 threw errors if non-XML DITA topics (such as Markdown files) were referenced in DITA
+            maps. The source format information is now retained to ensure these topics are processed correctly when the
+            <a class="xref" href="https://github.com/jelovirt/dita-ot-markdown" target="_blank">DITA-OT Markdown
+              plug-in</a> is installed.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2564" target="_blank">#2564</a>
+          </li>
+          
+          
+          <li class="li" id="v244__2573">In HTML5 transformations, DITA-OT 2.4 threw XSLT warnings if a topic included copyright metadata
+            in the prolog. The redundant templates have been removed to ensure that copyright metadata is correctly
+            processed.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2573" target="_blank">#2573</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2574" target="_blank">#2574</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2610" target="_blank">#2610</a>
+          </li>
+          <li class="li" id="v244__2577">In earlier versions of DITA-OT, the HTML5 transformation generated an empty
+              <code class="keyword markupname xmlelement">&lt;nav&gt;</code> element for table-of-contents navigation when the
+              <span class="keyword parmname">nav-toc</span> parameter was set to <span class="keyword option">partial</span> and the <code class="keyword markupname xmlatt">@chunk</code>
+            attribute for a topic reference was set <span class="keyword option">to-content</span>. Processing has been updated to produce
+            valid navigation links with to-content chunks.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2577" target="_blank">#2577</a>
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2578" target="_blank">#2578</a>
+          </li>
+          <li class="li" id="v244__2584">If an index term was defined in a map, a redundant empty citation was created in the index when
+            generating PDF output with Apache FOP. Index processing has been revised to ensure that links to index terms
+            defined in maps work properly for FOP.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2584" target="_blank">#2584</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2589" target="_blank">#2589</a>
+          </li>
+          <li class="li" id="v244__2586">When reading the <span class="ph filepath">local.properties</span> file, the Ant <code class="ph codeph">basedir</code>
+            property is set to the root directory of the DITA-OT installation. This change ensures that the
+              <span class="ph filepath">local.properties</span> file in the installation directory can be read consistently, even in
+            cases when custom build scripts override the <code class="ph codeph">basedir</code> property beforehand.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2586" target="_blank">#2586</a>
+          </li>
+          <li class="li" id="v244__2602">When generating PDF output, earlier versions of DITA-OT applied the
+              <code class="keyword markupname xmlatt">@keep-with-next.within-line</code> attribute to list item labels, which is not valid on
+              <code class="keyword markupname xmlelement">&lt;fo:list-item-label&gt;</code> formatting objects. The list label attribute sets have been
+            revised to generate valid XSL:FO output.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2602" target="_blank">#2602</a>
+          </li>
+          <li class="li" id="v244__2603">Parameter processing in variable resolution has been adjusted to ensure that nested
+              <code class="keyword markupname xmlelement">&lt;param&gt;</code> elements are taken into account when parameters are passed as a document
+            node.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2603" target="_blank">#2603</a>
+          </li>
+          <li class="li" id="v244__2605">The command-line help and documentation for the <span class="keyword cmdname">dita</span> command mistakenly
+            included the equals sign in the descriptions of the <span class="keyword option">--install</span> and
+              <span class="keyword option">--uninstall</span> options. The correct syntax separates these options from their values with a
+            space instead. To install a single plug-in from a local ZIP file, for example, use
+              <span class="keyword cmdname">dita</span>&nbsp;<span class="keyword parmname">--install</span>&nbsp;<var class="keyword varname">filename</var>.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2605" target="_blank">#2605</a>
+          </li>
+          <li class="li">
+            <p class="p">The documentation includes minor
+              <a class="xref" href="https://github.com/dita-ot/docs/compare/2.4.3...2.4.4" target="_blank">
+                changes</a> with
+              <a class="xref" href="https://github.com/dita-ot/docs/milestone/22?closed=1" target="_blank">corrections and improvements</a> to existing topics.</p>
+          </li>
+        </ul>
+        <p class="p">For the complete list of changes since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/2.4.3...2.4.4" target="_blank">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="ID__v243">
+    <h2 class="title topictitle2" id="ariaid-title3">Maintenance Release 2.4.3</h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit Release 2.4.3 includes the following bug fixes.</p>
+        <ul class="ul">
+          <li class="li" id="v243__1525">In PDF output generated with earlier versions of DITA-OT and RenderX XEP, the
+              <code class="keyword markupname xmlelement">&lt;indexterm&gt;</code> hierarchy for multilevel entries in the PDF index was not properly
+            indented. Index term indentation has been corrected to properly reflect the entry hierarchy as authored in
+            DITA source files.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1525" target="_blank">#1525</a>
+          </li>
+          <li class="li" id="v243__2038">In earlier versions of DITA-OT, specifying a relative path for the temporary directory on the
+            command line would cause PDF processing to fail. DITA-OT now checks whether the
+              <span class="keyword parmname">dita.temp.dir</span> property is set to an absolute path and responds with an error message
+            otherwise.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2038" target="_blank">#2038</a>
+          </li>
+          <li class="li" id="v243__2522">In certain cases, DITA-OT 2.4 generated broken links in PDF output for related topics and
+            reported “unresolved internal destination” warnings in the console when processing topic references with the
+              <code class="keyword markupname xmlatt">@collection-type</code> attribute set to <span class="keyword option">family</span>. Link rewrite processing has
+            been corrected to ensure that links are generated properly.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2522" target="_blank">#2522</a>
+          </li>
+          <li class="li" id="v243__2555">Default settings for several parameters have been removed from the
+              <span class="ph filepath">configuration.properties</span> file.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2555" target="_blank">#2555</a>
+            <div class="p">Values for these parameters can be passed as usual to the <span class="keyword cmdname">dita</span> command or included in
+              build scripts:
+              <ul class="ul">
+                <li class="li"><span class="keyword parmname">default.language</span></li>
+                <li class="li"><span class="keyword parmname">generate-debug-attributes</span></li>
+                <li class="li"><span class="keyword parmname">processing-mode</span></li>
+              </ul></div>
+          </li>
+          <li class="li" id="v243__2563">In previous versions of DITA-OT, the HTML5 transformation generated
+              <code class="keyword markupname xmlelement">&lt;simpletable&gt;</code> output with column widths specified in <code class="keyword markupname xmlelement">&lt;col&gt;</code>
+            elements as direct children of the <code class="keyword markupname xmlelement">&lt;table&gt;</code> element. A
+              <code class="keyword markupname xmlelement">&lt;colgroup&gt;</code> wrapper element has been added for compatibility with the HTML5
+            standard.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2563" target="_blank">#2563</a>
+          </li>
+        </ul>
+        <p class="p">For the complete list of changes since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/2.4.2...2.4.3" target="_blank">
+            changelog</a> on GitHub.</p>
+      </section>
+      <section class="section"><h3 class="title sectiontitle">Documentation updates</h3>
+        
+        <p class="p">The DITA-OT 2.4.3 documentation includes corrections and improvements to existing topics, along with new
+          content on
+          <a class="xref" href="../parameters/configuration-properties.html" title="The DITA-OT uses .properties files and internal properties that store configuration settings for the toolkit and its plug-ins. Configuration properties are available to both Ant and Java processes, but unlike argument properties, they cannot be set at run time.">Configuration properties</a>.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="ID__v242">
+    <h2 class="title topictitle2" id="ariaid-title4">Maintenance Release 2.4.2</h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit Release 2.4.2 includes the following bug fixes.</p>
+        <ul class="ul">
+          <li class="li" id="v242__1885">DITA-OT 2.0 threw a null pointer exception when producing Eclipse Help output from a bookmap
+            with a <code class="keyword markupname xmlelement">&lt;glossarylist&gt;</code> that referenced a composite <code class="keyword markupname xmlelement">&lt;dita&gt;</code>
+            topic. Processing has been updated to properly handle root <code class="keyword markupname xmlelement">&lt;dita&gt;</code> elements or any
+            other elements without <code class="keyword markupname xmlatt">@class</code> attributes.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1885" target="_blank">#1885</a>
+          </li>
+          <li class="li" id="v242__2542">HTML5 output generated with DITA-OT 2.4.1 included spurious namespace attributes for
+              <code class="keyword markupname xmlelement">&lt;taskbody&gt;</code> and <code class="keyword markupname xmlelement">&lt;simpletable&gt;</code> elements. The extra result
+            prefixes (<code class="keyword markupname xmlnsname">ditamsg</code>, <code class="keyword markupname xmlnsname">dita2html</code> and
+              <code class="keyword markupname xmlnsname">related-links</code>) have been excluded to ensure they no longer appear in output files.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2542" target="_blank">#2542</a>
+          </li>
+          <li class="li" id="v242__2547">Earlier versions of DITA-OT failed to ignore empty props specialization attributes during the
+            filtering process. Processing has been updated to treat any empty attributes specialized from
+              <code class="keyword markupname xmlatt">@props</code> like empty default profiling attributes such as
+              <code class="keyword markupname xmlatt">@audience</code><code class="ph codeph">=""</code>, which are ignored.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2547" target="_blank">#2547</a>
+          </li>
+          <li class="li" id="v242__2548">The <code class="ph codeph">xml-apis-ext</code> library that FOP depends on to render SVG images was missing
+            in DITA-OT 2.4. The distribution package has been updated to provide support for SVG images in PDF output.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2548" target="_blank">#2548</a>
+          </li>
+          <li class="li" id="v242__2551">If an input map contained topic references with duplicate <code class="keyword markupname xmlatt">@copy-to</code> attribute
+            values, earlier versions of DITA-OT failed to generate additional output topics. Processing now applies the
+              <span class="keyword parmname">force-unique</span> parameter to ensure that unique output files are created for each
+            instance of a resource when a map contains multiple references to a single topic.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2551" target="_blank">#2551</a>
+          </li>
+          <li class="li" id="v242__2554">Support for the <span class="keyword parmname">args.breadcrumbs</span> parameter provided in earlier versions of
+            DITA-OT was never fully implemented and has been removed. HTML customizations that rely on the XSLT
+              <span class="keyword parmname">BREADCRUMBS</span> parameter will need to re-implement this functionality in custom plug-in
+            code.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2554" target="_blank">#2554</a>
+          </li>
+        </ul>
+        <p class="p">For the complete list of changes since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/2.4.1...2.4.2" target="_blank">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="ID__v241">
+    <h2 class="title topictitle2" id="ariaid-title5">Maintenance Release 2.4.1</h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit Release 2.4.1 includes the following bug fixes.</p>
+        <ul class="ul">
+          <li class="li" id="v241__2520">In DITA-OT 2.3 and 2.4, setting the <span class="keyword parmname">force-unique</span> parameter to
+              <span class="keyword option">true</span> had no effect. Processing has been corrected to properly generate the copy-to
+            attributes that ensure unique file names for each instance of a resource when a map contains multiple
+            references to a single topic.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2520" target="_blank">#2520</a>
+          </li>
+          <li class="li" id="v241__2524">HTML5: In DITA-OT 2.4, the text content of table cells was partially propagated to the CSS
+              <code class="keyword markupname xmlatt">@class</code> attribute. Table processing has been updated to remove the legacy XHTML CSS class
+            mode and ensure that <code class="keyword markupname xmlatt">@class</code> attribute values are generated correctly.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2524" target="_blank">#2524</a>
+          </li>
+          <li class="li" id="v241__2526">Saxon 9.7.0.11 reported an error when producing output from DITA content: <samp class="ph msgph">The context
+              item for axis step ./@class is absent</samp>. This was resolved by modifying the
+              <code class="ph codeph">$localclass</code> variable in the <code class="ph codeph">output-message</code> template to use the
+              <code class="ph codeph">$ctx</code> context variable as a parent.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2526" target="_blank">#2526</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2535" target="_blank">#2535</a>
+          </li>
+          <li class="li" id="v241__2529">Earlier versions of DITA-OT did not correctly override the default <code class="keyword markupname xmlatt">@scope</code> and
+              <code class="keyword markupname xmlatt">@format</code> attribute values for topic references with values from the key definition. Keyref
+            processing has been updated to properly handle scope and format definition for non-local non-DITA targets.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2529" target="_blank">#2529</a>
+          </li>
+          <li class="li" id="v241__2537">In earlier versions of DITA-OT, the <code class="ph codeph">dita.xsl.html5.cover</code> extension point did
+            not respond to overrides declared in custom plug-ins. The extension point has now been moved to the template
+            file to ensure that it can be overridden as intended.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2537" target="_blank">#2537</a>
+          </li>
+          <li class="li" id="v241__2539">In cases where a single topic is used in multiple key scopes (and copies of the topic are
+            created), earlier versions of DITA-OT used the same target for key references to both key scopes. Key
+            targets are now rewritten to point to the new resource to ensure that duplicate link targets in key scopes
+            are correctly resolved.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2539" target="_blank">#2539</a>
+          </li>
+        </ul>
+        <p class="p">For the complete list of changes since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/2.4...2.4.1" target="_blank">
+            changelog</a> on GitHub.</p>
+      </section>
+      <section class="section"><h3 class="title sectiontitle">Documentation updates</h3>
+        
+        <p class="p">The DITA-OT 2.4.1 documentation includes corrections and improvements to existing topics, along with new
+          content.</p>
+        <ul class="ul">
+          <li class="li">
+            <a class="xref" href="../dev_ref/html-customization.html" title="There are several ways to customize the default HTML output. You can easily adjust the look and feel just by setting parameters and adding custom CSS, or create plug-ins for more complex customizations.">Customizing HTML output</a> provides examples that illustrate various approaches for customizing
+            HTML-based output, including:
+            <ul class="ul">
+              <li class="li">
+                <a class="xref" href="../dev_ref/html-customization-navigation.html" title="In HTML5 output, you can set a parameter to include table-of-contents navigation in the nav element of each page. The navigation can be rendered in a sidebar or menu via CSS.">Adding navigation to topics</a></li>
+              <li class="li">
+                <a class="xref" href="../dev_ref/html-customization-plugin-bundle-css.html" title="You can create a DITA-OT plug-in that provides a custom stylesheet with the typography and colors that define your corporate identity. Coworkers can install this plug-in to ensure consistent HTML output across projects without having to copy the stylesheet to each project.">Bundling CSS in a custom HTML plug-in</a></li>
+            </ul>
+          </li>
+          <li class="li">
+            <a class="xref" href="../user-guide/DITA-globalization-languages.html" title="The following languages are supported for all PDF, XHTML, and HTML5-based transformation types.">Supported languages</a> provides a common overview of languages supported for PDF and HTML-based output
+            formats.</li>
+          <li class="li">
+            <a class="xref" href="../license/third-party-software.html" title="DITA Open Toolkit uses third-party software components to provide certain features in the core toolkit and bundled plug-ins.">Third-party software</a> lists bundled software components with version and license information
+            for each library.</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="ID__requirements">
+    <h2 class="title topictitle2" id="ariaid-title6">Requirements</h2>
+    <div class="body refbody">
+      <section class="section">
+        
+        <p class="p">DITA Open Toolkit Release <span class="keyword">2.4</span> requires the Java Runtime Environment (JRE) version
+            <span class="keyword">8</span> or later.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title7" id="ID__highlights">
+    <h2 class="title topictitle2" id="ariaid-title7">Release Highlights</h2>
+    
+    <div class="body refbody"><p class="shortdesc">DITA-OT <span class="keyword">2.4</span> includes <span class="ph" id="highlights__summary">Apache FOP <span class="ph">2.1</span>,
+        a new long-form syntax for <span class="keyword cmdname">dita</span> command options, and additional code referencing
+        extensions</span>.</p>
+      <section class="section" id="highlights__1958"><h3 class="title sectiontitle">Apache FOP <span class="ph">2.1</span></h3>
+        
+        <p class="p">DITA-OT <span class="keyword">2.4</span> bundles the latest version of Apache™ FOP (Formatting Objects Processor).
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1958" target="_blank">#1958</a>,
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2399" target="_blank">#2399</a></p>
+        <p class="p">FOP <span class="ph">2.1</span> builds on the OpenType CFF font support added in FOP 2.0, with additional
+          font support and enhancements for PDF accessibility, including PDF/UA (PDF/Universal Accessibility) and
+          PDF/A-3.</p>
+        <p class="p">For details on recent changes in FOP, see the <cite class="cite">Release Notes</cite> for versions
+          <a class="xref" href="https://xmlgraphics.apache.org/fop/2.0/releaseNotes_2.0.html" target="_blank">2.0</a> and
+          <a class="xref" href="https://xmlgraphics.apache.org/fop/2.0/releaseNotes_2.0.html" target="_blank">2.1</a>.</p>
+        <div class="note note note_note"><span class="note__title">Note:</span> 
+          <p class="p">To conserve memory, accessible PDF output is disabled by default in FOP 2.1. To generate accessible PDFs
+            from DITA-OT, set the <span class="keyword parmname">args.fo.userconfig</span> parameter and include the
+              <span class="keyword option">&lt;accessibility&gt;true&lt;/accessibility&gt;</span> option in your custom FOP configuration
+            file.</p>
+          <p class="p">For more information, see
+            <a class="xref" href="https://xmlgraphics.apache.org/fop/trunk/accessibility.html" target="_blank">Apache FOP Accessibility</a>.</p>
+        </div>
+      </section>
+      <section class="section" id="highlights__2422"><h3 class="title sectiontitle">New long-form syntax for <span class="keyword cmdname">dita</span> command options</h3>
+        
+        <p class="p">All <span class="keyword cmdname">dita</span> command options can now be specified with a GNU-style option keyword preceded by
+          two hyphens. For example:</p>
+        <div class="p">
+          <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">userguide.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
+        </div>
+        <p class="p">DITA-OT parameters can now be passed to the <span class="keyword cmdname">dita</span> command with this same syntax:
+            <span class="keyword parmname">--parameter</span>=<var class="keyword varname">value</var>.</p>
+        <div class="p">When set with this method, properties are validated against the toolkit’s plug-in configuration. An error
+          message appears if a property is not recognized or if an enumerated property value is invalid.
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2422" target="_blank">#2422</a>,
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2492" target="_blank">#2492</a>
+          <div class="note attention note_attention"><span class="note__title">Attention:</span> Unix-style single-letter options (preceded by a single hyphen) are also available in
+            some cases for backwards compatibility. The X-Toolkit–style single-hyphen keyword variants supported by
+            previous releases (such as <span class="keyword parmname">-input</span>) have been deprecated and may be removed in an
+            upcoming release.</div></div>
+      </section>
+      <section class="section" id="highlights__2469"><h3 class="title sectiontitle">Extended code reference processing</h3>
+        
+        <p class="p">DITA-OT <span class="keyword">2.4</span> provides additional support for extracting a range of lines from code
+          references based on the content of the target file. Instead of specifying line numbers, you can now also
+          select lines to include in the code reference by specifying keywords (or “<dfn class="term">tokens</dfn>”) that appear in
+          the referenced file.
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2469" target="_blank">#2469</a>
+        </p>
+        <div class="div">
+        <p class="p">DITA-OT supports the <code class="ph codeph">token</code> pointer in the URI fragment to extract a line range based on the
+          file content. The format for referencing a range of lines by content is:</p>
+        <pre class="pre codeblock"><code>uri ("#token=" start? ("," end)? )?</code></pre>
+        <p class="p">Lines identified using start and end tokens are exclusive: the lines that contain the start token and end
+          token will be not be included. If the start token is omitted, the range starts from the first line in the
+          file; if the end token is omitted, the range ends on the last line of the file. </p>
+      </div>
+        <div class="note tip note_tip"><span class="note__title">Tip:</span> This approach can be used to reference code samples that are
+        frequently edited. In these cases, referencing line ranges by line number can be error-prone, as the target line
+        range for the reference may shift if preceding lines are added or removed. Specifying ranges by line content
+        makes references more robust, as long as the <code class="ph codeph">token</code> keywords are preserved when the referenced
+        resource is modified.</div>
+        <p class="p">For more information, see
+          <a class="xref" href="../user-guide/extended-functionality.html#code-reference" title="DITA-OT provides additional code reference processing support beyond that which is mandated by the DITA specification. These extensions can be used to define character encodings or line ranges for use in code blocks.">Extended code reference processing</a>.</p>
+      </section>
+      <section class="section" id="highlights__2405"><h3 class="title sectiontitle">Standalone <span class="keyword option">HTML5</span> plug-in</h3>
+        
+        <div class="div">
+            <p class="p">The <span class="keyword option">HTML5</span> transformation introduced in release 2.0 as part of the <span class="keyword option">XHTML</span>
+              plug-in was moved to a separate <span class="keyword option">HTML5</span> plug-in in release 2.2, but that version of the
+                <span class="keyword option">HTML5</span> transformation still depended on the <span class="keyword option">XHTML</span> plug-in for certain
+              common processing.</p>
+            <p class="p">In release 2.4, all dependencies between <span class="keyword option">HTML5</span> and <span class="keyword option">XHTML</span> have been
+              removed to ensure that HTML5 processing can be further refactored in the future without affecting XHTML
+              output, or other HTML-based transformations such as <span class="keyword option">eclipsehelp</span>,
+                <span class="keyword option">htmlhelp</span> or <span class="keyword option">javahelp</span>.</p>
+          </div>
+        <p class="p">
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2405" target="_blank">#2405</a>,
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2511" target="_blank">#2511</a>
+        </p>
+      </section>
+
+      <section class="section" id="highlights__1542"><h3 class="title sectiontitle">Legacy plug-ins removed</h3>
+      
+      <p class="p">DITA-OT 2.4 no longer includes the following legacy transformation plug-ins in the default distribution:</p>
+      <table class="table frame-none"><caption><span class="table--title-label">Table 1. </span><span class="title">Legacy plug-ins</span></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead class="thead">
+            <tr class="row">
+              <th class="entry colsep-0 rowsep-1" id="highlights__1542__entry__1">Plug-in </th>
+              <th class="entry colsep-0 rowsep-1" id="highlights__1542__entry__2">Source code location</th>
+            </tr>
+          </thead><tbody class="tbody">
+            <tr class="row">
+              <td class="entry colsep-0 rowsep-1" headers="highlights__1542__entry__1 ">DocBook</td>
+              <td class="entry colsep-0 rowsep-1" headers="highlights__1542__entry__2 ">
+                <a class="xref" href="https://github.com/dita-ot/org.dita.docbook" target="_blank">https://github.com/dita-ot/org.dita.docbook</a></td>
+            </tr>
+            <tr class="row">
+              <td class="entry colsep-0 rowsep-1" headers="highlights__1542__entry__1 ">Eclipse Content</td>
+              <td class="entry colsep-0 rowsep-1" headers="highlights__1542__entry__2 ">
+                <a class="xref" href="https://github.com/dita-ot/org.dita.eclipsecontent" target="_blank">https://github.com/dita-ot/org.dita.eclipsecontent</a></td>
+            </tr>
+            <tr class="row">
+              <td class="entry colsep-0 rowsep-1" headers="highlights__1542__entry__1 ">OpenDocument Text</td>
+              <td class="entry colsep-0 rowsep-1" headers="highlights__1542__entry__2 ">
+                <a class="xref" href="https://github.com/dita-ot/org.dita.odt" target="_blank">https://github.com/dita-ot/org.dita.odt</a></td>
+            </tr>
+            <tr class="row">
+              <td class="entry colsep-0 rowsep-1" headers="highlights__1542__entry__1 ">Word RTF</td>
+              <td class="entry colsep-0 rowsep-1" headers="highlights__1542__entry__2 ">
+                <a class="xref" href="https://github.com/dita-ot/org.dita.wordrtf" target="_blank">https://github.com/dita-ot/org.dita.wordrtf</a></td>
+            </tr>
+          </tbody></table>
+      <div class="note note note_note"><span class="note__title">Note:</span> If necessary, legacy plug-ins may be re-installed from earlier DITA-OT distributions, but they are no longer
+        actively maintained or supported by the core toolkit committers. The source code is available on GitHub for
+        anyone interested in maintaining the plug-ins for use with future toolkit versions.</div>
+    </section>
+      <section class="section">
+        <p class="p">
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1542" target="_blank">#1542</a></p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title8" id="ID__issues">
+    <h2 class="title topictitle2" id="ariaid-title8">Resolved issues</h2>
+    
+    <div class="body refbody"><p class="shortdesc">In addition to the highlights mentioned above, DITA Open Toolkit Release <span class="keyword">2.4</span>
+      includes the following changes.</p>
+
+      
+
+      <section class="section" id="issues__enhancements"><h3 class="title sectiontitle">Enhancements and changes</h3>
+        
+        <p class="p">DITA Open Toolkit Release <span class="keyword">2.4</span> includes the following enhancements and changes to
+          existing features:</p>
+        <ul class="ul">
+          <li class="li" id="issues__2026">Move to Java 8
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2026" target="_blank">#2026</a>
+          </li>
+          <li class="li" id="issues__1245">TM output
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1245" target="_blank">#1245</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2404" target="_blank">#2404</a>
+          </li>
+          <li class="li" id="issues__2512">Bug in "dita-utilities.xsl" getVariable when called from string context
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2512" target="_blank">#2512</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2513" target="_blank">#2513</a>
+          </li>
+          <li class="li" id="issues__2503">HTML5 generates duplicate class attributes
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2503" target="_blank">#2503</a>
+          </li>
+          <li class="li" id="issues__2502">Use Sass <code class="ph codeph">// comment</code> syntax for partials copyrights
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2502" target="_blank">#2502</a>
+          </li>
+          <li class="li" id="issues__2499">Change HTML5 to use libsass instead of Compass
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2499" target="_blank">#2499</a>
+          </li>
+          <li class="li" id="issues__2471">Add sign-off requirement to contribution
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2471" target="_blank">#2471</a>
+          </li>
+          <li class="li" id="issues__2467">Add copyright based on Git history
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2467" target="_blank">#2467</a>
+          </li>
+          <li class="li" id="issues__2465">Run dita command with only properties file
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2465" target="_blank">#2465</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2468" target="_blank">#2468</a>
+          </li>
+          <li class="li" id="issues__2462">Map temporary files to source/result files using job configuration
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2462" target="_blank">#2462</a>
+          </li>
+          <li class="li" id="issues__2453">Use job mapper when transforming topics to final output
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2453" target="_blank">#2453</a>
+          </li>
+          <li class="li" id="issues__2437">Move chunk target detection to chunk module
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2437" target="_blank">#2437</a>
+          </li>
+          
+          <li class="li" id="issues__2412">Replace named template with mode for easy override of static content
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2412" target="_blank">#2412</a>
+          </li>
+          <li class="li" id="issues__2151">Remove lax integration process
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2151" target="_blank">#2151</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" id="issues__bugs"><h3 class="title sectiontitle">Bugs</h3>
+        
+        <p class="p">DITA Open Toolkit Release <span class="keyword">2.4</span> provides fixes for the following bugs:</p>
+        <ul class="ul">
+          <li class="li" id="issues__2394">Fix error when <code class="keyword markupname xmlelement">&lt;linktext&gt;</code> contains <code class="keyword markupname xmlelement">&lt;tm&gt;</code> #2303
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2394" target="_blank">#2394</a>
+          </li>
+          <li class="li" id="issues__2347">Build fails when <code class="keyword markupname xmlelement">&lt;navtitle&gt;</code> in <code class="keyword markupname xmlelement">&lt;relcell&gt;</code> has child
+            elements
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2347" target="_blank">#2347</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2390" target="_blank">#2390</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" id="issues__contrib"><h3 class="title sectiontitle">Contributors</h3>
+        
+        <p class="p">DITA Open Toolkit Release <span class="keyword">2.4</span> includes
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/graphs/contributors" target="_blank">code contributions</a> by the following people:</p>
+        
+        
+        <ol class="ol">
+          <li class="li">Jarno Elovirta</li>
+          <li class="li">Robert D. Anderson</li>
+          <li class="li">Eliot Kimber</li>
+          <li class="li">Eero Helenius</li>
+          <li class="li">Roger Sheen</li>
+          <li class="li">Radu Coravu</li>
+        </ol>
+        <p class="p">For the complete list of changes since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/2.3...2.4" target="_blank">
+            changelog</a> on GitHub.</p>
+      </section>
+
+      <section class="section" id="issues__docs"><h3 class="title sectiontitle">Documentation updates</h3>
+        
+        <p class="p">The documentation for DITA Open Toolkit Release <span class="keyword">2.4</span> includes corrections and
+          improvements to existing topics, along with new content.</p>
+        <ul class="ul">
+          <li class="li">Like the generated
+            <a class="xref" href="../parameters/parameters_intro.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Some parameters apply only to specific transformation types. These parameters can be passed as options to the dita command using the --parameter=value syntax or included in build scripts as Ant properties.">DITA-OT parameters</a> and
+            <a class="xref" href="../user-guide/DITA-messages.html" title="This topic lists each error message generated by the toolkit and provides additional information that might be helpful in understanding and resolving the error condition. If your toolkit installation includes custom plug-ins that define additional messages, you can add to this list by rebuilding the DITA-OT documentation.">DITA-OT error messages</a> topics, a new
+            <a class="xref" href="../extension-points/extension-points-by-plugin.html" title="The default plug-ins that ship with the DITA Open Toolkit include a series of extension points that can be used to modify various aspects of toolkit processing.">Extension points by plug-in</a> section is now generated from the installed DITA-OT plug-ins to
+            provide an overview of the extension points supported by each plug-in.</li>
+          <li class="li">A new
+            <a class="xref" href="../user-guide/DITA-features-in-docs.html" title="The DITA Open Toolkit uses various recent DITA features in the project documentation.">DITA features in the documentation</a> topic provides examples of how the project documentation uses various
+            recent DITA features.</li>
+          <li class="li">A new topic provides information on
+            <a class="xref" href="../dev_ref/migrating-to-2.4.html" title="In DITA-OT 2.4, the HTML5 transformation was refactored as an independent plug-in that no longer depends on the XHTML plug-in.">Migrating to release 2.4</a>.</li>
+        </ul>
+        <p class="p">For additional information on documentation issues resolved in DITA Open Toolkit Release <span class="keyword">2.4</span>, see the
+          <a class="xref" href="https://github.com/dita-ot/docs/issues?q=milestone%3A2.4+is%3Aclosed" target="_blank">
+            <span class="keyword">2.4</span> milestone</a> in the documentation repository.</p>
+        <p class="p">DITA Open Toolkit Release <span class="keyword">2.4</span> includes
+          <a class="xref" href="https://github.com/dita-ot/docs/graphs/contributors" target="_blank">documentation contributions</a> by the following people:</p>
+        
+        <ol class="ol">
+          <li class="li">Roger Sheen</li>
+          <li class="li">Jarno Elovirta</li>
+          <li class="li">Mark Giffin</li>
+        </ol>
+        <p class="p">For the complete list of documentation changes since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/docs/compare/2.3...2.4" target="_blank">
+            changelog</a>.</p>
+      </section>
+    </div>
+  </article>
+</article></main></body></html>

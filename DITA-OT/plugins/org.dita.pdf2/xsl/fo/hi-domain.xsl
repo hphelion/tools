@@ -27,8 +27,8 @@ These terms and conditions supersede the terms and conditions in any
 licensing agreement to the extent that such terms and conditions conflict
 with those set forth herein.
 
-This file is part of the DITA Open Toolkit project hosted on Sourceforge.net. 
-See the accompanying license.txt file for applicable licenses.
+This file is part of the DITA Open Toolkit project.
+See the accompanying LICENSE file for applicable license.
 -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -76,5 +76,19 @@ See the accompanying license.txt file for applicable licenses.
         <xsl:apply-templates/>
       </fo:inline>
     </xsl:template>
+
+  <xsl:template match="*[contains(@class,' hi-d/line-through ')]">
+    <fo:inline xsl:use-attribute-sets="line-through">
+      <xsl:call-template name="commonattributes"/>
+      <xsl:apply-templates/>
+    </fo:inline>
+  </xsl:template>
+  
+  <xsl:template match="*[contains(@class,' hi-d/overline ')]">
+    <fo:inline xsl:use-attribute-sets="overline">
+      <xsl:call-template name="commonattributes"/>
+      <xsl:apply-templates/>
+    </fo:inline>
+  </xsl:template>
 
 </xsl:stylesheet>

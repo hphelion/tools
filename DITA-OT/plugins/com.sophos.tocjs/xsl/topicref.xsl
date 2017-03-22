@@ -1,10 +1,11 @@
 <!-- 
-  This file is part of the DITA Open Toolkit project hosted on
-  Sourceforge.net. See the accompanying license.txt file for
-  applicable licenses.
-  
-  (C) Copyright Shawn McKenzie, 2007. All Rights Reserved.
+This file is part of the DITA Open Toolkit project.
 
+Copyright 2007 Shawn McKenzie
+
+See the accompanying LICENSE file for applicable license.
+-->
+<!--
   UPDATES:
   20110817 RDA Include several fixes:
       * Make several element tests specialization aware
@@ -13,7 +14,7 @@
       * Topicref with no href or title drops the branch
       * Toc=no drops any nested toc=yes branches (unlike XHTML / others)
   *-->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
   <xsl:variable name="quote">"</xsl:variable>
   <xsl:variable name="quotestring">\"</xsl:variable>

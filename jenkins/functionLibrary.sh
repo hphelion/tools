@@ -29,7 +29,8 @@ echo "START ${FUNCNAME[0]} (referenced from functionLibrary.sh)"
 	#If no argument was passed to the function, use the master branch.  Otherwise use the argument as the branch
 	if [[ -z "$1"   ]];
 	then 
-		branch="master"
+		#branch="master"
+        branch="DITA-OT-2.4.4"
 	else
 		branch=$1
 	fi

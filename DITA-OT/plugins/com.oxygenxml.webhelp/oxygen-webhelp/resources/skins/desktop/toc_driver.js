@@ -104,7 +104,28 @@ function showDivs() {
  */
 function loadIframe(dynamicURL) {
     debug('loadIframe(' + dynamicURL + ')');
+    
+    /*
+     * Start of new code added to resolve DOM-based XSS issue 
+     */
+    
+    dynamicURL = dynamicURL.replace();
     var anchor = "";
+    try {
+         var parsedUri = parseUri(dynamicURL);
+         if (parsedUri.protocol != "") {
+             debug("Cross-site redirect security exception!");
+             return false;
+         }
+     } catch (e) {
+         debug(e);
+         return false;
+     }
+
+    /* 
+     * End of new code added to resolve DOM-based XSS issue 
+     */
+    
     if (dynamicURL.indexOf("#") > 0) {
         //anchor
         anchor = dynamicURL.substr(dynamicURL.indexOf("#"));

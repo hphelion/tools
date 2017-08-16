@@ -1,4 +1,5 @@
 devplat_docs_BRANCH="master"
+hos_docs_50BRANCH="hos-50"
 hos_docs_40BRANCH="hos-40"
 hos_docs_BRANCH="hos-30"
 public_cloud_docs_BRANCH="bundle-2015-may"
